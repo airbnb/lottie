@@ -4,6 +4,6 @@ Lottie
 * [iOS Documentation]()
   * [Working with images]()
 * [React Native Documentation]()
-* [After Effects ]
+* [After Effects]()
 * [Supported After Effects Features]()
 * [Community Showcase]()
