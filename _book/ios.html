@@ -1,0 +1,524 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>iOS Documentation · Lottie</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="android.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="android.html">
+            
+                <a href="android.html">
+            
+                    
+                    Android Documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="ios.html">
+            
+                <a href="ios.html">
+            
+                    
+                    iOS Documentation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    Working with images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    React Native Documentation
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="supported-features.html">
+            
+                <a href="supported-features.html">
+            
+                    
+                    Supported After Effects Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    After Effects
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Supported After Effects Features
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Community Showcase
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >iOS Documentation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="using-lottie"><a name="using-lottie" class="plugin-anchor" href="#using-lottie"><i class="fa fa-link" aria-hidden="true"></i></a>Using Lottie</h2>
+<p>Lottie supports iOS 8 and above.
+Lottie animations can be loaded from bundled JSON or from a URL</p>
+<p>To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
+<p>The simplest way to use it is with LOTAnimationView:</p>
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot;];
+[self.view addSubview:animation];
+[animation playWithCompletion:^(BOOL animationFinished) {
+  // Do Something
+}];
+</code></pre><p>If you are working with multiple bundles you can use.</p>
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot; inBundle:[NSBundle YOUR_BUNDLE]];
+[self.view addSubview:animation];
+[animation playWithCompletion:^(BOOL animationFinished) {
+  // Do Something
+}];
+</code></pre><p>Or you can load it programmatically from a NSURL</p>
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
+[self.view addSubview:animation];
+</code></pre><p>Lottie supports the iOS <code class="language-">UIViewContentModes</code> aspectFit, aspectFill and scaleFill</p>
+<p>You can also set the animation progress interactively.</p>
+<pre class="language-"><code class="language-">CGPoint translation = [gesture getTranslationInView:self.view];
+CGFloat progress = translation.y / self.view.bounds.size.height;
+animationView.animationProgress = progress;
+</code></pre><p>Want to mask arbitrary views to animation layers in a Lottie View?
+Easy-peasy as long as you know the name of the layer from After Effects</p>
+<pre class="language-"><code class="language-">UIView *snapshot = [self.view snapshotViewAfterScreenUpdates:YES];
+[lottieAnimation addSubview:snapshot toLayerNamed:@&quot;AfterEffectsLayerName&quot;];
+</code></pre><p>Lottie comes with a <code class="language-">UIViewController</code> animation-controller for making custom viewController transitions!</p>
+<pre class="language-"><code class="language-">#pragma mark -- View Controller Transitioning
+
+- (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+  LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition1&quot;
+                                                                                                          fromLayerNamed:@&quot;outLayer&quot;
+                                                                                                            toLayerNamed:@&quot;inLayer&quot;];
+  return animationController;
+}
+
+- (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForDismissedController:(UIViewController *)dismissed {
+  LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition2&quot;
+                                                                                                          fromLayerNamed:@&quot;outLayer&quot;
+                                                                                                            toLayerNamed:@&quot;inLayer&quot;];
+  return animationController;
+}
+</code></pre><p>If your animation will be frequently reused, <code class="language-">LOTAnimationView</code> has an built in LRU Caching Strategy.</p>
+<h2 id="swift-support"><a name="swift-support" class="plugin-anchor" href="#swift-support"><i class="fa fa-link" aria-hidden="true"></i></a>Swift Support</h2>
+<p>Lottie works just fine in Swift too!
+Simply <code class="language-">import Lottie</code> at the top of your swift class, and use Lottie as follows</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;hamburger&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>completion<span class="token punctuation">:</span> <span class="token punctuation">{</span> finished <span class="token keyword">in</span>
+    <span class="token comment" spellcheck="true">// Do Something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="note"><a name="note" class="plugin-anchor" href="#note"><i class="fa fa-link" aria-hidden="true"></i></a>Note:</h2>
+<p>Animation file name should be first added to your project. as for the above code sample, It won&apos;t work until you add an animation file called <code class="language-">hamburger.json</code>..
+<code class="language-">let animationView = LOTAnimationView(name: &quot;here_goes_your_json_file_name_without_.json&quot;)</code></p>
+<h2 id="supported-after-effects-features"><a name="supported-after-effects-features" class="plugin-anchor" href="#supported-after-effects-features"><i class="fa fa-link" aria-hidden="true"></i></a>Supported After Effects Features</h2>
+<h3 id="keyframe-interpolation"><a name="keyframe-interpolation" class="plugin-anchor" href="#keyframe-interpolation"><i class="fa fa-link" aria-hidden="true"></i></a>Keyframe Interpolation</h3>
+<hr>
+<ul>
+<li>Linear Interpolation</li>
+<li>Bezier Interpolation</li>
+<li>Hold Interpolation</li>
+<li>Rove Across Time</li>
+<li>Spatial Bezier</li>
+</ul>
+<h3 id="solids"><a name="solids" class="plugin-anchor" href="#solids"><i class="fa fa-link" aria-hidden="true"></i></a>Solids</h3>
+<hr>
+<ul>
+<li>Transform Anchor Point</li>
+<li>Transform Position</li>
+<li>Transform Scale</li>
+<li>Transform Rotation</li>
+<li>Transform Opacity</li>
+</ul>
+<h3 id="masks"><a name="masks" class="plugin-anchor" href="#masks"><i class="fa fa-link" aria-hidden="true"></i></a>Masks</h3>
+<hr>
+<ul>
+<li>Path</li>
+<li>Opacity</li>
+<li>Multiple Masks (additive)</li>
+</ul>
+<h3 id="track-mattes"><a name="track-mattes" class="plugin-anchor" href="#track-mattes"><i class="fa fa-link" aria-hidden="true"></i></a>Track Mattes</h3>
+<hr>
+<ul>
+<li>Alpha Matte</li>
+</ul>
+<h3 id="parenting"><a name="parenting" class="plugin-anchor" href="#parenting"><i class="fa fa-link" aria-hidden="true"></i></a>Parenting</h3>
+<hr>
+<ul>
+<li>Multiple Parenting</li>
+<li>Nulls</li>
+</ul>
+<h3 id="shape-layers"><a name="shape-layers" class="plugin-anchor" href="#shape-layers"><i class="fa fa-link" aria-hidden="true"></i></a>Shape Layers</h3>
+<hr>
+<ul>
+<li>Anchor Point</li>
+<li>Position</li>
+<li>Scale</li>
+<li>Rotation</li>
+<li>Opacity</li>
+<li>Path</li>
+<li>Group Transforms (Anchor point, position, scale etc)</li>
+<li>Rectangle (All properties)</li>
+<li>Elipse (All properties)</li>
+<li>Multiple paths in one group</li>
+</ul>
+<h4 id="stroke-shape-layer"><a name="stroke-shape-layer" class="plugin-anchor" href="#stroke-shape-layer"><i class="fa fa-link" aria-hidden="true"></i></a>Stroke (shape layer)</h4>
+<hr>
+<ul>
+<li>Stroke Color</li>
+<li>Stroke Opacity</li>
+<li>Stroke Width</li>
+<li>Line Cap</li>
+<li>Dashes</li>
+</ul>
+<h4 id="fill-shape-layer"><a name="fill-shape-layer" class="plugin-anchor" href="#fill-shape-layer"><i class="fa fa-link" aria-hidden="true"></i></a>Fill (shape layer)</h4>
+<hr>
+<ul>
+<li>Fill Color</li>
+<li>Fill Opacity</li>
+</ul>
+<h4 id="trim-paths-shape-layer"><a name="trim-paths-shape-layer" class="plugin-anchor" href="#trim-paths-shape-layer"><i class="fa fa-link" aria-hidden="true"></i></a>Trim Paths (shape layer)</h4>
+<hr>
+<ul>
+<li>Trim Paths Start</li>
+<li>Trim Paths End</li>
+<li>Trim Paths Offset</li>
+</ul>
+<h4 id="layer-features"><a name="layer-features" class="plugin-anchor" href="#layer-features"><i class="fa fa-link" aria-hidden="true"></i></a>Layer Features</h4>
+<hr>
+<ul>
+<li>Precomps</li>
+<li>Image Layers</li>
+<li>Shape Layers</li>
+<li>Null Layers</li>
+<li>Solid Layers</li>
+<li>Parenting Layers</li>
+<li>Alpha Matte Layers</li>
+</ul>
+<h2 id="currently-unsupported-after-effects-features"><a name="currently-unsupported-after-effects-features" class="plugin-anchor" href="#currently-unsupported-after-effects-features"><i class="fa fa-link" aria-hidden="true"></i></a>Currently Unsupported After Effects Features</h2>
+<ul>
+<li>Even-Odd winding paths</li>
+<li>Merge Shapes</li>
+<li>Trim Shapes Individually feature of Trim Paths</li>
+<li>Expressions</li>
+<li>3d Layer support</li>
+<li>Gradients</li>
+<li>Polystar shapes (Can convert to vector path as a workaround)</li>
+<li>Alpha inverted mask</li>
+</ul>
+<h2 id="install-lottie"><a name="install-lottie" class="plugin-anchor" href="#install-lottie"><i class="fa fa-link" aria-hidden="true"></i></a>Install Lottie</h2>
+<h3 id="cocoapods"><a name="cocoapods" class="plugin-anchor" href="#cocoapods"><i class="fa fa-link" aria-hidden="true"></i></a>CocoaPods</h3>
+<p>Add the pod to your podfile</p>
+<pre class="language-"><code class="language-">pod &apos;lottie-ios&apos;
+</code></pre><p>run</p>
+<pre class="language-"><code class="language-">pod install
+</code></pre><h3 id="carthage"><a name="carthage" class="plugin-anchor" href="#carthage"><i class="fa fa-link" aria-hidden="true"></i></a>Carthage</h3>
+<p>Install Carthage (<a href="https://github.com/Carthage/Carthage" target="_blank">https://github.com/Carthage/Carthage</a>)
+Add Lottie to your Cartfile</p>
+<pre class="language-"><code class="language-">github &quot;airbnb/lottie-ios&quot; &quot;master&quot;
+</code></pre><p>run</p>
+<pre class="language-"><code class="language-">carthage update
+</code></pre><h2 id="try-it-out"><a name="try-it-out" class="plugin-anchor" href="#try-it-out"><i class="fa fa-link" aria-hidden="true"></i></a>Try it out</h2>
+<p>Lottie Uses Cocoapods!
+Get the Cocoapod or clone this repo and try out <a href="https://github.com/airbnb/lottie-ios/tree/master/Example" target="_blank">the Example App</a>
+After installing the cocoapod into your project import Lottie with
+<code class="language-">#import &lt;Lottie/Lottie.h&gt;</code></p>
+<p>Try with Carthage.
+In your application targets &#x201C;General&#x201D; tab under the &#x201C;Linked Frameworks and Libraries&#x201D; section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that <code class="language-">carthage update</code> produced.</p>
+<h2 id="community-contributions"><a name="community-contributions" class="plugin-anchor" href="#community-contributions"><i class="fa fa-link" aria-hidden="true"></i></a>Community Contributions</h2>
+<ul>
+<li><a href="https://github.com/martijn00/LottieXamarin" target="_blank">Xamarin bindings</a></li>
+<li><a href="https://github.com/bradmartin/nativescript-lottie" target="_blank">NativeScript bindings</a></li>
+<li><a href="https://github.com/m1ga/ti.animation" target="_blank">Appcelerator Titanium bindings</a></li>
+<li>MacOS Support added by <a href="https://github.com/pawlowskialex" target="_blank">Alex Pawlowski</a></li>
+</ul>
+<h2 id="alternatives"><a name="alternatives" class="plugin-anchor" href="#alternatives"><i class="fa fa-link" aria-hidden="true"></i></a>Alternatives</h2>
+<ol>
+<li>Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It&apos;s often hard or even impossible to justify spending so much time to get an animation right.</li>
+<li><a href="https://github.com/facebookincubator/Keyframes" target="_blank">Facebook Keyframes</a>. Keyframes is a wonderful new library from Facebook that they built for reactions. However, Keyframes doesn&apos;t support some of Lottie&apos;s features such as masks, mattes, trim paths, dash patterns, and more.</li>
+<li>Gifs. Gifs are more than double the size of a bodymovin JSON and are rendered at a fixed size that can&apos;t be scaled up to match large and high density screens.</li>
+<li>Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin json and also can&apos;t be scaled up.</li>
+</ol>
+<h2 id="why-is-it-called-lottie"><a name="why-is-it-called-lottie" class="plugin-anchor" href="#why-is-it-called-lottie"><i class="fa fa-link" aria-hidden="true"></i></a>Why is it called Lottie?</h2>
+<p>Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) &#x2013; the oldest surviving feature-length animated film, preceding Walt Disney&apos;s feature-length Snow White and the Seven Dwarfs (1937) by over ten years
+<a href="https://www.youtube.com/watch?v=LvU55CUw5Ck&amp;feature=youtu.be" target="_blank">The art of Lotte Reineger</a></p>
+<h2 id="contributing"><a name="contributing" class="plugin-anchor" href="#contributing"><i class="fa fa-link" aria-hidden="true"></i></a>Contributing</h2>
+<p>Contributors are more than welcome. Just upload a PR with a description of your changes.</p>
+<p>If you would like to add more JSON files feel free to do so!</p>
+<h2 id="issues-or-feature-requests"><a name="issues-or-feature-requests" class="plugin-anchor" href="#issues-or-feature-requests"><i class="fa fa-link" aria-hidden="true"></i></a>Issues or feature requests?</h2>
+<p>File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.</p>
+<h2 id="roadmap-in-no-particular-order"><a name="roadmap-in-no-particular-order" class="plugin-anchor" href="#roadmap-in-no-particular-order"><i class="fa fa-link" aria-hidden="true"></i></a>Roadmap (In no particular order)</h2>
+<ul>
+<li>Add support for interactive animated transitions</li>
+<li>Add support for parenting programmatically added layers, moving/scaling</li>
+<li>Programmatically alter animations</li>
+<li>Animation Breakpoints/Seekpoints</li>
+<li>Gradients</li>
+<li>LOTAnimatedButton</li>
+<li>Repeater objects</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="android.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Android Documentation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"iOS Documentation","level":"1.3","depth":1,"next":{"title":"Working with images","level":"1.3.1","depth":2,"ref":"","articles":[]},"previous":{"title":"Android Documentation","level":"1.2","depth":1,"path":"android.md","ref":"android.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"ios.md","mtime":"2017-07-19T15:06:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-19T15:48:37.203Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -35,4 +35,8 @@ Or get in touch on GitHub or via lottie@airbnb.com
 
 ## Sample App
 
-You can build the sample app yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
+You can build the sample app for Android yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
+
+## Shipping something with Lottie?
+
+Email us at lottie@airbnb.com and soon we will create a testimonals and use cases page with real world usages of Lottie from around the world.
