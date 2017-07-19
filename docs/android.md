@@ -13,7 +13,7 @@ dependencies {
 }
 ```
 
-## Using Lottie
+## Getting Started
 Lottie supports ICS (API 14) and above.
 The simplest way to use it is with LottieAnimationView:
 
@@ -74,6 +74,18 @@ animator.start();
 animationView.cancelAnimation();
 ```
 
+Under the hood, `LottieAnimationView` uses `LottieDrawable` to render its animations. If you need to, you can use the drawable form directly:
+```java
+LottieDrawable drawable = new LottieDrawable();
+LottieComposition.Factory.fromAssetFileName(getContext(), "hello-world.json", (composition) -> {
+    drawable.setComposition(composition);
+});
+```
+
+If your animation will be frequently reused, `LottieAnimationView` has an optional caching strategy built in. Use `LottieAnimationView#setAnimation(String, CacheStrategy)`. `CacheStrategy` can be `Strong`, `Weak`, or `None` to have `LottieAnimationView` hold a strong or weak reference to the loaded and parsed animation.
+
+## Dynamic Colors
+
 You can add a color filter to the whole animation, a specific layer, or specific content within a layer:
 ```java
 // Any class that conforms to the ColorFilter interface
@@ -103,16 +115,6 @@ You can also add a color filter to the whole animation in the layout XML, which 
 
 Note: Color filters are only available for layers such as Image layer and Solid layer as well as content that includes fill, stroke, or group content.
 
-Under the hood, `LottieAnimationView` uses `LottieDrawable` to render its animations. If you need to, you can use the drawable form directly:
-```java
-LottieDrawable drawable = new LottieDrawable();
-LottieComposition.Factory.fromAssetFileName(getContext(), "hello-world.json", (composition) -> {
-    drawable.setComposition(composition);
-});
-```
-
-If your animation will be frequently reused, `LottieAnimationView` has an optional caching strategy built in. Use `LottieAnimationView#setAnimation(String, CacheStrategy)`. `CacheStrategy` can be `Strong`, `Weak`, or `None` to have `LottieAnimationView` hold a strong or weak reference to the loaded and parsed animation.
-
 
 ### Image Support
 You can animate images if your animation is loaded from assets and your image file is in a
@@ -131,130 +133,7 @@ animationView.setImageAssetDelegate(new ImageAssetDelegate() {
         });
 ```
 
-## Supported After Effects Features
-
-### Pre-composition
-
----
-
-### Keyframe Interpolation
-
----
-
-* Linear Interpolation
-
-* Bezier Interpolation
-
-* Hold Interpolation
-
-* Rove Across Time
-
-* Spatial Bezier
-
-### Solids
-
----
-
-* Transform Anchor Point
-
-* Transform Position
-
-* Transform Scale
-
-* Transform Rotation
-
-* Transform Opacity
-
-### Masks
-
----
-
-* Path
-
-* Opacity
-
-* Multiple Masks (additive, subtractive, inverted)
-
-### Track Mattes
-
----
-
-* Alpha Matte
-
-### Parenting
-
----
-
-* Multiple Parenting
-
-* Nulls
-
-### Shape Layers
-
----
-
-* Rectangle (All properties)
-
-* Ellipse (All properties)
-
-* Polystar (All properties)
-
-* Polygon (All properties. Integer point values only.)
-
-* Path (All properties)
-
-* Anchor Point
-
-* Position
-
-* Scale
-
-* Rotation
-
-* Opacity
-
-* Group Transforms (Anchor point, position, scale etc)
-
-* Multiple paths in one group
-
-* Merge paths (off by default and must be explicitly enabled with
-`enableMergePathsForKitKatAndAbove`)
-
-#### Stroke (shape layer)
-
----
-
-* Stroke Color
-
-* Stroke Opacity
-
-* Stroke Width
-
-* Line Cap
-
-* Dashes
-
-#### Fill (shape layer)
-
----
-
-* Fill Color
-
-* Fill Opacity
-
-* Fill Rule
-
-#### Trim Paths (shape layer)
-
----
-
-* Trim Paths Start
-
-* Trim Paths End
-
-* Trim Paths Offset
-
-## Performance and Memory
+## Performance
 1. If the composition has no masks or mattes then the performance and memory overhead should be quite good. No bitmaps are created and most operations are simple canvas draw operations.
 2. If the composition has masks or mattes, offscreen buffers will be used and there will
 be a performance hit as it gets drawn.
@@ -266,21 +145,8 @@ Clone this repository and run the LottieSample module to see a bunch of sample a
 
 The sample app can also load json files at a given url or locally on your device (like Downloads or on your sdcard).
 
-## Alternatives
-1. Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It's often hard or even impossible to justify spending so much time to get an animation right.
-2. [Facebook Keyframes](https://github.com/facebookincubator/Keyframes). Keyframes is a wonderful new library from Facebook that they built for reactions. However, Keyframes doesn't support some of Lottie's features such as masks, mattes, trim paths, dash patterns, and more.
-2. Gifs. Gifs are more than double the size of a bodymovin JSON and are rendered at a fixed size that can't be scaled up to match large and high density screens.
-3. Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin json and also can't be scaled up.
-
-## Why is it called Lottie?
-Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) – the oldest surviving feature-length animated film, preceding Walt Disney's feature-length Snow White and the Seven Dwarfs (1937) by over ten years
-[The art of Lotte Reineger](https://www.youtube.com/watch?v=LvU55CUw5Ck&feature=youtu.be)
-
 ## Contributing
 Contributors are more than welcome. Just upload a PR with a description of your changes.
 Lottie uses [Facebook screenshot tests for Android](https://github.com/facebook/screenshot-tests-for-android) to identify pixel level changes/breakages. Please run `./gradlew --daemon recordMode screenshotTests` before uploading a PR to ensure that nothing has broken. Use a Nexus 5 emulator running Lollipop for this. Changed screenshots will show up in your git diff if you have.
 
 If you would like to add more JSON files and screenshot tests, feel free to do so and add the test to `LottieTest`.
-
-## Issues or feature requests?
-File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
