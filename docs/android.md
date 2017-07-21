@@ -3,8 +3,7 @@
 You can build the sample app yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
 
 
-## Download
-
+## Getting Started
 Gradle is the only supported build configuration, so just add the dependency to your project `build.gradle` file:
 
 ```groovy
@@ -13,7 +12,6 @@ dependencies {
 }
 ```
 
-## Getting Started
 Lottie supports ICS (API 14) and above.
 The simplest way to use it is with LottieAnimationView:
 
@@ -132,18 +130,6 @@ animationView.setImageAssetDelegate(new ImageAssetDelegate() {
           }
         });
 ```
-
-## Performance
-1. If the composition has no masks or mattes then the performance and memory overhead should be quite good. No bitmaps are created and most operations are simple canvas draw operations.
-2. If the composition has masks or mattes, offscreen buffers will be used and there will
-be a performance hit as it gets drawn.
-3. If you are using your animation in a list, it is recommended to use a CacheStrategy in
-LottieAnimationView.setAnimation(String, CacheStrategy) so the animations do not have to be deserialized every time.
-
-## Try it out
-Clone this repository and run the LottieSample module to see a bunch of sample animations. The JSON files for them are located in [LottieSample/src/main/assets](https://github.com/airbnb/lottie-android/tree/master/LottieSample/src/main/assets) and the original After Effects files are located in [/After Effects Samples](https://github.com/airbnb/lottie-android/tree/master/After%20Effects%20Samples)
-
-The sample app can also load json files at a given url or locally on your device (like Downloads or on your sdcard).
 
 ## Contributing
 Contributors are more than welcome. Just upload a PR with a description of your changes.

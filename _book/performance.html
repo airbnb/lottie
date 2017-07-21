@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>After Effects Tips · Lottie</title>
+        <title>Performance · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="supported-features.html" />
+    <link rel="next" href="troubleshooting.html" />
     
     
-    <link rel="prev" href="ios.html" />
+    <link rel="prev" href="supported-features.html" />
     
 
     </head>
@@ -272,7 +272,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="after-effects.html">
+        <li class="chapter " data-level="1.5" data-path="after-effects.html">
             
                 <a href="after-effects.html">
             
@@ -298,7 +298,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="performance.html">
+        <li class="chapter active" data-level="1.7" data-path="performance.html">
             
                 <a href="performance.html">
             
@@ -367,7 +367,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >After Effects Tips</a>
+        <a href="." >Performance</a>
     </h1>
 </div>
 
@@ -379,28 +379,27 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="creating-lottie-animations"><a name="creating-lottie-animations" class="plugin-anchor" href="#creating-lottie-animations"><i class="fa fa-link" aria-hidden="true"></i></a>Creating Lottie animations</h2>
-<p>Creating animations for Lottie is a bit different than the usual After Effects workflow. Here are some general tips for creating Lottie animations.</p>
-<h2 id="keep-it-simple"><a name="keep-it-simple" class="plugin-anchor" href="#keep-it-simple"><i class="fa fa-link" aria-hidden="true"></i></a>Keep it Simple</h2>
-<p>When building for Lottie you always have to keep in mind that these JSON files need to be as compact and small as possible for mobile products. For example use parenting whenever you can. Duplicating the same keyframes on a similar layers adds extra code. Only use path keyframe animations when absolutely have to. Those eat up the most space because its adding data for each vertex on each keyframe. Techniques such as Autotrace, or the wiggler that give you a keyframe every frame, may make your JSON file size very large and may impact performance negatively. There has to be a balance with the way the compositions are setup so that things are as efficient as possible.</p>
-<h2 id="shape-layers-for-vector-artwork--adobe-illustrator"><a name="shape-layers-for-vector-artwork--adobe-illustrator" class="plugin-anchor" href="#shape-layers-for-vector-artwork--adobe-illustrator"><i class="fa fa-link" aria-hidden="true"></i></a>Shape layers for vector artwork / Adobe Illustrator</h2>
-<p>Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers otherwise they will not work in your Lottie animation. After you&apos;ve converted to shape layers remove the assets from your composition so they aren&apos;t exported with the JSON. Shape layers is where Lottie does best.</p>
-<h2 id="work-1x"><a name="work-1x" class="plugin-anchor" href="#work-1x"><i class="fa fa-link" aria-hidden="true"></i></a>Work @1x</h2>
-<p>Working at 1x ensures that all of your strokes will be right on different dimensions. All px values will be converted to points on iOS and dp on Android.</p>
-<h2 id="no-expressions-or-effects"><a name="no-expressions-or-effects" class="plugin-anchor" href="#no-expressions-or-effects"><i class="fa fa-link" aria-hidden="true"></i></a>No expressions or effects</h2>
-<p>Lottie does not yet support expressions, or any effects from the effects menu.</p>
-<h2 id="matte-size-matters"><a name="matte-size-matters" class="plugin-anchor" href="#matte-size-matters"><i class="fa fa-link" aria-hidden="true"></i></a>Matte size matters</h2>
-<p>Using alpha mattes can impact performance. If you&apos;re using an alpha matte or an alpha inverted matte, the size of the matte will impact performance even more. If you must use Mattes, cover the smallest area you can.</p>
-<h2 id="debugging"><a name="debugging" class="plugin-anchor" href="#debugging"><i class="fa fa-link" aria-hidden="true"></i></a>Debugging</h2>
-<p>If an animation is broken. Try debugging the animation by exporting only certain layers at a time to see which ones work and which ones don&apos;t. After you isolate the problem areas, be sure to file a github issue with the After effects file attached and then you can choose to remake those layers in a different way.</p>
-<h2 id="no-blending-modes-or-luma-mattes"><a name="no-blending-modes-or-luma-mattes" class="plugin-anchor" href="#no-blending-modes-or-luma-mattes"><i class="fa fa-link" aria-hidden="true"></i></a>No Blending modes or Luma mattes</h2>
-<p>Blending modes such as Multiply, Screen or Add, don&apos;t work nor do Luma mattes.</p>
-<h2 id="supporting-multiple-screen-sizes"><a name="supporting-multiple-screen-sizes" class="plugin-anchor" href="#supporting-multiple-screen-sizes"><i class="fa fa-link" aria-hidden="true"></i></a>Supporting multiple screen sizes</h2>
-<p>You can export longer (or taller) animations and use centerCrop on the View containing the Lottie animation and that will give you coverage for multiple screen sizes.</p>
-<h2 id="make-nulls-0"><a name="make-nulls-0" class="plugin-anchor" href="#make-nulls-0"><i class="fa fa-link" aria-hidden="true"></i></a>Make Nulls 0%</h2>
-<p>If you&apos;re using a null to control a bunch of layers and usually turn the visibility off, be sure to turn the visibility ON and turn the opacity to 0% otherwise they won&apos;t come through in the JSON file</p>
-<h2 id="sketch-workflow"><a name="sketch-workflow" class="plugin-anchor" href="#sketch-workflow"><i class="fa fa-link" aria-hidden="true"></i></a>Sketch workflow</h2>
-<p>If you&apos;re bringing in assets from Sketch, you can export artboards as PDFs. Bring that PDF into illustrator to break things out into layers and do some organization. Then save that PDF as an illustrator file that can be brought into After Effects and converted into a shape layer. Hopefully one day someone writes a script / tool to automate this process</p>
+                                <h1 id="optimizing-animation-performance"><a name="optimizing-animation-performance" class="plugin-anchor" href="#optimizing-animation-performance"><i class="fa fa-link" aria-hidden="true"></i></a>Optimizing Animation Performance</h1>
+<h2 id="sizing-px---pointsdp"><a name="sizing-px---pointsdp" class="plugin-anchor" href="#sizing-px---pointsdp"><i class="fa fa-link" aria-hidden="true"></i></a>Sizing (px -&gt; points/dp)</h2>
+<p>Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px.</p>
+<h2 id="masks-and-mattes"><a name="masks-and-mattes" class="plugin-anchor" href="#masks-and-mattes"><i class="fa fa-link" aria-hidden="true"></i></a>Masks and Mattes</h2>
+<p>Masks and mattes on android have the larges performance hit. Their performance hit is also proportional to the intersection bounds of the masked/matted layer and the mask/matte so the smaller the mask/matte, the less of a performance hit there will be.
+On Android, if you are using masks or mattes, there will be a several X performance improvement when using hardware acceleration.</p>
+<h2 id="hardware-acceleration-android"><a name="hardware-acceleration-android" class="plugin-anchor" href="#hardware-acceleration-android"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Acceleration (Android)</h2>
+<p>Android can render animations with hardware or software acceleration. Hardware acceleration is much faster but has some limitations.
+The following features have limited support</p>
+<ul>
+<li>Anti aliasing (API 16+ only)</li>
+<li>Clip to comp bounds (API 18+ only)</li>
+<li>Stroke caps (API 19+ only)</li>
+</ul>
+<p>For more information, read <a href="https://developer.android.com/guide/topics/graphics/hardware-accel.html" target="_blank">this</a>.</p>
+<p>In general, try your animation with hardware acceleration and use it if it works. You can try toggling it in the sample app.</p>
+<h2 id="render-graph-android"><a name="render-graph-android" class="plugin-anchor" href="#render-graph-android"><i class="fa fa-link" aria-hidden="true"></i></a>Render Graph (Android)</h2>
+<p>The Lottie sample app has a real time render graph that can be enabled from the menu in the top right.
+<img src="images/render-graph.png" alt="Render Graph"></p>
+<h2 id="reused-animations-android"><a name="reused-animations-android" class="plugin-anchor" href="#reused-animations-android"><i class="fa fa-link" aria-hidden="true"></i></a>Reused Animations (Android)</h2>
+<p>Animations are often reused many times such as a wish list heart in a list. To avoid deserialzation for each one, you may cache the deserialized composition. To do that, you may either set a cache strategy on your <code class="language-">LottieAnimationView</code> or load the <code class="language-">LottieComposition</code> directly, hold a reference yourself, and then set that directly on the <code class="language-">LottieAnimationView</code>.</p>
 
                                 
                                 </section>
@@ -412,12 +411,12 @@
 
             
                 
-                <a href="ios.html#getting-started" class="navigation navigation-prev " aria-label="Previous page: Getting Started">
+                <a href="supported-features.html" class="navigation navigation-prev " aria-label="Previous page: Supported Features">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="supported-features.html" class="navigation navigation-next " aria-label="Next page: Supported Features">
+                <a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page: Troubleshooting">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -428,7 +427,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"After Effects Tips","level":"1.5","depth":1,"next":{"title":"Supported Features","level":"1.6","depth":1,"path":"supported-features.md","ref":"supported-features.md","articles":[]},"previous":{"title":"Getting Started","level":"1.4.2","depth":2,"anchor":"#getting-started","path":"ios.md","ref":"ios.md#getting-started","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"after-effects.md","mtime":"2017-07-19T19:23:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T15:22:07.243Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Performance","level":"1.7","depth":1,"next":{"title":"Troubleshooting","level":"1.8","depth":1,"path":"troubleshooting.md","ref":"troubleshooting.md","articles":[]},"previous":{"title":"Supported Features","level":"1.6","depth":1,"path":"supported-features.md","ref":"supported-features.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"performance.md","mtime":"2017-07-21T15:22:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-21T15:22:07.243Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

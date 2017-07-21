@@ -1,5 +1,23 @@
-## Download
+## Sample App
 
+You can check out the example project with the following instructions
+
+1. Clone the repo: `git clone https://github.com/airbnb/lottie-react-native.git`
+2. Open: `cd lottie-react-native` and Install: `npm install`
+3. Run `npm start` to start the packager.
+4. In another CLI window, do the following:
+
+For Running iOS:
+
+1. If you don't have CocoaPods installed, run `bundle install`
+2. Install pods: `npm run build:pods`
+3. Run Example: `npm run run:ios`
+
+For Running Android:
+
+1. Run Example: `npm run run:android`
+
+## Getting Started
 Get started with Lottie by installing the node module with yarn or npm:
 
 ```bash
@@ -41,12 +59,6 @@ android {
 ```
 
 With this change you should be ready to go.
-
-Please file an issue if you have any trouble!
-
-## Getting Started
-
-[See full component API](/docs/api.md)
 
 Lottie's animation progress can be controlled with an `Animated` value:
 
@@ -111,25 +123,6 @@ export default class BasicExample extends React.Component {
 }
 ```
 
-## Example Project
-
-You can check out the example project with the following instructions
-
-1. Clone the repo: `git clone https://github.com/airbnb/lottie-react-native.git`
-2. Open: `cd lottie-react-native` and Install: `npm install`
-3. Run `npm start` to start the packager.
-4. In another CLI window, do the following:
-
-For Running iOS:
-
-1. If you don't have CocoaPods installed, run `bundle install`
-2. Install pods: `npm run build:pods`
-3. Run Example: `npm run run:ios`
-
-For Running Android:
-
-1. Run Example: `npm run run:android`
-
 
 ## Troubleshooting
 
@@ -148,3 +141,56 @@ LottieReactNative/LRNContainerView.h: 'Lottie/Lottie.h' file not found
 ```
 
 Add the `Lottie.framework` to the `Embedded Binaries` in your Xcode project configuration.
+
+## API
+Props:
+
+```
+type AnimationProps = {
+  // The source of animation. Can be referenced as a local asset by a string, or remotely
+  // with an object with a `uri` property, or it can be an actual JS object of an
+  // animation, obtained (for example) with something like
+  // `require('../path/to/animation.json')`
+  source: string | AnimationJson | { uri: string },
+
+  // A number between 0 and 1, or an `Animated` number between 0 and 1. This number
+  // represents the normalized progress of the animation. If you update this prop, the
+  // animation will correspondingly update to the frame at that progress value. This
+  // prop is not required if you are using the imperative API.
+  progress: number | Animated = 0,
+
+  // The speed the animation will progress. This only affects the imperative API. The
+  // default value is 1.
+  speed: number = 1,
+
+  // A boolean flag indicating whether or not the animation should loop.
+  loop: boolean = false,
+
+  // Style attributes for the view, as expected in a standard `View`:
+  // http://facebook.github.io/react-native/releases/0.39/docs/view.html#style
+  // CAVEAT: border styling is not supported.
+  style?: ViewStyle,
+
+  // [Android] Relative folder inside of assets containing image files to be animated.
+  // Make sure that the images that bodymovin export are in that folder with their names unchanged (should be img_#).
+  // Refer to https://github.com/airbnb/lottie-android#image-support for more details.
+  imageAssetsFolder: string,
+};
+
+```
+
+
+Methods:
+
+```
+class Animation extends React.Component {
+
+  // play the animation all the way through, at the speed specified as a prop.
+  play();
+
+
+  // Reset the animation back to `0` progress.
+  reset();
+
+}
+```
