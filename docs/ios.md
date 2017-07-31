@@ -1,4 +1,4 @@
-## Getting Started
+## Getting Started on iOS
 Lottie Uses Cocoapods and supports iOS 8 and above!
 
 Get the Cocoapod or clone this repo and try out [the Sample App](https://github.com/airbnb/lottie-ios/tree/master/Example)
