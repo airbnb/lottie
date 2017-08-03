@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>iOS · Lottie</title>
+        <title>iOS/MacOS · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -187,7 +187,7 @@
                 <a href="ios.html">
             
                     
-                    iOS
+                    iOS/MacOS
             
                 </a>
             
@@ -198,7 +198,7 @@
     
         <li class="chapter " data-level="1.3.1" data-path="ios.html">
             
-                <a href="ios.html#getting-started">
+                <a href="ios.html#getting-started-on-ios-or-macos">
             
                     
                     Getting Started
@@ -211,10 +211,88 @@
     
         <li class="chapter " data-level="1.3.2" data-path="ios.html">
             
-                <a href="ios.html#roadmap">
+                <a href="ios.html#installing-lottie">
             
                     
-                    Roadmap
+                    Installing Lottie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="ios.html">
+            
+                <a href="ios.html#ios-sample-app">
+            
+                    
+                    iOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ios.html">
+            
+                <a href="ios.html#macos-sample-app">
+            
+                    
+                    MacOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="ios.html">
+            
+                <a href="ios.html#objective-c-examples">
+            
+                    
+                    Objective C Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="ios.html">
+            
+                <a href="ios.html#swift-examples">
+            
+                    
+                    Swift Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="ios.html">
+            
+                <a href="ios.html#ios-view-controller-transitioning">
+            
+                    
+                    VC Transitioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="ios.html">
+            
+                <a href="ios.html#changing-animations-at-runtime">
+            
+                    
+                    Changing Animations At Runtime
             
                 </a>
             
@@ -367,7 +445,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >iOS</a>
+        <a href="." >iOS/MacOS</a>
     </h1>
 </div>
 
@@ -379,92 +457,173 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="getting-started-on-ios"><a name="getting-started-on-ios" class="plugin-anchor" href="#getting-started-on-ios"><i class="fa fa-link" aria-hidden="true"></i></a>Getting Started on iOS</h2>
-<p>Lottie Uses Cocoapods and supports iOS 8 and above!</p>
-<p>Get the Cocoapod or clone this repo and try out <a href="https://github.com/airbnb/lottie-ios/tree/master/Example" target="_blank">the Sample App</a>
-After installing the cocoapod into your project import Lottie with
-<code class="language-">#import &lt;Lottie/Lottie.h&gt;</code></p>
-<p>Try with Carthage.
-In your application targets &#x201C;General&#x201D; tab under the &#x201C;Linked Frameworks and Libraries&#x201D; section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that <code class="language-">carthage update</code> produced.</p>
-<h3 id="cocoapods"><a name="cocoapods" class="plugin-anchor" href="#cocoapods"><i class="fa fa-link" aria-hidden="true"></i></a>CocoaPods</h3>
-<p>Add the pod to your podfile</p>
+                                <h2 id="getting-started-on-ios-or-macos"><a name="getting-started-on-ios-or-macos" class="plugin-anchor" href="#getting-started-on-ios-or-macos"><i class="fa fa-link" aria-hidden="true"></i></a>Getting Started on iOS or MacOS</h2>
+<p>Lottie Uses Cocoapods, Carthage, Static and Dynamic modules.
+Lottie supports iOS 8+ and MacOS 10.10+</p>
+<h2 id="installing-lottie"><a name="installing-lottie" class="plugin-anchor" href="#installing-lottie"><i class="fa fa-link" aria-hidden="true"></i></a>Installing Lottie</h2>
+<h3 id="github-repo"><a name="github-repo" class="plugin-anchor" href="#github-repo"><i class="fa fa-link" aria-hidden="true"></i></a>Github Repo</h3>
+<p>You can pull the <a href="https://github.com/airbnb/lottie-ios/" target="_blank">Lottie Github Repo</a> and include the Lottie.xcodeproj to build a dynamic or static library.</p>
+<h3 id="cocoapods"><a name="cocoapods" class="plugin-anchor" href="#cocoapods"><i class="fa fa-link" aria-hidden="true"></i></a>Cocoapods</h3>
+<p>Get <a href="https://cocoapods.org/" target="_blank">Cocoapods</a>
+Add the pod to your podfile</p>
 <pre class="language-"><code class="language-">pod &apos;lottie-ios&apos;
 </code></pre><p>run</p>
 <pre class="language-"><code class="language-">pod install
-</code></pre><h3 id="carthage"><a name="carthage" class="plugin-anchor" href="#carthage"><i class="fa fa-link" aria-hidden="true"></i></a>Carthage</h3>
-<p>Install Carthage (<a href="https://github.com/Carthage/Carthage" target="_blank">https://github.com/Carthage/Carthage</a>)
-Add Lottie to your Cartfile</p>
+</code></pre><p>After installing the cocoapod into your project import Lottie with
+ Objective C
+<code class="language-">#import &lt;Lottie/Lottie.h&gt;</code> 
+Swift
+<code class="language-">import Lottie</code></p>
+<h3 id="carthage"><a name="carthage" class="plugin-anchor" href="#carthage"><i class="fa fa-link" aria-hidden="true"></i></a>Carthage</h3>
+<p>Get <a href="https://github.com/Carthage/Carthage" target="_blank">Carthage</a></p>
+<p>Add Lottie to your Cartfile</p>
 <pre class="language-"><code class="language-">github &quot;airbnb/lottie-ios&quot; &quot;master&quot;
 </code></pre><p>run</p>
 <pre class="language-"><code class="language-">carthage update
-</code></pre><p>Lottie animations can be loaded from bundled JSON or from a URL</p>
-<p>To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
-<p>The simplest way to use it is with LOTAnimationView:</p>
-<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot;];
+</code></pre><p>In your application targets &#x201C;General&#x201D; tab under the &#x201C;Linked Frameworks and Libraries&#x201D; section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that <code class="language-">carthage update</code> produced.</p>
+<h2 id="ios-sample-app"><a name="ios-sample-app" class="plugin-anchor" href="#ios-sample-app"><i class="fa fa-link" aria-hidden="true"></i></a>iOS Sample App</h2>
+<p>Clone this repo and try out <a href="https://github.com/airbnb/lottie-ios/tree/master/Example" target="_blank">the Sample App</a>
+The repo can build a MacOS Example and an iOS Example</p>
+<p>The iOS Example App demos several of the features of Lottie</p>
+<p><img src="images/iosexample1.png" alt="Example 1"><img src="images/iosexample2.png" alt="Example 2">
+<img src="images/iosexample3.png" alt="Example 3"></p>
+<p>The animation Explorer allows you to scrub, play, loop, and resize animations.
+Animations can be loaded from the app bundle or from <a href="http://www.lottiefiles.com" target="_blank">Lottie Files</a> using the built in QR Code reader.</p>
+<h2 id="macos-sample-app"><a name="macos-sample-app" class="plugin-anchor" href="#macos-sample-app"><i class="fa fa-link" aria-hidden="true"></i></a>MacOS Sample App</h2>
+<p>Clone this repo and try out <a href="https://github.com/airbnb/lottie-ios/tree/master/Example" target="_blank">the Sample App</a>
+The repo can build a MacOS Example and an iOS Example</p>
+<p><img src="images/macexample.png" alt="Lottie Viewer"></p>
+<p>The Lottie Viewer for MacOS allows you to drag and drop JSON files to open, play, scrub and loop animations. This app is backed by the same animation code as the iOS app, so you will get an accurate representation of Mac and iOS animations.</p>
+<h2 id="objective-c-examples"><a name="objective-c-examples" class="plugin-anchor" href="#objective-c-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Objective C Examples</h2>
+<p>Lottie animations can be loaded from bundled JSON or from a URL
+To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
+<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot;];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
   // Do Something
 }];
-</code></pre><p>If you are working with multiple bundles you can use.</p>
-<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot; inBundle:[NSBundle YOUR_BUNDLE]];
+</code></pre>
+<p>If you are working with multiple bundles you can use.</p>
+<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot; inBundle:[NSBundle YOUR_BUNDLE]];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
   // Do Something
 }];
-</code></pre><p>Or you can load it programmatically from a NSURL</p>
-<pre class="language-"><code class="language-">LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
+</code></pre>
+<p>Or you can load it programmatically from a NSURL</p>
+<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
 [self.view addSubview:animation];
-</code></pre><p>Lottie supports the iOS <code class="language-">UIViewContentModes</code> aspectFit, aspectFill and scaleFill</p>
+</code></pre>
+<p>Lottie supports the iOS <code class="language-">UIViewContentModes</code> aspectFit, aspectFill and scaleFill</p>
 <p>You can also set the animation progress interactively.</p>
-<pre class="language-"><code class="language-">CGPoint translation = [gesture getTranslationInView:self.view];
+<pre class="language-"><code class="lang-objective-c language-">CGPoint translation = [gesture getTranslationInView:self.view];
 CGFloat progress = translation.y / self.view.bounds.size.height;
 animationView.animationProgress = progress;
-</code></pre><p>Want to mask arbitrary views to animation layers in a Lottie View?
-Easy-peasy as long as you know the name of the layer from After Effects</p>
-<pre class="language-"><code class="language-">UIView *snapshot = [self.view snapshotViewAfterScreenUpdates:YES];
-[lottieAnimation addSubview:snapshot toLayerNamed:@&quot;AfterEffectsLayerName&quot;];
-</code></pre><p>Lottie comes with a <code class="language-">UIViewController</code> animation-controller for making custom viewController transitions!</p>
-<pre class="language-"><code class="language-">#pragma mark -- View Controller Transitioning
+</code></pre>
+<p>Or you can play just a portion of the animation:</p>
+<pre class="language-"><code class="lang-objective-c language-">[lottieAnimation playFromProgress:0.25 toProgress:0.5 withCompletion:^(BOOL animationFinished) {
+// Do Something
+}];
+</code></pre>
+<h2 id="swift-examples"><a name="swift-examples" class="plugin-anchor" href="#swift-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Swift Examples</h2>
+<p>Lottie animations can be loaded from bundled JSON or from a URL
+To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;LottieLogo&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>If your animation is in another bundle you can use</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;LottieLogo&quot;</span> bundle<span class="token punctuation">:</span>yourBundle<span class="token punctuation">)</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Or you can load it asynchronously from a URL</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token builtin">WebURL</span><span class="token punctuation">)</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>You can also set the animation progress interactively.</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> translation <span class="token operator">=</span> gesture<span class="token punctuation">.</span><span class="token function">getTranslationInView</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">)</span>
+<span class="token keyword">let</span> progress <span class="token operator">=</span> translation<span class="token punctuation">.</span>y <span class="token operator">/</span> <span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span>bounds<span class="token punctuation">.</span>size<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+animationView<span class="token punctuation">.</span>animationProgress <span class="token operator">=</span> progress
+</code></pre>
+<p>Or you can play just a portion of the animation:</p>
+<pre class="language-"><code class="lang-swift language-">animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>fromProgress<span class="token punctuation">:</span> <span class="token number">0.25</span><span class="token punctuation">,</span> toProgress<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span> withCompletion<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="ios-view-controller-transitioning"><a name="ios-view-controller-transitioning" class="plugin-anchor" href="#ios-view-controller-transitioning"><i class="fa fa-link" aria-hidden="true"></i></a>iOS View Controller Transitioning</h2>
+<p>Lottie comes with a <code class="language-">UIViewController</code> animation-controller for making custom viewController transitions!</p>
+<pre class="language-"><code class="lang-objective-c language-">#pragma mark -- View Controller Transitioning
 
 - (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
   LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition1&quot;
                                                                                                           fromLayerNamed:@&quot;outLayer&quot;
-                                                                                                            toLayerNamed:@&quot;inLayer&quot;];
+                                                                                                            toLayerNamed:@&quot;inLayer&quot;
+                                                                                                 applyAnimationTransform:NO];
   return animationController;
 }
 
 - (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForDismissedController:(UIViewController *)dismissed {
   LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition2&quot;
                                                                                                           fromLayerNamed:@&quot;outLayer&quot;
-                                                                                                            toLayerNamed:@&quot;inLayer&quot;];
+                                                                                                            toLayerNamed:@&quot;inLayer&quot;
+                                                                                                 applyAnimationTransform:NO];
   return animationController;
 }
-</code></pre><p>If your animation will be frequently reused, <code class="language-">LOTAnimationView</code> has an built in LRU Caching Strategy.</p>
-<h2 id="swift-support"><a name="swift-support" class="plugin-anchor" href="#swift-support"><i class="fa fa-link" aria-hidden="true"></i></a>Swift Support</h2>
-<p>Lottie works just fine in Swift too!
-Simply <code class="language-">import Lottie</code> at the top of your swift class, and use Lottie as follows</p>
-<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;hamburger&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
-
-animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>completion<span class="token punctuation">:</span> <span class="token punctuation">{</span> finished <span class="token keyword">in</span>
-    <span class="token comment" spellcheck="true">// Do Something</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<h2 id="note"><a name="note" class="plugin-anchor" href="#note"><i class="fa fa-link" aria-hidden="true"></i></a>Note:</h2>
-<p>Animation file name should be first added to your project. as for the above code sample, It won&apos;t work until you add an animation file called <code class="language-">hamburger.json</code>..
-<code class="language-">let animationView = LOTAnimationView(name: &quot;here_goes_your_json_file_name_without_.json&quot;)</code></p>
-<h2 id="roadmap-in-no-particular-order"><a name="roadmap-in-no-particular-order" class="plugin-anchor" href="#roadmap-in-no-particular-order"><i class="fa fa-link" aria-hidden="true"></i></a>Roadmap (In no particular order)</h2>
-<ul>
-<li>Add support for interactive animated transitions</li>
-<li>Add support for parenting programmatically added layers, moving/scaling</li>
-<li>Programmatically alter animations</li>
-<li>Animation Breakpoints/Seekpoints</li>
-<li>Gradients</li>
-<li>LOTAnimatedButton</li>
-<li>Repeater objects</li>
-</ul>
+<h2 id="changing-animations-at-runtime"><a name="changing-animations-at-runtime" class="plugin-anchor" href="#changing-animations-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Changing Animations At Runtime</h2>
+<p>Lottie can do more than just play beautiful animations. Lottie allows you to <strong>change</strong> animations at runtime.</p>
+<h3 id="say-we-want-to-create-4-toggle-switches"><a name="say-we-want-to-create-4-toggle-switches" class="plugin-anchor" href="#say-we-want-to-create-4-toggle-switches"><i class="fa fa-link" aria-hidden="true"></i></a>Say we want to create 4 toggle switches.</h3>
+<p><img src="images/switch_Normal.gif" alt="Toggle">
+Its easy to create the four switches and play them:</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">20</span>
+animationView<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView2 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView2<span class="token punctuation">)</span>
+animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView2<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView2<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView2<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView3 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView3<span class="token punctuation">)</span>
+animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView3<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView3<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView3<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView4 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView4<span class="token punctuation">)</span>
+animationView4<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView4<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView4<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView4<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView4<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="now-lets-change-their-colors"><a name="now-lets-change-their-colors" class="plugin-anchor" href="#now-lets-change-their-colors"><i class="fa fa-link" aria-hidden="true"></i></a>Now lets change their colors</h3>
+<p><img src="images/switch_BgColors.gif" alt="Recolored Toggle"></p>
+<pre class="language-"><code class="lang-swift language-">animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView3<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>red<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView4<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>orange<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The keyPath is a dot seperated path of layer and property names from After Effects.
+<img src="images/aftereffectskeypath.png" alt="Key Path">
+&quot;BG-On.Group 1.Fill 1.Color&quot;</p>
+<h3 id="now-lets-change-a-couple-of-properties"><a name="now-lets-change-a-couple-of-properties" class="plugin-anchor" href="#now-lets-change-a-couple-of-properties"><i class="fa fa-link" aria-hidden="true"></i></a>Now lets change a couple of properties</h3>
+<p><img src="images/switch_MultipleBgs.gif" alt="Multiple Colors"></p>
+<pre class="language-"><code class="lang-swift language-">animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>red<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-Off.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Lottie allows you to change <strong>any</strong> property that is animatable in After Effects. If a keyframe does not exist, a linear keyframe is created for you. If a keyframe does exist then just its data is replaced.</p>
 
                                 
                                 </section>
@@ -481,7 +640,7 @@ animationView<span class="token punctuation">.</span><span class="token function
                 </a>
                 
                 
-                <a href="ios.html#getting-started" class="navigation navigation-next " aria-label="Next page: Getting Started">
+                <a href="ios.html#getting-started-on-ios-or-macos" class="navigation navigation-next " aria-label="Next page: Getting Started">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -492,7 +651,7 @@ animationView<span class="token punctuation">.</span><span class="token function
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS","level":"1.3","depth":1,"next":{"title":"Getting Started","level":"1.3.1","depth":2,"anchor":"#getting-started","path":"ios.md","ref":"ios.md#getting-started","articles":[]},"previous":{"title":"Contributing","level":"1.2.5","depth":2,"anchor":"#contributing","path":"android.md","ref":"android.md#contributing","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"ios.md","mtime":"2017-07-31T21:09:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-31T21:10:27.026Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS/MacOS","level":"1.3","depth":1,"next":{"title":"Getting Started","level":"1.3.1","depth":2,"anchor":"#getting-started-on-ios-or-macos","path":"ios.md","ref":"ios.md#getting-started-on-ios-or-macos","articles":[]},"previous":{"title":"Contributing","level":"1.2.5","depth":2,"anchor":"#contributing","path":"android.md","ref":"android.md#contributing","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"ios.md","mtime":"2017-08-03T22:49:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T22:49:28.491Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
