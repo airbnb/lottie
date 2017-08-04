@@ -20,6 +20,7 @@ Lottie
   * [Getting Started](/ios.md#getting-started)
 * [After Effects Tips](/after-effects.md)
 * [Supported Features](/supported-features.md)
+* [Lottie Android vs Bodymovin AVD](/lottie-avd.md)
 * [Performance](/performance.md)
 * [Troubleshooting](/troubleshooting.md)
 * [Community Showcase]()

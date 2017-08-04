@@ -72,3 +72,5 @@
 | Expressions | ⛔️ | ⛔️ | 👍 |
 | Images | 👍 | 👍 | 👍 |
 | Precomps | 👍 | 👍 | 👍 |
+| Time Stretch | 👍 | ⛔️ | 👍 |
+| Time remap | 👍 | ⛔️ | 👍 |

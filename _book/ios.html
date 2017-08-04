@@ -376,7 +376,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="performance.html">
+        <li class="chapter " data-level="1.7" data-path="lottie-avd.html">
+            
+                <a href="lottie-avd.html">
+            
+                    
+                    Lottie Android vs Bodymovin AVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="performance.html">
             
                 <a href="performance.html">
             
@@ -389,7 +402,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="troubleshooting.html">
+        <li class="chapter " data-level="1.9" data-path="troubleshooting.html">
             
                 <a href="troubleshooting.html">
             
@@ -402,7 +415,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" >
+        <li class="chapter " data-level="1.10" >
             
                 <span>
             
@@ -471,7 +484,7 @@ Add the pod to your podfile</p>
 <pre class="language-"><code class="language-">pod install
 </code></pre><p>After installing the cocoapod into your project import Lottie with
  Objective C
-<code class="language-">#import &lt;Lottie/Lottie.h&gt;</code> 
+<code class="language-">#import &lt;Lottie/Lottie.h&gt;</code>
 Swift
 <code class="language-">import Lottie</code></p>
 <h3 id="carthage"><a name="carthage" class="plugin-anchor" href="#carthage"><i class="fa fa-link" aria-hidden="true"></i></a>Carthage</h3>
@@ -497,35 +510,30 @@ The repo can build a MacOS Example and an iOS Example</p>
 <h2 id="objective-c-examples"><a name="objective-c-examples" class="plugin-anchor" href="#objective-c-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Objective C Examples</h2>
 <p>Lottie animations can be loaded from bundled JSON or from a URL
 To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
-<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot;];
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot;];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
   // Do Something
 }];
-</code></pre>
-<p>If you are working with multiple bundles you can use.</p>
-<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot; inBundle:[NSBundle YOUR_BUNDLE]];
+</code></pre><p>If you are working with multiple bundles you can use.</p>
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [LOTAnimationView animationNamed:@&quot;Lottie&quot; inBundle:[NSBundle YOUR_BUNDLE]];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
   // Do Something
 }];
-</code></pre>
-<p>Or you can load it programmatically from a NSURL</p>
-<pre class="language-"><code class="lang-objective-c language-">LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
+</code></pre><p>Or you can load it programmatically from a NSURL</p>
+<pre class="language-"><code class="language-">LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
 [self.view addSubview:animation];
-</code></pre>
-<p>Lottie supports the iOS <code class="language-">UIViewContentModes</code> aspectFit, aspectFill and scaleFill</p>
+</code></pre><p>Lottie supports the iOS <code class="language-">UIViewContentModes</code> aspectFit, aspectFill and scaleFill</p>
 <p>You can also set the animation progress interactively.</p>
-<pre class="language-"><code class="lang-objective-c language-">CGPoint translation = [gesture getTranslationInView:self.view];
+<pre class="language-"><code class="language-">CGPoint translation = [gesture getTranslationInView:self.view];
 CGFloat progress = translation.y / self.view.bounds.size.height;
 animationView.animationProgress = progress;
-</code></pre>
-<p>Or you can play just a portion of the animation:</p>
-<pre class="language-"><code class="lang-objective-c language-">[lottieAnimation playFromProgress:0.25 toProgress:0.5 withCompletion:^(BOOL animationFinished) {
+</code></pre><p>Or you can play just a portion of the animation:</p>
+<pre class="language-"><code class="language-">[lottieAnimation playFromProgress:0.25 toProgress:0.5 withCompletion:^(BOOL animationFinished) {
 // Do Something
 }];
-</code></pre>
-<h2 id="swift-examples"><a name="swift-examples" class="plugin-anchor" href="#swift-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Swift Examples</h2>
+</code></pre><h2 id="swift-examples"><a name="swift-examples" class="plugin-anchor" href="#swift-examples"><i class="fa fa-link" aria-hidden="true"></i></a>Swift Examples</h2>
 <p>Lottie animations can be loaded from bundled JSON or from a URL
 To bundle JSON just add it and any images that the animation requires to your target in xcode.</p>
 <pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;LottieLogo&quot;</span><span class="token punctuation">)</span>
@@ -552,7 +560,7 @@ animationView<span class="token punctuation">.</span>animationProgress <span cla
 </code></pre>
 <h2 id="ios-view-controller-transitioning"><a name="ios-view-controller-transitioning" class="plugin-anchor" href="#ios-view-controller-transitioning"><i class="fa fa-link" aria-hidden="true"></i></a>iOS View Controller Transitioning</h2>
 <p>Lottie comes with a <code class="language-">UIViewController</code> animation-controller for making custom viewController transitions!</p>
-<pre class="language-"><code class="lang-objective-c language-">#pragma mark -- View Controller Transitioning
+<pre class="language-"><code class="language-">#pragma mark -- View Controller Transitioning
 
 - (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
@@ -571,8 +579,7 @@ animationView<span class="token punctuation">.</span>animationProgress <span cla
                                                                                                  applyAnimationTransform:NO];
   return animationController;
 }
-</code></pre>
-<h2 id="changing-animations-at-runtime"><a name="changing-animations-at-runtime" class="plugin-anchor" href="#changing-animations-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Changing Animations At Runtime</h2>
+</code></pre><h2 id="changing-animations-at-runtime"><a name="changing-animations-at-runtime" class="plugin-anchor" href="#changing-animations-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Changing Animations At Runtime</h2>
 <p>Lottie can do more than just play beautiful animations. Lottie allows you to <strong>change</strong> animations at runtime.</p>
 <h3 id="say-we-want-to-create-4-toggle-switches"><a name="say-we-want-to-create-4-toggle-switches" class="plugin-anchor" href="#say-we-want-to-create-4-toggle-switches"><i class="fa fa-link" aria-hidden="true"></i></a>Say we want to create 4 toggle switches.</h3>
 <p><img src="images/switch_Normal.gif" alt="Toggle">
@@ -651,7 +658,7 @@ animationView2<span class="token punctuation">.</span><span class="token functio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS/MacOS","level":"1.3","depth":1,"next":{"title":"Getting Started","level":"1.3.1","depth":2,"anchor":"#getting-started-on-ios-or-macos","path":"ios.md","ref":"ios.md#getting-started-on-ios-or-macos","articles":[]},"previous":{"title":"Contributing","level":"1.2.5","depth":2,"anchor":"#contributing","path":"android.md","ref":"android.md#contributing","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"ios.md","mtime":"2017-08-03T22:49:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T22:49:28.491Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS/MacOS","level":"1.3","depth":1,"next":{"title":"Getting Started","level":"1.3.1","depth":2,"anchor":"#getting-started-on-ios-or-macos","path":"ios.md","ref":"ios.md#getting-started-on-ios-or-macos","articles":[]},"previous":{"title":"Contributing","level":"1.2.5","depth":2,"anchor":"#contributing","path":"android.md","ref":"android.md#contributing","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/tree/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, and React Native"},"file":{"path":"ios.md","mtime":"2017-08-04T21:44:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-04T21:44:25.173Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

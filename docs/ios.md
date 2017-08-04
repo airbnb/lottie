@@ -20,7 +20,7 @@ pod install
 
 After installing the cocoapod into your project import Lottie with
  Objective C
-`#import <Lottie/Lottie.h>` 
+`#import <Lottie/Lottie.h>`
 Swift
 `import Lottie`
 
@@ -67,7 +67,7 @@ The Lottie Viewer for MacOS allows you to drag and drop JSON files to open, play
 Lottie animations can be loaded from bundled JSON or from a URL
 To bundle JSON just add it and any images that the animation requires to your target in xcode.
 
-```objective-c
+```
 LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
@@ -77,7 +77,7 @@ LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
 
 If you are working with multiple bundles you can use.
 
-```objective-c
+```
 LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie" inBundle:[NSBundle YOUR_BUNDLE]];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
@@ -86,7 +86,7 @@ LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie" inBundl
 ```
 
 Or you can load it programmatically from a NSURL
-```objective-c
+```
 LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL URLWithString:URL]];
 [self.view addSubview:animation];
 ```
@@ -94,14 +94,14 @@ LOTAnimationView *animation = [[LOTAnimationView alloc] initWithContentsOfURL:[N
 Lottie supports the iOS `UIViewContentModes` aspectFit, aspectFill and scaleFill
 
 You can also set the animation progress interactively.
-```objective-c
+```
 CGPoint translation = [gesture getTranslationInView:self.view];
 CGFloat progress = translation.y / self.view.bounds.size.height;
 animationView.animationProgress = progress;
 ```
 
 Or you can play just a portion of the animation:
-```objective-c
+```
 [lottieAnimation playFromProgress:0.25 toProgress:0.5 withCompletion:^(BOOL animationFinished) {
 // Do Something
 }];
@@ -147,7 +147,7 @@ animationView.play(fromProgress: 0.25, toProgress: 0.5, withCompletion: nil)
 
 Lottie comes with a `UIViewController` animation-controller for making custom viewController transitions!
 
-```objective-c
+```
 #pragma mark -- View Controller Transitioning
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
