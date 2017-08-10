@@ -6,16 +6,16 @@
 | Ellipse | 👍 | 👍 | 👍 |
 | Rectangle | 👍 | 👍 | 👍 |
 | Rounded Rectangle | 👍 | 👍 | 👍 |
-| Polystar | 👍 | ⛔️ | 👍 |
+| Polystar | 👍 | 👍 | 👍 |
 | Group | 👍 | 👍 | 👍 |
 | Trim Path (individually) | 👍 | 👍 | 👍 |
 | Trim Path (simultaneously) | 👍 | 👍 | 👍 |
 | **Fills** | **Android** | **iOS** | **Bodymovin** |
 | Color | 👍 | 👍 | 👍 |
 | Opacity | 👍 | 👍 | 👍 |
-| Fill Rule | 👍 | ️️⛔️ | 👍 |
-| Radial Gradient | 👍 | ️️️️️️️️⛔️ | 👍 |
-| Linear Gradient | 👍 | ️️️️️️️️⛔️ | 👍 |
+| Fill Rule | 👍 | ️️👍 | 👍 |
+| Radial Gradient | 👍 | ️️️️️️️️👍 | 👍 |
+| Linear Gradient | 👍 | ️️️️️️️️👍 | 👍 |
 | **Strokes** | **Android** | **iOS** | **Bodymovin** |
 | Color | 👍 | 👍 | 👍 |
 | Opacity | 👍 | 👍 | 👍 |
@@ -44,8 +44,8 @@
 | Mask Path | 👍 | 👍 | 👍 |
 | Mask Opacity | 👍 | 👍 | 👍 |
 | Add | 👍 | 👍 | 👍 |
-| Subtract | 👍 | ⛔️ | 👍 |
-| Intersect | ⛔️ | ⛔️ | ⛔️ |
+| Subtract | 👍 | 👍 | 👍 |
+| Intersect | ⛔️ | 👍 | ⛔️ |
 | Lighten | ⛔️ | ⛔️ | ⛔️ |
 | Darken | ⛔️ | ⛔️ | ⛔️ |
 | Difference | ⛔️ | ⛔️ | ⛔️ |
@@ -53,7 +53,7 @@
 | Feather | ⛔️ | ⛔️ | ⛔️ |
 | **Mattes** | **Android** | **iOS** | **Bodymovin** |
 | Alpha Matte | 👍 | 👍 | 👍 |
-| Alpha Inverted Matte | 👍 | ⛔️  | 👍 |
+| Alpha Inverted Matte | 👍 | 👍  | 👍 |
 | Luma Matte | ⛔️ | ⛔️ | ❔ |
 | Luma Inverted Matte | ⛔️ | ⛔️ | ❔ |
 | **Merge Paths** | **Android** | **iOS** | **Bodymovin** |
