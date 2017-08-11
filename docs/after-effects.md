@@ -40,4 +40,5 @@ If you're using a null to control a bunch of layers and usually turn the visibil
 
 ## Sketch workflow
 
-If you're bringing in assets from Sketch, you can export artboards as PDFs. Bring that PDF into illustrator to break things out into layers and do some organization. Then save that PDF as an illustrator file that can be brought into After Effects and converted into a shape layer. Hopefully one day someone writes a script / tool to automate this process
+If you are bringing in assets from Sketch, you can export artboards as PDFs. Bring that PDF into illustrator to break things out into layers and do some organization. Then save that PDF as an illustrator file that can be brought into After Effects and converted into a shape layer. Hopefully one day someone writes a script / tool to automate this process
+
