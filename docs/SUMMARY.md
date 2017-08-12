@@ -29,4 +29,4 @@ Lottie
 * [After Effects](/after-effects.md)
 * [Supported After Effects Features](/supported-features.md)
 * [Troubleshooting](/troubleshooting.md)
-* [Community Showcase]()
+* [Community Showcase](/community-showcase.md)
