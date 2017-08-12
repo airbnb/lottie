@@ -1,23 +1,26 @@
 # Lottie for [Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), and [React Native](https://github.com/airbnb/lottie-react-native)
 <a href='https://play.google.com/store/apps/details?id=com.airbnb.lottie'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>
 
+
 Lottie is a mobile library for Android and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/bodymovin/bodymovin) and renders them natively on mobile and on the web!
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here are 13,000:
 
-![Example1](images/Example1.gif)
+![Lottie Logo animation](images/Introduction_00_sm.gif)
+
+![Example1](imagesIntroduction_01_sm.gif)
 
 
-![Example2](images/Example2.gif)
+![Example2](images/Introduction_02_sm.gif)
 
 
-![Example3](images/Example3.gif)
+![Example3](images/Introduction_03_sm.gif)
 
 
 ![Community](images/Community%202_3.gif)
 
 
-![Example4](images/Example4.gif)
+![Example4](images/Introduction_04_sm.gif)
 
 
 All of these animations were created in After Effects, exported with Bodymovin, and rendered natively with no additional engineering effort.
@@ -59,3 +62,40 @@ If you would like to add more JSON files feel free to do so!
 
 ## Issues or feature requests?
 File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
+
+## Articles, Interviews & Podcasts
+
+Here are some articles and podcasts from the Lottie team @ Airbnb
+
+[Behind the scenes: Why we built Lottie, our new open-source animation tool here.](https://airbnb.design/introducing-lottie/)
+
+[Dig into the details and back story with Brandon Withrow and Salih Abdul-Karim on the School of motion podcast](https://www.schoolofmotion.com/blog/after-effects-to-code-lottie-from-airbnb)
+
+[Learn more about Lottie from Gabriel Peal on the Fragmented Podcast](http://fragmentedpodcast.com/episodes/82/)
+
+[Lottie Animation with Brandon Withrow and Gabriel Peal on Software engineering daily podcast](https://softwareengineeringdaily.com/2017/08/10/lottie-animation-with-brandon-withrow-and-gabriel-peal/)
+
+
+## Community articles and videos
+
+Heres some links from around the community
+
+[A Lottie to Like](https://t.co/dadjvgv9vk) by Nick Butcher
+
+[Creating better user experiences with animations and Lottie](https://pspdfkit.com/blog/2017/creating-better-user-experiences-with-animations-and-lottie/)by Samo Korosec and Stefan Keileithner
+
+[How to use Lottie \(In Chinese\)](https://goo.gl/e7BkND) by PattyDraw
+
+[A Beginning’s Guide to Lottie: Creating Amazing Animations in iOS Apps](https://www.appcoda.com/lottie-beginner-guide/#) by Simon NG
+
+[Take your animations to the next level with Airbnb framework, Lottie](https://medium.com/@jamesrochabrun/take-your-animations-to-the-next-level-with-airbnb-framework-lottie-ab6c6152acba) by James Rochabrun
+
+[iOS Swift Tutorial: Animations with After Effects and Lottie](https://www.youtube.com/watch?v=ESjFEaZx7UI) by Brian Advent
+
+[iOS Swift Tutorial: Interactive Animations with After Effects and Lottie](https://www.youtube.com/watch?v=QyL-jp9bFdM) by Brian Advent
+
+[After Effects for wiOS Developers: Dynamic Content in Animations](https://youtu.be/2HhgLir6Jz0?list=PLUDTy1CWIw-qu2EuzNVFQawyW5jmC5W7G) by Brian Advent
+
+[Creating cool animations in android using Lottie](https://www.youtube.com/watch?v=T4v72xJqNpQ)[Chetan Sachdeva](https://www.youtube.com/channel/UC_4TBWZcI-tdZ02wESTRVNw) by Chetan Sachdeva
+
+
