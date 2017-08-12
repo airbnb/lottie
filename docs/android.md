@@ -1,16 +1,11 @@
-## Sample App
-
-You can build the sample app yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
-
-
-## Getting Started
+# Getting Started
 Gradle is the only supported build configuration, so just add the dependency to your project `build.gradle` file:
 
-```groovy
+<pre><code class="lang-groovy">
 dependencies {
-  compile 'com.airbnb.android:lottie:2.1.2'
+  compile 'com.airbnb.android:lottie:{{ book.androidVersion }}'
 }
-```
+</code></pre>
 
 Lottie supports ICS (API 14) and above.
 The simplest way to use it is with LottieAnimationView:
@@ -80,59 +75,8 @@ LottieComposition.Factory.fromAssetFileName(getContext(), "hello-world.json", (c
 });
 ```
 
-If your animation will be frequently reused, `LottieAnimationView` has an optional caching strategy built in. Use `LottieAnimationView#setAnimation(String, CacheStrategy)`. `CacheStrategy` can be `Strong`, `Weak`, or `None` to have `LottieAnimationView` hold a strong or weak reference to the loaded and parsed animation.
+# Sample App
 
-## Dynamic Colors
-
-You can add a color filter to the whole animation, a specific layer, or specific content within a layer:
-```java
-// Any class that conforms to the ColorFilter interface
-final PorterDuffColorFilter colorFilter = new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN);
-
-// Adding a color filter to the whole view
-animationView.addColorFilter(colorFilter);
-
-// Adding a color filter to a specific layer
-animationView.addColorFilterToLayer("hello_layer", colorFilter);
-
-// Adding a color filter to specfic content on the "hello_layer"
-animationView.addColorFilterToContent("hello_layer", "hello", colorFilter);
-
-// Clear all color filters
-animationView.clearColorFilters();
-```
-You can also add a color filter to the whole animation in the layout XML, which will be applied with `PorterDuff.Mode.SRC_ATOP`:
-
-```xml
-<com.airbnb.lottie.LottieAnimationView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:lottie_fileName="hello-world.json"
-        app:lottie_colorFilter="@color/blue" />
-```
-
-Note: Color filters are only available for layers such as Image layer and Solid layer as well as content that includes fill, stroke, or group content.
-
-
-### Image Support
-You can animate images if your animation is loaded from assets and your image file is in a
-subdirectory of assets. Just call `setImageAssetsFolder` on `LottieAnimationView` or
-`LottieDrawable` with the relative folder inside of assets and make sure that the images that
-bodymovin export are in that folder with their names unchanged (should be img_#).
-If you use `LottieDrawable` directly, you must call `recycleBitmaps` when you are done with it.
-
-If you need to provide your own bitmaps if you downloaded them from the network or something, you
- can provide a delegate to do that:
- ```java
-animationView.setImageAssetDelegate(new ImageAssetDelegate() {
-          @Override public Bitmap fetchBitmap(LottieImageAsset asset) {
-            getBitmap(asset);
-          }
-        });
-```
-
-## Contributing
-Contributors are more than welcome. Just upload a PR with a description of your changes.
-Lottie uses [Facebook screenshot tests for Android](https://github.com/facebook/screenshot-tests-for-android) to identify pixel level changes/breakages. Please run `./gradlew --daemon recordMode screenshotTests` before uploading a PR to ensure that nothing has broken. Use a Nexus 5 emulator running Lollipop for this. Changed screenshots will show up in your git diff if you have.
-
-If you would like to add more JSON files and screenshot tests, feel free to do so and add the test to `LottieTest`.
+You can build the sample app yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
+<br/>
+<a href='https://play.google.com/store/apps/details?id=com.airbnb.lottie'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>

@@ -3,3 +3,4 @@ command -v gitbook >/dev/null 2>&1 || { npm install -g gitbook-cli; gitbook inst
 rm -rf _book
 gitbook build
 cp -r _book/ .
+rm -rf _book/

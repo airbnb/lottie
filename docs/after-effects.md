@@ -10,15 +10,15 @@ When building for Lottie you always have to keep in mind that these JSON files n
 
 Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers otherwise they will not work in your Lottie animation. After you've converted to shape layers remove the assets from your composition so they aren't exported with the JSON. Shape layers is where Lottie does best.
 
-## Work @1x
+## Work in points/dps
 
-Working at 1x ensures that all of your strokes will be right on different dimensions. All px values will be converted to points on iOS and dp on Android.
+All pixel values in After Effects will be converted to points on iOS and dps on Android to ensure that they look the same across all screen densities. Google has put together [a collection](https://material.io/devices/) of device metrics with screen size in dps for common devices.
 
 ## No expressions or effects
 
 Lottie does not yet support expressions, or any effects from the effects menu.
 
-## Matte size matters
+## Matte and mask size matters
 
 Using alpha mattes can impact performance. If you're using an alpha matte or an alpha inverted matte, the size of the matte will impact performance even more. If you must use Mattes, cover the smallest area you can.
 
@@ -30,11 +30,11 @@ If an animation is broken. Try debugging the animation by exporting only certain
 
 Blending modes such as Multiply, Screen or Add, don't work nor do Luma mattes.
 
-## Supporting multiple screen sizes
+## Full screen animations
 
-You can export longer (or taller) animations and use centerCrop on the View containing the Lottie animation and that will give you coverage for multiple screen sizes.
+Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mdoe on iOS.
 
-## Make Nulls 0%
+## Make Nulls visible and have 0% opacity
 
 If you're using a null to control a bunch of layers and usually turn the visibility off, be sure to turn the visibility ON and turn the opacity to 0% otherwise they won't come through in the JSON file
 

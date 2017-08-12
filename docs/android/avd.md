@@ -1,8 +1,8 @@
-## Lottie Android vs Bodymovin AVD
+# Lottie vs Android Vector Drawable (AVD)
 
 There are two ways to render After Effects animations:
-1. Export json with Bodymovin and play it with lottie-android
-2. Export AndroidVectorDrawable xml with Bodymovin and play it using the Android sdk
+1. Export json with Bodymovin and play it with lottie-android.
+2. Export AndroidVectorDrawable xml with Bodymovin and play it using the Android SDK.
 
 ## Pros of Lottie
 * Supports a much larger set of After Effects features. See [supported features](/supported-features.md) for a full list.

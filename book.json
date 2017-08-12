@@ -2,10 +2,14 @@
 {
   "gitbook": "3.2.2",
   "title": "Lottie",
-  "description": "After Effects Animations for Android, iOS, and React Native",
+  "description": "After Effects Animations for Android, iOS, React Native, and Web",
   "root": "./docs",
   "structure": {
     "summary": "SUMMARY.md"
+  },
+  "variables": {
+    "androidVersion": "2.1.2",
+    "iosVersion": "2.0.3"
   },
   "plugins": [
     "edit-link",
@@ -19,7 +23,7 @@
   ],
   "pluginsConfig": {
     "edit-link": {
-      "base": "https://github.com/airbnb/lottie/tree/gh-pages",
+      "base": "https://github.com/airbnb/lottie",
       "label": "Edit This Page"
     },
     "github": {
