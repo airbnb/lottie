@@ -1,0 +1,674 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Changing Animations At Runtime · Lottie</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="performance.html" />
+    
+    
+    <link rel="prev" href="view-controllers.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../android/android.html">
+            
+                <a href="../android/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../android/android.html">
+            
+                <a href="../android/android.html#getting-started">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../android/android.html">
+            
+                <a href="../android/android.html#sample-app">
+            
+                    
+                    Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../android/caching.html">
+            
+                <a href="../android/caching.html">
+            
+                    
+                    Caching and Preloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../android/colors.html">
+            
+                <a href="../android/colors.html">
+            
+                    
+                    Dynamic Colors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../android/images.html">
+            
+                <a href="../android/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../android/performance.html">
+            
+                <a href="../android/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../android/avd.html">
+            
+                <a href="../android/avd.html">
+            
+                    
+                    Lottie vs AVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../android/troubleshooting.html">
+            
+                <a href="../android/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../android/contributing.html">
+            
+                <a href="../android/contributing.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ios.html">
+            
+                <a href="../ios.html">
+            
+                    
+                    iOS/MacOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ios.html">
+            
+                <a href="../ios.html#getting-started-on-ios-or-macos">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ios.html">
+            
+                <a href="../ios.html#installing-lottie">
+            
+                    
+                    Installing Lottie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ios.html">
+            
+                <a href="../ios.html#ios-sample-app">
+            
+                    
+                    iOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ios.html">
+            
+                <a href="../ios.html#macos-sample-app">
+            
+                    
+                    MacOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ios.html">
+            
+                <a href="../ios.html#objective-c-examples">
+            
+                    
+                    Objective C Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../ios.html">
+            
+                <a href="../ios.html#swift-examples">
+            
+                    
+                    Swift Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="view-controllers.html">
+            
+                <a href="view-controllers.html">
+            
+                    
+                    View Controller Transitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.8" data-path="dynamic.html">
+            
+                <a href="dynamic.html">
+            
+                    
+                    Changing Animations At Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="troubleshooting.html">
+            
+                <a href="troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    Props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../after-effects.html">
+            
+                <a href="../after-effects.html">
+            
+                    
+                    After Effects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../supported-features.html">
+            
+                <a href="../supported-features.html">
+            
+                    
+                    Supported After Effects Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../troubleshooting.html">
+            
+                <a href="../troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Community Showcase
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Changing Animations At Runtime</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="changing-animations-at-runtime"><a name="changing-animations-at-runtime" class="plugin-anchor" href="#changing-animations-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Changing Animations At Runtime</h1>
+<p>Lottie can do more than just play beautiful animations. Lottie allows you to <strong>change</strong> animations at runtime.</p>
+<h2 id="say-we-want-to-create-4-toggle-switches"><a name="say-we-want-to-create-4-toggle-switches" class="plugin-anchor" href="#say-we-want-to-create-4-toggle-switches"><i class="fa fa-link" aria-hidden="true"></i></a>Say we want to create 4 toggle switches.</h2>
+<p><img src="../images/switch_Normal.gif" alt="Toggle">
+Its easy to create the four switches and play them:</p>
+<pre class="language-"><code class="lang-swift language-"><span class="token keyword">let</span> animationView <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">20</span>
+animationView<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView2 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView2<span class="token punctuation">)</span>
+animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView2<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView2<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView2<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView3 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView3<span class="token punctuation">)</span>
+animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView2<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView3<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView3<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView3<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> animationView4 <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;toggle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView4<span class="token punctuation">)</span>
+animationView4<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">40</span>
+animationView4<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>origin<span class="token punctuation">.</span>y <span class="token operator">=</span> animationView3<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>maxY <span class="token operator">+</span> <span class="token number">4</span>
+animationView4<span class="token punctuation">.</span>autoReverseAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView4<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+animationView4<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="now-lets-change-their-colors"><a name="now-lets-change-their-colors" class="plugin-anchor" href="#now-lets-change-their-colors"><i class="fa fa-link" aria-hidden="true"></i></a>Now lets change their colors</h2>
+<p><img src="../images/switch_BgColors.gif" alt="Recolored Toggle"></p>
+<pre class="language-"><code class="lang-swift language-">animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView3<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>red<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView4<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>orange<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The keyPath is a dot seperated path of layer and property names from After Effects.
+<img src="../images/aftereffectskeypath.png" alt="Key Path">
+&quot;BG-On.Group 1.Fill 1.Color&quot;</p>
+<h2 id="now-lets-change-a-couple-of-properties"><a name="now-lets-change-a-couple-of-properties" class="plugin-anchor" href="#now-lets-change-a-couple-of-properties"><i class="fa fa-link" aria-hidden="true"></i></a>Now lets change a couple of properties</h2>
+<p><img src="../images/switch_MultipleBgs.gif" alt="Multiple Colors"></p>
+<pre class="language-"><code class="lang-swift language-">animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-On.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+animationView2<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>red<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;BG-Off.Group 1.Fill 1.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Lottie allows you to change <strong>any</strong> property that is animatable in After Effects. If a keyframe does not exist, a linear keyframe is created for you. If a keyframe does exist then just its data is replaced.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="view-controllers.html" class="navigation navigation-prev " aria-label="Previous page: View Controller Transitions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="performance.html" class="navigation navigation-next " aria-label="Next page: Performance">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Changing Animations At Runtime","level":"1.3.8","depth":2,"next":{"title":"Performance","level":"1.3.9","depth":2,"path":"ios/performance.md","ref":"ios/performance.md","articles":[]},"previous":{"title":"View Controller Transitions","level":"1.3.7","depth":2,"path":"ios/view-controllers.md","ref":"ios/view-controllers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.1.2","iosVersion":"2.0.3"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"ios/dynamic.md","mtime":"2017-08-12T19:19:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-12T19:23:11.862Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

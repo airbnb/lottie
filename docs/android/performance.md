@@ -1,7 +1,7 @@
 # Performance
 
-## Sizing (px -> points/dp)
-Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px.
+## Sizing (px -> dp)
+Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px. You can find a list of common screen sizes in dps [here](https://material.io/devices/).
 
 ## Masks and Mattes
 Masks and mattes on android have the larges performance hit. Their performance hit is also proportional to the intersection bounds of the masked/matted layer and the mask/matte so the smaller the mask/matte, the less of a performance hit there will be.

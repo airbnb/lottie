@@ -98,9 +98,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../android.html">
+        <li class="chapter " data-level="1.2" data-path="android.html">
             
-                <a href="../android.html">
+                <a href="android.html">
             
                     
                     Android
@@ -112,9 +112,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../android.html">
+        <li class="chapter " data-level="1.2.1" data-path="android.html">
             
-                <a href="../android.html#getting-started">
+                <a href="android.html#getting-started">
             
                     
                     Getting Started
@@ -125,9 +125,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../android.html">
+        <li class="chapter " data-level="1.2.2" data-path="android.html">
             
-                <a href="../android.html#sample-app">
+                <a href="android.html#sample-app">
             
                     
                     Sample App
@@ -326,12 +326,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.7" data-path="../ios.html">
+        <li class="chapter " data-level="1.3.7" data-path="../ios/view-controllers.html">
             
-                <a href="../ios.html#ios-view-controller-transitioning">
+                <a href="../ios/view-controllers.html">
             
                     
-                    VC Transitioning
+                    View Controller Transitions
             
                 </a>
             
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.8" data-path="../ios.html">
+        <li class="chapter " data-level="1.3.8" data-path="../ios/dynamic.html">
             
-                <a href="../ios.html#changing-animations-at-runtime">
+                <a href="../ios/dynamic.html">
             
                     
                     Changing Animations At Runtime
@@ -352,9 +352,22 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="../ios.html">
+        <li class="chapter " data-level="1.3.9" data-path="../ios/performance.html">
             
-                <a href="../ios.html#troubleshooting">
+                <a href="../ios/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../ios/troubleshooting.html">
+            
+                <a href="../ios/troubleshooting.html">
             
                     
                     Troubleshooting
@@ -370,9 +383,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../react-native.html">
+        <li class="chapter " data-level="1.4" data-path="../react-native.md">
             
-                <a href="../react-native.html">
+                <span>
             
                     
                     React Native
@@ -384,9 +397,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../ios.html">
+        <li class="chapter " data-level="1.4.1" data-path="../react-native.md">
             
-                <a href="../ios.html#getting-started">
+                <span>
             
                     
                     Getting Started
@@ -397,9 +410,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../ios.html">
+        <li class="chapter " data-level="1.4.2" data-path="../react-native.md">
             
-                <a href="../ios.html#sample-app">
+                <span>
             
                     
                     Sample App
@@ -410,12 +423,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../ios.html">
+        <li class="chapter " data-level="1.4.3" data-path="../react-native.md">
             
-                <a href="../ios.html#props">
+                <span>
             
                     
                     Props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../react-native.md">
+            
+                <span>
+            
+                    
+                    Troubleshooting
             
                 </a>
             
@@ -523,8 +549,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="performance"><a name="performance" class="plugin-anchor" href="#performance"><i class="fa fa-link" aria-hidden="true"></i></a>Performance</h1>
-<h2 id="sizing-px---pointsdp"><a name="sizing-px---pointsdp" class="plugin-anchor" href="#sizing-px---pointsdp"><i class="fa fa-link" aria-hidden="true"></i></a>Sizing (px -&gt; points/dp)</h2>
-<p>Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px.</p>
+<h2 id="sizing-px---dp"><a name="sizing-px---dp" class="plugin-anchor" href="#sizing-px---dp"><i class="fa fa-link" aria-hidden="true"></i></a>Sizing (px -&gt; dp)</h2>
+<p>Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px. You can find a list of common screen sizes in dps <a href="https://material.io/devices/" target="_blank">here</a>.</p>
 <h2 id="masks-and-mattes"><a name="masks-and-mattes" class="plugin-anchor" href="#masks-and-mattes"><i class="fa fa-link" aria-hidden="true"></i></a>Masks and Mattes</h2>
 <p>Masks and mattes on android have the larges performance hit. Their performance hit is also proportional to the intersection bounds of the masked/matted layer and the mask/matte so the smaller the mask/matte, the less of a performance hit there will be.
 On Android, if you are using masks or mattes, there will be a several X performance improvement when using hardware acceleration.</p>
@@ -568,7 +594,7 @@ The following features have limited support</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Performance","level":"1.2.6","depth":2,"next":{"title":"Lottie vs AVD","level":"1.2.7","depth":2,"path":"android/avd.md","ref":"android/avd.md","articles":[]},"previous":{"title":"Images","level":"1.2.5","depth":2,"path":"android/images.md","ref":"android/images.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.1.2","iosVersion":"2.0.3"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"android/performance.md","mtime":"2017-08-12T18:56:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-12T18:57:28.611Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Performance","level":"1.2.6","depth":2,"next":{"title":"Lottie vs AVD","level":"1.2.7","depth":2,"path":"android/avd.md","ref":"android/avd.md","articles":[]},"previous":{"title":"Images","level":"1.2.5","depth":2,"path":"android/images.md","ref":"android/images.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.1.2","iosVersion":"2.0.3"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"android/performance.md","mtime":"2017-08-12T19:02:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-12T19:23:11.862Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

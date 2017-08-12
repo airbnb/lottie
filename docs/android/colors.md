@@ -31,3 +31,5 @@ You can also add a color filter to the whole animation in the layout XML, which 
 ```
 
 Note: Color filters are only available for layers such as Image layer and Solid layer as well as content that includes fill, stroke, or group content.
+
+You can read more about different color filters [here](https://developer.android.com/reference/android/graphics/PorterDuff.Mode.html).
