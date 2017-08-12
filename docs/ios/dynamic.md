@@ -4,6 +4,7 @@ Lottie can do more than just play beautiful animations. Lottie allows you to **c
 
 ## Say we want to create 4 toggle switches.
 ![Toggle](/images/switch_Normal.gif)
+<br />
 Its easy to create the four switches and play them:
 ```swift
 let animationView = LOTAnimationView(name: "toggle");
