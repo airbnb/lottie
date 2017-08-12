@@ -1,4 +1,4 @@
-## Creating Lottie animations
+# Creating Lottie animations
 
 Creating animations for Lottie is a bit different than the usual After Effects workflow. Here are some general tips for creating Lottie animations.
 
