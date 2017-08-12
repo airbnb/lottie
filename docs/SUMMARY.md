@@ -21,7 +21,7 @@ Lottie
   * [Changing Animations At Runtime](/ios/dynamic.md)
   * [Performance](/ios/performance.md)
   * [Troubleshooting](/ios/troubleshooting.md)
-* [React Native](/react-native.md)
+* [React Native](/react-native/react-native.md)
   * [Getting Started](/react-native/react-native.md#getting-started)
   * [Sample App](/react-native/react-native.md#sample-app)
   * [Props](/react-native/props.md)
