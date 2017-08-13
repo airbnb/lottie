@@ -28,7 +28,7 @@ Lottie
   * [Troubleshooting](/react-native/troubleshooting.md)
 * [After Effects](after-effects/after-effects.md)
   * [How to install Bodymovin](/after-effects/bodymovin-installation.md)
-  * [General tips & guidelines](/gafter-effects/eneral-tips.md)
+  * [General tips & guidelines](/after-effects/eneral-tips.md)
   * [Supported Features](/after-effects/supported-features.md)
   * [Artwork to Lottie walkthrough](after-effects//artwork-to-lottie-walkthrough.md)
 * [Troubleshooting](/troubleshooting.md)

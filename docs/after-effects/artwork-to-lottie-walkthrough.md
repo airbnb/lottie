@@ -17,21 +17,26 @@ To get the asset exported in one piece everything needs to be put into a single 
 
 You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes directly into AE?? We'll explain why later...
 
+![ArtworkWalkthrough_02](/images/ArtworkWalkthrough_02.png)
 
 ### 3 - Open SVG in Illustrator and save as a .AI file
 
-
+![ArtworkWalkthrough_03](/images/ArtworkWalkthrough_03.png)
+![ArtworkWalkthrough_04](/images/ArtworkWalkthrough_04.png)
 
 ### 4 - Import that .AI file into After Effects
 
 After you open After Effects either drag the illustrator file onto the project window or go to File > Import
 
-
+![ArtworkWalkthrough_05](/images/ArtworkWalkthrough_05.png)
 
 
 ### 5 - Create composition, set duration and check Frame-rate
 
 After dragging the Illustrator file down to the little composition icon in the bottom of the project panel you will have a new composition perfectly sized for your file.
+
+![ArtworkWalkthrough_06](/images/ArtworkWalkthrough_06.png)
+
 
 Next you can go to the menu and select Composition > Composition settings. I usually work in 30fps or 60fps.
 
@@ -42,7 +47,12 @@ Its important to pick the right frame-rate up front because if you have to chang
 
 Select the layer in the composition and in the Layer menu select "Create shapes from vector layer" It then creates a new "Shape Layer" based off of your illustrator artwork, that has editable vector properties of the artwork, such as paths, strokes, fills, etc.
 
+![ArtworkWalkthrough_07](/images/ArtworkWalkthrough_07.gif)
+
+
 So back to that question "Why didn't I just export a PDF or EPS from Sketch??" This is where it counts. When you export a PDF or EPS from Sketch it adds artboards to the shape layer when its converted.
+
+![ArtworkWalkthrough_08](/images/ArtworkWalkthrough_08.png)
 
 The one on the left is an SVG converted, and the example on the right is an EPS converted. The example on the right you can see the transparency is inverted, because its got some paths that are the size of the artboard. If you have a complicated piece of artwork things can really get strange. You can always go through and delete the artboard paths, its just time consuming and annoying. Thats why SVG is best.
 
@@ -55,6 +65,9 @@ Here you can choose to do some animation magic, or if you're just looking to cre
 ### 7 - Exporting with Bodymovin
 
 Next if the panel isn't already open go to Window > Extensions > Bodymovin.
+
+![ArtworkWalkthrough_09](/images/ArtworkWalkthrough_09.gif)
+
 
 Select the composition you want to export by clicking the circle to the left. Next select the destination by selecting the 3 dots on the right. Name your file, and press Render the big green button on the top left
 

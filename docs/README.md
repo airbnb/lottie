@@ -17,9 +17,6 @@ For the first time, designers can create **and ship** beautiful animations witho
 ![Example3](images/Introduction_03_sm.gif)
 
 
-![Community](images/Community%202_3.gif)
-
-
 ![Example4](images/Introduction_04_sm.gif)
 
 
