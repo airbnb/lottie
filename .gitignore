@@ -58,3 +58,4 @@ typings/
 .env
 
 .DS_STORE
+_book/**

@@ -18,7 +18,7 @@
     "github",
     "-search",
     "codeblock-disable-glossary",
-    "collapsible-menu",
+    "collapsible-chapters",
     "anchors"
   ],
   "pluginsConfig": {
@@ -28,6 +28,7 @@
     },
     "github": {
       "url": "https://github.com/airbnb/lottie/"
-    }
+    },
+    "collapsible-chapters": {}
   }
 }
