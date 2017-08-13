@@ -21,6 +21,6 @@ Uber eats uses Lottie for their initial loading animation. Simple but effective 
 
 ## Instacart
 
-Instacart uses Lottie for a handful of educational animations to teach users about the way instacart works
+Instacart uses Lottie for a handful of educational animations to teach shoppers.
 
 ![Instacart](/images/ShowcaseInstacart.gif)
