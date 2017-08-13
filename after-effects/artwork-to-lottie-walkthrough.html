@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Artwork to Lottie walkthrough · Lottie</title>
+        <title>Sketch/SVG/Illustrator to Lottie walkthrough · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../troubleshooting.html" />
+    <link rel="next" href="debugging.html" />
     
     
     <link rel="prev" href="supported-features.html" />
@@ -481,9 +481,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="eneral-tips.md">
+        <li class="chapter " data-level="1.5.2" data-path="general-tips.html">
             
-                <span>
+                <a href="general-tips.html">
             
                     
                     General tips & guidelines
@@ -512,7 +512,20 @@
                 <a href="artwork-to-lottie-walkthrough.html">
             
                     
-                    Artwork to Lottie walkthrough
+                    Sketch/SVG/Illustrator to Lottie walkthrough
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="debugging.html">
+            
+                <a href="debugging.html">
+            
+                    
+                    Debugging animations
             
                 </a>
             
@@ -581,7 +594,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Artwork to Lottie walkthrough</a>
+        <a href=".." >Sketch/SVG/Illustrator to Lottie walkthrough</a>
     </h1>
 </div>
 
@@ -593,12 +606,12 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="artwork-to-lottie-workflow"><a name="artwork-to-lottie-workflow" class="plugin-anchor" href="#artwork-to-lottie-workflow"><i class="fa fa-link" aria-hidden="true"></i></a>Artwork to Lottie workflow</h1>
+                                <h1 id="sketchsvgillustrator-to-lottie-workflow"><a name="sketchsvgillustrator-to-lottie-workflow" class="plugin-anchor" href="#sketchsvgillustrator-to-lottie-workflow"><i class="fa fa-link" aria-hidden="true"></i></a>Sketch/SVG/Illustrator to Lottie workflow</h1>
 <p>This walkthrough explains how to get artwork from Sketch to Lottie. If you already have an SVG skip to step 3. If you&apos;re working in illustrator start at step 4.</p>
 <p>It doesn&apos;t dive into any animation techniques. For that check out one of our other walkthroughs.</p>
 <p>We&apos;re assuming you have three things. Adobe Illustrator, Adobe After Effects, and <a href="https://github.com/bodymovin/bodymovin" target="_blank">Bodymovin</a>. For a walkthrough on how to install Bodymovin go <a href="../bodymovin-installation.md">here</a>. </p>
 <h3 id="1---ensure-artwork-is-grouped"><a name="1---ensure-artwork-is-grouped" class="plugin-anchor" href="#1---ensure-artwork-is-grouped"><i class="fa fa-link" aria-hidden="true"></i></a>1 - Ensure artwork is grouped</h3>
-<p>To get the asset exported in one piece everything needs to be put into a single group</p>
+<p>To get the asset exported in one piece everything needs to be put into a single group in Sketch</p>
 <p><img src="../images/ArtworkWalkthrough_01.png" alt="ArtworkWalkthrough_01"></p>
 <h3 id="2---select-the-group-and-export-as-an-svg"><a name="2---select-the-group-and-export-as-an-svg" class="plugin-anchor" href="#2---select-the-group-and-export-as-an-svg"><i class="fa fa-link" aria-hidden="true"></i></a>2 - Select the group and export as an SVG</h3>
 <p>You might be thinking &#x1F914; Why not export artwork as a PDF or EPS that goes directly into AE?? We&apos;ll explain why later...</p>
@@ -608,7 +621,7 @@
 <img src="../images/ArtworkWalkthrough_04.png" alt="ArtworkWalkthrough_04"></p>
 <h3 id="4---import-that-ai-file-into-after-effects"><a name="4---import-that-ai-file-into-after-effects" class="plugin-anchor" href="#4---import-that-ai-file-into-after-effects"><i class="fa fa-link" aria-hidden="true"></i></a>4 - Import that .AI file into After Effects</h3>
 <p>After you open After Effects either drag the illustrator file onto the project window or go to File &gt; Import</p>
-<p><img src="../images/ArtworkWalkthrough_05.png" alt="ArtworkWalkthrough_05"></p>
+<p><img src="../images/ArtworkWalkthrough_05.gif" alt="ArtworkWalkthrough_05"></p>
 <h3 id="5---create-composition-set-duration-and-check-frame-rate"><a name="5---create-composition-set-duration-and-check-frame-rate" class="plugin-anchor" href="#5---create-composition-set-duration-and-check-frame-rate"><i class="fa fa-link" aria-hidden="true"></i></a>5 - Create composition, set duration and check Frame-rate</h3>
 <p>After dragging the Illustrator file down to the little composition icon in the bottom of the project panel you will have a new composition perfectly sized for your file.</p>
 <p><img src="../images/ArtworkWalkthrough_06.png" alt="ArtworkWalkthrough_06"></p>
@@ -631,14 +644,17 @@
 <p>There are a few different ways to test, one of the easiest is by using Lottiefiles.com.</p>
 <h3 id="9---upload-onto-lottiefilescom"><a name="9---upload-onto-lottiefilescom" class="plugin-anchor" href="#9---upload-onto-lottiefilescom"><i class="fa fa-link" aria-hidden="true"></i></a>9 - Upload onto Lottiefiles.com</h3>
 <p>Open up your browser to Lottiefiles.com and drag your json file directly onto the page</p>
+<p><img src="../images/LottiefilesPreview.gif" alt="Lottiefiles"></p>
 <p>You should see your animation. If it looks correct, thats a great sign, as it means you&apos;re using bodymovin supported features.</p>
 <p>The next step is to test it on your platform of choice, android or iOS.</p>
 <h3 id="10---download-lottie-files-preview-app"><a name="10---download-lottie-files-preview-app" class="plugin-anchor" href="#10---download-lottie-files-preview-app"><i class="fa fa-link" aria-hidden="true"></i></a>10 - Download Lottie files preview app</h3>
 <p>Download the Lottie app from the Google play store or the Lottie Preview app from the App store.</p>
+<p><img src="../images/LottiefilesPreviewApp.png" alt="Lottiefiles preview app"></p>
 <h3 id="11---scan-the-qr-code"><a name="11---scan-the-qr-code" class="plugin-anchor" href="#11---scan-the-qr-code"><i class="fa fa-link" aria-hidden="true"></i></a>11 - Scan the QR code</h3>
 <p>After its downloaded just use the camera to scan the QR code.</p>
+<p><img src="../images/LottiefilesPreviewApp.gif" alt="Lottiefiles preview app"></p>
 <p>If you&apos;re animation looks correct in the preview app, you are good to go!</p>
-<p>If it doesn&apos;t then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached.</p>
+<p>If it doesn&apos;t then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached and we&apos;ll do our best to support you.</p>
 
                                 
                                 </section>
@@ -655,7 +671,7 @@
                 </a>
                 
                 
-                <a href="../troubleshooting.html" class="navigation navigation-next " aria-label="Next page: Troubleshooting">
+                <a href="debugging.html" class="navigation navigation-next " aria-label="Next page: Debugging animations">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -666,7 +682,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Artwork to Lottie walkthrough","level":"1.5.4","depth":2,"next":{"title":"Troubleshooting","level":"1.6","depth":1,"path":"troubleshooting.md","ref":"troubleshooting.md","articles":[]},"previous":{"title":"Supported Features","level":"1.5.3","depth":2,"path":"after-effects/supported-features.md","ref":"after-effects/supported-features.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.1.2","iosVersion":"2.0.3"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"after-effects/artwork-to-lottie-walkthrough.md","mtime":"2017-08-13T00:39:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-13T00:39:49.970Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sketch/SVG/Illustrator to Lottie walkthrough","level":"1.5.4","depth":2,"next":{"title":"Debugging animations","level":"1.5.5","depth":2,"path":"after-effects/debugging.md","ref":"after-effects/debugging.md","articles":[]},"previous":{"title":"Supported Features","level":"1.5.3","depth":2,"path":"after-effects/supported-features.md","ref":"after-effects/supported-features.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-menu","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"github":{"url":"https://github.com/airbnb/lottie/"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.1.2","iosVersion":"2.0.3"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"after-effects/artwork-to-lottie-walkthrough.md","mtime":"2017-08-13T03:57:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-13T03:58:30.014Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
