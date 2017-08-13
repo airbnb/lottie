@@ -100,6 +100,8 @@ Download the Lottie app from the Google play store or the Lottie Preview app fro
 
 After its downloaded just use the camera to scan the QR code.
 
+![Lottiefiles preview app](/images/LottiefilesPreviewApp.gif)
+
 If you're animation looks correct in the preview app, you are good to go!
 
 If it doesn't then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached and we'll do our best to support you.
