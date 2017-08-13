@@ -1,4 +1,4 @@
-# Artwork to Lottie workflow
+# Sketch/SVG/Illustrator to Lottie workflow
 
 This walkthrough explains how to get artwork from Sketch to Lottie. If you already have an SVG skip to step 3. If you're working in illustrator start at step 4.
 
@@ -9,7 +9,7 @@ We're assuming you have three things. Adobe Illustrator, Adobe After Effects, an
 
 ### 1 - Ensure artwork is grouped
 
-To get the asset exported in one piece everything needs to be put into a single group
+To get the asset exported in one piece everything needs to be put into a single group in Sketch
 
 ![ArtworkWalkthrough_01](/images/ArtworkWalkthrough_01.png)
 
@@ -28,8 +28,7 @@ You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes dire
 
 After you open After Effects either drag the illustrator file onto the project window or go to File > Import
 
-![ArtworkWalkthrough_05](/images/ArtworkWalkthrough_05.png)
-
+![ArtworkWalkthrough_05](/images/ArtworkWalkthrough_05.gif)
 
 ### 5 - Create composition, set duration and check Frame-rate
 
@@ -83,6 +82,8 @@ There are a few different ways to test, one of the easiest is by using Lottiefil
 
 Open up your browser to Lottiefiles.com and drag your json file directly onto the page
 
+![Lottiefiles](/images/LottiefilesPreview.gif)
+
 You should see your animation. If it looks correct, thats a great sign, as it means you're using bodymovin supported features.
 
 The next step is to test it on your platform of choice, android or iOS.
@@ -92,6 +93,8 @@ The next step is to test it on your platform of choice, android or iOS.
 
 Download the Lottie app from the Google play store or the Lottie Preview app from the App store.
 
+![Lottiefiles preview app](/images/LottiefilesPreviewApp.png)
+
 
 ### 11 - Scan the QR code
 
@@ -99,6 +102,6 @@ After its downloaded just use the camera to scan the QR code.
 
 If you're animation looks correct in the preview app, you are good to go!
 
-If it doesn't then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached.
+If it doesn't then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached and we'll do our best to support you.
 
 

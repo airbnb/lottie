@@ -8,7 +8,7 @@ For the first time, designers can create **and ship** beautiful animations witho
 
 ![Lottie Logo animation](images/Introduction_00_sm.gif)
 
-![Example1](imagesIntroduction_01_sm.gif)
+![Example1](images/Introduction_01_sm.gif)
 
 
 ![Example2](images/Introduction_02_sm.gif)
