@@ -8,15 +8,27 @@ When building for Lottie you always have to keep in mind that these JSON files n
 
 ## Shape layers for vector artwork / Adobe Illustrator
 
-Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers otherwise they will not work in your Lottie animation. After you've converted to shape layers remove the assets from your composition so they aren't exported with the JSON. Shape layers is where Lottie does best.
+Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers in After Effects otherwise they will not work in your Lottie animation. 
 
-## Work in points/dps
+![Create Shapes](/images/CreateShapes_sm.png)
+
+After you've converted to shape layers remove the assets from your composition so they aren't exported with the JSON. Shape layers is where Lottie does best.
+
+## Export at 1x
+
+You can work in After Effects at whatever composition size you want, but be sure to export with a composition size that is 1x the size of your asset. 
+
+![1x](/images/Create1x_sm.png)
 
 All pixel values in After Effects will be converted to points on iOS and dps on Android to ensure that they look the same across all screen densities. Google has put together [a collection](https://material.io/devices/) of device metrics with screen size in dps for common devices.
 
 ## No expressions or effects
 
 Lottie does not yet support expressions, or any effects from the effects menu.
+
+![NoEffects](/images/NoEffects.png)
+
+![NoEffects](/images/NoExpressions.png)
 
 ## Matte and mask size matters
 
@@ -28,7 +40,7 @@ If an animation is broken. Try debugging the animation by exporting only certain
 
 ## No Blending modes or Luma mattes
 
-Blending modes such as Multiply, Screen or Add, don't work nor do Luma mattes.
+Blending modes such as Multiply, Screen or Add, aren't yet supported nor are Luma mattes.
 
 ## Full screen animations
 
@@ -37,8 +49,4 @@ Export an animation wider than the widest screen you intend to support and use t
 ## Make Nulls visible and have 0% opacity
 
 If you're using a null to control a bunch of layers and usually turn the visibility off, be sure to turn the visibility ON and turn the opacity to 0% otherwise they won't come through in the JSON file
-
-## Sketch workflow
-
-If you are bringing in assets from Sketch, you can export artboards as PDFs. Bring that PDF into illustrator to break things out into layers and do some organization. Then save that PDF as an illustrator file that can be brought into After Effects and converted into a shape layer. Hopefully one day someone writes a script / tool to automate this process
 
