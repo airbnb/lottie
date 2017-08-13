@@ -11,7 +11,7 @@ We're assuming you have three things. Adobe Illustrator, Adobe After Effects, an
 
 To get the asset exported in one piece everything needs to be put into a single group
 
-![ArtworkWalkthrough_01](/images/ArtworkWalkthrough_01.gif)
+![ArtworkWalkthrough_01](/images/ArtworkWalkthrough_01.png)
 
 ### 2 - Select the group and export as an SVG
 
