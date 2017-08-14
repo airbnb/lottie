@@ -46,6 +46,9 @@ Blending modes such as Multiply, Screen or Add, aren't yet supported nor are Lum
 
 Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mdoe on iOS.
 
+![Full screen animations](/images/LottieFullScreen.gif)
+
+
 ## Make Nulls visible and have 0% opacity
 
 If you're using a null to control a bunch of layers and usually turn the visibility off, be sure to turn the visibility ON and turn the opacity to 0% otherwise they won't come through in the JSON file
