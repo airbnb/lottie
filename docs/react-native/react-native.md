@@ -1,11 +1,9 @@
 ## Getting Started
 Get started with Lottie by installing the node module with yarn or npm:
-
-```bash
-yarn add lottie-react-native
+<pre><code class="bash">yarn add lottie-react-native@{{ book.reactNativeVersion }}
 # or
-npm i --save lottie-react-native
-```
+npm i --save lottie-react-native@{{ book.reactNativeVersion }}
+</code></pre>
 
 If you're using CocoaPods on iOS, you can put the following in your `Podfile`:
 
@@ -28,6 +26,14 @@ For android, you can `react-native link` as well:
 ```bash
 react-native link lottie-react-native
 ```
+or you can add it to your `build.gradle` file:
+<pre><code class="lang-groovy">
+dependencies {
+  ...
+  compile 'com.airbnb.android:lottie:{{ book.androidVersion }}'
+  ...
+}
+</code></pre>
 
 Lottie requires Android support library version 25. If you're using the `react-native init` template,
 you may still be using 23. To change this, simply go to `android/app/build.gradle` and find the
@@ -110,7 +116,7 @@ You can check out the example project with the following instructions
 
 1. Clone the repo: `git clone https://github.com/airbnb/lottie-react-native.git`
 2. Open: `cd lottie-react-native` and Install: `npm install`
-3. Run `npm start` to start the packager.
+3. Run `npm start` to start the packager. ** The packager must be running to use the sample apps.**
 4. In another CLI window, do the following:
 
 For Running iOS:

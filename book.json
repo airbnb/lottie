@@ -9,7 +9,8 @@
   },
   "variables": {
     "androidVersion": "2.2.0",
-    "iosVersion": "2.0.3"
+    "iosVersion": "2.0.3",
+    "reactNativeVersion": "2.2.0"
   },
   "plugins": [
     "edit-link",
