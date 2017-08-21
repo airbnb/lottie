@@ -5,7 +5,7 @@ There are two ways to render After Effects animations:
 2. Export AndroidVectorDrawable xml with Bodymovin and play it using the Android SDK.
 
 ## Pros of Lottie
-* Supports a much larger set of After Effects features. See [supported features](/supported-features.md) for a full list.
+* Supports a much larger set of After Effects features. See [supported features](/after-effects/supported-features.md) for a full list.
 * Manually set progress to hook up an animation to a gesture, event, etc.
 * Download animations from the network.
 * Dynamic playback speed.
