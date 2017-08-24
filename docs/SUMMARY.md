@@ -19,6 +19,7 @@ Lottie
   * [Swift Examples](/ios.md#swift-examples)
   * [View Controller Transitions](/ios/view-controllers.md)
   * [Changing Animations At Runtime](/ios/dynamic.md)
+  * [Adding Views to Animation at Runtime](/ios/addsubviews.md)
   * [Performance](/ios/performance.md)
   * [Troubleshooting](/ios/troubleshooting.md)
 * [React Native](/react-native/react-native.md)

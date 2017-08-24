@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>View Controller Transitions · Lottie</title>
+        <title>Adding Views to Animation at Runtime · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="dynamic.html" />
+    <link rel="next" href="performance.html" />
     
     
-    <link rel="prev" href="../ios.html" />
+    <link rel="prev" href="dynamic.html" />
     
 
     </head>
@@ -330,7 +330,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.7" data-path="view-controllers.html">
+        <li class="chapter " data-level="1.3.7" data-path="view-controllers.html">
             
                 <a href="view-controllers.html">
             
@@ -356,7 +356,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="addsubviews.html">
+        <li class="chapter active" data-level="1.3.9" data-path="addsubviews.html">
             
                 <a href="addsubviews.html">
             
@@ -759,7 +759,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >View Controller Transitions</a>
+        <a href=".." >Adding Views to Animation at Runtime</a>
     </h1>
 </div>
 
@@ -771,28 +771,88 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="view-controller-transitions"><a name="view-controller-transitions" class="plugin-anchor" href="#view-controller-transitions"><i class="fa fa-link" aria-hidden="true"></i></a>View Controller Transitions</h1>
-<p>Lottie comes with a <code class="language-">UIViewController</code> animation-controller for making custom viewController transitions!</p>
-<pre class="language-"><code class="language-">#pragma mark -- View Controller Transitioning
+                                <h1 id="adding-views-to-an-animation-at-runtime"><a name="adding-views-to-an-animation-at-runtime" class="plugin-anchor" href="#adding-views-to-an-animation-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Adding Views to an Animation at Runtime</h1>
+<p>Not only can you <a href="dynamic.html">change animations at runtime</a> with Lottie, you can also add custom UI to a LOTAnimation at runtime.
+The example below shows some advance uses of this to create a dynamic image loader.</p>
+<h2 id="a-dynamic-image-loading-spinner"><a name="a-dynamic-image-loading-spinner" class="plugin-anchor" href="#a-dynamic-image-loading-spinner"><i class="fa fa-link" aria-hidden="true"></i></a>A Dynamic Image Loading Spinner</h2>
+<p><img src="../images/spinner.gif" alt="Spinner"></p>
+<p>The example above shows a single LOTAnimationView that is set with a loading spinner animation. The loading spinner loops a portion of its animation while an image is downloaded asynchronously. When the download is complete, the image is added to the animation and the rest of the animation is played seamlessly. The image is cleanly animated in and a completion block is called.</p>
+<p><img src="../images/spinner_Alternative.gif" alt="Spinner_Alt"></p>
+<p>Now, the animation has been changed by a designer and needs to be updated. All that is required is updating the JSON file in the bundle. No code change needed!</p>
+<p><img src="../images/spinner_DarkMode.gif" alt="Spinner_Dark"></p>
+<p>Here, the design has decided to add a &apos;Dark Mode&apos; to the app. Just a few lines of code change the color of the animation at runtime.</p>
+<p>Pretty powerful eh?</p>
+<p>Check out the code below for an example!</p>
+<pre class="language-"><code class="lang-swift language-">
+<span class="token keyword">import</span> <span class="token builtin">UIKit</span>
+<span class="token keyword">import</span> <span class="token builtin">Lottie</span>
 
-- (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source {
-  LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition1&quot;
-                                                                                                          fromLayerNamed:@&quot;outLayer&quot;
-                                                                                                            toLayerNamed:@&quot;inLayer&quot;
-                                                                                                 applyAnimationTransform:NO];
-  return animationController;
-}
+<span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token builtin">UIViewController</span> <span class="token punctuation">{</span>
 
-- (id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UIViewControllerAnimatedTransitioning</span><span class="token punctuation">&gt;</span></span>)animationControllerForDismissedController:(UIViewController *)dismissed {
-  LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@&quot;vcTransition2&quot;
-                                                                                                          fromLayerNamed:@&quot;outLayer&quot;
-                                                                                                            toLayerNamed:@&quot;inLayer&quot;
-                                                                                                 applyAnimationTransform:NO];
-  return animationController;
-}
+  <span class="token keyword">var</span> animationView<span class="token punctuation">:</span> <span class="token builtin">LOTAnimationView</span> <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;SpinnerSpin&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Setup our animaiton view</span>
+    animationView<span class="token punctuation">.</span>contentMode <span class="token operator">=</span> <span class="token punctuation">.</span>scaleAspectFill
+    animationView<span class="token punctuation">.</span>frame <span class="token operator">=</span> <span class="token function">CGRect</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// Lets change some of the properties of the animation</span>
+    <span class="token comment" spellcheck="true">// We arent going to use the MaskLayer, so lets just hide it</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;MaskLayer.Ellipse 1.Transform.Opacity&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// All of the strokes and fills are white, lets make them DarkGrey</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>darkGray<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;OuterRing.Stroke.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>darkGray<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;InnerRing.Stroke.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token builtin">UIColor</span><span class="token punctuation">.</span>darkGray<span class="token punctuation">,</span> forKeypath<span class="token punctuation">:</span> <span class="token string">&quot;InnerRing.Fill.Color&quot;</span><span class="token punctuation">,</span> atFrame<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Lets turn looping on, since we want it to repeat while the image is &apos;Downloading&apos;</span>
+    animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment" spellcheck="true">// Now play from 0 to 0.5 progress and loop indefinitely.</span>
+    animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>fromProgress<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> toProgress<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span> withCompletion<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Lets simulate a download that finishes in 4 seconds.</span>
+    <span class="token keyword">let</span> dispatchTime <span class="token operator">=</span> <span class="token builtin">DispatchTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">4.0</span>
+    <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">asyncAfter</span><span class="token punctuation">(</span>deadline<span class="token punctuation">:</span> dispatchTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">simulateImageDownloaded</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">func</span> <span class="token function">simulateImageDownloaded</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Our downloaded image</span>
+    <span class="token keyword">let</span> image <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string">&quot;avatar.jpg&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> imageView <span class="token operator">=</span> <span class="token function">UIImageView</span><span class="token punctuation">(</span>image<span class="token punctuation">:</span> image<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// We want the image to show up centered in the animation view at 150Px150P</span>
+    <span class="token comment" spellcheck="true">// Convert that rect to the animations coordinate space</span>
+    <span class="token comment" spellcheck="true">// The origin is set to -75, -75 because the origin is centered in the animation view</span>
+    <span class="token keyword">let</span> imageRect <span class="token operator">=</span> animationView<span class="token punctuation">.</span><span class="token function">convert</span><span class="token punctuation">(</span><span class="token function">CGRect</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">75</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">75</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">,</span> toLayerNamed<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Setup our image view with the rect and add rounded corners</span>
+    imageView<span class="token punctuation">.</span>frame <span class="token operator">=</span> imageRect
+    imageView<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>masksToBounds <span class="token operator">=</span> <span class="token boolean">true</span>
+    imageView<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> imageRect<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// Now we set the completion block on the currently running animation</span>
+    animationView<span class="token punctuation">.</span>completionBlock <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>result<span class="token punctuation">:</span> <span class="token builtin">Bool</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// Add the image view to the layer named &quot;TransformLayer&quot;</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>animationView<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>imageView<span class="token punctuation">,</span> toLayerNamed<span class="token punctuation">:</span> <span class="token string">&quot;TransformLayer&quot;</span><span class="token punctuation">,</span> applyTransform<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// Now play the last half of the animation</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>fromProgress<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span> toProgress<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> withCompletion<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>complete<span class="token punctuation">:</span> <span class="token builtin">Bool</span><span class="token punctuation">)</span> <span class="token keyword">in</span>
+        <span class="token comment" spellcheck="true">// Now the animation has finished and our image is displayed on screen</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;Image Downloaded and Displayed&quot;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// Turn looping off. Once the current loop finishes the animation will stop </span>
+    <span class="token comment" spellcheck="true">// and the completion block will be called.</span>
+    animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
 </code></pre>
+
                                 
                                 </section>
                             
@@ -803,12 +863,12 @@
 
             
                 
-                <a href="../ios.html#swift-examples" class="navigation navigation-prev " aria-label="Previous page: Swift Examples">
+                <a href="dynamic.html" class="navigation navigation-prev " aria-label="Previous page: Changing Animations At Runtime">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="dynamic.html" class="navigation navigation-next " aria-label="Next page: Changing Animations At Runtime">
+                <a href="performance.html" class="navigation navigation-next " aria-label="Next page: Performance">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -819,7 +879,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"View Controller Transitions","level":"1.3.7","depth":2,"next":{"title":"Changing Animations At Runtime","level":"1.3.8","depth":2,"path":"ios/dynamic.md","ref":"ios/dynamic.md","articles":[]},"previous":{"title":"Swift Examples","level":"1.3.6","depth":2,"anchor":"#swift-examples","path":"ios.md","ref":"ios.md#swift-examples","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.0","iosVersion":"2.0.3","reactNativeVersion":"2.2.0"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"ios/view-controllers.md","mtime":"2017-08-24T23:31:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-24T23:52:09.117Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adding Views to Animation at Runtime","level":"1.3.9","depth":2,"next":{"title":"Performance","level":"1.3.10","depth":2,"path":"ios/performance.md","ref":"ios/performance.md","articles":[]},"previous":{"title":"Changing Animations At Runtime","level":"1.3.8","depth":2,"path":"ios/dynamic.md","ref":"ios/dynamic.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.0","iosVersion":"2.0.3","reactNativeVersion":"2.2.0"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"ios/addsubviews.md","mtime":"2017-08-24T23:51:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-24T23:52:09.117Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
