@@ -1,13 +1,5 @@
 ## After Effects
 
-Creating animations for Lottie requires the latest version of Adobe After Effects as well as the most recent version of the Bodymovin Extension
+Get up and running creating animations for Lottie in After Effects!
 
-[How to install Bodymovin](/after-effects/bodymovin-installation.md)
-
-[General tips & guidelines](/after-effects/general-tips.md)
-
-[Supported Features](/after-effects/supported-features.md)
-
-[Sketch/SVG/Illustrator to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md)
-
-[Debugging animations](/after-effects/debugging.md)
+If you're new to it all, check out our [Getting Started](/after-effects/getting-started.md) guide, and go from there.

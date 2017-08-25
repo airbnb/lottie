@@ -1,5 +1,7 @@
 # Community showcase
 
+Below are some examples of how different individuals and companies are using Lottie in their products. If you're using Lottie and you'd like to be featured in the showcase please email us at [Lottie@airbnb.com](Lottie@airbnb.com) we would love to feature your work so the whole community can be inspired!
+
 ## Elevate
 
 Elevate used a combination of shape layers, alpha mattes and images to craft this silky smooth walkthrough where illstrations seamlessly mortph as users swipe to select different training options.

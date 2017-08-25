@@ -1,4 +1,4 @@
-## Getting started
+# Getting started
 
 To get started creating animations for Lottie in After Effects you'll need a few things
 
