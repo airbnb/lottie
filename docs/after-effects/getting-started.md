@@ -4,24 +4,23 @@ To get started creating animations for Lottie in After Effects you'll need a few
 
 ### 1. After Effects
 ![After Effects](/images/1-AfterEffects.png)
-Get the latest After Effects from Creative Cloud [here](http://www.adobe.com/products/aftereffects.html).
+<br>Get the latest After Effects from Creative Cloud [here](http://www.adobe.com/products/aftereffects.html).
 
 
 
 ### 2. Bodymovin
 ![BodyMovin](/images/2-Bodymovin.png)
-Download and install the latest version of the Bodymovin Extension for After Effects. Detailed instructions [here](/after-effects/bodymovin-installation.md).
+<br>Download and install the latest version of the Bodymovin Extension for After Effects. Detailed instructions [here](/after-effects/bodymovin-installation.md).
 
 
 ### 3. Lottiefiles preview app
 ![Lottie preview app](/images/3-Previewapp.png)
-Download the Lottie app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie), or the Lottie preview app on the [App Store](https://www.lottiefiles.com/ios).
+<br>Download the Lottie app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie), or the Lottie preview app on the [App Store](https://www.lottiefiles.com/ios).
 
 After you're all setup, check out our [general tips](/after-effets/general-tips.d). Since not all After Effects features are supported see our [supported features list](/after-effects/supported-features.md). Lastly check out some workflow overviews in our [SVG/Sketch to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md) or our [Illustrator to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
 
 <br>
 <br>
-
 
 ### 😍 Additional goodies 😍
 All of these goodies are highly recommended. They arent essential, because you can still create for Lottie whtout them. But your workflow will be significantly faster and better with these extra tools.
