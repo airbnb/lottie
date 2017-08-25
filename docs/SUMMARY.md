@@ -27,7 +27,7 @@ Lottie
   * [Sample App](/react-native/react-native.md#sample-app)
   * [Props](/react-native/props.md)
   * [Troubleshooting](/react-native/troubleshooting.md)
-* [After Effects](/after-effects/getting-started.md)
+* [After Effects](/after-effects/after-effects.md)
   * [Getting started](/after-effects/getting-started.md)
   * [How to install Bodymovin](/after-effects/bodymovin-installation.md)
   * [General tips & guidelines](/after-effects/general-tips.md)
