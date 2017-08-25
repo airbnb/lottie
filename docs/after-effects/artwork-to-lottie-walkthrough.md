@@ -15,7 +15,7 @@ To get the asset exported in one piece everything needs to be put into a single 
 
 ### 2 - Select the group and export as an SVG
 
-You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes directly into AE?? We'll explain why later...
+You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes directly into AE?? We'll explain why later. If you don't have illustrator a PDF or EPS will still work, you just might have to do more cleanup in After Effects. Check out cleanup tips in the [Debugging section](/after-effects/debugging.md)
 
 ![ArtworkWalkthrough_02](/images/ArtworkWalkthrough_02.png)
 
@@ -49,11 +49,11 @@ Select the layer in the composition and in the Layer menu select "Create shapes 
 ![ArtworkWalkthrough_07](/images/ArtworkWalkthrough_07.gif)
 
 
-So back to that question "Why didn't I just export a PDF or EPS from Sketch??" This is where it counts. When you export a PDF or EPS from Sketch it adds artboards to the shape layer when its converted.
+So back to that question "Why didn't I just export a PDF or EPS from Sketch??" This is where it counts. When you export a PDF or EPS from Sketch sometimes it adds artboard paths to the shape layer when its converted.
 
 ![ArtworkWalkthrough_08](/images/ArtworkWalkthrough_08.png)
 
-The one on the left is an SVG converted, and the example on the right is an EPS converted. The example on the right you can see the transparency is inverted, because its got some paths that are the size of the artboard. If you have a complicated piece of artwork things can really get strange. You can always go through and delete the artboard paths, its just time consuming and annoying. Thats why SVG is best.
+The one on the left is an SVG converted, and the example on the right is an EPS converted. The example on the right you can see the transparency is inverted, because its got some paths that are the size of the artboard. If you have a complicated piece of artwork things can really get strange. You can always go through and cleanup the shape layer by deleting unused paths and artboard paths, its just time consuming and annoying. Thats why SVG is best.
 
 
 ### 6 - Do some animation magic. Or not.

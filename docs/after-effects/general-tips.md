@@ -42,6 +42,11 @@ If an animation is broken. Try debugging the animation by exporting only certain
 
 Blending modes such as Multiply, Screen or Add, aren't yet supported nor are Luma mattes.
 
+## No layer styles
+
+Lottie does not yet support layer effects like drop shadow, color overlay or stroke.
+
+
 ## Full screen animations
 
 Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mdoe on iOS.
