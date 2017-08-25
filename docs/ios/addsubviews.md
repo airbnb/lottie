@@ -21,6 +21,7 @@ Here, the design has decided to add a 'Dark Mode' to the app. Just a few lines o
 Pretty powerful eh?
 
 Check out the code below for an example!
+Download the After Effects file [here](/AEP/LoadingSpinner.zip)
 
 ```swift
 
