@@ -19,6 +19,8 @@ You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes dire
 
 ![ArtworkWalkthrough_02](/images/ArtworkWalkthrough_02.png)
 
+If you have Googles [Sketch2AE](https://google.github.io/sketch2ae/) tool, you can use that instead. You'll be able to skip steps 3, 4, 5 and 6
+
 ### 3 - Open SVG in Illustrator and save as a .AI file
 
 ![ArtworkWalkthrough_03](/images/ArtworkWalkthrough_03.png)
@@ -67,7 +69,6 @@ Next if the panel isn't already open go to Window > Extensions > Bodymovin.
 
 ![ArtworkWalkthrough_09](/images/ArtworkWalkthrough_09.gif)
 
-
 Select the composition you want to export by clicking the circle to the left. Next select the destination by selecting the 3 dots on the right. Name your file, and press Render the big green button on the top left
 
 
@@ -104,6 +105,6 @@ After its downloaded just use the camera to scan the QR code.
 
 If you're animation looks correct in the preview app, you are good to go!
 
-If it doesn't then its time to do some debugging. Check out our After Effects debugging tips to see some techniques to get your animation working. If all else fails file an issue on github with your AE file attached and we'll do our best to support you.
+If it doesn't then its time to do some debugging. Check out our [After Effects debugging tips](/after-effects/debugging.md) to see some techniques to get your animation working. If all else fails file an issue on github in the respective repo ([iOS](http://www.github.com/airbnb/lottie-ios), [Android](http://www.github.com/airbnb/lottie-android)) with your AE file attached and we'll do our best to support you.
 
 
