@@ -41,7 +41,7 @@ Onboarding carousel for Popcorn app 🍿.
 ![Popcorn](/images/ShowcasePopcorn.gif)
 
 
-## Raise me
+## RaiseMe
 
 Illustration and animation by Rachel Schmitz.
 
