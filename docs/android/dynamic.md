@@ -39,6 +39,10 @@ You could:
  If a wildcard is in the middle of a keypath, it will match any content at that depth.
  If a wildcard is at the end of a keypath, it will recursively apply to that content as well as any children all the way down to the leaf contents.
 
+ ### Transforms
+
+ Transform contain position, anchor point, scale, rotation, and opacity. They belong to the content that comes after the `:` in their name. For example, in the image above, the transform that says `Transform: Body` is part of the `Body` content. However, `Path` and `Fill` are children of `Body`.
+
  ## Updating Keyframes
 
 If you use the LottieValue factory methods that only take the value, it will update beginning of the animation. In the case of a property that doesn't have an animation, it will become the new static value. In the case of a property that is animated, it will update the start value of the first keyframe.
