@@ -43,7 +43,7 @@ Onboarding carousel for Popcorn app 🍿.
 
 ## RaiseMe
 
-Illustration and animation by Rachel Schmitz.
+RaiseMe uses Lottie to show students how to earn scholarships from colleges on its iOS app. Illustration and animation by Rachel Schmitz.
 
 ![Raiseme](/images/ShowcaseRaiseme.gif)
 
