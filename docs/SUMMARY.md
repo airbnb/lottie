@@ -4,7 +4,7 @@ Lottie
   * [Getting Started](/android/android.md#getting-started)
   * [Sample App](/android/android.md#sample-app)
   * [Caching and Preloading](/android/caching.md)
-  * [Dynamic Colors](/android/colors.md)
+  * [Dynamic Properties (WIP)](/android/dynamic.md)
   * [Images](/android/images.md)
   * [Performance](/android/performance.md)
   * [Lottie vs AVD](/android/avd.md)
