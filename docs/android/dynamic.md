@@ -21,6 +21,8 @@ The following value can be modified:
 LottieValues are classes that take a value and apply it to content. You never need to implement one yourself and just need to use the static factory methods that ship with Lottie. Each LottieValue subclass is typed and can update properties of that type. The type for each updateable property can be seen above.
 For example, if you want to update a rotation to 45 degrees, use `FloatValue.forRotation(45)`.
 
+LottieValues themselves are mutable in case you have to frequently update it. However, when you do update it, you must call `setValue` on your `LottieDrawable` or `LottieAnimationView`.
+
 ## KeyPath
 
 KeyPaths are how you specify what content(s) a value will be applied to. These KeyPaths map directly to the layer hierarchy in After Effects.
@@ -31,6 +33,8 @@ You could:
  * Match all of Gabriel: `new KeyPath("Gabriel", "*");`
  * Match Gabriel left hand fill: `new KeyPath("Gabriel", "Body", "Left Hand", "Fill");`
  * Match Gabriel and Brandon's left hand fill: `new KeyPath("*", "Body", Left Hand", "Fill");`
+
+ If you are unsure what KeyPaths are available in your animation, you can log the String returned by `getAllKeyPaths()` on `LottieDrawable` or `LottieAnimationView`.
 
 
  ### Wildcards
@@ -56,3 +60,9 @@ If the previous/next keyframe is contiguous with the one being updated, its star
 will be updated to maintain continuity.
 
 `updateValues` does not currently support false but eventually, it will insert a new keyframe at the specified frame.
+
+
+## Putting it all together
+
+`LottieDrawable` and `LottieAnimationView` have a `setValue()` method that takes your `LottieValue` and `KeyPath`.
+`LottieTest` has some examples that test the animations in `/After Effects Samples/Tests/Dynamic.aep`.
