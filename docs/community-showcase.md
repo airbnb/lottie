@@ -3,6 +3,15 @@
 Below are some examples of how different individuals and companies are using Lottie in their products. If you're using Lottie and you'd like to be featured in the showcase please email us at [Lottie@airbnb.com](Lottie@airbnb.com) we would love to feature your work so the whole community can be inspired!
 
 
+## Swift Key
+
+SwiftKey iOS is using Lottie to help guide their users through the installation of a third party keyboard. With Lottie, they are able to easily control the colours to make their animations high contrast for accessibility, and they're able to scale up to the size of an iPad without losing quality. On a side note, they recently swapped out an old school png sequence which was about 6mb in size, for a lottie json that is just 340kb! 
+
+
+![Swift Key](/images/ShowcaseSwiftKeyiOS.gif)
+
+
+
 ## Elevate
 
 Elevate used a combination of shape layers, alpha mattes and images to craft this silky smooth walkthrough where illstrations seamlessly mortph as users swipe to select different training options.

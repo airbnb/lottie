@@ -21,15 +21,15 @@ Once you see which layer is looking strange you can dig into the shape layer and
 Lottie doesnt support effects or layer styles so If a layer has them it will probably be broken in Lottie. 
 
 
-
-
 ## Check for unsupported features
 
+Coming soon...
 
 
 ## Gradient issues
 
-
+Coming soon...
 
 ## Animation easings are off
 
+Coming soon...
