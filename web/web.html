@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Performance · Lottie</title>
+        <title>Web · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="avd.html" />
+    <link rel="next" href="../after-effects/getting-started.html" />
     
     
-    <link rel="prev" href="images.html" />
+    <link rel="prev" href="../react-native/troubleshooting.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="android.html">
+        <li class="chapter " data-level="1.2" data-path="../android/android.html">
             
-                <a href="android.html">
+                <a href="../android/android.html">
             
                     
                     Android
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="android.html">
+        <li class="chapter " data-level="1.2.1" data-path="../android/android.html">
             
-                <a href="android.html#getting-started">
+                <a href="../android/android.html#getting-started">
             
                     
                     Getting Started
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="android.html">
+        <li class="chapter " data-level="1.2.2" data-path="../android/android.html">
             
-                <a href="android.html#sample-app">
+                <a href="../android/android.html#sample-app">
             
                     
                     Sample App
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="caching.html">
+        <li class="chapter " data-level="1.2.3" data-path="../android/caching.html">
             
-                <a href="caching.html">
+                <a href="../android/caching.html">
             
                     
                     Caching and Preloading
@@ -155,9 +155,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="dynamic.html">
+        <li class="chapter " data-level="1.2.4" data-path="../android/dynamic.html">
             
-                <a href="dynamic.html">
+                <a href="../android/dynamic.html">
             
                     
                     Dynamic Properties (WIP)
@@ -168,9 +168,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="images.html">
+        <li class="chapter " data-level="1.2.5" data-path="../android/images.html">
             
-                <a href="images.html">
+                <a href="../android/images.html">
             
                     
                     Images
@@ -181,9 +181,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.6" data-path="performance.html">
+        <li class="chapter " data-level="1.2.6" data-path="../android/performance.html">
             
-                <a href="performance.html">
+                <a href="../android/performance.html">
             
                     
                     Performance
@@ -194,9 +194,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="avd.html">
+        <li class="chapter " data-level="1.2.7" data-path="../android/avd.html">
             
-                <a href="avd.html">
+                <a href="../android/avd.html">
             
                     
                     Lottie vs AVD
@@ -207,9 +207,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="troubleshooting.html">
+        <li class="chapter " data-level="1.2.8" data-path="../android/troubleshooting.html">
             
-                <a href="troubleshooting.html">
+                <a href="../android/troubleshooting.html">
             
                     
                     Troubleshooting
@@ -220,9 +220,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="contributing.html">
+        <li class="chapter " data-level="1.2.9" data-path="../android/contributing.html">
             
-                <a href="contributing.html">
+                <a href="../android/contributing.html">
             
                     
                     Contributing
@@ -471,9 +471,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../web/web.html">
+        <li class="chapter active" data-level="1.5" data-path="web.html">
             
-                <a href="../web/web.html">
+                <a href="web.html">
             
                     
                     Web
@@ -798,7 +798,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Performance</a>
+        <a href=".." >Web</a>
     </h1>
 </div>
 
@@ -810,25 +810,24 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="performance"><a name="performance" class="plugin-anchor" href="#performance"><i class="fa fa-link" aria-hidden="true"></i></a>Performance</h1>
-<h2 id="sizing-px---dp"><a name="sizing-px---dp" class="plugin-anchor" href="#sizing-px---dp"><i class="fa fa-link" aria-hidden="true"></i></a>Sizing (px -&gt; dp)</h2>
-<p>Any pixel values in After Effects will get converted to density independent pixels (points on iOS and dp on Android). For example, if you want an animation to be 24dp x 24dp, the After Effects composition should be 24px x 24px. You can find a list of common screen sizes in dps <a href="https://material.io/devices/" target="_blank">here</a>.</p>
-<h2 id="masks-and-mattes"><a name="masks-and-mattes" class="plugin-anchor" href="#masks-and-mattes"><i class="fa fa-link" aria-hidden="true"></i></a>Masks and Mattes</h2>
-<p>Masks and mattes on android have the larges performance hit. Their performance hit is also proportional to the intersection bounds of the masked/matted layer and the mask/matte so the smaller the mask/matte, the less of a performance hit there will be.
-On Android, if you are using masks or mattes, there will be a several X performance improvement when using hardware acceleration.</p>
-<h2 id="hardware-acceleration"><a name="hardware-acceleration" class="plugin-anchor" href="#hardware-acceleration"><i class="fa fa-link" aria-hidden="true"></i></a>Hardware Acceleration</h2>
-<p>Android can render animations with hardware or software acceleration. Hardware acceleration is much faster but has some limitations.
-The following features have limited support</p>
-<ul>
-<li>Anti aliasing (API 16+ only)</li>
-<li>Clip to composition bounds (API 18+ only)</li>
-<li>Stroke caps (API 19+ only)</li>
-</ul>
-<p>For more information, read <a href="https://developer.android.com/guide/topics/graphics/hardware-accel.html" target="_blank">this</a>.</p>
-<p>In general, try your animation with hardware acceleration and use it if it works. You can try toggling it in the sample app.</p>
-<h2 id="render-graph-android"><a name="render-graph-android" class="plugin-anchor" href="#render-graph-android"><i class="fa fa-link" aria-hidden="true"></i></a>Render Graph (Android)</h2>
-<p>The Lottie sample app has a real time render graph that can be enabled from the menu in the top right.
-<img src="../images/render-graph.png" alt="Render Graph"></p>
+                                <h2 id="getting-started"><a name="getting-started" class="plugin-anchor" href="#getting-started"><i class="fa fa-link" aria-hidden="true"></i></a>Getting Started</h2>
+<p>Bodymovin can render Lottie JSON files on the web.</p>
+<p>First, get the bodymovin player javascript library. It is statically hosted at <a href="https://cdnjs.com/libraries/bodymovin" target="_blank">https://cdnjs.com/libraries/bodymovin</a> or you can get the javascript directly by clicking <code class="language-">Get Player</code> in the bodymovin plugin.</p>
+<pre class="language-"><code class="lang-html language-"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>js/bodymovin.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment" spellcheck="true">&lt;!-- OR --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://cdnjs.com/libraries/bodymovin<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Bodymovin is also available on npm and bower.</p>
+<p>Then playing the animation is as simple as:</p>
+<pre class="language-"><code class="lang-javascript language-"><span class="token keyword">var</span> animation <span class="token operator">=</span> bodymovin<span class="token punctuation">.</span><span class="token function">loadAnimation</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token punctuation">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;lottie&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Required</span>
+  path<span class="token punctuation">:</span> <span class="token string">&apos;data.json&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Required</span>
+  renderer<span class="token punctuation">:</span> <span class="token string">&apos;svg/canvas/html&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Required</span>
+  loop<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Optional</span>
+  autoplay<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Optional</span>
+  name<span class="token punctuation">:</span> <span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Name for future reference. Optional.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
 
                                 
                                 </section>
@@ -840,12 +839,12 @@ The following features have limited support</p>
 
             
                 
-                <a href="images.html" class="navigation navigation-prev " aria-label="Previous page: Images">
+                <a href="../react-native/troubleshooting.html" class="navigation navigation-prev " aria-label="Previous page: Troubleshooting">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="avd.html" class="navigation navigation-next " aria-label="Next page: Lottie vs AVD">
+                <a href="../after-effects/getting-started.html" class="navigation navigation-next " aria-label="Next page: After Effects">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -856,7 +855,7 @@ The following features have limited support</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Performance","level":"1.2.6","depth":2,"next":{"title":"Lottie vs AVD","level":"1.2.7","depth":2,"path":"android/avd.md","ref":"android/avd.md","articles":[]},"previous":{"title":"Images","level":"1.2.5","depth":2,"path":"android/images.md","ref":"android/images.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.0","iosVersion":"2.0.3","reactNativeVersion":"2.2.0"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"android/performance.md","mtime":"2017-08-12T19:02:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-06T15:30:15.374Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Web","level":"1.5","depth":1,"next":{"title":"After Effects","level":"1.6","depth":1,"path":"after-effects/getting-started.md","ref":"after-effects/getting-started.md","articles":[{"title":"Getting started","level":"1.6.1","depth":2,"path":"after-effects/getting-started.md","ref":"after-effects/getting-started.md","articles":[]},{"title":"How to install Bodymovin","level":"1.6.2","depth":2,"path":"after-effects/bodymovin-installation.md","ref":"after-effects/bodymovin-installation.md","articles":[]},{"title":"General tips & guidelines","level":"1.6.3","depth":2,"path":"after-effects/general-tips.md","ref":"after-effects/general-tips.md","articles":[]},{"title":"Supported Features","level":"1.6.4","depth":2,"path":"after-effects/supported-features.md","ref":"after-effects/supported-features.md","articles":[]},{"title":"Sketch/SVG/Illustrator to Lottie walkthrough","level":"1.6.5","depth":2,"path":"after-effects/artwork-to-lottie-walkthrough.md","ref":"after-effects/artwork-to-lottie-walkthrough.md","articles":[]},{"title":"Advanced Illustrtor to Lottie walkthrough","level":"1.6.6","depth":2,"path":"after-effects/illustrator-to-lottie-walkthrough.md","ref":"after-effects/illustrator-to-lottie-walkthrough.md","articles":[]},{"title":"Debugging animations","level":"1.6.7","depth":2,"path":"after-effects/debugging.md","ref":"after-effects/debugging.md","articles":[]}]},"previous":{"title":"Troubleshooting","level":"1.4.4","depth":2,"path":"react-native/troubleshooting.md","ref":"react-native/troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.0","iosVersion":"2.0.3","reactNativeVersion":"2.2.0"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"web/web.md","mtime":"2017-09-06T15:30:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-06T15:30:15.374Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
