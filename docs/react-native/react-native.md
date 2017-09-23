@@ -5,6 +5,7 @@ Get started with Lottie by installing the node module with yarn or npm:
 npm i --save lottie-react-native@{{ book.reactNativeVersion }}
 </code></pre>
 
+### iOS
 If you're using CocoaPods on iOS, you can put the following in your `Podfile`:
 
 ```ruby
@@ -21,6 +22,7 @@ react-native link lottie-react-native
 
 After this, open the Xcode project configuration and add the `Lottie.framework` as `Embedded Binaries`.
 
+### Android
 For android, you can `react-native link` as well:
 
 ```bash
@@ -35,15 +37,27 @@ dependencies {
 }
 </code></pre>
 
-Lottie requires Android support library version 25. If you're using the `react-native init` template,
+Lottie requires Android support library version 26. If you're using the `react-native init` template,
 you may still be using 23. To change this, simply go to `android/app/build.gradle` and find the
 `compileSdkVersion` option inside of the `android` block and change it to
 
 ```
 android {
-    compileSdkVersion 25 // <-- update this to 25
+    compileSdkVersion 26 // <-- update this to 26
     // ...
 ```
+
+You must also add the `LottiePackage` to `getPackages()` in your `ReactApplication`
+```java
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          ...
+          new LottiePackage()
+      );
+    }
+  };
+  ```
 
 With this change you should be ready to go.
 
