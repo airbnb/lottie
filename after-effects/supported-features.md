@@ -34,6 +34,7 @@
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 |
 | Parenting |                     👍 | 👍 | 👍 | 👍 | 👍 |
 | Auto Orient |                   ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| 3D |                            ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | **Interpolation** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
 | Linear Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 |
 | Bezier Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 |
