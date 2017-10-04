@@ -49,13 +49,14 @@
 | Lighten |                       ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | Darken |                        ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | Difference |                    ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
-| Expansion |                     ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
+| Expansion |                     ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 |
 | Feather |                       ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | **Mattes** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
 | Alpha Matte |                   👍 | 👍 | 👍 | 👍 | 👍 |
 | Alpha Inverted Matte |          👍 | 👍 | 👍 | 👍 | 👍 |
 | Luma Matte |                    ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
+| Track Matte |                   ⛔️ | ⛔️ | 👍 | ⛔️ | ⛔ |
 | **Merge Paths** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
 | Merge |                         👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
 | Add |                           👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |

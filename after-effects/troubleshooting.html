@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>How to install Bodymovin · Lottie</title>
+        <title>Troubleshooting · Lottie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="general-tips.html" />
+    <link rel="next" href="getting-started.html" />
     
+    
+    <link rel="prev" href="../web/expressions.html" />
     
 
     </head>
@@ -535,7 +537,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="troubleshooting.html">
+        <li class="chapter active" data-level="1.5.5" data-path="troubleshooting.html">
             
                 <a href="troubleshooting.html">
             
@@ -606,7 +608,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.4" data-path="bodymovin-installation.html">
+        <li class="chapter " data-level="1.6.4" data-path="bodymovin-installation.html">
             
                 <a href="bodymovin-installation.html">
             
@@ -658,7 +660,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="troubleshooting.html">
+        <li class="chapter active" data-level="1.6.8" data-path="troubleshooting.html">
             
                 <a href="troubleshooting.html">
             
@@ -893,7 +895,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >How to install Bodymovin</a>
+        <a href=".." >Troubleshooting</a>
     </h1>
 </div>
 
@@ -905,20 +907,23 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="installing-bodymovin"><a name="installing-bodymovin" class="plugin-anchor" href="#installing-bodymovin"><i class="fa fa-link" aria-hidden="true"></i></a>Installing Bodymovin</h1>
-<h3 id="1---close-after-effects-if-its-open"><a name="1---close-after-effects-if-its-open" class="plugin-anchor" href="#1---close-after-effects-if-its-open"><i class="fa fa-link" aria-hidden="true"></i></a>1 - Close After Effects if its open</h3>
-<h3 id="2---install-the-zxp-installer"><a name="2---install-the-zxp-installer" class="plugin-anchor" href="#2---install-the-zxp-installer"><i class="fa fa-link" aria-hidden="true"></i></a>2 - Install the ZXP installer</h3>
-<p><a href="http://aescripts.com/learn/zxp-installer/" target="_blank">http://aescripts.com/learn/zxp-installer/</a></p>
-<p><img src="../images/ZxpInstaller.png" alt="ZxpInstaller"></p>
-<h3 id="3---download-the-latest-bodymovin-extension"><a name="3---download-the-latest-bodymovin-extension" class="plugin-anchor" href="#3---download-the-latest-bodymovin-extension"><i class="fa fa-link" aria-hidden="true"></i></a>3 - Download the latest bodymovin extension</h3>
-<p><a href="https://github.com/bodymovin/bodymovin/blob/master/build/extension/bodymovin.zxp" target="_blank">https://github.com/bodymovin/bodymovin/tree/master/build/extension</a></p>
-<p><img src="../images/BodymovinZxp.png" alt="Bodymovin ZxpInstaller"></p>
-<h3 id="4---open-the-zxp-installer-and-drag-the-bodymovin-extension-into-the-window"><a name="4---open-the-zxp-installer-and-drag-the-bodymovin-extension-into-the-window" class="plugin-anchor" href="#4---open-the-zxp-installer-and-drag-the-bodymovin-extension-into-the-window"><i class="fa fa-link" aria-hidden="true"></i></a>4 - Open the ZXP installer and drag the bodymovin extension into the window</h3>
-<p><img src="../images/BodymovinZxp.gif" alt="Bodymovin ZxpInstaller"></p>
-<h3 id="5---open-after-effects"><a name="5---open-after-effects" class="plugin-anchor" href="#5---open-after-effects"><i class="fa fa-link" aria-hidden="true"></i></a>5 - Open After Effects</h3>
-<p>Under the menu &quot;Window &gt; Extensions&quot; you should see &quot;Bodymovin&quot;</p>
-<p><img src="../images/BodymovinMenu.gif" alt="Bodymovin in the menu"></p>
-<p>Now you&apos;re good to go!</p>
+                                <h1 id="troubleshooting"><a name="troubleshooting" class="plugin-anchor" href="#troubleshooting"><i class="fa fa-link" aria-hidden="true"></i></a>Troubleshooting</h1>
+<p>There will be times when your animation looks different in Lottie than it does in After Effects. Here are some things you can try to isolate the problems and find a workaround</p>
+<h2 id="dig-into-your-shape-layers"><a name="dig-into-your-shape-layers" class="plugin-anchor" href="#dig-into-your-shape-layers"><i class="fa fa-link" aria-hidden="true"></i></a>Dig into your shape layers</h2>
+<p>Sometimes when you bring an asset in from Sketch or Illustrator and convert it to a shape layer there will be some wierd things hidden in your shape layers. Its important to dig in and check each shape layer for errand paths or groups to make your file cleaner.</p>
+<p>Heres an example of a file that has extra paths, groups and merge paths. On the left is what was exported from Sketch. You can see there are two weird large artboards that extend way out of the composition bounds and on the right is the cleaned up version which is only the necessary shapes</p>
+<p><img src="../images/Debugging01.png" alt="Comparison"></p>
+<h2 id="isolate-problem-layers"><a name="isolate-problem-layers" class="plugin-anchor" href="#isolate-problem-layers"><i class="fa fa-link" aria-hidden="true"></i></a>Isolate problem layers</h2>
+<p>Sometimes when you have a really complicated composition with lots of layers you&apos;ll need to isolate problem areas. I recommend turning on layers one by one or by groups of a few starting from the bottom of the stack, and just test them until you can see which layer is causing the issues.</p>
+<p>Once you see which layer is looking strange you can dig into the shape layer and remove any weird paths or rebuild certain shapes to better work for lottie</p>
+<h2 id="check-for-effects-or-layer-styles"><a name="check-for-effects-or-layer-styles" class="plugin-anchor" href="#check-for-effects-or-layer-styles"><i class="fa fa-link" aria-hidden="true"></i></a>Check for Effects, or Layer styles</h2>
+<p>Lottie doesnt support effects or layer styles so If a layer has them it will probably be broken in Lottie.</p>
+<h2 id="check-for-unsupported-features"><a name="check-for-unsupported-features" class="plugin-anchor" href="#check-for-unsupported-features"><i class="fa fa-link" aria-hidden="true"></i></a>Check for unsupported features</h2>
+<p>Coming soon...</p>
+<h2 id="gradient-issues"><a name="gradient-issues" class="plugin-anchor" href="#gradient-issues"><i class="fa fa-link" aria-hidden="true"></i></a>Gradient issues</h2>
+<p>Coming soon...</p>
+<h2 id="animation-easings-are-off"><a name="animation-easings-are-off" class="plugin-anchor" href="#animation-easings-are-off"><i class="fa fa-link" aria-hidden="true"></i></a>Animation easings are off</h2>
+<p>Coming soon...</p>
 
                                 
                                 </section>
@@ -930,8 +935,12 @@
 
             
                 
+                <a href="../web/expressions.html" class="navigation navigation-prev " aria-label="Previous page: Expressions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="general-tips.html" class="navigation navigation-next navigation-unique" aria-label="Next page: General tips & guidelines">
+                
+                <a href="getting-started.html" class="navigation navigation-next " aria-label="Next page: After Effects">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -942,7 +951,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to install Bodymovin","level":"1.6.4","depth":2,"next":{"title":"General tips & guidelines","level":"1.6.5","depth":2,"path":"after-effects/general-tips.md","ref":"after-effects/general-tips.md","articles":[]},"previous":{"title":"Video tutorial","level":"1.6.3","depth":2,"url":"https://www.youtube.com/watch?v=5XMUJdjI0L8","ref":"https://www.youtube.com/watch?v=5XMUJdjI0L8","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"after-effects/bodymovin-installation.md","mtime":"2017-08-13T23:34:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-04T01:02:32.600Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Troubleshooting","level":"1.5.5","depth":2,"next":{"title":"After Effects","level":"1.6","depth":1,"path":"after-effects/getting-started.md","ref":"after-effects/getting-started.md","articles":[{"title":"Getting started","level":"1.6.1","depth":2,"path":"after-effects/getting-started.md","ref":"after-effects/getting-started.md","articles":[]},{"title":"Bodymovin settings","level":"1.6.2","depth":2,"path":"after-effects/bodymovin-settings.md","ref":"after-effects/bodymovin-settings.md","articles":[]},{"title":"Video tutorial","level":"1.6.3","depth":2,"url":"https://www.youtube.com/watch?v=5XMUJdjI0L8","ref":"https://www.youtube.com/watch?v=5XMUJdjI0L8","articles":[]},{"title":"How to install Bodymovin","level":"1.6.4","depth":2,"path":"after-effects/bodymovin-installation.md","ref":"after-effects/bodymovin-installation.md","articles":[]},{"title":"General tips & guidelines","level":"1.6.5","depth":2,"path":"after-effects/general-tips.md","ref":"after-effects/general-tips.md","articles":[]},{"title":"Sketch/SVG/Illustrator to Lottie walkthrough","level":"1.6.6","depth":2,"path":"after-effects/artwork-to-lottie-walkthrough.md","ref":"after-effects/artwork-to-lottie-walkthrough.md","articles":[]},{"title":"Advanced Illustrtor to Lottie walkthrough","level":"1.6.7","depth":2,"path":"after-effects/illustrator-to-lottie-walkthrough.md","ref":"after-effects/illustrator-to-lottie-walkthrough.md","articles":[]},{"title":"Troubleshooting","level":"1.6.8","depth":2,"path":"after-effects/troubleshooting.md","ref":"after-effects/troubleshooting.md","articles":[]}]},"previous":{"title":"Expressions","level":"1.5.4","depth":2,"path":"web/expressions.md","ref":"web/expressions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"after-effects/troubleshooting.md","mtime":"2017-10-04T00:33:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-04T01:02:32.600Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -12,3 +12,10 @@ There are two ways to render After Effects animations:
 
 ## Pros of AnimatedVectorDrawable
 * Faster peformance due to the animation running on the [RenderThread](https://medium.com/@workingkills/understanding-the-renderthread-4dc17bcaf979) vs the main thread.
+
+
+## Bodymovin AVD exporter
+Bodymovin can export some animations directly as AVDs if they suit your needs better.
+To do so, just check the AVD checkbox in the bodymovin settings:
+
+![AVD](/images/BodymovinAvd.png)

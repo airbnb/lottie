@@ -1,4 +1,4 @@
-# Debugging animations
+# Troubleshooting
 
 There will be times when your animation looks different in Lottie than it does in After Effects. Here are some things you can try to isolate the problems and find a workaround
 
@@ -18,7 +18,7 @@ Once you see which layer is looking strange you can dig into the shape layer and
 
 
 ## Check for Effects, or Layer styles
-Lottie doesnt support effects or layer styles so If a layer has them it will probably be broken in Lottie. 
+Lottie doesnt support effects or layer styles so If a layer has them it will probably be broken in Lottie.
 
 
 ## Check for unsupported features
