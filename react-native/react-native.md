@@ -39,7 +39,26 @@ android {
     // ...
 ```
 
-With this change you should be ready to go.
+Then, go to `android/build.gradle` and make sure it has  : 
+
+```
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        // Add the following 3 lines
+        maven { 
+            url 'https://maven.google.com'
+        }
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+    }
+}
+```
+
+With these changes you should be ready to go.
 
 Lottie's animation progress can be controlled with an `Animated` value:
 
