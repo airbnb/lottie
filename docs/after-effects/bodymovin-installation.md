@@ -24,3 +24,8 @@ Under the menu "Window > Extensions" you should see "Bodymovin"
 ![Bodymovin in the menu](/images/BodymovinMenu.gif)
 
 Now you're good to go!
+
+# More Bodymovin info
+
+Check out information about the Bodymovin settings [here](/after-effects/bodymovin-settings.md) <br>
+Also here is a video walkthrough of how to install and use Bodymovin [here](https://www.youtube.com/watch?v=5XMUJdjI0L8)
