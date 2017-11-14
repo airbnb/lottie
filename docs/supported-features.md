@@ -1,6 +1,6 @@
 # Supported Features
 
-| **Shapes** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Shapes** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 |:--|:-:|:-:|:-:|:-:|:-:|:-:|
 | Shape |                         👍 | 👍 | 👍 | 👍 | 👍 |
 | Ellipse |                       👍 | 👍 | 👍 | 👍 | 👍 |
@@ -10,13 +10,13 @@
 | Group |                         👍 | 👍 | 👍 | 👍 | 👍 |
 | Trim Path (individually) |      👍 | 👍 | 👍 | 👍 | 👍 |
 | Trim Path (simultaneously) |    👍 | 👍 | 👍 | 👍 | 👍 |
-| **Fills** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Fills** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Color |                         👍 | 👍 | 👍 | 👍 | 👍 |
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 |
 | Fill Rule |                     👍 | 👍 | 👍 | 👍 | 👍 |
 | Radial Gradient |               👍 | 👍 | 👍 | 👍 | 👍 |
 | Linear Gradient |               👍 | 👍 | 👍 | 👍 | 👍 |
-| **Strokes** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Strokes** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Color |                         👍 | 👍 | 👍 | 👍 | 👍 |
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 |
 | Width |                         👍 | 👍 | 👍 | 👍 | 👍 |
@@ -25,7 +25,7 @@
 | Miter Limit |                   👍 | 👍 | 👍 | 👍 | 👍 |
 | Dashes |                        👍 | 👍 | 👍 | 👍 | 👍 |
 | Gradient |                      👍 | ️️️️️️️️⛔️ | 👍 | 👍 | 👍 |
-| **Transforms** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Transforms** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Position |                      👍 | 👍 | 👍 | 👍 | 👍 |
 | Position (separated X/Y) |      👍 | 👍 | 👍 | 👍 | 👍 |
 | Scale |                         👍 | 👍 | 👍 | 👍 | 👍 |
@@ -34,13 +34,13 @@
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 |
 | Parenting |                     👍 | 👍 | 👍 | 👍 | 👍 |
 | Auto Orient |                   ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| **Interpolation** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Interpolation** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Linear Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 |
 | Bezier Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 |
 | Hold Interpolation |            👍 | 👍 | 👍 | 👍 | 👍 |
 | Spatial Bezier Interpolation |  👍 | 👍 | 👍 | 👍 | 👍 |
 | Rove Across Time |              👍 | 👍 | 👍 | 👍 | 👍 |
-| **Masks** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Masks** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Mask Path |                     👍 | 👍 | 👍 | 👍 | 👍 |
 | Mask Opacity |                  👍 | 👍 | 👍 | 👍 | 👍 |
 | Add |                           👍 | 👍 | 👍 | 👍 | 👍 |
@@ -51,25 +51,25 @@
 | Difference |                    ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | Expansion |                     ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 |
 | Feather |                       ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
-| **Mattes** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Mattes** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Alpha Matte |                   👍 | 👍 | 👍 | 👍 | 👍 |
 | Alpha Inverted Matte |          👍 | 👍 | 👍 | 👍 | 👍 |
 | Luma Matte |                    ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Track Matte |                   ⛔️ | ⛔️ | 👍 | ⛔️ | ⛔ |
-| **Merge Paths** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Merge Paths** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Merge |                         👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
 | Add |                           👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
 | Subtract |                      👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
 | Intersect |                     👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
 | Exclude Intersection |          👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
-| **Layer Effects** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Layer Effects** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Fill |                          ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Stroke |                        ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Tint |                          ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Tritone |                       ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Levels Individual Controls |    ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| **Text** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Text** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Glyphs |                        👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Fonts |                         👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Transform |                     👍 | ⛔️ | 👍 | 👍 | 👍 |
@@ -87,7 +87,7 @@
 | Range selector (Ease Low)       ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | Range selector (Randomize order) | ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | expression selector |           ⛔ | ⛔️ | 👍 | 👍 | 👍 |
-| **Other** | **Android** | **iOS** | **Bodymovin (SVG)** | **Bodymovin (Canvas)** | **Bodymovin (HTML)** |
+| **Other** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Expressions |                   ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Images |                        👍 | 👍 | 👍 | 👍 | 👍 |
 | Precomps |                      👍 | 👍 | 👍 | 👍 | 👍 |
