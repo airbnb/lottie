@@ -9,7 +9,7 @@
 ![ZxpInstaller](/images/ZxpInstaller.png)
 
 ### 3 - Download the latest bodymovin extension
-[https://github.com/bodymovin/bodymovin/tree/master/build/extension](https://github.com/bodymovin/bodymovin/blob/master/build/extension/bodymovin.zxp)
+[https://github.com/airbnb/lottie-web/tree/master/build/extension](https://github.com/airbnb/lottie-web/blob/master/build/extension/bodymovin.zxp)
 
 ![Bodymovin ZxpInstaller](/images/BodymovinZxp.png)
 
