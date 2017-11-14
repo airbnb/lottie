@@ -44,7 +44,7 @@ Blending modes such as Multiply, Screen or Add, aren't yet supported nor are Lum
 
 ## Full screen animations
 
-Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mdoe on iOS.
+Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mode on iOS.
 
 ## Make Nulls visible and have 0% opacity
 
