@@ -8,6 +8,7 @@ Lottie
   * [Images](/android/images.md)
   * [Performance](/android/performance.md)
   * [Lottie vs AVD](/android/avd.md)
+  * [APK size](/android/apk-size.md)
   * [Troubleshooting](/android/troubleshooting.md)
   * [Contributing](/android/contributing.md)
 * [iOS/MacOS](/ios.md)

@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="troubleshooting.html" />
+    <link rel="next" href="apk-size.html" />
     
     
     <link rel="prev" href="performance.html" />
@@ -207,7 +207,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="troubleshooting.html">
+        <li class="chapter " data-level="1.2.8" data-path="apk-size.html">
+            
+                <a href="apk-size.html">
+            
+                    
+                    APK size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="troubleshooting.html">
             
                 <a href="troubleshooting.html">
             
@@ -220,7 +233,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="contributing.html">
+        <li class="chapter " data-level="1.2.10" data-path="contributing.html">
             
                 <a href="contributing.html">
             
@@ -912,6 +925,8 @@
 <li>Manually set progress to hook up an animation to a gesture, event, etc.</li>
 <li>Download animations from the network.</li>
 <li>Dynamic playback speed.</li>
+<li>Masks are anti-aliased.</li>
+<li>Dynamically change the color of a specific part of an animations</li>
 </ul>
 <h2 id="pros-of-animatedvectordrawable"><a name="pros-of-animatedvectordrawable" class="plugin-anchor" href="#pros-of-animatedvectordrawable"><i class="fa fa-link" aria-hidden="true"></i></a>Pros of AnimatedVectorDrawable</h2>
 <ul>
@@ -919,8 +934,9 @@
 </ul>
 <h2 id="bodymovin-avd-exporter"><a name="bodymovin-avd-exporter" class="plugin-anchor" href="#bodymovin-avd-exporter"><i class="fa fa-link" aria-hidden="true"></i></a>Bodymovin AVD exporter</h2>
 <p>Bodymovin can export some animations directly as AVDs if they suit your needs better.
-To do so, just check the AVD checkbox in the bodymovin settings:</p>
-<p><img src="../images/BodymovinAvd.png" alt="AVD"></p>
+To do so, just check the AVD checkbox in the bodymovin settings:
+<img src="../images/BodymovinAvd.png" alt="AVD">
+This support is very experimental and only supports a subset of the functionality of lottie and avd.</p>
 
                                 
                                 </section>
@@ -937,7 +953,7 @@ To do so, just check the AVD checkbox in the bodymovin settings:</p>
                 </a>
                 
                 
-                <a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page: Troubleshooting">
+                <a href="apk-size.html" class="navigation navigation-next " aria-label="Next page: APK size">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -948,7 +964,7 @@ To do so, just check the AVD checkbox in the bodymovin settings:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lottie vs AVD","level":"1.2.7","depth":2,"next":{"title":"Troubleshooting","level":"1.2.8","depth":2,"path":"android/troubleshooting.md","ref":"android/troubleshooting.md","articles":[]},"previous":{"title":"Performance","level":"1.2.6","depth":2,"path":"android/performance.md","ref":"android/performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"android/avd.md","mtime":"2017-10-17T19:40:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-17T20:04:04.095Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lottie vs AVD","level":"1.2.7","depth":2,"next":{"title":"APK size","level":"1.2.8","depth":2,"path":"android/apk-size.md","ref":"android/apk-size.md","articles":[]},"previous":{"title":"Performance","level":"1.2.6","depth":2,"path":"android/performance.md","ref":"android/performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"android/avd.md","mtime":"2017-11-14T07:44:44.586Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-14T07:50:53.338Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
