@@ -8,7 +8,7 @@ Get the latest After Effects from Creative Cloud [here](http://www.adobe.com/pro
 
 
 
-### 2. Bodymovin
+### 2.  (After Effects Plugin)
 ![BodyMovin](/images/2-Bodymovin.png)
 Download and install the latest version of the Bodymovin Extension for After Effects. Detailed instructions [here](/after-effects/bodymovin-installation.md).
 

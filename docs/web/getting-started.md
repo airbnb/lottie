@@ -1,32 +1,32 @@
 # HTML player installation
 ## Static URL
 Or you can use the script file from here:
-https://cdnjs.com/libraries/bodymovin
+https://cdnjs.com/libraries/lottie-web
 
 ## From Extension
 Or get it directly from the AE plugin clicking on Get Player
 
-## Bodymovin light
-The extension includes `bodymovin_light.js` which will play animations exported as svgs.
+## lottie light
+The extension includes `lottie_light.js` which will play animations exported as svgs.
 
 ## NPM
 ```bash
-npm install bodymovin
+npm install lottie-web
 ```
 
 ## Bower
 ```bash
-bower install bodymovin
+bower install lottie-web
 ```
 
 ### HTML
-- get the bodymovin.js file from the build/player/ folder for the latest build
+- get the lottie.js file from the build/player/ folder for the latest build
 - include the .js file on your html (remember to gzip it for production)
 ```html
-<script src="js/bodymovin.js" type="text/javascript"></script>
+<script src="js/lottie.js" type="text/javascript"></script>
 ```
 
-You can call bodymovin.loadAnimation() to start an animation.
+You can call lottie.loadAnimation() to start an animation.
 It takes an object as a unique param with:
 - animationData: an Object with the exported animation data.
 - path: the relative path to the animation object. (animationData and path are mutually exclusive)
@@ -40,7 +40,7 @@ It takes an object as a unique param with:
 It returns the animation instance you can control with play, pause, setSpeed, etc.
 
 ```js
-bodymovin.loadAnimation({
+lottie.loadAnimation({
   container: element, // the dom element that will contain the animation
   renderer: 'svg',
   loop: true,
@@ -63,16 +63,16 @@ animation instances have these main methods:
 **anim.setSubframe(flag)** -- If false, it will respect the original AE fps. If true, it will update as much as possible. (true by default)<br/>
 **anim.destroy()**<br/>
 
-bodymovin has 8 main methods:
-**bodymovin.play()** -- with 1 optional parameter **name** to target a specific animation <br/>
-**bodymovin.stop()** -- with 1 optional parameter **name** to target a specific animation <br/>
-**bodymovin.setSpeed()** -- first param speed (1 is normal speed) -- with 1 optional parameter **name** to target a specific animation <br/>
-**bodymovin.setDirection()** -- first param direction (1 is normal direction.) -- with 1 optional parameter **name** to target a specific animation <br/>
-**bodymovin.searchAnimations()** -- looks for elements with class "bodymovin" <br/>
-**bodymovin.loadAnimation()** -- Explained above. returns an animation instance to control individually. <br/>
-**bodymovin.destroy()** -- To destroy and release resources. The DOM element will be emptied.<br />
-**bodymovin.registerAnimation()** -- you can register an element directly with registerAnimation. It must have the "data-animation-path" attribute pointing at the data.json url<br />
-**bodymovin.setQuality()** -- default 'high', set 'high','medium','low', or a number > 1 to improve player performance. In some animations as low as 2 won't show any difference.<br />
+lottie has 8 main methods:
+**lottie.play()** -- with 1 optional parameter **name** to target a specific animation <br/>
+**lottie.stop()** -- with 1 optional parameter **name** to target a specific animation <br/>
+**lottie.setSpeed()** -- first param speed (1 is normal speed) -- with 1 optional parameter **name** to target a specific animation <br/>
+**lottie.setDirection()** -- first param direction (1 is normal direction.) -- with 1 optional parameter **name** to target a specific animation <br/>
+**lottie.searchAnimations()** -- looks for elements with class "lottie" <br/>
+**lottie.loadAnimation()** -- Explained above. returns an animation instance to control individually. <br/>
+**lottie.destroy()** -- To destroy and release resources. The DOM element will be emptied.<br />
+**lottie.registerAnimation()** -- you can register an element directly with registerAnimation. It must have the "data-animation-path" attribute pointing at the data.json url<br />
+**lottie.setQuality()** -- default 'high', set 'high','medium','low', or a number > 1 to improve player performance. In some animations as low as 2 won't show any difference.<br />
 
 ## Events
 - onComplete
@@ -93,7 +93,7 @@ you can also use addEventListener with the following events:
 #### Other loading options
 - if you want to use an existing canvas to draw, you can pass an extra object: 'renderer' with the following configuration:
 ```js
-bodymovin.loadAnimation({
+lottie.loadAnimation({
   container: element, // the dom element
   renderer: 'svg',
   loop: true,
@@ -111,16 +111,16 @@ bodymovin.loadAnimation({
 Doing this you will have to handle the canvas clearing after each frame
 <br/>
 Another way to load animations is adding specific attributes to a dom element.
-You have to include a div and set it's class to bodymovin.
-If you do it before page load, it will automatically search for all tags with the class "bodymovin".
-Or you can call bodymovin.searchAnimations() after page load and it will search all elements with the class "bodymovin".
+You have to include a div and set it's class to lottie.
+If you do it before page load, it will automatically search for all tags with the class "lottie".
+Or you can call lottie.searchAnimations() after page load and it will search all elements with the class "lottie".
 <br/>
 - add the data.json to a folder relative to the html
 - create a div that will contain the animation.
 <br/>
  **Required**
  <br/>
- . a class called "bodymovin"
+ . a class called "lottie"
  . a "data-animation-path" attribute with relative path to the data.json
  <br/>
 **Optional**
@@ -131,6 +131,6 @@ Or you can call bodymovin.searchAnimations() after page load and it will search 
  **Example**
  <br/>
 ```html
- <div style="width:1067px;height:600px" class="bodymovin" data-animation-path="animation/" data-anim-loop="true" data-name="ninja"></div>
+ <div style="width:1067px;height:600px" class="lottie" data-animation-path="animation/" data-anim-loop="true" data-name="ninja"></div>
 ```
 <br/>
