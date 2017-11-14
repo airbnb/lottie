@@ -36,7 +36,7 @@ Lottie
   * [Troubleshooting](/after-effects/troubleshooting.md)
 * [After Effects](/after-effects/getting-started.md)
   * [Getting started](/after-effects/getting-started.md)
-  * [Installing Bodymovin](/after-effects/bodymovin-installation.md)
+  * [Install Bodymovin Plugin](/after-effects/bodymovin-installation.md)
     * [Bodymovin settings](/after-effects/bodymovin-settings.md)
   * [General tips & guidelines](/after-effects/general-tips.md)
   * [Sketch/SVG/Illustrator to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md)
