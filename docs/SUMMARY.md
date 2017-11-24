@@ -25,7 +25,7 @@ Lottie
   * [Troubleshooting](/ios/troubleshooting.md)
 * [React Native](/react-native/react-native.md)
   * [Getting Started](/react-native/react-native.md#getting-started)
-  * [Sample App](/react-native/react-native.md#sample-app)
+  * [Sample App](/react-native/sample-app.md)
   * [Props](/react-native/props.md)
   * [Troubleshooting](/web/troubleshooting.md)
 * [Web](/web/web.md)

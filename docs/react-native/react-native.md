@@ -83,7 +83,7 @@ Lottie's animation progress can be controlled with an `Animated` value:
 ```jsx
 import React from 'react';
 import { Animated } from 'react-native';
-import Animation from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 
 export default class BasicExample extends React.Component {
   constructor(props) {
@@ -102,14 +102,7 @@ export default class BasicExample extends React.Component {
 
   render() {
     return (
-      <Animation
-        style={{
-          width: 200,
-          height: 200,
-        }}
-        source={require('../path/to/animation.json')}
-        progress={this.state.progress}
-      />
+      <LottieView source={require('../path/to/animation.json')} progress={this.state.progress} />
     );
   }
 }
@@ -119,22 +112,20 @@ Additionally, there is an imperative API which is sometimes simpler.
 
 ```jsx
 import React from 'react';
-import Animation from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 
 export default class BasicExample extends React.Component {
   componentDidMount() {
     this.animation.play();
+    // Or set a specific startFrame and endFrame with:
+    this.animation.play(30, 120);
   }
 
   render() {
     return (
-      <Animation
+      <LottieView
         ref={animation => {
           this.animation = animation;
-        }}
-        style={{
-          width: 200,
-          height: 200,
         }}
         source={require('../path/to/animation.json')}
       />
@@ -142,22 +133,3 @@ export default class BasicExample extends React.Component {
   }
 }
 ```
-
-## Sample App
-
-You can check out the example project with the following instructions
-
-1. Clone the repo: `git clone https://github.com/airbnb/lottie-react-native.git`
-2. Open: `cd lottie-react-native` and Install: `npm install`
-3. Run `npm start` to start the packager. ** The packager must be running to use the sample apps.**
-4. In another CLI window, do the following:
-
-For Running iOS:
-
-1. If you don't have CocoaPods installed, run `bundle install`
-2. Install pods: `npm run build:pods`
-3. Run Example: `npm run run:ios`
-
-For Running Android:
-
-1. Run Example: `npm run run:android`
