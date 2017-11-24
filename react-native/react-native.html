@@ -440,9 +440,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="react-native.html">
+        <li class="chapter " data-level="1.4.2" data-path="sample-app.html">
             
-                <a href="react-native.html#sample-app">
+                <a href="sample-app.html">
             
                     
                     Sample App
@@ -929,23 +929,31 @@ pod <span class="token string">&apos;lottie-react-native&apos;</span><span class
 <pre class="language-"><code class="lang-bash language-">react-native <span class="token function">link</span> lottie-ios
 react-native <span class="token function">link</span> lottie-react-native
 </code></pre>
-<p>After this, open the Xcode project configuration and add the <code class="language-">Lottie.framework</code> as <code class="language-">Embedded Binaries</code>.</p>
+<p>After this, open the Xcode project configuration and add the <code class="language-">Lottie.framework</code> as <code class="language-">Embedded
+Binaries</code>.</p>
 <h3 id="android"><a name="android" class="plugin-anchor" href="#android"><i class="fa fa-link" aria-hidden="true"></i></a>Android</h3>
 <p>For android, you can <code class="language-">react-native link</code> as well:</p>
 <pre class="language-"><code class="lang-bash language-">react-native <span class="token function">link</span> lottie-react-native
 </code></pre>
-<p>or you can add it to your <code class="language-">build.gradle</code> file:</p>
+<p>or you can add it manually:</p>
+<p><code class="language-">settings.gradle</code>:</p>
+<pre class="language-"><code class="lang-groovy language-">
+include <span class="token string">&apos;:lottie-react-native&apos;</span>
+<span class="token function">project</span><span class="token punctuation">(</span><span class="token string">&apos;:lottie-react-native&apos;</span><span class="token punctuation">)</span><span class="token operator">.</span>projectDir <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>rootProject<span class="token operator">.</span>projectDir<span class="token punctuation">,</span> <span class="token string">&apos;../node_modules/lottie-react-native/lib/android&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p><code class="language-">build.gradle</code>:</p>
 <pre class="language-"><code class="lang-groovy language-">
 dependencies <span class="token punctuation">{</span>
   <span class="token punctuation">...</span>
-  compile <span class="token string">&apos;com.airbnb.android:lottie:2.2.5&apos;</span>
+  compile <span class="token function">project</span><span class="token punctuation">(</span><span class="token string">&apos;:lottie-react-native&apos;</span><span class="token punctuation">)</span>
   <span class="token punctuation">...</span>
 <span class="token punctuation">}</span>
 </code></pre>
 
-<p>Lottie requires Android support library version 26. If you&apos;re using the <code class="language-">react-native init</code> template,
-you may still be using 23. To change this, simply go to <code class="language-">android/app/build.gradle</code> and find the
-<code class="language-">compileSdkVersion</code> option inside of the <code class="language-">android</code> block and change it to</p>
+<p>Lottie requires Android support library version 26. If you&apos;re using the <code class="language-">react-native init</code>
+template, you may still be using 23. To change this, simply go to <code class="language-">android/app/build.gradle</code> and
+find the <code class="language-">compileSdkVersion</code> option inside of the <code class="language-">android</code> block and change it to</p>
 <pre class="language-"><code class="language-">android {
     compileSdkVersion 26 // &lt;-- update this to 26
     // ...
@@ -963,7 +971,7 @@ you may still be using 23. To change this, simply go to <code class="language-">
 <p>Lottie&apos;s animation progress can be controlled with an <code class="language-">Animated</code> value:</p>
 <pre class="language-"><code class="lang-jsx language-"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Animated <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-native&apos;</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> Animation <span class="token keyword">from</span> <span class="token string">&apos;lottie-react-native&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> LottieView <span class="token keyword">from</span> <span class="token string">&apos;lottie-react-native&apos;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">BasicExample</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -982,34 +990,27 @@ you may still be using 23. To change this, simply go to <code class="language-">
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Animation</span>
-        <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
-          width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-          height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
-        <span class="token attr-name">source</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;../path/to/animation.json&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
-        <span class="token attr-name">progress</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>progress<span class="token punctuation">}</span></span>
-      <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LottieView</span> <span class="token attr-name">source</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;../path/to/animation.json&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">progress</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>progress<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Additionally, there is an imperative API which is sometimes simpler.</p>
 <pre class="language-"><code class="lang-jsx language-"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> Animation <span class="token keyword">from</span> <span class="token string">&apos;lottie-react-native&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> LottieView <span class="token keyword">from</span> <span class="token string">&apos;lottie-react-native&apos;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">BasicExample</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>animation<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Or set a specific startFrame and endFrame with:</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>animation<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Animation</span>
-        <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>animation <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>animation <span class="token operator">=</span> animation<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
-        <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
-          width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-          height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LottieView</span>
+        <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>animation <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>animation <span class="token operator">=</span> animation<span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
         <span class="token attr-name">source</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;../path/to/animation.json&apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
       <span class="token punctuation">/&gt;</span></span>
@@ -1017,24 +1018,6 @@ you may still be using 23. To change this, simply go to <code class="language-">
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="sample-app"><a name="sample-app" class="plugin-anchor" href="#sample-app"><i class="fa fa-link" aria-hidden="true"></i></a>Sample App</h2>
-<p>You can check out the example project with the following instructions</p>
-<ol>
-<li>Clone the repo: <code class="language-">git clone https://github.com/airbnb/lottie-react-native.git</code></li>
-<li>Open: <code class="language-">cd lottie-react-native</code> and Install: <code class="language-">npm install</code></li>
-<li>Run <code class="language-">npm start</code> to start the packager. <strong> The packager must be running to use the sample apps.</strong></li>
-<li>In another CLI window, do the following:</li>
-</ol>
-<p>For Running iOS:</p>
-<ol>
-<li>If you don&apos;t have CocoaPods installed, run <code class="language-">bundle install</code></li>
-<li>Install pods: <code class="language-">npm run build:pods</code></li>
-<li>Run Example: <code class="language-">npm run run:ios</code></li>
-</ol>
-<p>For Running Android:</p>
-<ol>
-<li>Run Example: <code class="language-">npm run run:android</code></li>
-</ol>
 
                                 
                                 </section>
@@ -1062,7 +1045,7 @@ you may still be using 23. To change this, simply go to <code class="language-">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React Native","level":"1.4","depth":1,"next":{"title":"Getting Started","level":"1.4.1","depth":2,"anchor":"#getting-started","path":"react-native/react-native.md","ref":"react-native/react-native.md#getting-started","articles":[]},"previous":{"title":"Troubleshooting","level":"1.3.11","depth":2,"path":"ios/troubleshooting.md","ref":"ios/troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"react-native/react-native.md","mtime":"2017-09-23T00:09:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-14T22:18:06.149Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React Native","level":"1.4","depth":1,"next":{"title":"Getting Started","level":"1.4.1","depth":2,"anchor":"#getting-started","path":"react-native/react-native.md","ref":"react-native/react-native.md#getting-started","articles":[]},"previous":{"title":"Troubleshooting","level":"1.3.11","depth":2,"path":"ios/troubleshooting.md","ref":"ios/troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.0.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.2.5","iosVersion":"2.1.3","reactNativeVersion":"2.2.7"},"title":"Lottie","gitbook":"3.2.2","description":"After Effects Animations for Android, iOS, React Native, and Web"},"file":{"path":"react-native/react-native.md","mtime":"2017-11-24T21:43:07.620Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-24T21:44:05.506Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
