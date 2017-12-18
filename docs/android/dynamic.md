@@ -1,6 +1,6 @@
 # Updating Properties Dynamically
 
-With Lottie 2.3.2+, you can update properties dynamically at runtime. This can be used for a variety of purposes such as:
+With Lottie 2.5.0+, you can update properties dynamically at runtime. This can be used for a variety of purposes such as:
 * Theming (day and night or arbitrary themes).
 * Responding to events such as an error or a success.
 * Animating a single part of an animation in response to an event.
