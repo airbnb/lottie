@@ -25,9 +25,11 @@ After you're all setup with those three things, check out our [general tips](/af
 ### 😍 Additional goodies 😍
 All of these goodies are <b>Highly recommended</b>. They arent essential, because you can still create for Lottie whtout them. But your workflow will be significantly faster and better with these extra tools.
 
-[Explode shape layers](http://aescripts.com/explode-shape-layers/) is a fantastic tool created by [Zack Lovatt ](https://twitter.com/zlovatt?lang=en)for after effects that helps in the conversion of illustrator files to shape layers.
+[Overlord](http://www.battleaxe.co/overlord/) by [Adam Plouff](https://twitter.com/adamplouff) is the ideal Illustrator to  After Effects workflow. It is an extension for After Effects and Illustrator that helps get artwork back and forth between the two programss. "Think of Overlord as a way to use Adobe Illustrator as a drawing plugin for After Effects." -Lester Banks.
 
-[Sketch2AE](https://google.github.io/sketch2ae/) is an amazing new tool from [Adam Plouff](http://adamplouff.com/) and the [Google SUMux](https://design.google/) team. It assists in bringing artwork from Sketch to After Effects
+[Explode shape layers](http://aescripts.com/explode-shape-layers/) is a fantastic tool created by [Zack Lovatt](https://twitter.com/zlovatt?lang=en) for After Effects that helps in the managing of shape layers.
+
+[Sketch2AE](https://google.github.io/sketch2ae/) is another amazing new tool from [Adam Plouff](http://adamplouff.com/) and the [Google SUMux](https://design.google/) team. It assists in bringing artwork from Sketch to After Effects
 
 [Parametric converter](https://www.kyle-martinez.com/tools/parametric-converter/) made by [Kyle Martinez](https://twitter.com/kyletmartinez) converts bezier shapes to parametric shapes. Its super helpful when you have an illustrator file that has elipses or rectangles as paths, and you need them converted to the parametric shapes with size controls etc.
 
