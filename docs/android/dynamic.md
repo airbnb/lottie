@@ -6,6 +6,10 @@ With Lottie 2.5.0+, you can update properties dynamically at runtime. This can b
 * Animating a single part of an animation in response to an event.
 * Responding to view sizes or other values not known at design time.
 
+## Understanding After Effects
+To understand how to change animation properties in Lottie, you should first understand how animation properties are stored in Lottie.
+Animation properties are stored in a data tree that mimics the information heirarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `KeyPath`.
+
 ## Usage
 To update a property at runtime, you need 3 things:
 1. KeyPath
@@ -45,21 +49,30 @@ There are also some helper `ValueCallback` subclasses such as `LottieStaticValue
 ```java
   animationView.addValueCallback(
       new KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR,
+      LottieProperty.COLOR_FILTER,
       new LottieStaticValueCallback<>(Color.RED));
 ```
 
 ```java
 animationView.addValueCallback(
     new KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR,
-    (
-        float startFrame, float endFrame,
-        Integer startValue, Integer endValue,
-        float linearKeyframeProgress, float interpolatedKeyframeProgress,
-        float overallProgress) -> {
+    LottieProperty.COLOR_FILTER,
+    (frameInfo) -> {
       return overallProgress < 0.5 ? Color.GREEN : Color.RED;
     }
+);
+```
+
+or Kotlin
+```kotlin
+  animationView.addValueCallback(
+      KeyPath("Shape Layer", "Rectangle", "Fill"),
+      LottieProperty.COLOR_FILTER) { Color.RED };
+```
+```kotlin
+animationView.addValueCallback(
+    KeyPath("Shape Layer", "Rectangle", "Fill"),
+    LottieProperty.COLOR_FILTER) { frameInfo -> frameInfo.overallProgress < 0.5 ? Color.GREEN : Color.RED }
 );
 ```
 
@@ -111,8 +124,43 @@ The following value can be modified:
 
 ## Notable Properties
 
-## Time Remapping
+### Time Remapping
 Compositions and precomps (composition layers) have an a time remap proprty. If you set a value callback for time remapping, you control the progress of a specific layer. To do so, return the desired time value in seconds from your value callback.
 
-## Color Filters
+### Color Filters
 The only animatable property that doesn't map 1:1 to an After Effects property is the color filter property you can set on fill content. This can be used to set blend modes on layers. It will only apply to the color of that fill, not any overlapping content.
+
+## Migrating from the old `addColorFilter` API
+If you were using the old API to dynamically change a color, you will need to migrate to the new one. To do so upgrade your code as follows:
+```java
+animationView.addColorFilter(colorFilter);
+```
+becomes
+```java
+animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+```
+------
+```java
+animationView.addColorFilterToLayer("hello_layer", colorFilter);
+```
+becomes
+```java
+animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+```
+------
+```java
+animationView.addColorFilterToContent("hello_layer", "hello", colorFilter);
+```
+becomes
+```java
+
+animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+```
+------
+```java
+animationView.clearColorFilters();
+```
+becomes
+```java
+animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, null);
+```
