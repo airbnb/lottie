@@ -45,6 +45,11 @@ The ValueCallback is what gets called every time the animation is rendered. The 
 
 There are also some helper `ValueCallback` subclasses such as `LottieStaticValueCallback` that takes a single value of the correct type in its constructor and will always return that. Think of it as a fire and forget value. There is also a relative value callback that offsets the real animation value by a specified amount.
 
+### ValueCallback classes
+* LottieValueCallback<T>: Either set a static value in the contructor or override getValue() to set the value on every frame.
+* LottieRelativeTYPEValueCallback: Either set a static value in the constructor or override getOffset() to set a value taht will be applied as an offset to the actual animation value on each frame. TYPE is the same type as the LottieProperty parameter.
+* LottieInterpolatedTYPEValue: Supply a start value, end value, and optional interpolator to have the value automatically interpolate across the entire animation. TYPE is the same type as the LottieProperty parameter.
+
 ## Usage
 ```java
   animationView.addValueCallback(
