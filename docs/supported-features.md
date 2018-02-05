@@ -84,7 +84,7 @@
 | Range selector (Amount) |       ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | Range selector (Shape) |        ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | Range selector (Ease High) |    ⛔ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Ease Low)       ⛔ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Ease Low)  |    ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | Range selector (Randomize order) | ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | expression selector |           ⛔ | ⛔️ | 👍 | 👍 | 👍 |
 | **Other** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
