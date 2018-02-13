@@ -6,18 +6,18 @@ Lottie is a mobile library for Android and iOS that parses [Adobe After Effects]
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here are 13,000:
 
-![Lottie Logo animation](images/Introduction_00_sm.gif)
+![Lottie Logo animation](../images/Introduction_00_sm.gif)
 
-![Example1](images/Introduction_01_sm.gif)
-
-
-![Example2](images/Introduction_02_sm.gif)
+![Example1](../images/Introduction_01_sm.gif)
 
 
-![Example3](images/Introduction_03_sm.gif)
+![Example2](../images/Introduction_02_sm.gif)
 
 
-![Example4](images/Introduction_04_sm.gif)
+![Example3](../images/Introduction_03_sm.gif)
+
+
+![Example4](../images/Introduction_04_sm.gif)
 
 
 All of these animations were created in After Effects, exported with Bodymovin, and rendered natively with no additional engineering effort.
