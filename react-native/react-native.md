@@ -45,7 +45,7 @@ Lottie's animation progress can be controlled with an `Animated` value:
 
 ```jsx
 import React from 'react';
-import { Animated } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import Animation from 'lottie-react-native';
 
 export default class BasicExample extends React.Component {
@@ -60,6 +60,7 @@ export default class BasicExample extends React.Component {
     Animated.timing(this.state.progress, {
       toValue: 1,
       duration: 5000,
+      easing: Easing.linear,
     }).start();
   }
 
