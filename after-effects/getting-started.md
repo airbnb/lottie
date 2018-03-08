@@ -24,7 +24,7 @@ After you're all setup, check out our [general tips](/after-effets/general-tips.
 
 
 ### 😍 Additional goodies 😍
-All of these goodies are highly recommended. They arent essential, because you can still create for Lottie whtout them. But your workflow will be significantly faster and better with these extra tools.
+All of these goodies are highly recommended. They arent essential, because you can still create for Lottie without them. But your workflow will be significantly faster and better with these extra tools.
 
 [Explode shape layers](http://aescripts.com/explode-shape-layers/) is a fantastic tool created by [Zack Lovatt ](https://twitter.com/zlovatt?lang=en)for after effects that helps in the conversion of illustrator files to shape layers. Highly recommended!
 
