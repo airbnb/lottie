@@ -8,9 +8,9 @@
     "summary": "SUMMARY.md"
   },
   "variables": {
-    "androidVersion": "2.5.0-rc1",
+    "androidVersion": "2.5.1",
     "iosVersion": "2.5.0",
-    "reactNativeVersion": "2.2.7"
+    "reactNativeVersion": "2.3.2"
   },
   "plugins": [
     "edit-link",
