@@ -66,6 +66,10 @@ android {
 You must also add the `LottiePackage` to `getPackages()` in your `ReactApplication`
 
 ```java
+    import com.airbnb.android.react.lottie.LottiePackage;
+    
+    ...
+    
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
