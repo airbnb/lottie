@@ -44,7 +44,7 @@ Lottie
     * [Bodymovin settings](/after-effects/bodymovin-settings.md)
   * [General tips & guidelines](/after-effects/general-tips.md)
   * [Sketch/SVG/Illustrator to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md)
-  * [Advanced Illustrtor to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
+  * [Advanced Illustrator to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
   * [Troubleshooting](/after-effects/troubleshooting.md)
 * [Supported After Effects Features](/supported-features.md)
 * [Other Platforms](/other-platforms.md)
