@@ -5,7 +5,7 @@ Lottie can do more than just play beautiful animations. Lottie allows you to **c
 ##LOTKeypath
 
 To understand how to change animation properties in Lottie, you should first understand how animation properties are stored in Lottie.
-Animation properties are stored in a data tree that mimics the information heirarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `LOTKeypath`. A `LOTKeypath` is an object initialized with a list of `String` names. `LOTKeypath`  is used to search the backing animation data for properties and objects. Keypath string names should match the names used for layers and objects in the animation data. 
+Animation properties are stored in a data tree that mimics the information heirarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `LOTKeypath`. A `LOTKeypath` is an object initialized with a list of `String` names. `LOTKeypath`  is used to search the backing animation data for properties and objects. Keypath string names should match the names used for layers and objects in the animation data.
 
 Wildcards (\*) and Globstars (\*\*) can be used to search through keypaths. Wildcards will search through a single depth layer, globstars will search any depth.
 
@@ -23,7 +23,7 @@ We can search for it explicitly by creating a keypath that targets `Boat.Transfo
 let keypath = LOTKeypath(string: "Boat.Transform.Position")
 ```
 ####Objective-C
-```objective-c
+```objectivec
 LOTKeypath *keypath = [LOTKeypath keypathWithKeys:@"Boat", @"Transform", @"Position", nil];
 //  ----OR-----
 LOTKeypath *keypath = [LOTKeypath keypathWithString@"Boat.Transform.Position"];
@@ -38,7 +38,7 @@ Suppose you are interested in changing the color of any shape group named `Fish`
 let keypath = LOTKeypath(string: "**.Fish.Fill.Color")
 ```
 ####Objective-C
-```objective-c
+```objectivec
 LOTKeypath *keypath = [LOTKeypath keypathWithKeys:@"**", @"Fish", @"Fill", @"Color", nil];
 //  ----OR-----
 LOTKeypath *keypath = [LOTKeypath keypathWithString@"*.Fish.Fill.Color"];
@@ -46,14 +46,14 @@ LOTKeypath *keypath = [LOTKeypath keypathWithString@"*.Fish.Fill.Color"];
 
 ##LOTValueDelegate
 
-`LOTValueDelegate` is a collection of 5 protocols used to provide new animation data for a given `LOTKeypath` search. 
-A value delegate is called every frame while an animation plays and requests the override data for the given property. The delegate is given the current frame of the animation, and the animation property's current data. If animation already existed for the property the delegate is given the leading and trailing keyframe as well as the current interpolated progress. Each of the 5 protocols returns a different type of animated data. 
+`LOTValueDelegate` is a collection of 5 protocols used to provide new animation data for a given `LOTKeypath` search.
+A value delegate is called every frame while an animation plays and requests the override data for the given property. The delegate is given the current frame of the animation, and the animation property's current data. If animation already existed for the property the delegate is given the leading and trailing keyframe as well as the current interpolated progress. Each of the 5 protocols returns a different type of animated data.
 
 The protocols are `LOTColorValueDelegate`, `LOTNumberValueDelegate`, `LOTPointValueDelegate`, `LOTSizeValueDelegate`, `LOTPathValueDelegate`.
 
 ##Predefined LOTValueDelegate Objects
 
-Lottie contains several predefined objects that conform to `LOTValueDelegate` that support a number of basic operations. There are three types of objects, `LOTValueCallback`, `LOTBlockCallback`, and `LOTInterpolatorCallback`. Each type contains an object for a specific data type. Example `LOTValueCallback` contains `LOTNumberValueCallback`, `LOTColorValueCallback`, etc. 
+Lottie contains several predefined objects that conform to `LOTValueDelegate` that support a number of basic operations. There are three types of objects, `LOTValueCallback`, `LOTBlockCallback`, and `LOTInterpolatorCallback`. Each type contains an object for a specific data type. Example `LOTValueCallback` contains `LOTNumberValueCallback`, `LOTColorValueCallback`, etc.
 
 ###LOTValueCallback
 
@@ -65,13 +65,13 @@ Example:
 let colorCallback = LOTColorValueCallback(color:UIColor.blueColor.CGColor)
 ```
 ####Objective-C
-```objective-c
+```objectivec
 LOTColorValueCallback *colorCallback = [LOTColorValueCallback withCGColor:[UIColor blueColor].CGColor];
 ```
 
 ###LOTBlockCallback
 
-`LOTBlockCallback` is similar to valueCallback, but instead holds a block or closure that is called every frame for the property. There are 5 different block callback objects: `LOTColorBlockCallback`, `LOTNumberBlockCallback`, `LOTPointBlockCallback`, `LOTSizeBlockCallback`, `LOTPathBlockCallback`. 
+`LOTBlockCallback` is similar to valueCallback, but instead holds a block or closure that is called every frame for the property. There are 5 different block callback objects: `LOTColorBlockCallback`, `LOTNumberBlockCallback`, `LOTPointBlockCallback`, `LOTSizeBlockCallback`, `LOTPathBlockCallback`.
 
 Example:
 ####Swift
@@ -81,7 +81,7 @@ let colorBlock = LOTColorBlockCallback { (currentFrame, startKeyFrame, endKeyFra
 }
 ```
 ####Objective-C
-```objective-c
+```objectivec
 LOTColorBlockCallback *colorBlock = [LOTColorBlockCallback withBlock:^CGColorRef _Nonnull(CGFloat currentFrame, CGFloat startFrame, CGFloat endFrame, CGFloat interpolatedProgress, CGColorRef  _Nullable startColor, CGColorRef  _Nullable endColor, CGColorRef  _Nullable interpolatedColor) {
     return aColor;
 }];
@@ -89,7 +89,7 @@ LOTColorBlockCallback *colorBlock = [LOTColorBlockCallback withBlock:^CGColorRef
 
 ###LOTInterpolatorCallback
 
-`LOTInterpolatorCallback` is used to interpolate between two values using a progress from 0 to 1. Each Interpolator contains a startValue, endvalue, and a currentProgress. When currentProgress is changed externally, the property is set with the interpolated value. There are 5 different interpolator callback objects: `LOTColorInterpolatorCallback`, `LOTNumberInterpolatorCallback`, `LOTPointInterpolatorCallback`, `LOTSizeInterpolatorCallback`, `LOTPathInterpolatorCallback`. 
+`LOTInterpolatorCallback` is used to interpolate between two values using a progress from 0 to 1. Each Interpolator contains a startValue, endvalue, and a currentProgress. When currentProgress is changed externally, the property is set with the interpolated value. There are 5 different interpolator callback objects: `LOTColorInterpolatorCallback`, `LOTNumberInterpolatorCallback`, `LOTPointInterpolatorCallback`, `LOTSizeInterpolatorCallback`, `LOTPathInterpolatorCallback`.
 
 Example:
 ####Swift
@@ -99,7 +99,7 @@ positionInterpolator.currentProgress = 0.5
 // Sets the position to the halfway point between start and end point.
 ```
 ####Objective-C
-```objective-c
+```objectivec
 LOTPointInterpolatorCallback *positionInterpolator = [LOTPointInterpolatorCallback withFromPoint:startPoint toPoint:endPoint];
 positionInterpolator.currentProgress = 0.5;
 // Sets the position to the halfway point between start and end point.
@@ -109,7 +109,7 @@ positionInterpolator.currentProgress = 0.5;
 
 After creating a `LOTKeypath` and a `LOTValueDelegate` it is possible to set the delegate on an existing `LOTAnimationView`.
 
-`setValueDelegate:forKeypath:` will search through the exisiting animation view, and set the `valueDelegate` on each property that matches the `keypath`. The animation will be forced to redraw. An exception will be thrown if the data type of the property does not match the data type of the delegate (Example: setting number delegate on color property). 
+`setValueDelegate:forKeypath:` will search through the exisiting animation view, and set the `valueDelegate` on each property that matches the `keypath`. The animation will be forced to redraw. An exception will be thrown if the data type of the property does not match the data type of the delegate (Example: setting number delegate on color property).
 
 **NOTE** `LOTAnimationView` maintains a WEAK reference to the delegate. This helps reduce retain cycles. You must maintain a reference to the delegate to keep it in memory.
 

@@ -58,11 +58,11 @@
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Track Matte |                   ⛔️ | ⛔️ | 👍 | ⛔️ | ⛔ |
 | **Merge Paths** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
-| Merge |                         👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
-| Add |                           👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
-| Subtract |                      👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
-| Intersect |                     👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
-| Exclude Intersection |          👍 (KitKat+) | ⛔ | 👍 | 👍 | 👍 |
+| Merge |                         👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
+| Add |                           👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
+| Subtract |                      👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
+| Intersect |                     👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
+| Exclude Intersection |          👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
 | **Layer Effects** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Fill |                          ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Stroke |                        ⛔️ | ⛔️ | 👍 | 👍 | 👍 |

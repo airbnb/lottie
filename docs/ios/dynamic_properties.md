@@ -38,7 +38,7 @@ func createDownloadTask() {
  }
 ```
 ####Objective-C:
-```objective-c
+```objectivec
 - (void)createDownloadTask {
   NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg"]];
   NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
@@ -66,7 +66,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
 ```
 
 ####Objective-C:
-```objective-c
+```objectivec
 @interface LADownloadTestViewController () <NSURLSessionDownloadDelegate>
 
 @end
@@ -109,7 +109,7 @@ override func viewDidLoad() {
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
@@ -148,7 +148,7 @@ override func viewDidLoad() {
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -177,7 +177,7 @@ A `LOTKeypath` is used to match views inside of a LOTAnimation to their counterp
 
 `LOTValueDelegate` is a protocol that is called for a specific keypath as an animation plays. It can override the keypath's data by returning new data for the keypath. There are several subclasses of `LOTValueDelegate`, one for each primitive type: Color, Number, Point, Size, and Path. There are also pre-built objects that adhere to `LOTValueDelegate` to perform basic animation driving functions. The pre-built objects come in three flavors each with subclasses for each primitive: `LOTValueCallback`, `LOTBlockCallback`, `LOTInterpolatorCallback`. For this excercise we will use a `LOTInterpolatorCallback`. For more information see the documentation for `LOTValueCallback`, `LOTBlockCallback`, `LOTInterpolatorCallback`.
 
-Lets set up our `LOTInterpolatorCallback`. A `LOTInterpolatorCallback` contains a `startPoint`, an `endPoint`, and a `currentProgress` property. As the `currentProgress` property is driven from 0 to 1, the interpolator will move the animation property specified by the keypath from the `startPoint` to the `endPoint`. We will want the boat layer to move from the center of the screen up one entire screen height. Its important to note that Lottie maintains a weak reference to any delegate added. The view controller will hold the interpolator since it needs to make changes as the download progresses. 
+Lets set up our `LOTInterpolatorCallback`. A `LOTInterpolatorCallback` contains a `startPoint`, an `endPoint`, and a `currentProgress` property. As the `currentProgress` property is driven from 0 to 1, the interpolator will move the animation property specified by the keypath from the `startPoint` to the `endPoint`. We will want the boat layer to move from the center of the screen up one entire screen height. Its important to note that Lottie maintains a weak reference to any delegate added. The view controller will hold the interpolator since it needs to make changes as the download progresses.
 
 Dynamic properties work in the animation's coordinate space, so we will have to convert the screen coordinates into the `Boat` layer coordinates using the `convertPoint:toKeypathLayer` function on `LOTAnimationView`. This function finds the layer at the specified keypath and converts the given point from the animation's parent view coordinate space into the layers coordinate space.
 
@@ -200,7 +200,7 @@ positionInterpolator = LOTPointInterpolatorCallback(from: boatStartPoint, to: bo
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 // The center of the screen
 CGPoint screenCenter = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 // The center one screen height above the screen.
@@ -232,7 +232,7 @@ boatAnimation!.play(fromProgress: 0,
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 // Set the interpolator on the animation view for the Boat.Transform.Position keypath.
 [_boatLoader setValueDelegate:_positionInterpolator forKeypath:[LOTKeypath keypathWithKeys:@"Boat", @"Transform", @"Position", nil]];
 
@@ -252,7 +252,7 @@ func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, did
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
       didWriteData:(int64_t)bytesWritten
@@ -262,7 +262,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 }
 ```
 
-Run the App and press download. You should see the water filling the screen as the download progresses! Fantastic! We're almost done! When the download finishes the animation should play through the current loop, then play the last half of the animation, which will notify the success of the download. 
+Run the App and press download. You should see the water filling the screen as the download progresses! Fantastic! We're almost done! When the download finishes the animation should play through the current loop, then play the last half of the animation, which will notify the success of the download.
 
 ####Swift:
 ```swift
@@ -272,7 +272,7 @@ func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, did
     boatAnimation!.loopAnimation = false
     // Speed up animation to finish out the current loop.
     boatAnimation!.animationSpeed = 4
-    
+
     boatAnimation!.play(toProgress: 0.5) {[weak self] (_) in
       // At this time the animation is at the halfway point. Reset sped to 1 and play through the completion animation.
       self?.boatAnimation!.animationSpeed = 1
@@ -282,7 +282,7 @@ func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, did
  ```
 
 ####Objective-C
-```objective-c
+```objectivec
 - (void)URLSession:(nonnull NSURLSession *)session
       downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(nonnull NSURL *)location {

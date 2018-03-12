@@ -1,10 +1,13 @@
 #!/bin/bash
 
-command -v gitbook >/dev/null 2>&1 || { npm install -g gitbook-cli; gitbook install; }
+command -v gitbook >/dev/null 2>&1 || { npm install -g gitbook-cli; }
 
 rm -rf _book
 mkdir -p _book
+gitbook install
 gitbook build
+
+cp -r images _book
 
 
 cd _book

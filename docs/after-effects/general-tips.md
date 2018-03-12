@@ -8,7 +8,7 @@ When building for Lottie you always have to keep in mind that these JSON files n
 
 ## Shape layers for vector artwork / Adobe Illustrator
 
-Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers in After Effects otherwise they will not work in your Lottie animation. 
+Convert any Adobe Illustrator, EPS, SVG, or PDF assets to shape layers in After Effects otherwise they will not work in your Lottie animation.
 
 ![Create Shapes](/images/CreateShapes_sm.png)
 
@@ -16,7 +16,7 @@ After you've converted to shape layers remove the assets from your composition s
 
 ## Export at 1x
 
-You can work in After Effects at whatever composition size you want, but be sure to export with a composition size that is 1x the size of your asset. 
+You can work in After Effects at whatever composition size you want, but be sure to export with a composition size that is 1x the size of your asset.
 
 ![1x](/images/Create1x_sm.png)
 
@@ -49,7 +49,7 @@ Lottie does not yet support layer effects like drop shadow, color overlay or str
 
 ## Full screen animations
 
-Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mdoe on iOS.
+Export an animation wider than the widest screen you intend to support and use the `centerCrop` scale type on Android or the `aspectFill` content mode on iOS.
 
 ![Full screen animations](/images/LottieFullScreen.gif)
 

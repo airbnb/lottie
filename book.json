@@ -1,6 +1,6 @@
 
 {
-  "gitbook": "3.2.2",
+  "gitbook": "3.2.3",
   "title": "Lottie",
   "description": "After Effects Animations for Android, iOS, React Native, and Web",
   "root": "./docs",
@@ -14,7 +14,7 @@
   },
   "plugins": [
     "edit-link",
-    "prism@2.0.0",
+    "prism@2.3.0",
     "-highlight",
     "github",
     "-search",
