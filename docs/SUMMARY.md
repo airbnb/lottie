@@ -31,7 +31,7 @@ Lottie
   * [Getting Started](/react-native/react-native.md#getting-started)
   * [Sample App](/react-native/sample-app.md)
   * [Props](/react-native/props.md)
-  * [Troubleshooting](/web/troubleshooting.md)
+  * [Troubleshooting](/react-native/troubleshooting.md)
 * [Web](/web/web.md)
   * [Getting started](/web/getting-started.md)
   * [Video tutorial](https://www.youtube.com/watch?v=5XMUJdjI0L8)
