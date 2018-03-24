@@ -7,9 +7,6 @@ mkdir -p _book
 gitbook install
 gitbook build
 
-cp -r images _book
-
-
 cd _book
 git init
 git commit --allow-empty -m 'update book'
