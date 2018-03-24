@@ -3,6 +3,7 @@ Lottie
 * [Android](/android/android.md)
   * [Getting Started](/android/android.md#getting-started)
   * [Sample App](/android/android.md#sample-app)
+  * [Basic Workflow](/android/basic-workflow.md)
   * [Caching and Preloading](/android/caching.md)
   * [Dynamic Properties](/android/dynamic.md)
   * [Images](/android/images.md)
