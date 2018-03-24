@@ -40,9 +40,11 @@ Or you can load it programmatically in multiple ways. When the animation is load
 ### From res/raw or assets/
 ```java
 LottieAnimationView animationView = ...
-animationView.setAnimation(R.raw.hello_world.json);
+
+animationView.setAnimation(R.raw.hello_world);
 // or
 animationView.setAnimation(R.raw.hello_world.json);
+
 animationView.playAnimation();
 ```
 This method will load the file and parse the animation in the background and asynchronously start rendering once completed.
