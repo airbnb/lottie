@@ -15,7 +15,7 @@ Lottie supports API 16 and above.
 The simplest way to use it is with LottieAnimationView:
 
 Lottie support loading bundled animations from res/raw or assets/.
-It is recommended to use res/raw because you can use static references to your animationt through `R` instead of just using string names. This can also aid in build static analysis because it can track the usage of your animations.
+It is recommended to use res/raw because you can use static references to your animation through `R` instead of just using string names. This can also aid in build static analysis because it can track the usage of your animations.
 #### From res/raw (`lottie_rawRes`) or assets/ (`lottie_fileName`)
 ```xml
 <com.airbnb.lottie.LottieAnimationView
