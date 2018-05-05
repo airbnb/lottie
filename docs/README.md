@@ -99,4 +99,4 @@ Heres some links from around the community
 
 [Creating cool animations in android using Lottie](https://www.youtube.com/watch?v=T4v72xJqNpQ)[Chetan Sachdeva](https://www.youtube.com/channel/UC_4TBWZcI-tdZ02wESTRVNw) by Chetan Sachdeva
 
-
+[Boost Your User Experience with Lottie for React Native](https://blog.reactnativecoach.com/boost-your-user-experience-with-lottie-for-react-native-5da1ac589982) by Samuli Hakoniemi
