@@ -27,6 +27,10 @@ All of these animations were created in After Effects, exported with Bodymovin, 
 Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
 Or get in touch on GitHub or via lottie@airbnb.com
 
+## Links
+- **[Documentation](https://airbnb.io/lottie/)**
+- [Issue Tracker](https://github.com/mochajs/mocha/issues)
+
 ## Other Platforms
  * [Xamarin (martijn00)](https://github.com/martijn00/LottieXamarin)
  * [NativeScript (bradmartin)](https://github.com/bradmartin/nativescript-lottie)
