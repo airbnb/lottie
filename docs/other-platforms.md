@@ -11,3 +11,4 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [React](https://github.com/chenqingspring/react-lottie)
 * [Vue](https://github.com/chenqingspring/vue-lottie)
 * [Angular](https://github.com/chenqingspring/ng-lottie)
+* [Polymer](https://github.com/AfterWebX/polymate-view/)
