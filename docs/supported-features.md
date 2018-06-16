@@ -52,11 +52,10 @@
 | Expansion |                     ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 |
 | Feather |                       ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | **Mattes** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
-| Alpha Matte |                   👍 | 👍 | 👍 | 👍 | 👍 |
+| Alpha Matte |                   👍 | 👍 | 👍 | ⛔️ | 👍 |
 | Alpha Inverted Matte |          👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Luma Matte |                    ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
-| Track Matte |                   ⛔️ | ⛔️ | 👍 | ⛔️ | ⛔ |
 | **Merge Paths** | **Android** | **iOS** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Merge |                         👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
 | Add |                           👍 (KitKat+) | ⛔ | ⛔ | ⛔ | ⛔ |
