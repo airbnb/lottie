@@ -8,7 +8,7 @@
     "summary": "SUMMARY.md"
   },
   "variables": {
-    "androidVersion": "2.5.1",
+    "androidVersion": "2.5.5",
     "iosVersion": "2.5.0",
     "reactNativeVersion": "2.3.2"
   },
