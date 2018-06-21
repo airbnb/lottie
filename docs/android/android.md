@@ -3,7 +3,7 @@ Gradle is the only supported build configuration, so just add the dependency to 
 
 <pre><code class="lang-groovy">dependencies {
     ...
-    compile 'com.airbnb.android:lottie:{{ book.androidVersion }}'
+    implementation 'com.airbnb.android:lottie:{{ book.androidVersion }}'
     ...
 }
 </code></pre>
