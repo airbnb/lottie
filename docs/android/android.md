@@ -151,9 +151,9 @@ It is often convenient to play/loop a single part of an animation. For example, 
 
  `setMinFrame(...)`
 
- `setMinFrame(...)`
+ `setMaxFrame(...)`
 
- `setMaxProgress(...)`
+ `setMinProgress(...)`
 
  `setMaxProgress(...)`
 
