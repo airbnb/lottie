@@ -51,6 +51,9 @@ Instacart uses Lottie for a handful of educational animations to teach shoppers.
 
 ![Instacart](/images/ShowcaseInstacart.gif)
 
+## PenPal
+![PenPal](/images/ShowcasePenPal.gif)
+
 
 ## Popcorn
 Onboarding carousel for Popcorn app 🍿.

@@ -10,7 +10,7 @@ gitbook build
 cd _book
 git init
 git commit --allow-empty -m 'update book'
-git fetch git@github.com:airbnb/lottie.git gh-pages
+git fetch git@github.com:airbnb/lottie.git --depth=1 gh-pages
 git checkout -b gh-pages
 git add .
 git commit -am 'update book'
