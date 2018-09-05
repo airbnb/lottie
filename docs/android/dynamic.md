@@ -54,14 +54,14 @@ There are also some helper `ValueCallback` subclasses such as `LottieStaticValue
 ```java
   animationView.addValueCallback(
       new KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR_FILTER,
+      LottieProperty.COLOR,
       new LottieStaticValueCallback<>(Color.RED));
 ```
 
 ```java
 animationView.addValueCallback(
     new KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR_FILTER,
+    LottieProperty.COLOR,
     (frameInfo) -> {
       return overallProgress < 0.5 ? Color.GREEN : Color.RED;
     }
