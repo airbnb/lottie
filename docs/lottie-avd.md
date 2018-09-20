@@ -11,4 +11,4 @@ There are two ways to render After Effects animations:
 * Dynamic playback speed.
 
 ## Pros of AnimatedVectorDrawable
-* Faster peformance due to the animation running on the [RenderThread](https://medium.com/@workingkills/understanding-the-renderthread-4dc17bcaf979) vs the main thread.
+* Faster performance due to the animation running on the [RenderThread](https://medium.com/@workingkills/understanding-the-renderthread-4dc17bcaf979) vs the main thread.
