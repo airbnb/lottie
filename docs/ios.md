@@ -218,7 +218,7 @@ animationView2.setValue(UIColor.green, forKeypath: "BG-On.Group 1.Fill 1.Color",
 animationView3.setValue(UIColor.red, forKeypath: "BG-On.Group 1.Fill 1.Color", atFrame: 0)
 animationView4.setValue(UIColor.orange, forKeypath: "BG-On.Group 1.Fill 1.Color", atFrame: 0)
 ```
-The keyPath is a dot seperated path of layer and property names from After Effects.
+The keyPath is a dot separated path of layer and property names from After Effects.
 ![Key Path](/images/aftereffectskeypath.png)
 "BG-On.Group 1.Fill 1.Color"
 
