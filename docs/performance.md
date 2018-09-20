@@ -8,7 +8,7 @@ Masks and mattes on android have the larges performance hit. Their performance h
 On Android, if you are using masks or mattes, there will be a several X performance improvement when using hardware acceleration.
 
 ## Reused Animations (Android)
-Animations are often reused many times such as a wish list heart in a list. To avoid deserialzation for each one, you may cache the deserialized composition. To do that, you may either set a cache strategy on your `LottieAnimationView` or load the `LottieComposition` directly, hold a reference yourself, and then set that directly on the `LottieAnimationView`.
+Animations are often reused many times such as a wish list heart in a list. To avoid deserialization for each one, you may cache the deserialized composition. To do that, you may either set a cache strategy on your `LottieAnimationView` or load the `LottieComposition` directly, hold a reference yourself, and then set that directly on the `LottieAnimationView`.
 
 ## Hardware Acceleration (Android)
 Android can render animations with hardware or software acceleration. Hardware acceleration is much faster but has some limitations.
