@@ -142,7 +142,7 @@ animationView.addColorFilter(colorFilter);
 ```
 becomes
 ```java
-animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java
@@ -150,7 +150,7 @@ animationView.addColorFilterToLayer("hello_layer", colorFilter);
 ```
 becomes
 ```java
-animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java
@@ -159,7 +159,7 @@ animationView.addColorFilterToContent("hello_layer", "hello", colorFilter);
 becomes
 ```java
 
-animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java
