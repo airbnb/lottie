@@ -1,12 +1,11 @@
 # Getting Started
 Gradle is the only supported build configuration, so just add the dependency to your project `build.gradle` file:
 
-<pre><code class="lang-groovy">dependencies {
-    ...
-    implementation "com.airbnb.android:lottie:$lottieVersion"
-    ...
+```groovy
+dependencies {
+  implementation 'com.airbnb.android:lottie:2.5.5'
 }
-</code></pre>
+```
 The latest version is: ![lottieVersion](https://maven-badges.herokuapp.com/maven-central/com.airbnb.android/lottie/badge.svg)
 
 # Sample App
