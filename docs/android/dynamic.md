@@ -54,14 +54,14 @@ There are also some helper `ValueCallback` subclasses such as `LottieStaticValue
 ```java
   animationView.addValueCallback(
       new KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR_FILTER,
+      LottieProperty.COLOR,
       new LottieStaticValueCallback<>(Color.RED));
 ```
 
 ```java
 animationView.addValueCallback(
     new KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR_FILTER,
+    LottieProperty.COLOR,
     (frameInfo) -> {
       return overallProgress < 0.5 ? Color.GREEN : Color.RED;
     }
@@ -142,7 +142,7 @@ animationView.addColorFilter(colorFilter);
 ```
 becomes
 ```java
-animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java
@@ -150,7 +150,7 @@ animationView.addColorFilterToLayer("hello_layer", colorFilter);
 ```
 becomes
 ```java
-animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java
@@ -159,7 +159,7 @@ animationView.addColorFilterToContent("hello_layer", "hello", colorFilter);
 becomes
 ```java
 
-animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback(colorFilter));
+animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
 ```
 ------
 ```java

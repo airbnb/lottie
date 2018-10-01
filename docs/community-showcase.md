@@ -51,6 +51,10 @@ Instacart uses Lottie for a handful of educational animations to teach shoppers.
 
 ![Instacart](/images/ShowcaseInstacart.gif)
 
+## PenPal
+From the onboarding process to animated achievement stamps  users earn, Pen Pals uses Lottie for over 100 different animations inside their app. Check out their  animations for onboarding screens below!
+![PenPal](/images/ShowcasePenPal.gif)
+
 
 ## Popcorn
 Onboarding carousel for Popcorn app 🍿.
