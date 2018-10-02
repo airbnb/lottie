@@ -31,7 +31,7 @@ Or get in touch on GitHub or via lottie@airbnb.com
  * [Xamarin (martijn00)](https://github.com/martijn00/LottieXamarin)
  * [NativeScript (bradmartin)](https://github.com/bradmartin/nativescript-lottie)
  * [Windows (UWP) (azchohfi)](https://github.com/azchohfi/LottieUWP)
- * [Appcelerator Titanium (m1ga)](https://github.com/m1ga/ti.animation)
+ * [Axway Appcelerator (m1ga)](https://github.com/m1ga/ti.animation)
  * [ReactXP (colmbrady)](https://github.com/colmbrady/lottie-reactxp)
  * [Flutter (simolus3)](https://github.com/simolus3/fluttie)
  * [Flutter (fabiomsr)](https://github.com/fabiomsr/lottie-flutter)
