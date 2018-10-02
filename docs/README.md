@@ -39,7 +39,7 @@ You can build the sample app for Android yourself or download it from the [Play 
 
 ## Shipping something with Lottie?
 
-Email us at lottie@airbnb.com and soon we will create a testimonals and use cases page with real world usages of Lottie from around the world.
+Email us at lottie@airbnb.com and soon we will create a testimonial and use cases page with real world usages of Lottie from around the world.
 We also have an internal regression testing repo that we can use to prevent causing regressions with your animations.
 
 ## Alternatives
