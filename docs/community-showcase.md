@@ -26,7 +26,7 @@ SwiftKey iOS is using Lottie to help guide their users through the installation 
 
 
 ## Elevate
-Elevate used a combination of shape layers, alpha mattes and images to craft this silky smooth walkthrough where illstrations seamlessly mortph as users swipe to select different training options.
+Elevate used a combination of shape layers, alpha mattes and images to craft this silky smooth walkthrough where illstrations seamlessly morph as users swipe to select different training options.
 
 ![Elevate](/images/ShowcaseElevate.gif)
 
