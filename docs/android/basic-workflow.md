@@ -1,5 +1,5 @@
 # Replacing a static asset with Lottie
-One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assest.
+One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assets.
 
 ### Switch from static assets to animations with 3 lines of code!
 
