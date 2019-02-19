@@ -1,6 +1,6 @@
 # Getting started
 
-To get started creating animations for Lottie in After Effects you'll need a few things
+To get started creating animations for Lottie in After Effects, you'll need a few things:
 
 ### 1. After Effects
 ![After Effects](/images/1-AfterEffects.png)
@@ -17,15 +17,15 @@ To get started creating animations for Lottie in After Effects you'll need a few
 ![Lottie preview app](/images/3-Previewapp.png)
 <br>Download the Lottie app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie), or the Lottie preview app on the [App Store](https://www.lottiefiles.com/ios).
 
-After you're all setup with those three things, check out our [general tips](/after-effets/general-tips.d). Since not all After Effects features are supported see our [supported features list](/after-effects/supported-features.md). Lastly check out some workflow overviews in our [SVG/Sketch to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md) or our [Illustrator to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
+After you're all setup with those three things, check out our [general tips](/after-effects/general-tips). Since not all After Effects features are supported see our [supported features list](/after-effects/supported-features.md). Lastly check out some workflow overviews in our [SVG/Sketch to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md) or our [Illustrator to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
 
 <br>
 <br>
 
 ### 😍 Additional goodies 😍
-All of these goodies are <b>Highly recommended</b>. They arent essential, because you can still create for Lottie without them. But your workflow will be significantly faster and better with these extra tools.
+All of these goodies are <b>Highly recommended</b>. They aren't essential because you can still create for Lottie without them. But your workflow will be significantly faster and better with these extra tools.
 
-[Overlord](http://www.battleaxe.co/overlord/) by [Adam Plouff](https://twitter.com/adamplouff) is the ideal Illustrator to  After Effects workflow. It is an extension for After Effects and Illustrator that helps get artwork back and forth between the two programss. "Think of Overlord as a way to use Adobe Illustrator as a drawing plugin for After Effects." -Lester Banks.
+[Overlord](http://www.battleaxe.co/overlord/) by [Adam Plouff](https://twitter.com/adamplouff) is the ideal Illustrator to  After Effects workflow. It is an extension for After Effects and Illustrator that helps get artwork back and forth between the two programs. "Think of Overlord as a way to use Adobe Illustrator as a drawing plugin for After Effects." -Lester Banks.
 
 [Explode shape layers](http://aescripts.com/explode-shape-layers/) is a fantastic tool created by [Zack Lovatt](https://twitter.com/zlovatt?lang=en) for After Effects that helps in the managing of shape layers.
 

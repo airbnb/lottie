@@ -1,5 +1,5 @@
 # Replacing a static asset with Lottie
-One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assest.
+One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assets.
 
 ### Switch from static assets to animations with 3 lines of code!
 
@@ -12,7 +12,7 @@ Include it in your layout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawble/your_drawable" />
+        android:src="@drawable/your_drawable" />
 ```
 
 ## Lottie workflow
