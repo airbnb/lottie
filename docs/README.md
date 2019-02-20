@@ -1,8 +1,9 @@
-# Lottie for [Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [React Native](https://github.com/airbnb/lottie-react-native), and [Web](https://github.com/airbnb/lottie-web)
+# Lottie for [Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [React Native](https://github.com/airbnb/lottie-react-native), [Web](https://github.com/airbnb/lottie-web), and [Windows](https://aka.ms/lottie)
+
 <a href='https://play.google.com/store/apps/details?id=com.airbnb.lottie'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>
 
 
-Lottie is a mobile library for Android and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
+Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here are 13,000:
 
@@ -22,7 +23,7 @@ For the first time, designers can create **and ship** beautiful animations witho
 
 All of these animations were created in After Effects, exported with Bodymovin, and rendered natively with no additional engineering effort.
 
-[Bodymovin](https://github.com/airbnb/lottie-web) is an After Effects plugin created by Hernan Torrisi that exports After effects files as json and includes a javascript web player. We've built on top of his great work to extend its usage to Android, iOS, and React Native.
+[Bodymovin](https://github.com/airbnb/lottie-web) is an After Effects plugin created by Hernan Torrisi that exports After effects files as json and includes a javascript web player. We've built on top of his great work to extend its usage to Android, iOS, React Native, and Windows.
 
 Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
 Or get in touch on GitHub or via lottie@airbnb.com
@@ -30,7 +31,6 @@ Or get in touch on GitHub or via lottie@airbnb.com
 ## Other Platforms
  * [Xamarin (martijn00)](https://github.com/martijn00/LottieXamarin)
  * [NativeScript (bradmartin)](https://github.com/bradmartin/nativescript-lottie)
- * [Windows (UWP) (azchohfi)](https://github.com/azchohfi/LottieUWP)
  * [Axway Appcelerator (m1ga)](https://github.com/m1ga/ti.animation)
  * [ReactXP (colmbrady)](https://github.com/colmbrady/lottie-reactxp)
  * [Flutter (simolus3)](https://github.com/simolus3/fluttie)
@@ -39,6 +39,8 @@ Or get in touch on GitHub or via lottie@airbnb.com
 ## Sample App
 
 You can build the sample app for Android yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
+
+For Windows, you can get the [Lottie Viewer app](https://aka.ms/lottieviewer) to preview Lottie animation and codegen classes, and the [Lottie Samples app](https://aka.ms/lottiesamples) to get started with code samples and simple tutorials.
 
 ## Shipping something with Lottie?
 
