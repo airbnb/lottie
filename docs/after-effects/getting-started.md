@@ -15,7 +15,7 @@ To get started creating animations for Lottie in After Effects, you'll need a fe
 
 ### 3. Lottiefiles preview app
 ![Lottie preview app](/images/3-Previewapp.png)
-<br>Download the Lottie app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie), or the Lottie preview app on the [App Store](https://www.lottiefiles.com/ios).
+<br>Download the Lottie app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie), the Lottie preview app on the [App Store](https://www.lottiefiles.com/ios), or the Lottie Viewer app on the [Microsoft Store](https://aka.ms/lottieviewer).
 
 After you're all setup with those three things, check out our [general tips](/after-effects/general-tips). Since not all After Effects features are supported see our [supported features list](/after-effects/supported-features.md). Lastly check out some workflow overviews in our [SVG/Sketch to Lottie walkthrough](/after-effects/artwork-to-lottie-walkthrough.md) or our [Illustrator to Lottie walkthrough](/after-effects/illustrator-to-lottie-walkthrough.md)
 
