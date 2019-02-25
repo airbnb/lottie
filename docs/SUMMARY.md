@@ -37,6 +37,10 @@ Lottie
   * [Previewing](/web/previewing.md)
   * [Expressions](/web/expressions.md)
   * [Troubleshooting](/after-effects/troubleshooting.md)
+* [Windows](/windows/windows.md)
+  * [Getting Started](/windows/getting_started.md)
+  * [Tutorials](/windows/tutorials.md)
+  * [Troubleshooting](/windows/troubleshooting.md)
 * [After Effects](/after-effects/getting-started.md)
   * [Getting started](/after-effects/getting-started.md)
   * [Install Bodymovin Plugin](/after-effects/bodymovin-installation.md)
@@ -51,7 +55,6 @@ Lottie
     * [Xamarin](https: //github.com/martijn00/LottieXamarin)
     * [NativeScript](https://github.com/bradmartin/nativescript-lottie)
     * [Titanium](https://github.com/m1ga/ti.animation)
-    * [Windows (UWP)](https://github.com/azchohfi/LottieUWP)
   * Web Frameworks
     * [React](https://github.com/chenqingspring/react-lottie)
     * [Vue](https://github.com/chenqingspring/vue-lottie)
