@@ -38,7 +38,7 @@ Lottie
   * [Expressions](/web/expressions.md)
   * [Troubleshooting](/after-effects/troubleshooting.md)
 * [Windows](/windows/windows.md)
-  * [Getting Started](/windows/getting_started.md)
+  * [Getting Started](/windows/windows.md#getting-started)
   * [Tutorials](/windows/tutorials.md)
   * [Troubleshooting](/windows/troubleshooting.md)
 * [After Effects](/after-effects/getting-started.md)
