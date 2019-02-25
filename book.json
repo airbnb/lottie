@@ -2,7 +2,7 @@
 {
   "gitbook": "3.2.3",
   "title": "Lottie",
-  "description": "After Effects Animations for Android, iOS, React Native, and Web",
+  "description": "After Effects Animations for Android, iOS, React Native, Web, and Windows",
   "root": "./docs",
   "structure": {
     "summary": "SUMMARY.md"
