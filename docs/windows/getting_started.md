@@ -37,7 +37,20 @@ For detailed steps and code samples for getting started with a JSON file, check 
 In addition to using JSON files, Lottie-Windows allows you to use generated C# / C++ classes for better performance 
 by avoiding the cost of parsing and translating JSON files at run-time. You may generate the code by using:
 
-* LottieGen command-line tool, or
-* Lottie Viewer application
+* [LottieGen command-line tool](https://aka.ms/lottiegen), or
+* [Lottie Viewer application](https://github.com/windows-toolkit/Lottie-Windows/tree/master/LottieViewer#usage)
 
-Having generated the 
+Having generated your C# or C++ class, you'll need to configure your AnimatedVisualPlayer to consume it:
+
+```XAML
+    <!--  AnimatedVisualPlayer with AutoPlay  -->
+    <winui:AnimatedVisualPlayer x:Name="LottiePlayer">
+        <!--  Codegen source with C# class: AnimatedVisuals/LottieLogo1.cs  -->
+        <animatedvisuals:LottieLogo1 />
+    </winui:AnimatedVisualPlayer>
+```
+
+For detailes steps and code samples for getting started with a codegen class, check out [this tutorial](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen).
+
+Both approaches — JSON and Codegen — produce the same visual results but have different tradeoffs and workflows; 
+to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen).
