@@ -52,5 +52,9 @@ Having generated your C# or C++ class, you'll need to configure your AnimatedVis
 
 For detailed steps and code samples for using codegen in lieu of JSON, check out [this tutorial](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen).
 
+## JSON versus Codegen
+
 Both approaches — JSON and Codegen — produce the same visual results but have different tradeoffs and workflows; 
-to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen).
+to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen). Here's how all the pieces fit in together:
+
+<img src="/docs/images/windows/windows_workflow.png" alt="Workflow" width="450"/>
