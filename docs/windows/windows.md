@@ -57,6 +57,6 @@ For detailed steps and code samples for using codegen in lieu of JSON, check out
 ## JSON versus Codegen
 
 Both approaches — JSON and Codegen — produce the same visual results but have different tradeoffs and workflows; 
-to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen). Here's how all the pieces fit in together:
+to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen). Here's how all the pieces fit together:
 
 <img src="/images/windows/windows_workflow.png" alt="Workflow" width="450"/>
