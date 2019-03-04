@@ -1,0 +1,1171 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Adding Views to Animation at Runtime · Lottie</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="dynamic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../android/android.html">
+            
+                <a href="../android/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../android/android.html">
+            
+                <a href="../android/android.html#getting-started">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../android/android.html">
+            
+                <a href="../android/android.html#sample-app">
+            
+                    
+                    Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../android/basic-workflow.html">
+            
+                <a href="../android/basic-workflow.html">
+            
+                    
+                    Basic Workflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../android/dynamic.html">
+            
+                <a href="../android/dynamic.html">
+            
+                    
+                    Dynamic Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../android/images.html">
+            
+                <a href="../android/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../android/performance.html">
+            
+                <a href="../android/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../android/avd.html">
+            
+                <a href="../android/avd.html">
+            
+                    
+                    Lottie vs AVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../android/apk-size.md">
+            
+                <span>
+            
+                    
+                    APK size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../android/troubleshooting.html">
+            
+                <a href="../android/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ios.html">
+            
+                <a href="../ios.html">
+            
+                    
+                    iOS/MacOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    Docs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../ios.html">
+            
+                <a href="../ios.html#getting-started-on-ios-or-macos">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../ios.html">
+            
+                <a href="../ios.html#installing-lottie">
+            
+                    
+                    Installing Lottie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../ios.html">
+            
+                <a href="../ios.html#ios-sample-app">
+            
+                    
+                    iOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../ios.html">
+            
+                <a href="../ios.html#macos-sample-app">
+            
+                    
+                    MacOS Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../ios.html">
+            
+                <a href="../ios.html#objective-c-examples">
+            
+                    
+                    Objective C Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../ios.html">
+            
+                <a href="../ios.html#swift-examples">
+            
+                    
+                    Swift Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="view-controllers.html">
+            
+                <a href="view-controllers.html">
+            
+                    
+                    View Controller Transitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="dynamic.html">
+            
+                <a href="dynamic.html">
+            
+                    
+                    Dynamic Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.9" data-path="addsubviews.html">
+            
+                <a href="addsubviews.html">
+            
+                    
+                    Adding Views to Animation at Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="dynamic_properties.html">
+            
+                <a href="dynamic_properties.html">
+            
+                    
+                    Building a Dynamic Progress Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    Troubleshooting
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="troubleshooting.html">
+            
+                <a href="troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../react-native/react-native.html">
+            
+                <a href="../react-native/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../react-native/react-native.html">
+            
+                <a href="../react-native/react-native.html#getting-started">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../react-native/sample-app.html">
+            
+                <a href="../react-native/sample-app.html">
+            
+                    
+                    Sample App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../react-native/props.html">
+            
+                <a href="../react-native/props.html">
+            
+                    
+                    Props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../react-native/troubleshooting.html">
+            
+                <a href="../react-native/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../web/web.html">
+            
+                <a href="../web/web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../web/getting-started.html">
+            
+                <a href="../web/getting-started.html">
+            
+                    
+                    Getting started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <a target="_blank" href="https://www.youtube.com/watch?v=5XMUJdjI0L8">
+            
+                    
+                    Video tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../web/previewing.html">
+            
+                <a href="../web/previewing.html">
+            
+                    
+                    Previewing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../web/expressions.html">
+            
+                <a href="../web/expressions.html">
+            
+                    
+                    Expressions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../after-effects/troubleshooting.html">
+            
+                <a href="../after-effects/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../windows/windows.html">
+            
+                <a href="../windows/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../windows/windows.html">
+            
+                <a href="../windows/windows.html#getting-started">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../windows/tutorials.html">
+            
+                <a href="../windows/tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../windows/troubleshooting.html">
+            
+                <a href="../windows/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../after-effects/getting-started.html">
+            
+                <a href="../after-effects/getting-started.html">
+            
+                    
+                    After Effects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../after-effects/getting-started.html">
+            
+                <a href="../after-effects/getting-started.html">
+            
+                    
+                    Getting started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../after-effects/bodymovin-installation.html">
+            
+                <a href="../after-effects/bodymovin-installation.html">
+            
+                    
+                    Install Bodymovin Plugin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../after-effects/bodymovin-settings.html">
+            
+                <a href="../after-effects/bodymovin-settings.html">
+            
+                    
+                    Bodymovin settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../after-effects/general-tips.html">
+            
+                <a href="../after-effects/general-tips.html">
+            
+                    
+                    General tips & guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../after-effects/artwork-to-lottie-walkthrough.html">
+            
+                <a href="../after-effects/artwork-to-lottie-walkthrough.html">
+            
+                    
+                    Sketch/SVG/Illustrator to Lottie walkthrough
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../after-effects/illustrator-to-lottie-walkthrough.html">
+            
+                <a href="../after-effects/illustrator-to-lottie-walkthrough.html">
+            
+                    
+                    Advanced Illustrator to Lottie walkthrough
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../after-effects/troubleshooting.html">
+            
+                <a href="../after-effects/troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../supported-features.html">
+            
+                <a href="../supported-features.html">
+            
+                    
+                    Supported After Effects Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../other-platforms.html">
+            
+                <a href="../other-platforms.html">
+            
+                    
+                    Other Platforms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    Mobile
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" >
+            
+                <a target="_blank" href="https: //github.com/martijn00/LottieXamarin">
+            
+                    
+                    Xamarin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" >
+            
+                <a target="_blank" href="https://github.com/bradmartin/nativescript-lottie">
+            
+                    
+                    NativeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.3" >
+            
+                <a target="_blank" href="https://github.com/m1ga/ti.animation">
+            
+                    
+                    Titanium
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                    Web Frameworks
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" >
+            
+                <a target="_blank" href="https://github.com/chenqingspring/react-lottie">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" >
+            
+                <a target="_blank" href="https://github.com/chenqingspring/vue-lottie">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" >
+            
+                <a target="_blank" href="https://github.com/chenqingspring/ng-lottie">
+            
+                    
+                    Angular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../troubleshooting.html">
+            
+                <a href="../troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../community-showcase.html">
+            
+                <a href="../community-showcase.html">
+            
+                    
+                    Community Showcase
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Adding Views to Animation at Runtime</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="adding-views-to-an-animation-at-runtime"><a name="adding-views-to-an-animation-at-runtime" class="plugin-anchor" href="#adding-views-to-an-animation-at-runtime"><i class="fa fa-link" aria-hidden="true"></i></a>Adding Views to an Animation at Runtime</h1>
+<p>Not only can you <a href="dynamic.html">change animations at runtime</a> with Lottie, you can also add custom UI to a LOTAnimation at runtime.
+The example below shows some advance uses of this to create a dynamic image loader.</p>
+<h2 id="a-dynamic-image-loading-spinner"><a name="a-dynamic-image-loading-spinner" class="plugin-anchor" href="#a-dynamic-image-loading-spinner"><i class="fa fa-link" aria-hidden="true"></i></a>A Dynamic Image Loading Spinner</h2>
+<p><img src="../images/spinner.gif" alt="Spinner"></p>
+<p>The example above shows a single LOTAnimationView that is set with a loading spinner animation. The loading spinner loops a portion of its animation while an image is downloaded asynchronously. When the download is complete, the image is added to the animation and the rest of the animation is played seamlessly. The image is cleanly animated in and a completion block is called.</p>
+<p><img src="../images/spinner_Alternative.gif" alt="Spinner_Alt"></p>
+<p>Now, the animation has been changed by a designer and needs to be updated. All that is required is updating the JSON file in the bundle. No code change needed!</p>
+<p><img src="../images/spinner_DarkMode.gif" alt="Spinner_Dark"></p>
+<p>Here, the design has decided to add a &apos;Dark Mode&apos; to the app. Just a few lines of code change the color of the animation at runtime.</p>
+<p>Pretty powerful eh?</p>
+<p>Check out the code below for an example!
+Download the After Effects file <a href="../AEP/LoadingSpinner.zip">here</a></p>
+<pre class="language-"><code class="lang-swift">
+<span class="token keyword">import</span> <span class="token builtin">UIKit</span>
+<span class="token keyword">import</span> <span class="token builtin">Lottie</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token builtin">UIViewController</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">var</span> animationView<span class="token punctuation">:</span> <span class="token builtin">LOTAnimationView</span> <span class="token operator">=</span> <span class="token function">LOTAnimationView</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">&quot;SpinnerSpin&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> colorCallback <span class="token operator">=</span> <span class="token function">LOTColorValueCallback</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token builtin">UIColor</span><span class="token punctuation">.</span>darkGray<span class="token punctuation">.</span>cgColor<span class="token punctuation">)</span>
+  <span class="token keyword">var</span> maskOpacityCallback <span class="token operator">=</span> <span class="token function">LOTNumberValueCallback</span><span class="token punctuation">(</span>number<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Setup our animaiton view</span>
+    animationView<span class="token punctuation">.</span>contentMode <span class="token operator">=</span> <span class="token punctuation">.</span>scaleAspectFill
+    animationView<span class="token punctuation">.</span>frame <span class="token operator">=</span> <span class="token function">CGRect</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>animationView<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// Lets change some of the properties of the animation</span>
+    <span class="token comment" spellcheck="true">// We arent going to use the MaskLayer, so lets just hide it</span>
+
+    <span class="token keyword">let</span> maskKeypath <span class="token operator">=</span> <span class="token function">LOTKeypath</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string">&quot;MaskLayer.Ellipse 1.Transform.Opacity&quot;</span><span class="token punctuation">)</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValueDelegate</span><span class="token punctuation">(</span>maskOpacityCallback<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> maskKeypath<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// All of the strokes and fills are white, lets make them DarkGrey</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValueDelegate</span><span class="token punctuation">(</span>colorCallback<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token function">LOTKeypath</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string">&quot;OuterRing.Stroke.Color&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValueDelegate</span><span class="token punctuation">(</span>colorCallback<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token function">LOTKeypath</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string">&quot;InnerRing.Stroke.Color&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    animationView<span class="token punctuation">.</span><span class="token function">setValueDelegate</span><span class="token punctuation">(</span>colorCallback<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token function">LOTKeypath</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string">&quot;InnerRing.Fill.Color&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Lets turn looping on, since we want it to repeat while the image is &apos;Downloading&apos;</span>
+    animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment" spellcheck="true">// Now play from 0 to 0.5 progress and loop indefinitely.</span>
+    animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>fromProgress<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> toProgress<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span> withCompletion<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Lets simulate a download that finishes in 4 seconds.</span>
+    <span class="token keyword">let</span> dispatchTime <span class="token operator">=</span> <span class="token builtin">DispatchTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">4.0</span>
+    <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">asyncAfter</span><span class="token punctuation">(</span>deadline<span class="token punctuation">:</span> dispatchTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">simulateImageDownloaded</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">func</span> <span class="token function">simulateImageDownloaded</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Our downloaded image</span>
+    <span class="token keyword">let</span> image <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string">&quot;avatar.jpg&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> imageView <span class="token operator">=</span> <span class="token function">UIImageView</span><span class="token punctuation">(</span>image<span class="token punctuation">:</span> image<span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> layerKeypath <span class="token operator">=</span> <span class="token function">LOTKeypath</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string">&quot;TransformLayer&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// We want the image to show up centered in the animation view at 150Px150P</span>
+    <span class="token comment" spellcheck="true">// Convert that rect to the layers animations coordinate space</span>
+    <span class="token keyword">let</span> imageRect <span class="token operator">=</span> animationView<span class="token punctuation">.</span><span class="token function">convert</span><span class="token punctuation">(</span><span class="token function">CGRect</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">,</span> toKeypathLayer<span class="token punctuation">:</span>layerKeypath<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// Setup our image view with the rect and add rounded corners</span>
+    imageView<span class="token punctuation">.</span>frame <span class="token operator">=</span> imageRect
+    imageView<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>masksToBounds <span class="token operator">=</span> <span class="token boolean">true</span>
+    imageView<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> imageRect<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// Now we set the completion block on the currently running animation</span>
+    animationView<span class="token punctuation">.</span>completionBlock <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>result<span class="token punctuation">:</span> <span class="token builtin">Bool</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// Add the image view to the layer named &quot;TransformLayer&quot;</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>animationView<span class="token punctuation">.</span><span class="token function">addSubview</span><span class="token punctuation">(</span>imageView<span class="token punctuation">,</span> toKeypathLayer<span class="token punctuation">:</span> layerKeypath<span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// Now play the last half of the animation</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>animationView<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span>fromProgress<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span> toProgress<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> withCompletion<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>complete<span class="token punctuation">:</span> <span class="token builtin">Bool</span><span class="token punctuation">)</span> <span class="token keyword">in</span>
+        <span class="token comment" spellcheck="true">// Now the animation has finished and our image is displayed on screen</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;Image Downloaded and Displayed&quot;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// Turn looping off. Once the current loop finishes the animation will stop</span>
+    <span class="token comment" spellcheck="true">// and the completion block will be called.</span>
+    animationView<span class="token punctuation">.</span>loopAnimation <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dynamic.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Dynamic Properties">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Adding Views to Animation at Runtime","level":"1.3.1.9","depth":3,"next":{"title":"Tutorials","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"Building a Dynamic Progress Loader","level":"1.3.2.1","depth":3,"path":"ios/dynamic_properties.md","ref":"ios/dynamic_properties.md","articles":[]}]},"previous":{"title":"Dynamic Properties","level":"1.3.1.8","depth":3,"path":"ios/dynamic.md","ref":"ios/dynamic.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism@2.3.0","-highlight","github","-search","codeblock-disable-glossary","collapsible-chapters","anchors"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/airbnb/lottie/"},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/airbnb/lottie/edit/lottie-docs/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"androidVersion":"2.5.1","iosVersion":"2.5.0","reactNativeVersion":"2.3.2"},"title":"Lottie","gitbook":"3.2.3","description":"After Effects Animations for Android, iOS, React Native, Web, and Windows"},"file":{"path":"ios/addsubviews.md","mtime":"2018-09-24T06:09:32.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-04T17:14:50.587Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
