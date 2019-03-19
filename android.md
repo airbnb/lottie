@@ -413,7 +413,9 @@ Merge paths are only supported on KitKat and above. There is also some performan
 
 # Render Graph
 The Lottie sample app has a real time render graph that can be enabled from the menu in the top right. It also has guidelines for 16.66 and 33.333ms per frame which represent the maximum render time to hit 60fps and 30fps respectively.
-![Render Graph](/images/render-graph.png)
+
+
+![Render Graph](/images/render-graph.png ':size=300')
 
 
 # Render Times Per Layer
@@ -421,14 +423,15 @@ The Lottie sample app also has a bottom sheet with the time it took each layer t
 
 If there are any layers that are particularly slow, try optimizing their shapes, eliminated masks, mattes, and merge paths where possible.
 
-![Render times](/images/render-times-per-layer.png)
+![Render times](/images/render-times-per-layer.png  ':size=300')
 
 # Troubleshooting
 There may be times in which Lottie doesn't render your animation correctly. After effects has an enormous number of features, not all of which are supported by Lottie. If an animation doesn't look correct, run through the following steps before reporting an issue.
 
 ## Check for Warnings
 The Lottie for Android will automatically detect and report some errors. It doesn't catch everything but will catch many common cases. You can either call `getWarnings()` from your own code or open the animation in the [Lottie sample app](https://play.google.com/store/apps/details?id=com.airbnb.lottie) and see if warnings show up in the top right. If they do, tapping it will give you more information.
-![Warnings](/images/warnings.png)
+
+![Warnings](/images/warnings.png  ':size=300')
 
 ## Check the supported features page.
 Check the [supported features page](/supported-features.md) on this site to see if you are using anything that isn't supported.
