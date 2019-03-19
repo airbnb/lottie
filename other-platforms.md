@@ -1,10 +1,11 @@
 # Third Party Platforms
 The Lottie community has build Lottie bindings for the following platforms:
 
-# Mobile
+# Wrappers
 * [Xamarin](https://github.com/martijn00/LottieXamarin)
 * [NativeScript](https://github.com/bradmartin/nativescript-lottie)
 * [Axway Appcelerator](https://github.com/m1ga/ti.animation)
+* [Qt QML](https://sea-region.github.com/kbroulik/lottie-qml)
 
 # Web
 * [React](https://github.com/chenqingspring/react-lottie)
