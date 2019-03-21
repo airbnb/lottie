@@ -5,7 +5,7 @@
 Use the [Lottie Viewer application](https://aka.ms/lottieviewer) to test the visual accuracy of your Lottie animations and identify potential issues. 
 Simply use drag-and-drop or use a file-picker to open local JSON files and URIs. A warning icon may light up to indicate any issues with your animation.
 
-<a><img src='/images/windows/windows_lottieviewer.gif' alt='Lottie Viewer gif' width='600px'/></a>
+![Lottie Viewer gif](/images/windows_lottieviewer.gif ':width=600')
 
 <a href='https://www.microsoft.com/store/apps/9p7x9k692tmw?ocid=badge'><img src='https://assets.windowsphone.com/13484911-a6ab-4170-8b7e-795c1e8b4165/English_get_L_InvariantCulture_Default.png' alt='English badge' width='127px' height='52px'/></a>
 
@@ -59,7 +59,7 @@ For detailed steps and code samples for using codegen in lieu of JSON, check out
 Both approaches — JSON and Codegen — produce the same visual results but have different tradeoffs and workflows; 
 to decide which is best suited for your application, check out [this comparison](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie-scenarios/json_codegen). Here's how all the pieces fit together:
 
-<img src="/images/windows/windows_workflow.png" alt="Workflow" width="450"/>
+![Workflow](/images/windows_workflow.png 'width=450')
 
 # Tutorials
 
@@ -79,7 +79,7 @@ common Lottie animation scenarios, including:
 The [Lottie Samples application](https://aka.ms/lottiesamples) accompanies the tutorials by providing simple code examples. 
 The source code for the samples may be [found here](https://github.com/windows-toolkit/Lottie-Windows/tree/master/samples).
 
-<a><img src='/images/windows/windows_lottiesamples.png' alt='Lottie Samples image' width='600px'/></a>
+![Lottie Samples image](/images/windows_lottiesamples.png ':width=600')
 
 <a href='https://www.microsoft.com/store/apps/9n3j5tg8ff7f?ocid=badge'><img src='https://assets.windowsphone.com/13484911-a6ab-4170-8b7e-795c1e8b4165/English_get_L_InvariantCulture_Default.png' alt='English badge' width='127px' height='52px'/></a>
 
