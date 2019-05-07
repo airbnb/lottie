@@ -8,6 +8,7 @@
 | Rounded Rectangle |             👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Polystar |                      👍 | 👍 | ️️️️️️️️⛔️ | 👍 | 👍 | 👍 |
 | Group |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+| Repeater |                      👍 | ⛔️ | 👍 | 👍 | 👍 | 👍 |
 | Trim Path (individually) |      👍 | 👍 | ️️️️️️️️⛔️ | 👍 | 👍 | 👍 |
 | Trim Path (simultaneously) |    👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | **Fills** | **Android** | **iOS** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
