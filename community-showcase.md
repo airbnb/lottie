@@ -73,3 +73,7 @@ A Bitcoin/Blockchain startup based in Milan uses  Lottie to better explain some 
 
 ![Conio](/images/ShowcaseConio.gif)
 
+## Galaxy Watch
+Galaxy watch (Tizen OS) uses lottie for watchface and workout application. 
+
+![Galaxy Watch](/images/ShowcaseGalaxyWatch.gif)
