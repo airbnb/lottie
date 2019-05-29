@@ -25,7 +25,7 @@ Playing the animation as-is will animate the rolling waves for a second, then th
 
 Let's start with some ground work. We need a new ViewController and a large download to track. Create a new UIViewController subclass, and import Lottie. In keeping with the maritime theme, the file we will be downloading is a 10mb oceanography map. Now lets create a network request to download our map.
 
-####Swift:
+#### Swift:
 ```swift
 var downloadTask: URLSessionDownloadTask?
 
@@ -37,7 +37,7 @@ func createDownloadTask() {
     downloadTask!.resume()
  }
 ```
-####Objective-C:
+#### Objective-C:
 ```objectivec
 - (void)createDownloadTask {
   NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg"]];
@@ -52,7 +52,7 @@ func createDownloadTask() {
 
 You will also need to make your view controller class adhere to the NSURLSessionDownloadDelegate protocol and add in the following stub methods.
 
-####Swift:
+#### Swift:
 ```swift
 class ViewController: UIViewController, URLSessionDownloadDelegate {
 	func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -65,7 +65,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
 }
 ```
 
-####Objective-C:
+#### Objective-C:
 ```objectivec
 @interface LADownloadTestViewController () <NSURLSessionDownloadDelegate>
 
@@ -90,7 +90,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 ## Building the UI
 Now that we have our download task created, lets create the UI. We will need a single Lottie view for the animation, and a button to start the download. Add the animation's JSON [Boat_Loader.json](/AEP/Boat_Loader.zip) to the App bundle. Create the animation view, and set it to be a full-screen view.
 
-####Swift:
+#### Swift:
 ```swift
 private var boatAnimation: LOTAnimationView?
 
@@ -108,7 +108,7 @@ override func viewDidLoad() {
 }
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -127,7 +127,7 @@ override func viewDidLoad() {
 
 Now add a button placed center in the screen that will start the download. Add this to the bottom of the `viewDidLoad` function. The button will need to call a function when pressed. Add the function that the button calls that will trigger the download.
 
-####Swift:
+#### Swift:
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -147,7 +147,7 @@ override func viewDidLoad() {
 
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -165,11 +165,11 @@ override func viewDidLoad() {
 }
 ```
 
-##Making it all move
+## Making it all move
 
 If you run the App now you should see a boat sitting on a wave. If you click on the download button the image will download, but the animation never plays. Lets wire it all up!
 
-![Boat_Loader_Props](Boat_Loader_Props.png)
+![Boat_Loader_Props](images/Boat_Loader_Props.png)
 
 First, let's look closer at the After Effects file. The animation has a layer named `Boat` which contains the boat and the rolling waves. We want to move this layer up the screen as the download progresses. We need to drive the position of the `Boat` layer with the progress of the download. Looking at the After Effects file we can see that the property we want to change is `Boat.Transform.Position` In order to change an animation we need two things. A `LOTKeypath` and a `LOTValueDelegate`.
 
@@ -184,7 +184,7 @@ Dynamic properties work in the animation's coordinate space, so we will have to 
 
 Add this at the bottom of `viewDidLoad`.
 
-####Swift:
+#### Swift:
 ```swift
 // The center of the screen, where the boat will start
 let screenCenter = CGPoint(x:view.bounds.midX, y:view.bounds.midY)
@@ -199,7 +199,7 @@ let boatEndPoint = boatAnimation!.convert(offscreenCenter, toKeypathLayer: LOTKe
 positionInterpolator = LOTPointInterpolatorCallback(from: boatStartPoint, to: boatEndPoint)
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 // The center of the screen
 CGPoint screenCenter = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
@@ -219,7 +219,7 @@ _positionInterpolator = [LOTPointInterpolatorCallback withFromPoint:boatStartPoi
 
 Now that we have a `_positionInterpolator` lets set it on the `Boat.Transform.Position` property of animation view and tell the animation view to loop the first half of the animation.
 
-####Swift:
+#### Swift:
 ```swift
 // Set the interpolator on the animation view for the Boat.Transform.Position keypath.
 boatAnimation!.setValueDelegate(positionInterpolator!, for:LOTKeypath(string: "Boat.Transform.Position"))
@@ -231,7 +231,7 @@ boatAnimation!.play(fromProgress: 0,
                     withCompletion: nil)
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 // Set the interpolator on the animation view for the Boat.Transform.Position keypath.
 [_boatLoader setValueDelegate:_positionInterpolator forKeypath:[LOTKeypath keypathWithKeys:@"Boat", @"Transform", @"Position", nil]];
@@ -243,7 +243,7 @@ _boatLoader.loopAnimation = YES;
 
 Now, if you run the App you should see the boat moving over the waves indefinitely. If you press the download button, the boat will continue to move over the waves but nothing else happens. We need to hook the download progress up to the `_positionInterpolator` in the request's delegate callback.
 
-####Swift:
+#### Swift:
 ```swift
 func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
     positionInterpolator?.currentProgress = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
@@ -251,7 +251,7 @@ func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, did
 
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
@@ -264,7 +264,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 
 Run the App and press download. You should see the water filling the screen as the download progresses! Fantastic! We're almost done! When the download finishes the animation should play through the current loop, then play the last half of the animation, which will notify the success of the download.
 
-####Swift:
+#### Swift:
 ```swift
 func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
     // Pause the animation and disable looping.
@@ -281,7 +281,7 @@ func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, did
   }
  ```
 
-####Objective-C
+#### Objective-C
 ```objectivec
 - (void)URLSession:(nonnull NSURLSession *)session
       downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask
@@ -301,7 +301,7 @@ didFinishDownloadingToURL:(nonnull NSURL *)location {
 
 Run the App, and now you should see the completion animation!
 
-##Conclusion
+## Conclusion
 
 Hopefully this has shown some of the power of dynamic properties with Lottie! This is only a small example of what can be achieved. Read the documentation on dynamic properties to see what else you can do. Happy animating!
 
