@@ -15,6 +15,6 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Polymer](https://github.com/reemardelarosa/polymate)
 
 # Operating Systems
-* [Windpws](https://github.com/windows-toolkit/Lottie-Windows)
+* [Windows](https://github.com/windows-toolkit/Lottie-Windows)
 * [Qt](https://blog.qt.io/blog/2019/03/08/announcing-qtlottie/)
 * [Skia](https://skia.org/user/modules/skottie)
