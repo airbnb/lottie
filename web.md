@@ -189,6 +189,16 @@ If you set the string 'use javascript' as the first line of your expression, the
 For your code to be javascript compliant, please declare all vars and use operators limited to what javascript supports.
 For example don't use an addition operator to sum two arrays.
 
+## valueAtTime
+
+Function `valueAtTime` can only be used in expressions when it is referencing the same property or other non-expression properties.
+When calling this function for the other expression property, it will return base property values obtained from keyframes, not an expression result, as it happens in After Effects.
+This may lead to some animations not working properly on export. 
+
+For example, this causes issues when exporting [Duik](https://rainboxprod.coop/en/tools/duik/)'s forward kinematics. See [this issue](https://github.com/airbnb/lottie-web/issues/1661) for more information.
+
+As a possible workaround, you can pre-bake expressions into keyframes before export by using `Convert expression to keyframes` feature of After Effects, or any baking plugin. 
+
 # Troubleshooting
 
 ## Missing masks
