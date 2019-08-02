@@ -444,3 +444,9 @@ Merge paths are only available on KitKat and above so you must manually enable t
 
 ## Animation Clipping
 Make sure you are using the latest version of Lottie.
+
+# Performance Testing
+
+![YourKit](https://www.yourkit.com/images/yklogo.png)
+
+Performance and memory testing was aided by [YourKit](https://www.yourkit.com/java/profiler/) which provides powerful performance and memory profiling tools for Java.
