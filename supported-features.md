@@ -78,16 +78,16 @@
 | Stroke |                        👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Tracking |                      👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Anchor point grouping |         ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Text Path |                     ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Per-character 3D |              ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Units) |        ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Based on) |     ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Amount) |       ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Shape) |        ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Ease High) |    ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Ease Low)  |    ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Range selector (Randomize order) | ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| expression selector |           ⛔ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Text Path |                     ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Per-character 3D |              ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Units) |        ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Based on) |     ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Amount) |       ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Shape) |        ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Ease High) |    ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Ease Low)  |    ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Range selector (Randomize order) | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| expression selector |           ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | **Other** | **Android** | **iOS** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Expressions |                   ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Images |                        👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
