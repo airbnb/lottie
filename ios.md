@@ -14,6 +14,7 @@
   - [Using Markers](#using-markers)
   - [Dynamic Animation Properties](#dynamic-animation-properties)
   - [Adding Views to Animations](#adding-views-to-animations)
+  - [Enabling and Disabling Animation Nodes](#enabling-and-disabling-animation-nodes)
 - [Image Provider](#image-provider)
   - [BundleImageProvider](#bundleimageprovider)
   - [FilepathImageProvider](#filepathimageprovider)
@@ -444,8 +445,32 @@ AnimationView.logHierarchyKeypaths()
 Logs all child keypaths of the animation into the console.
 
 #
-### Adding Views to Animations
+#### Adding Views to Animations
 Custom views can be added to AnimationViews. These views will animate alongside the animation.
+
+#
+#### Enabling and Disabling Animation Nodes
+
+`public func setNodeIsEnabled(isEnabled: Bool, keypath: AnimationKeypath)`
+
+Sets the enabled state of all animator nodes found with the keypath search.
+This can be used to interactively enable / disable parts of the animation.
+An enabled node affects the render tree, a disabled node will be removed from the render tree.
+
+- Parameter isEnabled: When true the animator nodes affect the rendering tree. When false the node is removed from the tree.
+- Parameter keypath: The keypath used to find the node(s).
+
+Example
+```swift
+// Create an animation view.
+let animation = Animation.named("LottieLogo1", subdirectory: "TestAnimations")
+// Some time later. Create a keypath to find any node named "Stroke 1"
+let keypath1 = AnimationKeypath(keypath: "**.Stroke 1")
+// Disable all nodes named Stroke 1, removing them from the current render tree.
+animationView.setNodeIsEnabled(isEnabled: false, keypath: keypath1)
+// Re-enable all nodes named Stroke 1.
+animationView.setNodeIsEnabled(isEnabled: true, keypath: keypath1)
+```
 
 #
 #### Adding Subviews
