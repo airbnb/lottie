@@ -742,6 +742,7 @@ Lottie allows you to change **any** property that is animatable in After Effects
 ## Supported After Effects Features
 
 See Supported Features by platform [here](/supported-features.md)
+
 | **Shapes** | **2.5.2** | **3.0** |
 |:--|:-:|:-:|
 | Shape | 👍 | 👍 |
