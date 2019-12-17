@@ -561,7 +561,7 @@ You may also call `LRUAnimationCache.sharedCache.clearCache()` to clear the cach
 
 [Back to contents](#contents)
 ## Value Providers
-`AnyValueProvider` is a protocol that return animation data for a property at a given time. Every fame an `AnimationView` queries all of its properties and asks if their ValueProvider has an update. If it does the AnimationView will read the property and update that portion of the animation.
+`AnyValueProvider` is a protocol that return animation data for a property at a given time. Every frame an `AnimationView` queries all of its properties and asks if their ValueProvider has an update. If it does the AnimationView will read the property and update that portion of the animation.
 
 Value Providers can be used to dynamically set animation properties at run time.
 
