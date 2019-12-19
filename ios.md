@@ -123,13 +123,13 @@ Parameters:
 Example:
 ```swift
 /// Load from the main bundle.
-let animation = Animation("StarAnimation")
+let animation = Animation.named("StarAnimation")
 /// Load from a specific bundle/
-let animation = Animation("StarAnimation", bundle: myBundle)
+let animation = Animation.named("StarAnimation", bundle: myBundle)
 /// Load from a subdirectory in a bundle.
-let animation = Animation("StarAnimation", subdirectory: "Animations")
+let animation = Animation.named("StarAnimation", subdirectory: "Animations")
 /// Load with an animation cache.
-let animation = Animation("StarAnimation", animationCache: LRUAnimationCache.sharedCache)
+let animation = Animation.named("StarAnimation", animationCache: LRUAnimationCache.sharedCache)
 ```
 #
 #### Loading from a Filepath
