@@ -4,7 +4,7 @@ Get up and running creating animations for Lottie in After Effects!
 
 # Installing Bodymovin
 
-### 1 - Close After Effects if its open
+### 1 - Close After Effects if it's open
 
 ### 2 - Install the ZXP installer
 
