@@ -112,4 +112,4 @@ Heres some links from around the community
 
 [Boost Your User Experience with Lottie for React Native](https://blog.reactnativecoach.com/boost-your-user-experience-with-lottie-for-react-native-5da1ac589982) by Samuli Hakoniemi
 
-[How to use 'Lottie' in Framer X](https://blog.reactnativecoach.com/boost-your-user-experience-with-lottie-for-react-native-5da1ac589982) by ruucm
+[How to use 'Lottie' in Framer X](https://www.youtube.com/watch?v=GflnbO5RMZI) by ruucm
