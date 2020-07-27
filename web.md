@@ -224,3 +224,9 @@ If an element needs to be rendered larger than the original size, it won't be sm
 * Some fonts have special combinations of chars that are spaced differently than default. These are not supported yet, they will be spaced as any other char and you might notice some differences.
 * Some fonts can't be converted to glyphs on AE and will result on an error on the plugin. I've seen this behavior specially with fonts that simulate pixelled fonts.
 * If you use Typekit fonts, make sure you load them on a single kit, and provide for each font the css Selector displayed on the kit editor.
+
+## Paths with strokes getting cut off
+
+If paths with strokes are being cut off to a rectangular viewbox, add a rectangular path larger than the stroked path to the same layer to force the final masked size to include the stroke width.
+
+![Stroke cutoff issue demo](images/Web-StrokeCutoffMaskingDemo.png)
