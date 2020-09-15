@@ -94,7 +94,7 @@ Heres some links from around the community
 
 [A Lottie to Like](https://t.co/dadjvgv9vk) by Nick Butcher
 
-[Creating better user experiences with animations and Lottie](https://pspdfkit.com/blog/2017/creating-better-user-experiences-with-animations-and-lottie/)by Samo Korosec and Stefan Keileithner
+[Creating better user experiences with animations and Lottie](https://pspdfkit.com/blog/2017/creating-better-user-experiences-with-animations-and-lottie/) by Samo Korosec and Stefan Keileithner
 
 [How to use Lottie \(In Chinese\)](https://goo.gl/e7BkND) by PattyDraw
 
