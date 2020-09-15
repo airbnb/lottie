@@ -7,6 +7,7 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Axway Appcelerator](https://github.com/m1ga/ti.animation)
 * [Qt QML](https://sea-region.github.com/kbroulik/lottie-qml)
 * [Rlottie](https://github.com/Samsung/rlottie)
+* [Python](https://gitlab.com/mattia.basaglia/python-lottie)
 
 # Web
 * [React](https://github.com/chenqingspring/react-lottie)
