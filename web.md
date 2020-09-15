@@ -82,7 +82,7 @@ animation instances have these main methods:
 - **anim.goToAndStop(value, isFrame)** first param is a numeric value. second param is a boolean that defines time or frames for first param
 - **anim.goToAndPlay(value, isFrame)** first param is a numeric value. second param is a boolean that defines time or frames for first param
 - **anim.setDirection(direction)** -- one param direction (1 is normal direction.)
-- **anim.playSegments(segments, forceFlag)** -- first param is a single array or multiple arrays of two values each(fromFrame,toFrame), second param is a boolean for forcing the new segment right awa
+- **anim.playSegments(segments, forceFlag)** -- first param is a single array or multiple arrays of two values each(fromFrame,toFrame), second param is a boolean for forcing the new segment right away
 - **anim.setSubframe(flag)** -- If false, it will respect the original AE fps. If true, it will update as much as possible. (true by default
 - **anim.destroy()**
 
