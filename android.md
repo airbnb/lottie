@@ -60,6 +60,8 @@ It is recommended to use `lottie_rawRes` because you can use static references t
 
 You can also call many Lottie APIs on LottieAnimationView directly. View the class reference for the full set of APIs.
 
+Note: to correctly load dark mode (`-night`) resources, make sure you pass `Activity` as a context where possible (instead of e.g. the application context). The `Activity` won't be leaked.
+
 ### Caching Animations
 
 All Lottie animations are cached with a LRU cache by default. Default cache keys will be created for animations loaded from `res/raw/` or `assets/`. Other APIs require setting a cache key.
