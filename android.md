@@ -20,7 +20,7 @@ You can build the sample app yourself or download it from the [Play Store](https
 
 * `LottieAnimationView` extends ImageView and is the default and simplest way to load a Lottie animation.
 * `LottieDrawable` has most of the same APIs as LottieAnimationView but you can use it on any View you want.
-* `LottieComposition` is the stateless model repesentation of an animation. You can create one with LottieCompositionFactory and set it on a LottieDrawable or LottieAnimationView.
+* `LottieComposition` is the stateless model repesentation of an animation. You can create one with LottieCompositionFactory and set it on a LottieDrawable or LottieAnimationView. This class is cached in-memory by Lottie but you can freely cache and reuse it across your app.
 
 # Loading an Animation
 
@@ -65,7 +65,7 @@ Note: to correctly load dark mode (`-night`) resources, make sure you pass `Acti
 ### Caching Animations
 
 All Lottie animations are cached with a LRU cache by default. Default cache keys will be created for animations loaded from `res/raw/` or `assets/`. Other APIs require setting a cache key.
-If you fire multiple animation requests for the same animation in parallel such as a wishlist heart in a RecyclerView, subsequent requests will join the existing task so it only gets parsed once (Lottie >= 2.6.0).
+If you fire multiple animation requests for the same animation in parallel such as a wishlist heart in a RecyclerView, subsequent requests will join the existing task so it only gets parsed once.
 
 # Replacing a static asset with Lottie
 One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assets.
@@ -101,6 +101,12 @@ Include it in your layout:
 
 `LottieAnimationView` extends `ImageView` so you can start by simply replacing your ImageViews with LottieAnimationViews even if you are still using drawables!
 
+# Global Configuration
+Lottie has some global configuration options. None are required by default but it can be used to:
+* Use your own network stack intead of Lottie's built in one when loading animations from the network.
+* Provide your own cache directories for animation fetched from the network instead of using Lottie's default one (`cacheDir/lottie_network_cache`).
+* Enable systrace makers for debugging.
+
 # Animation Listeners
 
 You can control the animation or add listeners:
@@ -108,6 +114,7 @@ You can control the animation or add listeners:
 animationView.addAnimatorUpdateListener((animation) -> {
     // Do something.
 });
+animationView.addAnimatorListener(...);
 animationView.playAnimation();
 ...
 if (animationView.isAnimating()) {
@@ -151,7 +158,7 @@ However, if your animation isn't the perfect size, you have two options:
 
 # ImageView scaleType
 
-LottieAnimationView is a wrapped `ImageView` and it supports `centerCrop` and `centerInside` so you may use those two as you would with any other image.
+LottieAnimationView is a wrapped `ImageView` and it supports `centerCrop`, `centerInside`, and `fitXY` so you may use those two as you would with any other image.
 
 ## Scaling Up/Down
 
@@ -167,17 +174,17 @@ You can update properties dynamically at runtime. This can be used for a variety
 * Animating a single part of an animation in response to an event.
 * Responding to view sizes or other values not known at design time.
 
-## Understanding After Effects
+### Understanding After Effects
 To understand how to change animation properties in Lottie, you should first understand how animation properties are stored in Lottie.
 Animation properties are stored in a data tree that mimics the information heirarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `KeyPath`.
 
-## Usage
+### Usage
 To update a property at runtime, you need 3 things:
 1. KeyPath
 1. LottieProperty
 1. LottieValueCallback
 
-### KeyPath
+#### KeyPath
 A KeyPath is used to target a specific content or a set of contents that will be updated. A KeyPath is specified by a list of strings that correspond to the hierarchy of After Effects contents in the original animation.
 
 KeyPaths can include the specific name of the contents or wildcards:
@@ -186,15 +193,15 @@ KeyPaths can include the specific name of the contents or wildcards:
 * **Globstar** `**`
   * Globstars match zero or more layers.
 
-### KeyPath resolution
+#### KeyPath resolution
 KeyPaths have the ability to store an internal reference to the content that they resolve to. When you create a new KeyPath object, it will be unresolved. LottieDrawable and LottieAnimationView has a `resolveKeyPath()` method that takes a KeyPath and returns a list of zero or more resolved KeyPaths that each resolve to a single piece of content and are internally resolved. This can be used to discover the structure of your animation if you don't know it. To do so, in a development environment, resolve `new KeyPath("**")` and log the returned list. However, you shouldn't use `**` by itself with a ValueCallback because it will be applied to every single piece of content in your animation. If you resolve your KeyPaths and want to subsequently add a value callback, use the KeyPaths returned from that method because they will be internally resolved and won't have to do a tree walk to find the content again.
 
 See the documentation for `KeyPath` for more information.
 
-### LottieProperty
+#### LottieProperty
 LottieProperty is an enumeration of properties that can be set. They correspond to the animatable value in After Effects and the available properties are listed above and in the documentation for `LottieProperty`
 
-### ValueCallback
+#### ValueCallback
 The ValueCallback is what gets called every time the animation is rendered. The callback provides:
 1. Start frame of the current keyframe.
 1. End frame of the current keyframe.
@@ -206,12 +213,12 @@ The ValueCallback is what gets called every time the animation is rendered. The 
 
 There are also some helper `ValueCallback` subclasses such as `LottieStaticValueCallback` that takes a single value of the correct type in its constructor and will always return that. Think of it as a fire and forget value. There is also a relative value callback that offsets the real animation value by a specified amount.
 
-#### ValueCallback classes
+##### ValueCallback classes
 * LottieValueCallback<T>: Either set a static value in the contructor or override getValue() to set the value on every frame.
 * LottieRelativeTYPEValueCallback: Either set a static value in the constructor or override getOffset() to set a value taht will be applied as an offset to the actual animation value on each frame. TYPE is the same type as the LottieProperty parameter.
 * LottieInterpolatedTYPEValue: Supply a start value, end value, and optional interpolator to have the value automatically interpolate across the entire animation. TYPE is the same type as the LottieProperty parameter.
 
-## Usage
+### Usage
 ```java
   animationView.addValueCallback(
       new KeyPath("Shape Layer", "Rectangle", "Fill"),
@@ -242,32 +249,32 @@ animationView.addValueCallback(
 );
 ```
 
-## Animatable Properties
+### Animatable Properties
 
 The following value can be modified:
-### Transform:
+#### Transform:
  * `TRANSFORM_ANCHOR_POINT`
  * `TRANSFORM_POSITION`
  * `TRANSFORM_OPACITY`
  * `TRANSFORM_SCALE`
  * `TRANSFORM_ROTATION`
 
-### Fill:
+#### Fill:
  * `COLOR` (non-gradient)
  * `OPACITY`
  * `COLOR_FILTER`
 
-### Stroke:
+#### Stroke:
  * `COLOR (non-gradient)`
  * `STROKE_WIDTH`
  * `OPACITY`
  * `COLOR_FILTER`
 
-### Ellipse:
+#### Ellipse:
  * `POSITION`
  * `ELLIPSE_SIZE`
 
-### Polystar:
+#### Polystar:
  * `POLYSTAR_POINTS`
  * `POLYSTAR_ROTATION`
  * `POSITION`
@@ -276,7 +283,7 @@ The following value can be modified:
  * `POLYSTAR_INNER_RADIUS` (star)
  * `POLYSTAR_INNER_ROUNDEDNESS` (star)
 
-### Repeater:
+#### Repeater:
  * All transform properties
  * `REPEATER_COPIES`
  * `REPEATER_OFFSET`
@@ -284,19 +291,19 @@ The following value can be modified:
  * `TRANSFORM_START_OPACITY`
  * `TRANSFORM_END_OPACITY`
 
-### Layers:
+#### Layers:
  * All transform properties
  * `TIME_REMAP` (composition layers only)
 
-## Notable Properties
+### Notable Properties
 
-### Time Remapping
+#### Time Remapping
 Compositions and precomps (composition layers) have an a time remap proprty. If you set a value callback for time remapping, you control the progress of a specific layer. To do so, return the desired time value in seconds from your value callback.
 
-### Color Filters
+#### Color Filters
 The only animatable property that doesn't map 1:1 to an After Effects property is the color filter property you can set on fill content. This can be used to set blend modes on layers. It will only apply to the color of that fill, not any overlapping content.
 
-## Migrating from the old `addColorFilter` API
+### Migrating from the old `addColorFilter` API
 If you were using the old API to dynamically change a color, you will need to migrate to the new one. To do so upgrade your code as follows:
 ```java
 animationView.addColorFilter(colorFilter);
@@ -390,18 +397,12 @@ There are two ways to render After Effects animations:
 ## Pros of AnimatedVectorDrawable
 * Faster peformance due to the animation running on the [RenderThread](https://medium.com/@workingkills/understanding-the-renderthread-4dc17bcaf979) vs the main thread.
 
-
-## Bodymovin AVD exporter
-Bodymovin can export some animations directly as AVDs if they suit your needs better.
-To do so, just check the AVD checkbox in the bodymovin settings:
-![AVD](/images/BodymovinAvd.png)
-This support is very experimental and only supports a subset of the functionality of lottie and avd.
-
 # Performance
 
 ## Masks and Mattes
 Masks and mattes on android have the larges performance hit. Their performance hit is also proportional to the intersection bounds of the masked/matted layer and the mask/matte so the smaller the mask/matte, the less of a performance hit there will be.
 On Android, if you are using masks or mattes, there will be a several X performance improvement when using hardware acceleration.
+For debugging purposes, Lottie can outline all masks and mattes in your animation. To do that, just call `setOutlineMasksAndMattes(true)` on your `LottieAnimationView` or `LottieDrawable`.
 
 # Hardware Acceleration
 
