@@ -1,5 +1,5 @@
 # Getting Started
-Gradle is the only supported build configuration, so just add the dependency to your project `build.gradle` file:
+Add the dependency to your project `build.gradle` file:
 
 <pre><code class="lang-groovy">dependencies {
     ...
@@ -15,24 +15,27 @@ You can build the sample app yourself or download it from the [Play Store](https
 <br/>
 <a href='https://play.google.com/store/apps/details?id=com.airbnb.lottie'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>
 
-
+---
 # Core Classes
 
 * `LottieAnimationView` extends ImageView and is the default and simplest way to load a Lottie animation.
 * `LottieDrawable` has most of the same APIs as LottieAnimationView but you can use it on any View you want.
-* `LottieComposition` is the stateless model repesentation of an animation. You can create one with LottieCompositionFactory and set it on a LottieDrawable or LottieAnimationView. This class is cached in-memory by Lottie but you can freely cache and reuse it across your app.
+* `LottieComposition` is the stateless model representation of an animation. This file is safe to cache for as long as you need and can be freely reused across drawables/views.
+* `LottieCompositionFactory` allows you to create a LottieComposition from a number of inputs. This is what the `setAnimation(...)` APIs on `LottieDrawable` and `LottieAnimationView` use under the hood. The factory methods share the same cache with those classes as well.
 
+---
 # Loading an Animation
 
-Lottie supports API 16 and above.
+Lottie can load animations from:
 
-Lottie animations can load animations from:
 * A json animation in `src/main/res/raw`.
 * A json file in `src/main/assets`.
 * A zip file in `src/main/assets`. See [images docs](/android?id=images) for more info.
+* A [dotLottie](https://dotlottie.io/) file in `src/main/assets`.
 * A url to a json or zip file.
 * A json string. The source can be from anything including your own network stack.
 * An InputStream to either a json file or a zip file.
+
 
 ### From XML
 
@@ -58,7 +61,7 @@ It is recommended to use `lottie_rawRes` because you can use static references t
 
 ### Programmatically
 
-You can also call many Lottie APIs on LottieAnimationView directly. View the class reference for the full set of APIs.
+`LottieAnimationView`, `LottieDrawable`, and `LottieCompositionFactory` each has methods for the corresponding locations.
 
 Note: to correctly load dark mode (`-night`) resources, make sure you pass `Activity` as a context where possible (instead of e.g. the application context). The `Activity` won't be leaked.
 
@@ -67,66 +70,38 @@ Note: to correctly load dark mode (`-night`) resources, make sure you pass `Acti
 All Lottie animations are cached with a LRU cache by default. Default cache keys will be created for animations loaded from `res/raw/` or `assets/`. Other APIs require setting a cache key.
 If you fire multiple animation requests for the same animation in parallel such as a wishlist heart in a RecyclerView, subsequent requests will join the existing task so it only gets parsed once.
 
-# Replacing a static asset with Lottie
-One of the primary motivations behind Lottie is to make shipping animations just as easy as shipping static assets.
-
-## Switch from static assets to animations with 3 lines of code!
-
-### Static Asset Workflow
-Put your pngs or vector drawables (xml) in `res/drawable`
-Include it in your layout
-```xml
-<ImageView
-        android:id="@+id/image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/your_drawable" />
-```
-
-### Lottie workflow
-
-Put your lottie json in `res/raw`
-Include it in your layout:
-```xml
-<com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:lottie_rawRes="@raw/your_animation"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true" />
-```
-
-`LottieAnimationView` extends `ImageView` so you can start by simply replacing your ImageViews with LottieAnimationViews even if you are still using drawables!
-
+---
 # Global Configuration
 Lottie has some global configuration options. None are required by default but it can be used to:
 * Use your own network stack intead of Lottie's built in one when loading animations from the network.
 * Provide your own cache directories for animation fetched from the network instead of using Lottie's default one (`cacheDir/lottie_network_cache`).
 * Enable systrace makers for debugging.
 
+To set it up, somewhere during your application initialization, include:
+```kotlin
+Lottie.initialize(
+    LottieConfig.Builder()
+        .setEnableSystraceMarkers(true)
+        .setNetworkFetcher(...)
+        .setNetworkCacheDir(...)
+)
+```
+
+---
 # Animation Listeners
 
 You can control the animation or add listeners:
-```java
-animationView.addAnimatorUpdateListener((animation) -> {
-    // Do something.
-});
-animationView.addAnimatorListener(...);
-animationView.playAnimation();
-...
-if (animationView.isAnimating()) {
-    // Do something.
+```kotlin
+animationView.addAnimatorUpdateListener { animation ->
 }
-...
-animationView.setProgress(0.5f);
-...
+animationView.addAnimatorListener(...)
+animationView.addPauseListener {
+}
+
 ```
 
 In the update listener callback:
-`animation.getAnimatedValue()` will return the progres of the animation regardless of the currently set min/max frame [0,1].
+`animation.getAnimatedValue()` will return the progress of the animation regardless of the currently set min/max frame [0,1].
 
 `animation.getAnimatedFraction()` will return the progress of the animation taking into account the set min/max frame [minFrame,maxFrame].
 
@@ -134,15 +109,16 @@ In the update listener callback:
 
 Although `playAnimation()` is sufficient for the vast majority of use cases, you can call `setProgress(...)` in the update callback for your own animator. This can be useful to tie an animation to something like a gesture, download progress, or scroll position.
 
-```java
+```kotlin
 // Custom animation speed or duration.
-ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
-animator.addUpdateListener(animation -> {
-    animationView.setProgress(animation.getAnimatedValue());
-});
-animator.start();
+val animator = ValueAnimator.ofFloat(0f, 1f)
+animator.addUpdateListener {
+    animationView.setProgress(animation.animatedValue)
+}
+animator.start()
 ```
 
+---
 # Looping
 
 Lottie support advanced looping functionality that mirrors `ValueAnimator`. As such, you can call `setRepeatMode(...)` or `setRepeatCount(...)` as you would on a `ValueAnimator`
@@ -150,12 +126,14 @@ You can also enable looping from xml with `lottie_loop="true"`
 
 You can loop a specific part of an animation by using `setMinFrame`, `setMaxFrame`, or `setMinAndMaxFrame`. There are multiple versions of each that take frame, progress (from 0.0 to 1.0) or a marker name (specified in After Effects).
 
+---
 # Animation Size (px vs dp)
 
 _**Lottie converts all px values in After Effects to dps**_ on device so that everything is rendered at the same size across devices. This means that instead of making an animation in After Effects that is 1920x1080, it should be more like 411x731px in After Effects which roughly corresponds to the dp screen size of most phones today.
 
 However, if your animation isn't the perfect size, you have two options:
 
+---
 # ImageView scaleType
 
 LottieAnimationView is a wrapped `ImageView` and it supports `centerCrop`, `centerInside`, and `fitXY` so you may use those two as you would with any other image.
@@ -166,6 +144,7 @@ LottieAnimationView is a wrapped `ImageView` and it supports `centerCrop`, `cent
 
 If your animation is performing slowly, make sure to check the documentation on [performance](/android/performance.md). However, try scaling your animation down in combination with a scaleType. This will reduce the amount that Lottie renders per frame. This is particularly helpful if you have large mattes or masks.
 
+---
 # Dynamic Properties
 
 You can update properties dynamically at runtime. This can be used for a variety of purposes such as:
@@ -219,77 +198,35 @@ There are also some helper `ValueCallback` subclasses such as `LottieStaticValue
 * LottieInterpolatedTYPEValue: Supply a start value, end value, and optional interpolator to have the value automatically interpolate across the entire animation. TYPE is the same type as the LottieProperty parameter.
 
 ### Usage
-```java
-  animationView.addValueCallback(
-      new KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR,
-      new LottieStaticValueCallback<>(Color.RED));
-```
-
-```java
-animationView.addValueCallback(
-    new KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR,
-    (frameInfo) -> {
-      return overallProgress < 0.5 ? Color.GREEN : Color.RED;
-    }
-);
-```
-
-or Kotlin
 ```kotlin
-  animationView.addValueCallback(
-      KeyPath("Shape Layer", "Rectangle", "Fill"),
-      LottieProperty.COLOR_FILTER) { Color.RED };
+animationView.addValueCallback(
+  KeyPath("Shape Layer", "Rectangle", "Fill"),
+  LottieProperty.COLOR,
+  { Color.RED }
+)
 ```
+
 ```kotlin
 animationView.addValueCallback(
     KeyPath("Shape Layer", "Rectangle", "Fill"),
-    LottieProperty.COLOR_FILTER) { frameInfo -> frameInfo.overallProgress < 0.5 ? Color.GREEN : Color.RED }
-);
+    LottieProperty.COLOR,
+    { if (it.overallProgress < 0.5) Color.GREEN else Color.RED }
+)
 ```
 
 ### Animatable Properties
 
 The following value can be modified:
-#### Transform:
- * `TRANSFORM_ANCHOR_POINT`
- * `TRANSFORM_POSITION`
- * `TRANSFORM_OPACITY`
- * `TRANSFORM_SCALE`
- * `TRANSFORM_ROTATION`
 
-#### Fill:
- * `COLOR` (non-gradient)
- * `OPACITY`
- * `COLOR_FILTER`
+| Transform              | Layer                  | Fill         | Stroke       | Ellipse      | Polystar                   | Repeater                |
+|------------------------|------------------------|--------------|--------------|--------------|----------------------------|-------------------------|
+| TRANSFORM_ANCHOR_POINT | TRANSFORM_ANCHOR_POINT | COLOR        | COLOR        | ELLIPSE_SIZE | POLYSTAR_POINTS            | REPEATER_COPIES         |
+| TRANSFORM_POSITION     | TRANSFORM_POSITION     | OPACITY      | OPACITY      | POSITION     | POLYSTAR_ROTATION          | REPEATER_OFFSET         |
+| TRANSFORM_OPACITY      | TRANSFORM_OPACITY      | COLOR_FILTER | COLOR_FILTER |              | POSITION                   | TRANSFORM_ROTATION      |
+| TRANSFORM_SCALE        | TRANSFORM_SCALE        |              | STROKE_WIDTH |              | POLYSTAR_OUTER_RADIUS      | TRANSFORM_START_OPACITY |
+| TRANSFORM_ROTATION     | TRANSFORM_ROTATION     |              |              |              | POLYSTAR_OUTER_ROUNDEDNESS | TRANSFORM_END_OPACITY   |
+|                        | TIME_REMAP             |              |              |              | POLYSTAR_INNER_RADIUS      |                         |
 
-#### Stroke:
- * `COLOR (non-gradient)`
- * `STROKE_WIDTH`
- * `OPACITY`
- * `COLOR_FILTER`
-
-#### Ellipse:
- * `POSITION`
- * `ELLIPSE_SIZE`
-
-#### Polystar:
- * `POLYSTAR_POINTS`
- * `POLYSTAR_ROTATION`
- * `POSITION`
- * `POLYSTAR_OUTER_RADIUS`
- * `POLYSTAR_OUTER_ROUNDEDNESS`
- * `POLYSTAR_INNER_RADIUS` (star)
- * `POLYSTAR_INNER_ROUNDEDNESS` (star)
-
-#### Repeater:
- * All transform properties
- * `REPEATER_COPIES`
- * `REPEATER_OFFSET`
- * `TRANSFORM_ROTATION`
- * `TRANSFORM_START_OPACITY`
- * `TRANSFORM_END_OPACITY`
 
 #### Layers:
  * All transform properties
@@ -303,41 +240,7 @@ Compositions and precomps (composition layers) have an a time remap proprty. If 
 #### Color Filters
 The only animatable property that doesn't map 1:1 to an After Effects property is the color filter property you can set on fill content. This can be used to set blend modes on layers. It will only apply to the color of that fill, not any overlapping content.
 
-### Migrating from the old `addColorFilter` API
-If you were using the old API to dynamically change a color, you will need to migrate to the new one. To do so upgrade your code as follows:
-```java
-animationView.addColorFilter(colorFilter);
-```
-becomes
-```java
-animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
-```
-------
-```java
-animationView.addColorFilterToLayer("hello_layer", colorFilter);
-```
-becomes
-```java
-animationView.addValueCallback(new KeyPath("hello_layer", "**"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
-```
-------
-```java
-animationView.addColorFilterToContent("hello_layer", "hello", colorFilter);
-```
-becomes
-```java
-
-animationView.addValueCallback(new KeyPath("hello_layer", "**", "hello"), LottieProperty.COLOR_FILTER, new LottieValueCallback<ColorFilter>(colorFilter));
-```
-------
-```java
-animationView.clearColorFilters();
-```
-becomes
-```java
-animationView.addValueCallback(new KeyPath("**"), LottieProperty.COLOR_FILTER, null);
-```
-
+---
 # Images
 
 Lottie is designed to work with vector shapes. Although Lottie supports rendering images, there are disadvantages to using them:
@@ -347,39 +250,36 @@ Lottie is designed to work with vector shapes. Although Lottie supports renderin
 
 A common cause of images in Lottie files is that bodymovin exports Illustrator layers from After Effects as images. If you think this might be the case, follow the instructions [here](/after-effects/artwork-to-lottie-walkthrough.md).
 
-## Setting your images
+### Setting your images
 You can set Lottie images in three ways:
-### src/assets
+#### src/assets
 If you do need to use images, put the images in a folder inside of `src/assets` and don't change the filenames of the images. You then need to direct Lottie to the assets folder where the images are stored by calling `setImageAssetsFolder` on `LottieAnimationView` or
 `LottieDrawable` with the relative folder inside of assets. Again,make sure that the images that
 bodymovin export are in that folder with their names unchanged (should be img_#).
 If you use `LottieDrawable` directly.
 You should call `recycleBitmaps` when you are done animating.
-### Zip file
+#### Zip file
 Alternatively, you can create a zip file with your json and images together. Lottie can unzip and read the contents. This can be done for local files or from a url.
-### Providing your own images
+#### Providing your own images
 Sometimes, you don't have the images bundled with the device. You may do this to save space in your apk or if you downloaded the animation from the network. To handle this case, you can set an `ImageAssetDelegate` on your `LottieAnimationView` or `LottieDrawable`. The delgate will be called every time Lottie tries to render an image. It will pass the image name and ask you to return the bitmap. If you don't have it yet (if it's still downloading, for example) then just return null and Lottie will continue to ask on every frame until you return a non-null value.
 
- ```java
-animationView.setImageAssetDelegate(new ImageAssetDelegate() {
-  @Override public Bitmap fetchBitmap(LottieImageAsset asset) {
-    if (downloadedBitmap == null) {
-      // We don't have it yet. Lottie will keep
-      // asking until we return a non-null bitmap.
-      return null;
-    }
-    return downloadedBitmap;
-  }
-});
+ ```kotlin
+animationView.setImageAssetDelegate { asset ->
+	when (asset.id) {
+		"id_1" -> yourBitmap1
+		...
+	}
+}
 ```
 
+---
 # What is the impact of Lottie on APK size?
 
 Very small:
-* ~800 methods.
-* 111kb uncompressed.
-* 45kb gzipped when downloaded through the Play Store.
+* ~1600 methods.
+* 287kb uncompressed.
 
+---
 # Lottie vs Android Vector Drawable (AVD)
 
 There are two ways to render After Effects animations:
@@ -397,6 +297,7 @@ There are two ways to render After Effects animations:
 ## Pros of AnimatedVectorDrawable
 * Faster peformance due to the animation running on the [RenderThread](https://medium.com/@workingkills/understanding-the-renderthread-4dc17bcaf979) vs the main thread.
 
+---
 # Performance
 
 ## Masks and Mattes
