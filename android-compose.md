@@ -33,12 +33,12 @@ fun Loader() {
 ```kotlin
 @Composable
 fun Loader() {
-    val spec = remember { LottieAnimationSpec.RawRes(R.raw.loading) }
+    val animationSpec = remember { LottieAnimationSpec.RawRes(R.raw.loading) }
     // You can control isPlaying/progress/repeat/etc. with this.
     val animationState = rememberLottieAnimationState(autoPlay = true, repeatCount = Integer.MAX_VALUE)
 
     LottieAnimation(
-        spec,
+        animationSpec,
         animationState,
         modifier = Modifier.preferredSize(100.dp)
     )
