@@ -34,11 +34,11 @@ fun Loader() {
 @Composable
 fun Loader() {
     val spec = remember { LottieAnimationSpec.RawRes(R.raw.loading) }
-    val compositionResult = rememberLottieComposition(spec)
+    // You can control isPlaying/progress/repeat/etc. with this.
     val animationState = rememberLottieAnimationState(autoPlay = true, repeatCount = Integer.MAX_VALUE)
 
     LottieAnimation(
-        compositionResult,
+        spec,
         animationState,
         modifier = Modifier.preferredSize(100.dp)
     )
