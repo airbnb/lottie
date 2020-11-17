@@ -2,6 +2,17 @@
 
 Initial work has been done to add Lottie support to Jetpack Compose. It is currently in a pre-alpha stage but a public preview will be published soon.
 
+## Getting Started
+Add the dependency to your project `build.gradle` file:
+
+<pre><code class="lang-groovy">dependencies {
+    ...
+    implementation "com.airbnb.android:lottie-compose:$lottieVersion"
+    ...
+}
+</code></pre>
+The latest version is: ![lottieVersion](https://maven-badges.herokuapp.com/maven-central/com.airbnb.android/lottie-compose/badge.svg)
+
 ## Core Composables and Classes
 
 The primary Composable used for Lottie is `LottieAnimation`. It takes two parameters:
