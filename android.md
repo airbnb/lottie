@@ -248,7 +248,7 @@ Lottie is designed to work with vector shapes. Although Lottie supports renderin
 * They get pixelated when scaled.
 * They add complexity to the animation. Instead of one file, you have the json file plus all of the images.
 
-A common cause of images in Lottie files is that bodymovin exports Illustrator layers from After Effects as images. If you think this might be the case, follow the instructions [here](/after-effects/artwork-to-lottie-walkthrough.md).
+A common cause of images in Lottie files is that bodymovin exports Illustrator layers from After Effects as images. If you think this might be the case, follow the instructions [here](/after-effects.md).
 
 ### Setting your images
 You can set Lottie images in three ways:
