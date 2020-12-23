@@ -97,6 +97,8 @@ Heres some links from around the community
 
 [How to use Lottie \(In Spanish\)](https://www.youtube.com/watch?v=hLUBXENQSOc) by AnimatiCSS
 
+[10 amazing web animations with Lottie \(In Spanish\)](https://www.youtube.com/watch?v=IFp3tyy3cRA) by AnimatiCSS
+
 [How to use Lottie \(In Chinese\)](https://goo.gl/e7BkND) by PattyDraw
 
 [A Beginning’s Guide to Lottie: Creating Amazing Animations in iOS Apps](https://www.appcoda.com/lottie-beginner-guide/#) by Simon NG
