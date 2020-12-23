@@ -95,9 +95,9 @@ Heres some links from around the community
 
 [Creating better user experiences with animations and Lottie](https://pspdfkit.com/blog/2017/creating-better-user-experiences-with-animations-and-lottie/) by Samo Korosec and Stefan Keileithner
 
-[How to use Lottie \(In Spanish\)](https://www.youtube.com/watch?v=hLUBXENQSOc) by AnimatiCSS
-
 [10 amazing web animations with Lottie \(In Spanish\)](https://www.youtube.com/watch?v=IFp3tyy3cRA) by AnimatiCSS
+
+[How to use Lottie \(In Spanish\)](https://www.youtube.com/watch?v=hLUBXENQSOc) by AnimatiCSS
 
 [How to use Lottie \(In Chinese\)](https://goo.gl/e7BkND) by PattyDraw
 
