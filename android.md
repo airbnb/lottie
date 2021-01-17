@@ -253,11 +253,14 @@ A common cause of images in Lottie files is that bodymovin exports Illustrator l
 ### Setting your images
 You can set Lottie images in three ways:
 #### src/assets
-If you do need to use images, put the images in a folder inside of `src/assets` and don't change the filenames of the images. You then need to direct Lottie to the assets folder where the images are stored by calling `setImageAssetsFolder` on `LottieAnimationView` or
-`LottieDrawable` with the relative folder inside of assets. Again,make sure that the images that
-bodymovin export are in that folder with their names unchanged (should be img_#).
-If you use `LottieDrawable` directly.
-You should call `recycleBitmaps` when you are done animating.
+Put the images in a folder inside of `src/assets` and don't change the filenames of the images.
+
+
+Then, tell Lottie to the assets folder where the images are stored by calling `setImageAssetsFolder` on `LottieAnimationView` or
+`LottieDrawable` with the relative folder inside of assets or with the `app:lottie_imageAssetsFolder` attribute on your LottieAnimationView.
+
+Again,make sure that the images that bodymovin exports are in that folder with their names unchanged (should be img_#).
+
 #### Zip file
 Alternatively, you can create a zip file with your json and images together. Lottie can unzip and read the contents. This can be done for local files or from a url.
 #### Providing your own images
