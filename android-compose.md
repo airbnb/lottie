@@ -11,7 +11,24 @@ Add the dependency to your project `build.gradle` file:
     ...
 }
 </code></pre>
-The latest version is: ![lottieVersion](https://maven-badges.herokuapp.com/maven-central/com.airbnb.android/lottie-compose/badge.svg)
+The latest stable version is: ![lottieVersion](https://maven-badges.herokuapp.com/maven-central/com.airbnb.android/lottie-compose/badge.svg)
+
+For the time being, we won't provide numbered releases for every new Jetpack Compose
+version. Check out our snapshot builds instead.
+
+#### Snapshot Versions
+Snapshots are hosted on Sonatype. First, add the Sonatype repository to your `build.gradle` file:
+
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}
+```
+
+The latest snapshot version is: ![lottieSnapshotVersion](https://img.shields.io/nexus/s/com.airbnb.android/lottie-compose?server=https%3A%2F%2Foss.sonatype.org)
 
 ## Core Composables and Classes
 
