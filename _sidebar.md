@@ -3,7 +3,7 @@
 * [**Community Showcase**](/community-showcase.md)
 * [**Android**](/android.md)
 * [**Android - Jetpack Compose**](/android-compose.md)
-* [**iOS/MacOS**](ios.md)
+* [**iOS/MacOS**](/ios.md)
 * [**React Native**](/react-native.md)
 * [**Web**](/web.md)
 * [**Windows**](/windows.md)
