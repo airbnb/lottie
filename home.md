@@ -30,9 +30,11 @@ For the first time, designers can create **and ship** beautiful animations witho
 ![Example4](images/Introduction_04_sm.gif)
 
 
-All of these animations were created in After Effects, exported with Bodymovin, and rendered natively with no additional engineering effort.
+All of the above animations were created in After Effects, and can be exported to Lottie using either the Bodymovin plugin or the LottieFiles for After Effects plugin, and rendered natively with no additional engineering effort.
 
 [Bodymovin](https://github.com/airbnb/lottie-web) is an After Effects plugin created by Hernan Torrisi that exports After effects files as json and includes a javascript web player. We've built on top of his great work to extend its usage to Android, iOS, React Native, and Windows.
+
+[LottieFiles for After Effects](https://lottiefiles.com/plugins/after-effects) is a plugin created by LottieFiles, lets you render your animation natively but also offers additional features such as testing on mobile and a render graph that lets you check your animations CPU usage as you create your Lottie. You can access a library of 1000s of free animations with their AEP file on LottieFiles straight from within the plugin itself too.
 
 Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
 Or get in touch on GitHub or via lottie@airbnb.com
