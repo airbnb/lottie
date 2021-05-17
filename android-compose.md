@@ -67,8 +67,8 @@ fun Loader() {
 
     LottieAnimation(
         animationSpec,
-        animationState,
-        modifier = Modifier.preferredSize(100.dp)
+        modifier = Modifier.preferredSize(100.dp),
+        animationState
     )
 }
 ```
