@@ -53,7 +53,7 @@ fun Loader() {
     val animationSpec = remember { LottieAnimationSpec.RawRes(R.raw.loading) }
     LottieAnimation(
         animationSpec,
-        modifier = Modifier.preferredSize(100.dp)
+        modifier = Modifier.size(100.dp)
     )
 }
 ```
@@ -68,7 +68,7 @@ fun Loader() {
     LottieAnimation(
         animationSpec,
         animationState,
-        modifier = Modifier.preferredSize(100.dp)
+        modifier = Modifier.size(100.dp)
     )
 }
 ```
