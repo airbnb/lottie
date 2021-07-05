@@ -179,7 +179,7 @@ To use dynamic properties, you need 3 things:
 1. A `KeyPath`. A KeyPath is a path to the animation node that has the property that you want to animate. Refer to the docs for `KeyPath` on how to construct one.
 1. A `LottieValueCallback` that will get called on each frame or a single value that will be returned on every frame until you update it.
 
-You use those three to cosntruct a `LottieDynamicProperties` object like this:
+You use those three to construct a `LottieDynamicProperties` object like this:
 ```kotlin
 val dynamicProperties = rememberLottieDynamicProperties(
     rememberLottieDynamicProperty(
@@ -196,3 +196,4 @@ val dynamicProperties = rememberLottieDynamicProperties(
 and pass it as a parameter to your `LottieAnimation` composable.
 
 You can chain together multiple dynamic properties if you want to update several at the same time. This example changes the heart color of [heart.json](https://raw.githubusercontent.com/airbnb/lottie-android/master/sample/src/main/res/raw/heart.json) and can also be seen in [these examples](https://github.com/airbnb/lottie-android/blob/master/sample-compose/src/main/java/com/airbnb/lottie/sample/compose/examples/DynamicPropertiesExamplesPage.kt).
+
