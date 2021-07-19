@@ -2,6 +2,10 @@
 
 Get up and running creating animations for Lottie in After Effects!
 
+[Bodymovin](https://github.com/airbnb/lottie-web) is an After Effects plugin created by Hernan Torrisi that exports After effects files as json and includes a javascript web player. We've built on top of his great work to extend its usage to Android, iOS, React Native, and Windows.
+
+[LottieFiles for After Effects](https://lottiefiles.com/plugins/after-effects) is a plugin created by LottieFiles, lets you render your animation natively but also offers additional features such as testing on mobile and a render graph that lets you check your animations CPU usage as you create your Lottie. You can access a library of 1000s of free animations with their AEP file on LottieFiles straight from within the plugin itself too.
+
 # Installing Bodymovin
 
 ### 1 - Close After Effects if it's open

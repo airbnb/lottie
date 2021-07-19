@@ -1,5 +1,35 @@
 # Lottie for&nbsp;[Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [Web](https://github.com/airbnb/lottie-web), [React Native](https://github.com/airbnb/lottie-react-native), and [Windows](https://aka.ms/lottie)
 
+
+Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
+
+For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here you go:
+
+![Lottie Logo animation](images/Introduction_00_sm.gif ':size=500')
+
+
+The above animation was created in After Effects, and can be rendered natively across all platforms with a simple json file.
+
+## Sponsors
+
+Lottie is made possible because of our supporters on GitHub Sponsors and Open Collective. To learn more, please check out our [sponsorship page](/sponsorship.md).
+
+We would especially like to thank our sponsorships from
+
+[![Lottiefiles](images/lottiefiles.svg ':size=300')](https://www.lottiefiles.com/)
+
+[![Airbnb](images/airbnb.svg ':size=300')](https://www.airbnb.com/)
+
+[![Tonal](images/tonal.svg ':size=300')](https://www.tonal.com/)
+
+[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/sdk/android/?utm_source=lottie&utm_medium=sponsorship&utm_content=developer)
+
+[![Duolingo](images/duolingo.svg ':size=300')](https://www.duolingo.com/)
+
+Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
+Or get in touch on GitHub or via lottie@airbnb.com
+
+## Sample App
 <table>
   <tr>
     <th>
@@ -7,47 +37,9 @@
     </th>
     <th>
       <a href='https://www.microsoft.com/store/apps/9p7x9k692tmw?ocid=badge'><img src='https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png' alt='English badge' width='127px' height='52px'/></a>
-    </th> 
+    </th>
   </tr>
 </table>
-
-
-Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
-
-For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here are 13,000:
-
-![Lottie Logo animation](images/Introduction_00_sm.gif)
-
-![Example1](images/Introduction_01_sm.gif)
-
-
-![Example2](images/Introduction_02_sm.gif)
-
-
-![Example3](images/Introduction_03_sm.gif)
-
-
-![Example4](images/Introduction_04_sm.gif)
-
-
-All of the above animations were created in After Effects, and can be exported to Lottie using either the Bodymovin plugin or the LottieFiles for After Effects plugin, and rendered natively with no additional engineering effort.
-
-[Bodymovin](https://github.com/airbnb/lottie-web) is an After Effects plugin created by Hernan Torrisi that exports After effects files as json and includes a javascript web player. We've built on top of his great work to extend its usage to Android, iOS, React Native, and Windows.
-
-[LottieFiles for After Effects](https://lottiefiles.com/plugins/after-effects) is a plugin created by LottieFiles, lets you render your animation natively but also offers additional features such as testing on mobile and a render graph that lets you check your animations CPU usage as you create your Lottie. You can access a library of 1000s of free animations with their AEP file on LottieFiles straight from within the plugin itself too.
-
-Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
-Or get in touch on GitHub or via lottie@airbnb.com
-
-## Other Platforms
- * [Xamarin (martijn00)](https://github.com/martijn00/LottieXamarin)
- * [NativeScript (bradmartin)](https://github.com/bradmartin/nativescript-lottie)
- * [Axway Appcelerator (m1ga)](https://github.com/m1ga/ti.animation)
- * [ReactXP (colmbrady)](https://github.com/colmbrady/lottie-reactxp)
- * [Flutter (simolus3)](https://github.com/simolus3/fluttie)
- * [Flutter (fabiomsr)](https://github.com/fabiomsr/lottie-flutter)
-
-## Sample App
 
 You can build the sample app for Android yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
 
@@ -55,7 +47,7 @@ For Windows, you can get the [Lottie Viewer app](https://aka.ms/lottieviewer) to
 
 ## Shipping something with Lottie?
 
-Email us at [lottie@airbnb.com](lottie@airbnb.com) and soon we will create a testimonals and use cases page with real world usages of Lottie from around the world.
+We would love to feature your work on our [community showcase](/community-showcase.md)! To do so, Put up a PR on [github.com/lottie](https://github.com/airbnb/lottie) with a change to [community-showcase.md](https://github.com/airbnb/lottie/blob/master/community-showcase.md) with a description and gif of your animation.
 We also have an internal regression testing repo that we can use to prevent causing regressions with your animations.
 
 ## Alternatives
@@ -68,10 +60,8 @@ We also have an internal regression testing repo that we can use to prevent caus
 Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) – the oldest surviving feature-length animated film, preceding Walt Disney's feature-length Snow White and the Seven Dwarfs (1937) by over ten years
 [The art of Lotte Reineger](https://www.youtube.com/watch?v=LvU55CUw5Ck&feature=youtu.be)
 
-## Contributing
-Contributors are more than welcome. Just upload a PR with a description of your changes.
-
-If you would like to add more JSON files feel free to do so!
+## Contributing to Documentation
+Contributors are more than welcome. Just put up a PR to [github.com/airbnb](https://github.com/airbnb/lottie).
 
 ## Issues or feature requests?
 File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
