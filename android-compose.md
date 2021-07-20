@@ -26,7 +26,7 @@ The latest snapshot version is: ![lottieSnapshotVersion](https://img.shields.io/
 ```kotlin
 @Composable
 fun Loader() {
-    val composition by rememberLottieComposition(LottieAnimationSpec.RawRes(R.raw.loading))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
     val progress by animateLottieCompositionAsState(composition)
     LottieAnimation(
         composition,
@@ -38,7 +38,7 @@ Or with the `LottieAnimation` overload that merges `LottieAnimation` and `animat
 ```kotlin
 @Composable
 fun Loader() {
-    val composition by rememberLottieComposition(LottieAnimationSpec.RawRes(R.raw.loading))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
     LottieAnimation(composition)
 }
 ```
