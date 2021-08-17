@@ -69,7 +69,9 @@
 | Stroke |                        ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Tint |                          ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Tritone |                       ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| Levels Individual Controls |    ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
+| Levels Individual Controls |    ⛔️ | ⛔️ | ⛔️ | ❔ | 👍 | 👍 |
+| Gaussian blur |                 👍 (4.1+) | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
+| Drop Shadows |                  👍 (4.1+) | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | **Text** | **Android** | **iOS** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Glyphs |                        👍 | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Fonts |                         👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
@@ -94,4 +96,10 @@
 | Precomps |                      👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Time Stretch |                  👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Time remap |                    👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
-| Markers |                    👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+| Markers |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+
+## Drop Shadows and Gaussian Blurs on Android
+Drop shadows and gaussian blur effects on Android are applied on each fill or stroke not on the final layer. This has the following side effects:
+* If you have many shapes in a layer that has a drop shadow, each shape will get its own shadow and it may appear darker in some areas than others due to overlapping shadows.
+* If your blur or shadow extends beyond the bounds of a precomp, the blur or shadow will be clipped. To avoid this, add padding to your precomp.
+* Dynamic properties must target the individual fill or strokes that have a blur or shadow even if the effect is applied on the whole layer. The easiest way to do this is to append "**" after the layer name in the KeyPath. This will apply the dynamic property to all applicable children within the layer.
