@@ -107,7 +107,7 @@ Codable; see JSON schema [here](https://github.com/airbnb/lottie-web/tree/master
 There are a variety of ways to load an `Animation` on its own. Additionally you can load an animation while allocating an `AnimationView` through one of the convenience initializers on `AnimationView`.
 
 Animations can be stored in an `AnimationCacheProvider`  to reduce the overhead of deserializing the same animations over and over. Read more [here](#animation-cache).
-#
+
 #### Loading from a Bundle
 ```swift
 Animation.named(_ name: String, bundle: Bundle, subdirectory: String?, animationCache: AnimationCacheProvider?) -> Animation?
@@ -131,7 +131,7 @@ let animation = Animation.named("StarAnimation", subdirectory: "Animations")
 /// Load with an animation cache.
 let animation = Animation.named("StarAnimation", animationCache: LRUAnimationCache.sharedCache)
 ```
-#
+
 #### Loading from a Filepath
 ```swift
 Animation.filepath(_ filepath: String, animationCache: AnimationCacheProvider?) -> Animation?
@@ -154,7 +154,7 @@ let animation = Animation(filepathURL.path, animationCache: LRUAnimationCache.sh
 ### Creating Animation Views
 Animation views can be allocated with or without animation data. There are a handful of convenience initializers for initializing with animations. 
 
-#
+
 ### Supplying Images
 `AnimationView` uses `AnimationImageProvider` to retrieve the images for its animation.
 An image provider can be supplied when the Animation View is initialized, or after by setting its `imageProvider` property. 
@@ -162,7 +162,7 @@ To force an AnimationView to reload its images call `reloadImages()` on the Anim
 
 Read more about `AnimationImageProvider` [here](#image-provider)
 
-#
+
 ### Playing Animations
 #### Time
 There are several methods for playing animations, and portions of animations. Lottie describes Time in three ways:
@@ -171,7 +171,7 @@ There are several methods for playing animations, and portions of animations. Lo
  - Time - Describes time in seconds.
 
 All three can be used to play and set time on an `AnimationView`
-#
+
 #### Basic Playing
 ```swift
 AnimationView.play(completion: LottieCompletionBlock?)
@@ -187,7 +187,7 @@ starAnimationView.play { (finished) in
 /// Animation stopped
 }
 ```
-#
+
 #### Play with Progress Time
 ```swift
 AnimationView.play(fromProgress: AnimationProgressTime?, toProgress: AnimationProgressTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
@@ -205,7 +205,7 @@ Example:
 /// Play only the last half of an animation.
 animationView.play(fromProgress: 0.5, toProgress: 1)
 ```
-#
+
 #### Play with Frame Time
 ```swift
 AnimationView.play(fromFrame: AnimationProgressTime?, toFrame: AnimationFrameTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
@@ -223,7 +223,7 @@ Example:
 /// Play from frame 24 to 48 of an animation.
 animationView.play(fromFrame: 24, toFrame: 48)
 ```
-#
+
 #### Play with Marker Names
 ```swift
 AnimationView.play(fromMarker: String?, toMarker: String, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
@@ -243,7 +243,7 @@ Example:
 /// Play from frame 24 to 48 of an animation.
 animationView.play(fromMarker: "ftue1_begin", toMarker: "ftue1_end")
 ```
-#
+
 #### Stop
 ```swift
 AnimationView.stop()
@@ -253,7 +253,7 @@ Example:
 ```swift
 animationView.stop()
 ```
-#
+
 #### Pause
 ```swift
 AnimationView.pause()
@@ -263,10 +263,10 @@ Example:
 ```swift
 animationView.pause()
 ```
-#
+
 ### Animation Settings
 `AnimationView` has a variety of settings for controlling playback, and visual state.
-#
+
 #### Content Mode
 ```swift
 /// iOS
@@ -281,7 +281,7 @@ Options:
 : **scaleAspectFit**: Animation will be scaled to fit the AnimationView while preserving its aspect ratio.
 : **scaleAspectFill**: Animation will be scaled to fill the AnimationView while preserving its aspect ratio.
 : **topLeft**: Animation will not be scaled.
-#
+
 #### Background Behavior
 ```swift
 var AnimationView.backgroundBehavior: LottieBackgroundBehavior { get set }
@@ -294,7 +294,7 @@ Options:
 : **stop**: Stop the animation and reset it to the beginning of its current play time. The completion block is called.
 : **pause**: Pause the animation in its current state. The completion block is called.
 : **pauseAndRestore**: Pause the animation and restart it when the application moves back to the foreground. The completion block is stored and called when the animation completes.
-#
+
 #### Loop Mode
 ```swift
 var AnimationView.loopMode: LottieLoopMode { get set }
@@ -306,13 +306,13 @@ Options:
 : **autoReverse**: Animation will play forward, then backwards and loop until stopped.
 : **repeat(amount)**: Animation will loop from end to beginning up to *amount* of times.
 : **repeatBackwards(amount)**: Animation will play forward, then backwards a *amount* of times.
-#
+
 #### Is Animation Playing
 ```swift
 var AnimationView.isAnimationPlaying: Bool { get set }
 ```
 Returns `true` if the animation is currently playing, `false` if it is not.
-#
+
 #### Should Rasterize When Idle
 ```swift
 var AnimationView.shouldRasterizeWhenIdle: Bool { get set }
@@ -321,7 +321,7 @@ When `true` the animation view will rasterize its contents when not animating. R
 ==Note:== this will not produce crisp results at resolutions above the animation's natural resolution.
 
 Defaults to `false`
-#
+
 #### Respect Animation Frame Rate
 ```swift
 var AnimationView.respectAnimationFrameRate: Bool { get set }
@@ -329,60 +329,60 @@ var AnimationView.respectAnimationFrameRate: Bool { get set }
 When `true` the animation will play back at the framerate encoded in the `Animation` model. When `false` the animation will play at the framerate of the device.
 
 Defaults to `false`
-#
+
 #### Animation Speed
 ```swift
 var AnimationView.animationSpeed: CGFloat { get set }
 ```
 Sets the speed of the animation playback. Higher speed equals faster time.
 Defaults to `1`
-#
+
 #### Current Progress
 ```swift
 var AnimationView.currentProgress: AnimationProgressTime { get set }
 ```
 Sets the current animation time with a Progress Time. Returns the current Progress Time, or the final Progress Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
+
 #### Current Time
 ```swift
 var AnimationView.currentTime: TimeInterval { get set }
 ```
 Sets the current animation time with a TimeInterval. Returns the current TimeInterval, or the final TimeInterval if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
+
 #### Current Frame
 ```swift
 var AnimationView.currentFrame: AnimationFrameTime { get set }
 ```
 Sets the current animation time with a Frame Time. Returns the current  Frame Time, or the final  Frame Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
+
 #### Realtime Frame
 ```swift
 var AnimationView.realtimeAnimationFrame: AnimationFrameTime { get }
 ```
 Returns the realtime Frame Time of an AnimationView while an animation is in flight.
-#
+
 #### Realtime Progress
 ```swift
 var AnimationView.realtimeAnimationProgress: AnimationProgressTime { get }
 ```
 Returns the realtime Progress Time of an AnimationView while an animation is in flight.
-#
+
 #### Force Display Update
 ```swift
 func AnimationView.forceDisplayUpdate()
 ```
 Forces the AnimationView to redraw its contents.
 
-#
+
 ### Using Markers
 Markers are a way to describe a point in time by a key name. Markers are encoded into animation JSON. By using markers a designer can mark playback points for a developer to use without having to worry about keeping track of animation frames. If the animation file is updated, the developer does not need to update playback code.
 
 Markers can be used to [playback sections of animation](#play-with-marker-names), or can be read directly for more advanced use. Both `Animation` and `AnimationView` have methods for reading Marker Times.
 
-#
+
 #### Reading Marker Time
 ```swift
 /// Animation View Methods
@@ -393,12 +393,12 @@ Animation.progressTime(forMarker named: String) -> AnimationProgressTime?
 Animation.frameTime(forMarker named: String) -> AnimationFrameTime?
 ```
 Each method returns the time for the marker specified by name. Returns nil if the marker is not found.
-#
+
 ### Dynamic Animation Properties
 Nearly all properties of a Lottie animation can be changed at runtime using a combination of [Animation Keypaths](#animation-keypaths) and [Value Providers](#value-providers). Setting a ValueProvider on a keypath will cause the animation to update its contents and read the new Value Provider.
 In addition, animation properties can be read using `Animation Keypaths`.
 
-#
+
 #### Setting Dynamic Properties
 ```swift
 AnimationView.setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath)
@@ -418,7 +418,7 @@ let redValueProvider = ColorValueProvider(Color(r: 1, g: 0.2, b: 0.3, a: 1))
 /// Set the provider on the animationView.
 animationView.setValueProvider(redValueProvider, keypath: fillKeypath)
 ```
-#
+
 #### Reading Animation Properties
 ```swift
 AnimationView.getValue(for keypath: AnimationKeypath, atFrame: AnimationFrameTime?) -> Any?
@@ -437,18 +437,18 @@ let fillKeypath = AnimationKeypath(keypath: "Layer 1.Group 1.Transform.Position"
 let position = animationView.getValue(for: fillKeypath, atFrame: nil)
 /// Returns Vector(10, 10, 0) for currentFrame. 
 ```
-#
+
 #### Logging Keypaths
 ```swift
 AnimationView.logHierarchyKeypaths()
 ```
 Logs all child keypaths of the animation into the console.
 
-#
+
 #### Adding Views to Animations
 Custom views can be added to AnimationViews. These views will animate alongside the animation.
 
-#
+
 #### Enabling and Disabling Animation Nodes
 
 `public func setNodeIsEnabled(isEnabled: Bool, keypath: AnimationKeypath)`
@@ -472,7 +472,7 @@ animationView.setNodeIsEnabled(isEnabled: false, keypath: keypath1)
 animationView.setNodeIsEnabled(isEnabled: true, keypath: keypath1)
 ```
 
-#
+
 #### Adding Subviews
 ```swift
 AnimationView.addSubview(_ subview: AnimationSubview, forLayerAt keypath: AnimationKeypath)
@@ -496,7 +496,7 @@ subview.addSubview(customView)
 /// Set the provider on the animationView.
 animationView.addSubview(subview, forLayerAt: layerKeypath)
 ```
-#
+
 #### Converting CGRect and CGPoint to Layers
 ```swift
 /// Converts a rect
@@ -511,7 +511,7 @@ If no layer is found, nil is returned
 Parameters
 : **point or rect**: The CGPoint or CGRect in the AnimationView's coordinate space to convert.
 : **keypath**: The keypath used to find the layer.
-#
+
 [Back to contents](#contents)
 ## Image Provider
 Image provider is a protocol that is used to supply images to `AnimationView`.
@@ -532,7 +532,7 @@ let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "Animat
 /// Set the provider on an animation.
 animationView.imageProvider = imageProvider
 ```
-#
+
 ### FilepathImageProvider
 ```swift
 public class FilepathImageProvider: AnimationImageProvider
@@ -738,7 +738,7 @@ Lottie allows you to change **any** property that is animatable in After Effects
 
 [Back to contents](#contents)
 
-#
+
 ## Supported After Effects Features
 
 See Supported Features by platform [here](/supported-features.md)
