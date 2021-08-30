@@ -155,7 +155,7 @@ You can update properties dynamically at runtime. This can be used for a variety
 
 ### Understanding After Effects
 To understand how to change animation properties in Lottie, you should first understand how animation properties are stored in Lottie.
-Animation properties are stored in a data tree that mimics the information heirarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `KeyPath`.
+Animation properties are stored in a data tree that mimics the information hierarchy of After Effects. In After Effects a `Composition` is a collection of `Layers` that each have their own timelines. `Layer` objects have string names, and their contents can be an image, shape layers, fills, strokes, or just about anything that is drawable. Each object in After Effects has a name. Lottie can find these objects and properties by their name using a `KeyPath`.
 
 ### Usage
 To update a property at runtime, you need 3 things:
