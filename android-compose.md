@@ -148,8 +148,8 @@ class MyHoistedState {
 }
 ```
 ```kotlin
-val composition = rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.animation))
-val lottieAnimatable by rememberLottieAnimatable()
+val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.animation))
+val lottieAnimatable = rememberLottieAnimatable()
 LaunchedEffect(Unit) {
     lottieAnimatable.animate(
         composition,
