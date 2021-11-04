@@ -19,3 +19,12 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Windows](https://github.com/windows-toolkit/Lottie-Windows)
 * [Qt](https://blog.qt.io/blog/2019/03/08/announcing-qtlottie/)
 * [Skia](https://skia.org/user/modules/skottie)
+
+# MIT Appinventor
+You can use Lottie Animations in your Apps built with MIT's Appinventor and its distributions like : 
+* Kodular
+* Niotron
+* Hydride
+
+Plugin Version 1.0.1
+https://community.appinventor.mit.edu/t/lottie-animations-add-cool-animations-to-your-apps/44483/
