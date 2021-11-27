@@ -8,6 +8,7 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Qt QML](https://sea-region.github.com/kbroulik/lottie-qml)
 * [Rlottie](https://github.com/Samsung/rlottie)
 * [Python](https://gitlab.com/mattia.basaglia/python-lottie)
+* [MIT Appinventor](https://community.appinventor.mit.edu/t/lottie-animations-add-cool-animations-to-your-apps/44483/)
 
 # Web
 * [React](https://github.com/chenqingspring/react-lottie)
@@ -20,11 +21,3 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Qt](https://blog.qt.io/blog/2019/03/08/announcing-qtlottie/)
 * [Skia](https://skia.org/user/modules/skottie)
 
-# MIT Appinventor
-You can use Lottie Animations in your Apps built with MIT's Appinventor and its distributions like : 
-* Kodular
-* Niotron
-* Hydride
-
-Plugin Version 1.0.1
-https://community.appinventor.mit.edu/t/lottie-animations-add-cool-animations-to-your-apps/44483/
