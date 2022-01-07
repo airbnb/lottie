@@ -22,7 +22,7 @@ We would especially like to thank our sponsorships from
 
 [![Tonal](images/tonal.svg ':size=300')](https://www.tonal.com/)
 
-[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/sdk/android/?utm_source=lottie&utm_medium=sponsorship&utm_content=developer)
+[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/sdk/android/?utm_source=OpenCollective&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=OpenCollective_Jan2022_AndroidChatSDK)
 
 [![Duolingo](images/duolingo.svg ':size=300')](https://www.duolingo.com/)
 
