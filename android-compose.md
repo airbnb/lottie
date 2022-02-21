@@ -165,7 +165,7 @@ Images should be avoided whenever possible. They are much large, less performant
 1. Baked into the Lottie json file. This is done via an option in the exporter (such as teh Bodymovin After Effects plugin). When done, images are encoded as a base64 string and embedded directly in the json file. This is the simplest way to use images because everything is contained in a single file and no additional work is necessary to make them work.
 1. Zipped with the json file in a single zip file. When parsing the animation, Lottie will unzip the animation and automatically link any images in zip file to the composition. These zip files can be stored in `src/main/assets` and loaded via `LottieCompositionSpec.Asset` or downloaded via the internet and loaded via `LottieCompositionSpec.Url`.
 1. Stored in `src/main/assets/*`. When the animation is exported, it may include references to external images referenced via their file name. When this method is used, the images should be stored in a subdirectory within your assets folder and set via the `imageAssetsFolder` parameter on your `LottieAnimation` composable.
-1. Manually returned via an `ImageAssetDelegate` and set as the `imageAssetDelegate` parameter on your `LottieAnimation` composable.
+1. Via `LottieProperty.IMAGE` dynamic properties.
 
 # Dynamic Properties
 

@@ -134,17 +134,6 @@ _**Lottie converts all px values in After Effects to dps**_ on device so that ev
 However, if your animation isn't the perfect size, you have two options:
 
 ---
-# ImageView scaleType
-
-LottieAnimationView is a wrapped `ImageView` and it supports `centerCrop`, `centerInside`, and `fitXY` so you may use those two as you would with any other image.
-
-## Scaling Up/Down
-
-`LottieAnimationView` and `LottieDrawable` both have a `setScale(float)` API that you can use to manually scale up or down your animation. This is rarely useful but can be in certain situations.
-
-If your animation is performing slowly, make sure to check the documentation on [performance](/android/performance.md). However, try scaling your animation down in combination with a scaleType. This will reduce the amount that Lottie renders per frame. This is particularly helpful if you have large mattes or masks.
-
----
 # Dynamic Properties
 
 You can update properties dynamically at runtime. This can be used for a variety of purposes such as:
@@ -218,19 +207,15 @@ animationView.addValueCallback(
 
 The following value can be modified:
 
-| Transform              | Layer                  | Fill         | Stroke       | Ellipse      | Polystar                   | Repeater                |
-|------------------------|------------------------|--------------|--------------|--------------|----------------------------|-------------------------|
-| TRANSFORM_ANCHOR_POINT | TRANSFORM_ANCHOR_POINT | COLOR        | COLOR        | ELLIPSE_SIZE | POLYSTAR_POINTS            | REPEATER_COPIES         |
-| TRANSFORM_POSITION     | TRANSFORM_POSITION     | OPACITY      | OPACITY      | POSITION     | POLYSTAR_ROTATION          | REPEATER_OFFSET         |
-| TRANSFORM_OPACITY      | TRANSFORM_OPACITY      | COLOR_FILTER | COLOR_FILTER |              | POSITION                   | TRANSFORM_ROTATION      |
-| TRANSFORM_SCALE        | TRANSFORM_SCALE        |              | STROKE_WIDTH |              | POLYSTAR_OUTER_RADIUS      | TRANSFORM_START_OPACITY |
-| TRANSFORM_ROTATION     | TRANSFORM_ROTATION     |              |              |              | POLYSTAR_OUTER_ROUNDEDNESS | TRANSFORM_END_OPACITY   |
-|                        | TIME_REMAP             |              |              |              | POLYSTAR_INNER_RADIUS      |                         |
-
-
-#### Layers:
- * All transform properties
- * `TIME_REMAP` (composition layers only)
+| Transform              | Layer                     | Fill         | Stroke       | Ellipse      | Polystar                   | Repeater                | Image        | Text          |
+|------------------------|---------------------------|--------------|--------------|--------------|----------------------------|-------------------------|--------------|---------------|
+| TRANSFORM_ANCHOR_POINT | TRANSFORM_ANCHOR_POINT    | COLOR        | COLOR        | ELLIPSE_SIZE | POLYSTAR_POINTS            | REPEATER_COPIES         | IMAGE        | COLOR         |
+| TRANSFORM_POSITION     | TRANSFORM_POSITION        | OPACITY      | OPACITY      | POSITION     | POLYSTAR_ROTATION          | REPEATER_OFFSET         | COLOR_FILTER | STROKE_COLOR  |
+| TRANSFORM_OPACITY      | TRANSFORM_OPACITY         | COLOR_FILTER | COLOR_FILTER |              | POSITION                   | TRANSFORM_ROTATION      |              | STROKE_WIDTH  |
+| TRANSFORM_SCALE        | TRANSFORM_SCALE           |              | STROKE_WIDTH |              | POLYSTAR_OUTER_RADIUS      | TRANSFORM_START_OPACITY |              | TEXT_TRACKING |
+| TRANSFORM_ROTATION     | TRANSFORM_ROTATION        |              |              |              | POLYSTAR_OUTER_ROUNDEDNESS | TRANSFORM_END_OPACITY   |              | TEXT_SIZE     |
+|                        | TIME_REMAP (composition)  |              |              |              | POLYSTAR_INNER_RADIUS      |                         |              | TYPEFACE      |
+|                        |                           |              |              |              |                            |                         |              | TEXT          |
 
 ### Notable Properties
 
@@ -264,16 +249,7 @@ Again,make sure that the images that bodymovin exports are in that folder with t
 #### Zip file
 Alternatively, you can create a zip file with your json and images together. Lottie can unzip and read the contents. This can be done for local files or from a url.
 #### Providing your own images
-Sometimes, you don't have the images bundled with the device. You may do this to save space in your apk or if you downloaded the animation from the network. To handle this case, you can set an `ImageAssetDelegate` on your `LottieAnimationView` or `LottieDrawable`. The delgate will be called every time Lottie tries to render an image. It will pass the image name and ask you to return the bitmap. If you don't have it yet (if it's still downloading, for example) then just return null and Lottie will continue to ask on every frame until you return a non-null value.
-
- ```kotlin
-animationView.setImageAssetDelegate { asset ->
-	when (asset.id) {
-		"id_1" -> yourBitmap1
-		...
-	}
-}
-```
+Sometimes, you don't have the images bundled with the device. You may do this to save space in your apk or if you downloaded the animation from the network. To handle this case, you can use dynamic properties with `LottieProperty.IMAGE`
 
 ---
 # What is the impact of Lottie on APK size?
