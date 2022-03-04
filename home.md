@@ -18,13 +18,15 @@ We would especially like to thank our sponsorships from
 
 [![Lottiefiles](images/lottiefiles.svg ':size=300')](https://www.lottiefiles.com/)
 
+[![Lottie Lab](images/lottielab.png ':size=300')](https://lottielab.io/)
+
 [![Airbnb](images/airbnb.svg ':size=300')](https://www.airbnb.com/)
 
 [![Tonal](images/tonal.svg ':size=300')](https://www.tonal.com/)
 
 [![Stream](images/stream.png ':size=300')](https://getstream.io/chat/sdk/android/?utm_source=OpenCollective&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=OpenCollective_Jan2022_AndroidChatSDK)
 
-[![Duolingo](images/duolingo.svg ':size=300')](https://www.duolingo.com/)
+[![Coinbase](images/coinbase.svg ':size=300')](https://www.coinbase.com/)
 
 Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
 Or get in touch on GitHub or via lottie@airbnb.com
