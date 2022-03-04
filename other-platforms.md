@@ -9,6 +9,7 @@ The Lottie community has build Lottie bindings for the following platforms:
 * [Rlottie](https://github.com/Samsung/rlottie)
 * [Python](https://gitlab.com/mattia.basaglia/python-lottie)
 * [MIT Appinventor](https://community.appinventor.mit.edu/t/lottie-animations-add-cool-animations-to-your-apps/44483/)
+* [Flutter](https://github.com/xvrh/lottie-flutter)
 
 # Web
 * [React](https://github.com/chenqingspring/react-lottie)
