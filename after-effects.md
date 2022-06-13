@@ -127,7 +127,7 @@ This walkthrough explains how to get artwork from Sketch to Lottie. If you alrea
 
 It doesn't dive into any animation techniques. For that check out one of our other walkthroughs.
 
-We're assuming you have three things. Adobe Illustrator, Adobe After Effects, and [Bodymovin](https://github.com/airbnb/lottie-web). For a walkthrough on how to install Bodymovin go [here](/bodymovin-installation.md).
+We're assuming you have three things. Adobe Illustrator, Adobe After Effects, and [Bodymovin](https://github.com/airbnb/lottie-web). For a walkthrough on how to install Bodymovin go [here](#Installing%20Bodymovin).
 
 
 ### 1 - Ensure artwork is grouped
@@ -138,7 +138,7 @@ To get the asset exported in one piece everything needs to be put into a single 
 
 ### 2 - Select the group and export as an SVG
 
-You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes directly into AE?? We'll explain why later. If you don't have illustrator a PDF or EPS will still work, you just might have to do more cleanup in After Effects. Check out cleanup tips in the [Debugging section](/after-effects/debugging.md)
+You might be thinking 🤔 Why not export artwork as a PDF or EPS that goes directly into AE?? We'll explain why later. If you don't have illustrator a PDF or EPS will still work, you just might have to do more cleanup in After Effects. Check out cleanup tips in the [Debugging section](#debugging)
 
 ![ArtworkWalkthrough_02](/images/ArtworkWalkthrough_02.png)
 
