@@ -24,7 +24,7 @@ We would especially like to thank our sponsorships from
 
 [![Tonal](images/tonal.svg ':size=300')](https://www.tonal.com/)
 
-[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/sdk/android/?utm_source=OpenCollective&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=OpenCollective_Jan2022_AndroidChatSDK)
+[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/?utm_source=OpenCollective_Lottie&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Lottie_July2022_Chat_klmh22)
 
 [![Coinbase](images/coinbase.svg ':size=300')](https://www.coinbase.com/)
 
