@@ -1,14 +1,14 @@
 # Lottie for&nbsp;[Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [Web](https://github.com/airbnb/lottie-web), [React Native](https://github.com/airbnb/lottie-react-native), and [Windows](https://aka.ms/lottie)
 
 
-Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
+Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as JSON with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
 
-For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here you go:
+For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating them by hand. They say a picture is worth 1,000 words, so here you go:
 
 ![Lottie Logo animation](images/Introduction_00_sm.gif ':size=500')
 
 
-The above animation was created in After Effects, and can be rendered natively across all platforms with a simple json file.
+The above animation was created in After Effects and can be rendered natively across all platforms with a simple JSON file.
 
 ## Sponsors
 
@@ -45,18 +45,18 @@ Or get in touch on GitHub or via lottie@airbnb.com
 
 You can build the sample app for Android yourself or download it from the [Play Store](https://play.google.com/store/apps/details?id=com.airbnb.lottie). The sample app includes some built in animations but also allows you to load an animation from internal storage or from a url.
 
-For Windows, you can get the [Lottie Viewer app](https://aka.ms/lottieviewer) to preview Lottie animation and codegen classes, and the [Lottie Samples app](https://aka.ms/lottiesamples) to get started with code samples and simple tutorials.
+For Windows, you can get the [Lottie Viewer app](https://aka.ms/lottieviewer) to preview Lottie animation and codegen classes and the [Lottie Samples app](https://aka.ms/lottiesamples) to get started with code samples and simple tutorials.
 
 ## Shipping something with Lottie?
 
-We would love to feature your work on our [community showcase](/community-showcase.md)! To do so, Put up a PR on [github.com/lottie](https://github.com/airbnb/lottie) with a change to [community-showcase.md](https://github.com/airbnb/lottie/blob/master/community-showcase.md) with a description and gif of your animation.
+We would love to feature your work in our [community showcase](/community-showcase.md)! To do so, Put up a PR on [github.com/lottie](https://github.com/airbnb/lottie) with a change to [community-showcase.md](https://github.com/airbnb/lottie/blob/master/community-showcase.md) with a description and gif of your animation.
 We also have an internal regression testing repo that we can use to prevent causing regressions with your animations.
 
 ## Alternatives
 1. Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It's often hard or even impossible to justify spending so much time to get an animation right.
 1. Gifs. Gifs are more than double the size of a bodymovin JSON and are rendered at a fixed size that can't be scaled up to match large and high density screens.
-1. Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin json and also can't be scaled up.
-1. Animated Vector Drawable (Android only). More performant because it runs on the RenderThread instead of the main thread. Supports only a subset of Lottie features. Progress can't be manually set. Doesn't support text or dynamic colors. Can't be loaded programatically or over the internet.
+1. Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin JSON and also can't be scaled up.
+1. Animated Vector Drawable (Android only). More performant because it runs on the RenderThread instead of the main thread. Supports only a subset of Lottie features. Progress can't be manually set. Doesn't support text or dynamic colors. Can't be loaded programmatically or over the internet.
 
 ## Why is it called Lottie?
 Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) – the oldest surviving feature-length animated film, preceding Walt Disney's feature-length Snow White and the Seven Dwarfs (1937) by over ten years
@@ -83,7 +83,7 @@ Here are some articles and podcasts from the Lottie team @ Airbnb
 
 ## Community articles and videos
 
-Heres some links from around the community
+Here are some links from around the community
 
 [A Lottie to Like](https://t.co/dadjvgv9vk) by Nick Butcher
 
