@@ -73,9 +73,10 @@ If you fire multiple animation requests for the same animation in parallel such 
 ---
 # Global Configuration
 Lottie has some global configuration options. None are required by default but it can be used to:
-* Use your own network stack intead of Lottie's built in one when loading animations from the network.
+* Use your own network stack instead of Lottie's built in one when loading animations from the network.
 * Provide your own cache directories for animation fetched from the network instead of using Lottie's default one (`cacheDir/lottie_network_cache`).
 * Enable systrace makers for debugging.
+* Disable Lottie's network cache completely if you want to implement custom network fetcher-level caching strategy. 
 
 To set it up, somewhere during your application initialization, include:
 ```kotlin
@@ -84,6 +85,7 @@ Lottie.initialize(
         .setEnableSystraceMarkers(true)
         .setNetworkFetcher(...)
         .setNetworkCacheDir(...)
+        .setEnableNetworkCache(false)
 )
 ```
 
