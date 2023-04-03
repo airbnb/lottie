@@ -153,7 +153,7 @@ val lottieAnimatable = rememberLottieAnimatable()
 LaunchedEffect(Unit) {
     lottieAnimatable.animate(
         composition,
-        iteration = LottieConstants.IterateForever,
+        iterations = LottieConstants.IterateForever,
         clipSpec = LottieClipSpec.Progress(0.5f, 0.75f),
     )
 }
