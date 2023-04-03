@@ -107,6 +107,14 @@ In the update listener callback:
 
 `animation.getAnimatedFraction()` will return the progress of the animation taking into account the set min/max frame [minFrame,maxFrame].
 
+### Failure Listener
+
+Set a default failure listener that will be called if any of the setAnimation APIs fail for any reason. This can be used to replace the default behavior. The default behavior will log any network errors and rethrow all other exceptions.
+
+If you are loading an animation from the network, errors may occur if your user has no internet. You can use this listener to retry the download or you can have it default to an error drawable with `setFallbackResource(int)`. Unless you are using `setAnimationFromUrl(String)`, errors are unexpected.
+
+Set the listener to `null` to revert to the default behavior.
+
 ### Custom animators
 
 Although `playAnimation()` is sufficient for the vast majority of use cases, you can call `setProgress(...)` in the update callback for your own animator. This can be useful to tie an animation to something like a gesture, download progress, or scroll position.
