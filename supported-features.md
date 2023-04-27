@@ -54,7 +54,7 @@
 | Expansion |                     ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 |
 | Feather |                       ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | **Mattes** | **Android** | **iOS** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
-| Alpha Matte |                   👍 | 👍 | 👍 | 👍 | ⛔️ | 👍 |
+| Alpha Matte |                   👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Alpha Inverted Matte |          👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Luma Matte |                    ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
