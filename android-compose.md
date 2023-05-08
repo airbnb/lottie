@@ -19,6 +19,28 @@ allprojects {
     }
 }
 ```
+You also add this Sonatype repository line to your `settings.gradle` file to avoid compile time errors if you face them:
+Then your `settings.gradle` file should look like this :
+
+```groovy
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}
+rootProject.name = "// Your Android project name"
+include ':app'
+```
 
 The latest snapshot version is: ![lottieSnapshotVersion](https://img.shields.io/nexus/s/com.airbnb.android/lottie-compose?server=https%3A%2F%2Foss.sonatype.org)
 
