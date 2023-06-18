@@ -219,10 +219,10 @@ The following value can be modified:
 
 | Transform              | Layer                     | Fill         | Stroke       | Ellipse      | Polystar                   | Repeater                | Image        | Text          |
 |------------------------|---------------------------|--------------|--------------|--------------|----------------------------|-------------------------|--------------|---------------|
-| TRANSFORM_ANCHOR_POINT | TRANSFORM_ANCHOR_POINT    | COLOR        | COLOR        | ELLIPSE_SIZE | POLYSTAR_POINTS            | REPEATER_COPIES         | IMAGE        | COLOR         |
-| TRANSFORM_POSITION     | TRANSFORM_POSITION        | OPACITY      | OPACITY      | POSITION     | POLYSTAR_ROTATION          | REPEATER_OFFSET         | COLOR_FILTER | STROKE_COLOR  |
+| TRANSFORM_ANCHOR_POINT | TRANSFORM_ANCHOR_POINT    | COLOR        | STROKE_COLOR | ELLIPSE_SIZE | POLYSTAR_POINTS            | REPEATER_COPIES         | IMAGE        | COLOR         |
+| TRANSFORM_POSITION     | TRANSFORM_POSITION        | OPACITY      | STROKE_WIDTH | POSITION     | POLYSTAR_ROTATION          | REPEATER_OFFSET         | COLOR_FILTER | STROKE_COLOR  |
 | TRANSFORM_OPACITY      | TRANSFORM_OPACITY         | COLOR_FILTER | COLOR_FILTER |              | POSITION                   | TRANSFORM_ROTATION      |              | STROKE_WIDTH  |
-| TRANSFORM_SCALE        | TRANSFORM_SCALE           |              | STROKE_WIDTH |              | POLYSTAR_OUTER_RADIUS      | TRANSFORM_START_OPACITY |              | TEXT_TRACKING |
+| TRANSFORM_SCALE        | TRANSFORM_SCALE           |              | OPACITY      |              | POLYSTAR_OUTER_RADIUS      | TRANSFORM_START_OPACITY |              | TEXT_TRACKING |
 | TRANSFORM_ROTATION     | TRANSFORM_ROTATION        |              |              |              | POLYSTAR_OUTER_ROUNDEDNESS | TRANSFORM_END_OPACITY   |              | TEXT_SIZE     |
 |                        | TIME_REMAP (composition)  |              |              |              | POLYSTAR_INNER_RADIUS      |                         |              | TYPEFACE      |
 |                        |                           |              |              |              |                            |                         |              | TEXT          |
