@@ -1,12 +1,10 @@
 # Lottie for&nbsp;[Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [Web](https://github.com/airbnb/lottie-web), [React Native](https://github.com/airbnb/lottie-react-native), and [Windows](https://aka.ms/lottie)
 
-
 Lottie is a library for Android, iOS, Web, and Windows that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as JSON with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating them by hand. They say a picture is worth 1,000 words, so here you go:
 
-![Lottie Logo animation](images/Introduction_00_sm.gif ':size=500')
-
+![Lottie Logo animation](images/Introduction_00_sm.gif ":size=500")
 
 The above animation was created in After Effects and can be rendered natively across all platforms with a simple JSON file.
 
@@ -16,22 +14,23 @@ Lottie is made possible because of our supporters on GitHub Sponsors and Open Co
 
 We would especially like to thank our sponsorships from
 
-[![Lottiefiles](images/lottiefiles.svg ':size=300')](https://www.lottiefiles.com/)
+[![Lottiefiles](images/lottiefiles.svg ":size=300")](https://www.lottiefiles.com/)
 
-[![Lottie Lab](images/lottielab.png ':size=300')](https://lottielab.io/)
+[![Lottie Lab](images/lottielab.png ":size=300")](https://lottielab.io/)
 
-[![Airbnb](images/airbnb.svg ':size=300')](https://www.airbnb.com/)
+[![Airbnb](images/airbnb.svg ":size=300")](https://www.airbnb.com/)
 
-[![Tonal](images/tonal.svg ':size=300')](https://www.tonal.com/)
+[![Emerge Tools](images/emerge.png ":size=300")](https://www.emergetools.com/)
 
-[![Stream](images/stream.png ':size=300')](https://getstream.io/chat/?utm_source=OpenCollective_Lottie&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Lottie_July2022_Chat_klmh22)
+[![Stream](images/stream.png ":size=300")](https://getstream.io/chat/?utm_source=OpenCollective_Lottie&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Lottie_July2022_Chat_klmh22)
 
-[![Coinbase](images/coinbase.svg ':size=300')](https://www.coinbase.com/)
+[![Coinbase](images/coinbase.svg ":size=300")](https://www.coinbase.com/)
 
 Read more about it on our [blog post](http://airbnb.design/introducing-lottie/)
 Or get in touch on GitHub or via lottie@airbnb.com
 
 ## Sample App
+
 <table>
   <tr>
     <th>
@@ -53,19 +52,23 @@ We would love to feature your work in our [community showcase](/community-showca
 We also have an internal regression testing repo that we can use to prevent causing regressions with your animations.
 
 ## Alternatives
+
 1. Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It's often hard or even impossible to justify spending so much time to get an animation right.
 1. Gifs. Gifs are more than double the size of a bodymovin JSON and are rendered at a fixed size that can't be scaled up to match large and high density screens.
 1. Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin JSON and also can't be scaled up.
 1. Animated Vector Drawable (Android only). More performant because it runs on the RenderThread instead of the main thread. Supports only a subset of Lottie features. Progress can't be manually set. Doesn't support text or dynamic colors. Can't be loaded programmatically or over the internet.
 
 ## Why is it called Lottie?
+
 Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) – the oldest surviving feature-length animated film, preceding Walt Disney's feature-length Snow White and the Seven Dwarfs (1937) by over ten years
 [The art of Lotte Reineger](https://www.youtube.com/watch?v=LvU55CUw5Ck&feature=youtu.be)
 
 ## Contributing to Documentation
+
 Contributors are more than welcome. Just put up a PR to [github.com/airbnb](https://github.com/airbnb/lottie).
 
 ## Issues or feature requests?
+
 File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
 
 ## Articles, Interviews & Podcasts
@@ -79,7 +82,6 @@ Here are some articles and podcasts from the Lottie team @ Airbnb
 [Learn more about Lottie from Gabriel Peal on the Fragmented Podcast](http://fragmentedpodcast.com/episodes/82/)
 
 [Lottie Animation with Brandon Withrow and Gabriel Peal on Software engineering daily podcast](https://softwareengineeringdaily.com/2017/08/10/lottie-animation-with-brandon-withrow-and-gabriel-peal/)
-
 
 ## Community articles and videos
 
