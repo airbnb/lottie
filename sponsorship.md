@@ -1,18 +1,9 @@
 # Sponsorship
-Lottie is an open source project built and maintained by a single or very small group of people per platform. Almost all support and work is done on nights and weekends outside of any full time jobs. If you use Lottie and want to support its ongoing development, please considering having you or your company Sponsor Lottie. Each repo has a sponsorship section on the right side of the main repo with links to GitHub Sponsors and Open Collective.
-
-## Github Sponsors
-
-For [GitHub Sponsors](https://github.com/sponsors), contributions can be made from either an individual or an organization/company. Contributions are sent directly to specific maintainers of the project.
-
-Most Lottie platforms are maintained by a single person. You can sponsor them here:
-* Android: [Gabriel Peal](https://github.com/sponsors/gpeal)
-* iOS: [Brandon Withrow](https://github.com/sponsors/buba447)
-* Web: [Hernan Torrisi](https://github.com/bodymovin) (not accepting sponsorship at this time)
+Lottie is an open source project built and maintained by a single or very small group of people per platform. Almost all support and work is done on nights and weekends outside of any full time jobs. If you use Lottie and want to support its ongoing development, please considering having you or your company Sponsor Lottie. Each repo has a sponsorship section on the right side of the main repo with links to Open Collective or GitHub Sponsors.
 
 ## Open Collective
 
-Lottie also accepts sponsorship via [Open Collective](https://opencollective.com/lottie).
+Lottie accepts sponsorship via [Open Collective](https://opencollective.com/lottie).
 
 ## Why Sponsor Lottie?
 

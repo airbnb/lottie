@@ -1,8 +1,8 @@
+> The doc was last updated in 2019 and is no longer up to date. It no longer reflects the current project structure, and doesn't include any content about the Core Animation rendering engine. This doc is left available as documentation of the Main Thread rendering engine, which hasn't changed significantly since this documentation was written.
+
 # Lottie-iOS Render System Documentation
 
 The purpose of this document is to explain how Lottie's render system works. 
-
-For questions reach out to the author: [Brandon Withrow](https://twitter.com/theWithra)
 
 ## Check Before Submitting
 

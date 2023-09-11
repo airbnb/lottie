@@ -1,45 +1,33 @@
+# Supported Platforms
 
->  ==**Announcement**==: As of 3.0 Lottie has been completely rewritten in Swift 4.2! For Objective-C support please use Lottie 2.5.3. Read Migration doc [Here](/ios-migration.md).
+The [lottie-ios](https://github.com/airbnb/lottie-ios) package supports iOS, macOS, tvOS, and visionOS.
 
-## Contents
+# Installing Lottie
 
-- [Installing Lottie](#installing-lottie)
-- [Quick Start](#quick-start)
-- [Animation Model](#animation-model)
-  - [Loading Animation](#loading-animation)
-- [Animation View](#animation-view)
-  - [Supplying Images](#supplying-images)
-  - [Playing Animations](#playing-animations)
-  - [Animation Settings](#animation-settings)
-  - [Using Markers](#using-markers)
-  - [Dynamic Animation Properties](#dynamic-animation-properties)
-  - [Adding Views to Animations](#adding-views-to-animations)
-  - [Enabling and Disabling Animation Nodes](#enabling-and-disabling-animation-nodes)
-- [Image Provider](#image-provider)
-  - [BundleImageProvider](#bundleimageprovider)
-  - [FilepathImageProvider](#filepathimageprovider)
-- [Animation Cache](#animation-cache)
-  - [LRUAnimationCache](#lruanimationcache)
-- [Value Providers](#value-providers)
-  - [Primitives](#primitives)
-  - [Prebuilt Providers](#prebuilt-providers)
-- [Animated Control](#animated-control)
-- [Animated Switch](#animated-switch)
-- [Animated Button](#animated-button)
-- [Examples](#examples)
-  - [Changing Animations at Runtime](#changing-animations-at-runtime)
-- [Supported After Effects Features](#supported-after-effects-features)
-- [Alternatives](#alternatives)
-- [Why is it Called Lottie?](#why-is-it-called-lottie)
-- [Contributing](#contributing)
-- [Issues or Feature Requests?](#issues-or-feature-requests)
-## Installing Lottie
-Lottie supports [CocoaPods](https://cocoapods.org/) and [Carthage](https://github.com/Carthage/Carthage) (Both dynamic and static). Lottie is written in ***Swift 4.2***.
-### Github Repo
+Lottie supports [Swift Package Manager](https://www.swift.org/package-manager/), [CocoaPods](https://cocoapods.org/), and [Carthage](https://github.com/Carthage/Carthage) (Both dynamic and static).
 
-You can pull the [Lottie Github Repo](https://github.com/airbnb/lottie-ios/) and include the Lottie.xcodeproj to build a dynamic or static library.
+## Github Repo
 
-### CocoaPods
+You can pull the [Lottie Github Repo](https://github.com/airbnb/lottie-ios/) and include the `Lottie.xcodeproj` to build a dynamic or static library.
+
+## Swift Package Manager
+
+To install Lottie using [Swift Package Manager](https://github.com/apple/swift-package-manager) you can follow the [tutorial published by Apple](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) using the URL for the Lottie repo with the current version:
+
+1. In Xcode, select “File” → “Add Packages...”
+1. Enter https://github.com/airbnb/lottie-spm.git
+
+or you can add the following dependency to your `Package.swift`:
+
+```swift
+.package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.2.0")
+```
+
+When using Swift Package Manager we recommend using the [lottie-spm](https://github.com/airbnb/lottie-spm) repo instead of the main lottie-ios repo.  The main git repository for [lottie-ios](https://github.com/airbnb/lottie-ios) is somewhat large (300+ MB), and Swift Package Manager always downloads the full repository with all git history. The [lottie-spm](https://github.com/airbnb/lottie-spm) repo is much smaller (less than 500kb), so can be downloaded much more quickly. 
+
+Instead of downloading the full git history of Lottie and building it from source, the lottie-spm repo just contains a pointer to the precompiled XCFramework included in the [latest lottie-ios release](https://github.com/airbnb/lottie-ios/releases/latest) (typically ~8MB). If you prefer to include Lottie source directly your project, you can directly depend on the main lottie-ios repo by referencing `https://github.com/airbnb/lottie-ios.git` instead.
+
+## CocoaPods
 Add the pod to your Podfile:
 ```ruby
 pod 'lottie-ios'
@@ -49,11 +37,12 @@ And then run:
 ```ruby
 pod install
 ```
-After installing the cocoapod into your project import Lottie with 
+After installing the cocoapod into your project import Lottie with
 ```swift
 import Lottie
 ```
-### Carthage
+
+## Carthage
 Add Lottie to your Cartfile:
 ```
 github "airbnb/lottie-ios" "master"
@@ -65,25 +54,28 @@ carthage update
 ```
 In your application targets “General” tab under the “Linked Frameworks and Libraries” section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that `carthage update` produced.
 
-[Back to contents](#contents)
-
-## Quick Start
+# Quick Start
 
 Lottie loads and renders animations and vectors exported in the bodymovin JSON format. Bodymovin JSON can be created and exported from After Effects with [bodymovin](https://github.com/bodymovin/bodymovin), Sketch with [Lottie Sketch Export](https://github.com/buba447/Lottie-Sketch-Export), and from [Haiku](https://www.haiku.ai). 
- 
- Lottie-iOS looks to `UIImageView` for its API. The basic API is broken into two parts:
- - `Animation` - The backing model for an animation that is deserialized from a json file.
- - `AnimationView` - A `UIView` subclass responsible for loading and rendering the `Animation`
+
+Lottie provides components for displaying and rendering Lottie animations, which are compatible with SwiftUI, UIKit, and Core Animation:
+  - `LottieAnimationLayer`: a Core Animation `CALayer` subclass that renders Lottie animations
+  - `LottieAnimationView`: a UIKit `UIView` subclass that wraps `LottieAnimationLayer` and provides the same set of APIs.
+  - `LottieView`: a SwiftUI `View` that wraps the UIKit `LottieAnimationView` and provides a SwiftUI-style declarative API.
+
+`LottieAnimation` is the main type for representing a Lottie animation. It supplies many static helper methods for loading `LottieAnimation`s, including asynchronously from URLs. Lottie also supports the [dotLottie](https://dotlottie.io/) format, available as the `DotLottieFile` type.
+
+## UIKit
 
 You can quickly load a Lottie animation with:
 ```swift
-let starAnimationView = AnimationView(name: "StarAnimation")
+let starAnimationView = LottieAnimationView(name: "StarAnimation")
 ```
-Additionally you can choose to load an `AnimationView` without any animation, and set the animation later:
+Additionally you can choose to load an `LottieAnimationView` without any animation, and set the animation later:
 ```swift
-let starAnimationView = AnimationView()
+let starAnimationView = LottieAnimationView()
 /// Some time later
-let starAnimation = Animation.named("StarAnimation")
+let starAnimation = LottieAnimation.named("StarAnimation")
 starAnimationView.animation = starAnimation
 ```
 You can load animations from a specific bundle, a filepath, or even asynchronously from a URL. Read more about loading animations [Here](#loading-animation)
@@ -91,26 +83,62 @@ You can load animations from a specific bundle, a filepath, or even asynchronous
 After loading an animation it can be played with:
 ```swift
 starAnimationView.play { (finished) in
-  /// Animation finished
+  /// LottieAnimation finished
 }
 ```
 Read more about playing animations [Here](#playing-animations)
 
-[Back to contents](#contents)
-## Animation Model
-The `Animation` model is the top level model object in Lottie. An `Animation` holds all of the animation data backing a Lottie Animation. `Animations` are deserialized from JSON.
-Codable; see JSON schema [here](https://github.com/airbnb/lottie-web/tree/master/docs/json).
+## SwiftUI
 
- `Animation` is also fully `codable`. ==Animations can be decoded, and encoded to JSON!==
- 
-### Loading Animation
-There are a variety of ways to load an `Animation` on its own. Additionally you can load an animation while allocating an `AnimationView` through one of the convenience initializers on `AnimationView`.
+The `LottieView` SwiftUI view provides many of the same APIs as the UIKit `LottieAnimationView`.
 
-Animations can be stored in an `AnimationCacheProvider`  to reduce the overhead of deserializing the same animations over and over. Read more [here](#animation-cache).
-#
-#### Loading from a Bundle
+For example, here's how you load and play a simple local animation:
+
 ```swift
-Animation.named(_ name: String, bundle: Bundle, subdirectory: String?, animationCache: AnimationCacheProvider?) -> Animation?
+LottieView(animation: .named("StarAnimation"))
+  .play()
+```
+
+`LottieView` also provides a convenient API for loading animations asynchronously, e.g. by downloading them from a URL:
+
+```swift
+LottieView {
+  try await LottieAnimation.loadedFrom(url: myAnimationDownloadURL)
+}
+.play()
+```
+
+You can use an `@State` property with a `LottiePlaybackMode` to control animation playback. For example, here's how you can trigger an animation to be played in response to a button being pressed:
+
+```swift
+@State var playbackMode = LottiePlaybackMode.pause
+
+var body: some View {
+  LottieView(animation: .named("StarAnimation"))
+    .play(playbackMode)
+    .animationDidFinish { _ in
+      playbackMode = .pause
+    }
+  
+  Button {
+    playbackMode = .fromProgress(0, toProgress: 1, loopMode: .playOnce)
+  } label: {
+    Image(systemName: "play.fill")
+  }
+}
+```
+
+# LottieAnimation Model
+The `LottieAnimation` model is the top level model object in Lottie. An `LottieAnimation` holds all of the animation data backing a Lottie LottieAnimation. `LottieAnimation`s are deserialized from JSON using the schema defined [here](https://github.com/airbnb/lottie-web/tree/master/docs/json).
+ 
+## Loading LottieAnimation
+There are a variety of ways to load an `LottieAnimation` on its own. Additionally you can load an animation while initializing an `LottieAnimationView` through one of the convenience initializers on `LottieAnimationView`.
+
+Animations can be stored in an `AnimationCacheProvider` to reduce the overhead of deserializing the same animations over and over. Read more [here](#animation-cache).
+#
+### Loading from a Bundle
+```swift
+LottieAnimation.named(_ name: String, bundle: Bundle, subdirectory: String?, animationCache: AnimationCacheProvider?) -> LottieAnimation?
 ```
 Loads an animation model from a bundle by its name. Returns `nil` if an animation is not found. 
 
@@ -123,18 +151,18 @@ Parameters:
 Example:
 ```swift
 /// Load from the main bundle.
-let animation = Animation.named("StarAnimation")
+let animation = LottieAnimation.named("StarAnimation")
 /// Load from a specific bundle/
-let animation = Animation.named("StarAnimation", bundle: myBundle)
+let animation = LottieAnimation.named("StarAnimation", bundle: myBundle)
 /// Load from a subdirectory in a bundle.
-let animation = Animation.named("StarAnimation", subdirectory: "Animations")
+let animation = LottieAnimation.named("StarAnimation", subdirectory: "Animations")
 /// Load with an animation cache.
-let animation = Animation.named("StarAnimation", animationCache: LRUAnimationCache.sharedCache)
+let animation = LottieAnimation.named("StarAnimation", animationCache: LRUAnimationCache.sharedCache)
 ```
-#
-#### Loading from a Filepath
+
+### Loading from a Filepath
 ```swift
-Animation.filepath(_ filepath: String, animationCache: AnimationCacheProvider?) -> Animation?
+LottieAnimation.filepath(_ filepath: String, animationCache: AnimationCacheProvider?) -> LottieAnimation?
 ```
 Loads an animation model from an absolute filepath. Returns `nil` if an animation is not found. 
 
@@ -144,37 +172,34 @@ Parameters:
 
 Example:
 ```swift
-let animation = Animation(filepathURL.path, animationCache: LRUAnimationCache.sharedCache)
+let animation = LottieAnimation(filepathURL.path, animationCache: LRUAnimationCache.sharedCache)
 ```
 
-[Back to contents](#contents)
-## Animation View
-`AnimationView` is a UIView (NSView on macOS) subclass that displays animation content. `AnimationView` offers a number of ways to load, play, and even change animations.
+# LottieAnimation View
+`LottieAnimationView` is a UIView (NSView on macOS) subclass that displays animation content. `LottieAnimationView` offers a number of ways to load, play, and even change animations. Lottie is also available as a `LottieView` SwiftUI `View` and a `LottieAnimationLayer` Core Animation `CALayer`.
 
-### Creating Animation Views
-Animation views can be allocated with or without animation data. There are a handful of convenience initializers for initializing with animations. 
+## Creating LottieAnimation Views
+LottieAnimation views can be allocated with or without animation data. There are a handful of convenience initializers for initializing with animations. 
 
-#
-### Supplying Images
-`AnimationView` uses `AnimationImageProvider` to retrieve the images for its animation.
-An image provider can be supplied when the Animation View is initialized, or after by setting its `imageProvider` property. 
-To force an AnimationView to reload its images call `reloadImages()` on the AnimationView.
+## Supplying Images
+`LottieAnimationView` uses `AnimationImageProvider` to retrieve the images for its animation.
+An image provider can be supplied when the LottieAnimation View is initialized, or after by setting its `imageProvider` property. 
+To force an LottieAnimationView to reload its images call `reloadImages()` on the LottieAnimationView.
 
 Read more about `AnimationImageProvider` [here](#image-provider)
 
-#
-### Playing Animations
-#### Time
+## Playing Animations
+### Time
 There are several methods for playing animations, and portions of animations. Lottie describes Time in three ways:
  - Frame Time - Describes time in a frames per second format. `(Seconds * Framerate)` *eg: 0.5 second is FrameTime 12 when framerate is 24*.
  - Progress Time - Describes time in progress from 0 (the beginning of the animation timeline) to 1 (the end of the animation timeline).
  - Time - Describes time in seconds.
 
-All three can be used to play and set time on an `AnimationView`
-#
-#### Basic Playing
+All three can be used to play and set time on an `LottieAnimationView`
+
+### Basic Playing
 ```swift
-AnimationView.play(completion: LottieCompletionBlock?)
+LottieAnimationView.play(completion: LottieCompletionBlock?)
 ```
 Plays the animation from its current state to the end of its timeline. Calls the completion block when the animation is stopped.
 
@@ -183,14 +208,21 @@ Parameters:
 
 Example:
 ```swift
-starAnimationView.play { (finished) in
-/// Animation stopped
+starAnimationView.play { finished in
+  /// LottieAnimation stopped
 }
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .play()
+  .animationDidFinish { finished in
+    /// LottieAnimation did finish
+  }
 ```
-#
-#### Play with Progress Time
+
+### Play with Progress Time
 ```swift
-AnimationView.play(fromProgress: AnimationProgressTime?, toProgress: AnimationProgressTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
+LottieAnimationView.play(fromProgress: AnimationProgressTime?, toProgress: AnimationProgressTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
 ```
 Plays the animation from a `Progress Time` to a `Progress Time` with options.
 
@@ -204,11 +236,15 @@ Example:
 ```swift
 /// Play only the last half of an animation.
 animationView.play(fromProgress: 0.5, toProgress: 1)
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .play(.fromProgress(0.5, toProgress: 1, loopMode: .playOnce))
 ```
-#
-#### Play with Frame Time
+
+### Play with Frame Time
 ```swift
-AnimationView.play(fromFrame: AnimationProgressTime?, toFrame: AnimationFrameTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
+LottieAnimationView.play(fromFrame: AnimationProgressTime?, toFrame: AnimationFrameTime, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
 ```
 Plays the animation from a `Frame Time` to a `Frame Time` with options.
 
@@ -222,13 +258,18 @@ Example:
 ```swift
 /// Play from frame 24 to 48 of an animation.
 animationView.play(fromFrame: 24, toFrame: 48)
+
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .play(.fromFrame(24, toFrame: 24, loopMode: .playOnce))
 ```
-#
-#### Play with Marker Names
+
+### Play with Marker Names
 ```swift
-AnimationView.play(fromMarker: String?, toMarker: String, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
+LottieAnimationView.play(fromMarker: String?, toMarker: String, loopMode: LottieLoopMode?, completion: LottieCompletionBlock?)
 ```
-Plays the animation from a named marker to another marker. Markers are point in time that are encoded into the Animation data and assigned a name.
+Plays the animation from a named marker to another marker. Markers are point in time that are encoded into the LottieAnimation data and assigned a name.
 Read more on Markers [here](#using-markers)
 ==NOTE==: If markers are not found the play command will exit. 
 
@@ -240,53 +281,62 @@ Parameters:
 
 Example:
 ```swift
-/// Play from frame 24 to 48 of an animation.
+/// Play from marker "ftue1_begin" to marker "ftue1_end" of an animation.
 animationView.play(fromMarker: "ftue1_begin", toMarker: "ftue1_end")
+
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .play(.fromMarker("ftue1_begin", toMarker: "ftue1_end", loopMode: .playOnce))
 ```
-#
-#### Stop
+
+### Stop
 ```swift
-AnimationView.stop()
+LottieAnimationView.stop()
 ```
 Stops the currently playing animation, if any. The animation view is reset to its start frame. The previous animation's completion block will be closed with `false`
 Example:
 ```swift
 animationView.stop()
 ```
-#
-#### Pause
+
+### Pause
 ```swift
-AnimationView.pause()
+LottieAnimationView.pause()
 ```
 Pauses the animation in its current state. The previous animation's completion block will be closed with `false`
 Example:
 ```swift
 animationView.pause()
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .playbackMode(.pause)
 ```
-#
-### Animation Settings
-`AnimationView` has a variety of settings for controlling playback, and visual state.
-#
-#### Content Mode
+
+## LottieAnimation Settings
+`LottieAnimationView` has a variety of settings for controlling playback, and visual state.
+
+### Content Mode
 ```swift
 /// iOS
-var AnimationView.contentMode: UIViewContentMode { get set }
+var LottieAnimationView.contentMode: UIViewContentMode { get set }
 /// MacOS
-var AnimationView.contentMode: LottieContentMode { get set }
+var LottieAnimationView.contentMode: LottieContentMode { get set }
 ```
-Describes how the AnimationView should resize and scale its contents.
+Describes how the LottieAnimationView should resize and scale its contents.
 
 Options:
-: **scaleToFill**: Animation scaled to fill the bounds of AnimationView. The animation will be stretched if the aspect of the AnimationView is different than the Animation.
-: **scaleAspectFit**: Animation will be scaled to fit the AnimationView while preserving its aspect ratio.
-: **scaleAspectFill**: Animation will be scaled to fill the AnimationView while preserving its aspect ratio.
-: **topLeft**: Animation will not be scaled.
-#
-#### Background Behavior
+: **scaleToFill**: LottieAnimation scaled to fill the bounds of LottieAnimationView. The animation will be stretched if the aspect of the LottieAnimationView is different than the LottieAnimation.
+: **scaleAspectFit**: LottieAnimation will be scaled to fit the LottieAnimationView while preserving its aspect ratio.
+: **scaleAspectFill**: LottieAnimation will be scaled to fill the LottieAnimationView while preserving its aspect ratio.
+: **topLeft**: LottieAnimation will not be scaled.
+
+### Background Behavior
 ```swift
-var AnimationView.backgroundBehavior: LottieBackgroundBehavior { get set }
+var LottieAnimationView.backgroundBehavior: LottieBackgroundBehavior { get set }
 ```
-Describes the behavior of an AnimationView when the app is moved to the background. (iOS only)
+Describes the behavior of an LottieAnimationView when the app is moved to the background. (iOS only)
 
 The default is `.pause`
 
@@ -294,114 +344,112 @@ Options:
 : **stop**: Stop the animation and reset it to the beginning of its current play time. The completion block is called.
 : **pause**: Pause the animation in its current state. The completion block is called.
 : **pauseAndRestore**: Pause the animation and restart it when the application moves back to the foreground. The completion block is stored and called when the animation completes.
-#
-#### Loop Mode
+
+### Loop Mode
 ```swift
-var AnimationView.loopMode: LottieLoopMode { get set }
+var LottieAnimationView.loopMode: LottieLoopMode { get set }
 ```
 Sets the loop behavior for `play` calls. Defaults to `playOnce`
 Options:
-: **playOnce**: Animation is played once then stops.
-: **loop**: Animation will loop from end to beginning until stopped.
-: **autoReverse**: Animation will play forward, then backwards and loop until stopped.
-: **repeat(amount)**: Animation will loop from end to beginning up to *amount* of times.
-: **repeatBackwards(amount)**: Animation will play forward, then backwards a *amount* of times.
-#
-#### Is Animation Playing
+: **playOnce**: LottieAnimation is played once then stops.
+: **loop**: LottieAnimation will loop from end to beginning until stopped.
+: **autoReverse**: LottieAnimation will play forward, then backwards and loop until stopped.
+: **repeat(amount)**: LottieAnimation will loop from end to beginning up to *amount* of times.
+: **repeatBackwards(amount)**: LottieAnimation will play forward, then backwards a *amount* of times.
+
+### Is LottieAnimation Playing
 ```swift
-var AnimationView.isAnimationPlaying: Bool { get set }
+var LottieAnimationView.isAnimationPlaying: Bool { get set }
 ```
 Returns `true` if the animation is currently playing, `false` if it is not.
-#
-#### Should Rasterize When Idle
+
+### Should Rasterize When Idle
 ```swift
-var AnimationView.shouldRasterizeWhenIdle: Bool { get set }
+var LottieAnimationView.shouldRasterizeWhenIdle: Bool { get set }
 ```
-When `true` the animation view will rasterize its contents when not animating. Rasterizing will improve performance of static animations.
+When `true` the animation view will rasterize its contents when not animating. Rasterizing will improve performance of static animations. This may be required to avoid unexpected artifacts if your `LottieAnimationView` is not opaque with `alpha = 1.0` (e.g. if applying a crossfade to your view).
 ==Note:== this will not produce crisp results at resolutions above the animation's natural resolution.
 
 Defaults to `false`
-#
-#### Respect Animation Frame Rate
+
+### Respect LottieAnimation Frame Rate
 ```swift
-var AnimationView.respectAnimationFrameRate: Bool { get set }
+var LottieAnimationView.respectAnimationFrameRate: Bool { get set }
 ```
-When `true` the animation will play back at the framerate encoded in the `Animation` model. When `false` the animation will play at the framerate of the device.
+When `true` the animation will play back at the framerate encoded in the `LottieAnimation` model. When `false` the animation will play at the framerate of the device.
 
 Defaults to `false`
-#
-#### Animation Speed
+
+### LottieAnimation Speed
 ```swift
-var AnimationView.animationSpeed: CGFloat { get set }
+var LottieAnimationView.animationSpeed: CGFloat { get set }
 ```
 Sets the speed of the animation playback. Higher speed equals faster time.
 Defaults to `1`
 #
-#### Current Progress
+### Current Progress
 ```swift
-var AnimationView.currentProgress: AnimationProgressTime { get set }
+var LottieAnimationView.currentProgress: AnimationProgressTime { get set }
 ```
 Sets the current animation time with a Progress Time. Returns the current Progress Time, or the final Progress Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
-#### Current Time
+
+### Current Time
 ```swift
-var AnimationView.currentTime: TimeInterval { get set }
+var LottieAnimationView.currentTime: TimeInterval { get set }
 ```
 Sets the current animation time with a TimeInterval. Returns the current TimeInterval, or the final TimeInterval if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
-#### Current Frame
+
+### Current Frame
 ```swift
-var AnimationView.currentFrame: AnimationFrameTime { get set }
+var LottieAnimationView.currentFrame: AnimationFrameTime { get set }
 ```
 Sets the current animation time with a Frame Time. Returns the current  Frame Time, or the final  Frame Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
-#
-#### Realtime Frame
-```swift
-var AnimationView.realtimeAnimationFrame: AnimationFrameTime { get }
-```
-Returns the realtime Frame Time of an AnimationView while an animation is in flight.
-#
-#### Realtime Progress
-```swift
-var AnimationView.realtimeAnimationProgress: AnimationProgressTime { get }
-```
-Returns the realtime Progress Time of an AnimationView while an animation is in flight.
-#
-#### Force Display Update
-```swift
-func AnimationView.forceDisplayUpdate()
-```
-Forces the AnimationView to redraw its contents.
 
-#
-### Using Markers
+### Realtime Frame
+```swift
+var LottieAnimationView.realtimeAnimationFrame: AnimationFrameTime { get }
+```
+Returns the realtime Frame Time of an LottieAnimationView while an animation is in flight.
+ress
+```swift
+var LottieAnimationView.realtimeAnimationProgress: AnimationProgressTime { get }
+```
+Returns the realtime Progress Time of an LottieAnimationView while an animation is in flight.
+
+### Force Display Update
+```swift
+func LottieAnimationView.forceDisplayUpdate()
+```
+Forces the LottieAnimationView to redraw its contents.
+
+
+## Using Markers
 Markers are a way to describe a point in time by a key name. Markers are encoded into animation JSON. By using markers a designer can mark playback points for a developer to use without having to worry about keeping track of animation frames. If the animation file is updated, the developer does not need to update playback code.
 
-Markers can be used to [playback sections of animation](#play-with-marker-names), or can be read directly for more advanced use. Both `Animation` and `AnimationView` have methods for reading Marker Times.
+Markers can be used to [playback sections of animation](#play-with-marker-names), or can be read directly for more advanced use. Both `LottieAnimation` and `LottieAnimationView` have methods for reading Marker Times.
 
-#
-#### Reading Marker Time
+
+### Reading Marker Time
 ```swift
-/// Animation View Methods
-AnimationView.progressTime(forMarker named: String) -> AnimationProgressTime?
-AnimationView.frameTime(forMarker named: String) -> AnimationFrameTime?
-/// Animation Model Methods
-Animation.progressTime(forMarker named: String) -> AnimationProgressTime?
-Animation.frameTime(forMarker named: String) -> AnimationFrameTime?
+/// LottieAnimation View Methods
+LottieAnimationView.progressTime(forMarker named: String) -> AnimationProgressTime?
+LottieAnimationView.frameTime(forMarker named: String) -> AnimationFrameTime?
+/// LottieAnimation Model Methods
+LottieAnimation.progressTime(forMarker named: String) -> AnimationProgressTime?
+LottieAnimation.frameTime(forMarker named: String) -> AnimationFrameTime?
 ```
 Each method returns the time for the marker specified by name. Returns nil if the marker is not found.
-#
-### Dynamic Animation Properties
-Nearly all properties of a Lottie animation can be changed at runtime using a combination of [Animation Keypaths](#animation-keypaths) and [Value Providers](#value-providers). Setting a ValueProvider on a keypath will cause the animation to update its contents and read the new Value Provider.
-In addition, animation properties can be read using `Animation Keypaths`.
 
-#
-#### Setting Dynamic Properties
+## Dynamic LottieAnimation Properties
+Nearly all properties of a Lottie animation can be changed at runtime using a combination of [LottieAnimation Keypaths](#animation-keypaths) and [Value Providers](#value-providers). Setting a ValueProvider on a keypath will cause the animation to update its contents and read the new Value Provider.
+In addition, animation properties can be read using `LottieAnimation Keypaths`.
+
+### Setting Dynamic Properties
 ```swift
-AnimationView.setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath)
+LottieAnimationView.setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath)
 ```
 Sets a ValueProvider for the specified keypath. The value provider will be set on all properties that match the keypath.
 
@@ -418,10 +466,10 @@ let redValueProvider = ColorValueProvider(Color(r: 1, g: 0.2, b: 0.3, a: 1))
 /// Set the provider on the animationView.
 animationView.setValueProvider(redValueProvider, keypath: fillKeypath)
 ```
-#
-#### Reading Animation Properties
+
+### Reading LottieAnimation Properties
 ```swift
-AnimationView.getValue(for keypath: AnimationKeypath, atFrame: AnimationFrameTime?) -> Any?
+LottieAnimationView.getValue(for keypath: AnimationKeypath, atFrame: AnimationFrameTime?) -> Any?
 ```
 Reads the value of a property specified by the Keypath.
 Returns nil if no property is found.
@@ -437,19 +485,17 @@ let fillKeypath = AnimationKeypath(keypath: "Layer 1.Group 1.Transform.Position"
 let position = animationView.getValue(for: fillKeypath, atFrame: nil)
 /// Returns Vector(10, 10, 0) for currentFrame. 
 ```
-#
-#### Logging Keypaths
+
+### Logging Keypaths
 ```swift
-AnimationView.logHierarchyKeypaths()
+LottieAnimationView.logHierarchyKeypaths()
 ```
 Logs all child keypaths of the animation into the console.
 
-#
-#### Adding Views to Animations
+### Adding Views to Animations
 Custom views can be added to AnimationViews. These views will animate alongside the animation.
 
-#
-#### Enabling and Disabling Animation Nodes
+### Enabling and Disabling LottieAnimation Nodes
 
 `public func setNodeIsEnabled(isEnabled: Bool, keypath: AnimationKeypath)`
 
@@ -463,7 +509,7 @@ An enabled node affects the render tree, a disabled node will be removed from th
 Example
 ```swift
 // Create an animation view.
-let animation = Animation.named("LottieLogo1", subdirectory: "TestAnimations")
+let animation = LottieAnimation.named("LottieLogo1", subdirectory: "TestAnimations")
 // Some time later. Create a keypath to find any node named "Stroke 1"
 let keypath1 = AnimationKeypath(keypath: "**.Stroke 1")
 // Disable all nodes named Stroke 1, removing them from the current render tree.
@@ -472,10 +518,9 @@ animationView.setNodeIsEnabled(isEnabled: false, keypath: keypath1)
 animationView.setNodeIsEnabled(isEnabled: true, keypath: keypath1)
 ```
 
-#
-#### Adding Subviews
+### Adding Subviews
 ```swift
-AnimationView.addSubview(_ subview: AnimationSubview, forLayerAt keypath: AnimationKeypath)
+LottieAnimationView.addSubview(_ subview: AnimationSubview, forLayerAt keypath: AnimationKeypath)
 ```
 Searches for the nearest child layer to the first Keypath and adds the subview to that layer. The subview will move and animate with the child layer. Furthermore the subview will be in the child layers coordinate space.
 ==Note==: if no layer is found for the keypath, then nothing happens.
@@ -496,31 +541,50 @@ subview.addSubview(customView)
 /// Set the provider on the animationView.
 animationView.addSubview(subview, forLayerAt: layerKeypath)
 ```
-#
-#### Converting CGRect and CGPoint to Layers
+
+### Converting CGRect and CGPoint to Layers
 ```swift
 /// Converts a rect
-AnimationView.convert(_ rect: CGRect, toLayerAt keypath: AnimationKeypath) -> CGRect?
+LottieAnimationView.convert(_ rect: CGRect, toLayerAt keypath: AnimationKeypath) -> CGRect?
 /// Converts a point
-AnimationView.convert(_ point: CGPoint, toLayerAt keypath: AnimationKeypath) -> CGPoint?
+LottieAnimationView.convert(_ point: CGPoint, toLayerAt keypath: AnimationKeypath) -> CGPoint?
 ```
-These two methods are used to convert geometry from the AnimationView's coordinate space into the coordinate space of the layer found at Keypath.
+These two methods are used to convert geometry from the LottieAnimationView's coordinate space into the coordinate space of the layer found at Keypath.
 
 If no layer is found, nil is returned
 
 Parameters
-: **point or rect**: The CGPoint or CGRect in the AnimationView's coordinate space to convert.
+: **point or rect**: The CGPoint or CGRect in the LottieAnimationView's coordinate space to convert.
 : **keypath**: The keypath used to find the layer.
 #
-[Back to contents](#contents)
-## Image Provider
-Image provider is a protocol that is used to supply images to `AnimationView`.
 
-Some animations require a reference to an image. The image provider loads and provides those images to the `AnimationView`.  Lottie includes a couple of prebuilt Image Providers that supply images from a Bundle, or from a FilePath.
+# Rendering Engines
+
+Lottie for iOS includes two rendering engine implementations, which are responsible for actually displaying and rendering Lottie animations:
+
+ - The Core Animation rendering engine (enabled by default in Lottie 4.0+) uses Core Animation `CAAnimation`s to deliver better performance than the older Main Thread rendering engine.
+ - The Main Thread rendering engine (the default before Lottie 4.0) runs code on the main thread once per frame to update and re-render the animation.
+
+You can learn more about the Core Animation rendering engine in [this post](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54) on Airbnb's Tech Blog: **[Announcing Lottie 4.0 for iOS](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54)**.
+
+The Core Animation rendering engine and Main Thread rendering engine support different sets of functionality. For example, as of Sept 2023 the Core Animation engine doesn't support time remapping, but only the Core Animation rendering engine supports drop shadows. A complete list of supported functionality is available [here](https://airbnb.io/lottie/#/supported-features).
+
+Most animations are rendered exactly the same by both rendering engines, but s shown above the Core Animation rendering engine and Main Thread rendering engine support slightly different sets of functionality. 
+
+As of [Lottie 4.0](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54), Lottie uses the Core Animation rendering engine by default. If Lottie detects that an animation uses functionality not supported by the Core Animation rendering engine, it will automatically fall back to the Main Thread rendering engine. You can also configure which rendering engine is used by configuring the `LottieConfiguration.renderingEngine`.
+
+
+By default, if Lottie detects that an animation uses functionality not supported by the Core Animation rendering engine, it will automatically fall back to the Main Thread rendering engine. You can also configure which rendering engine is used by configuring the `LottieConfiguration.renderingEngine`.
+
+
+# Image Provider
+Image provider is a protocol that is used to supply images to `LottieAnimationView`.
+
+Some animations require a reference to an image. The image provider loads and provides those images to the `LottieAnimationView`.  Lottie includes a couple of prebuilt Image Providers that supply images from a Bundle, or from a FilePath.
 
 Additionally custom Image Providers can be made to load images from a URL, or to Cache images.
 
-### BundleImageProvider
+## BundleImageProvider
 ```swift
 public class BundleImageProvider: AnimationImageProvider
 ```
@@ -532,8 +596,8 @@ let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "Animat
 /// Set the provider on an animation.
 animationView.imageProvider = imageProvider
 ```
-#
-### FilepathImageProvider
+
+## FilepathImageProvider
 ```swift
 public class FilepathImageProvider: AnimationImageProvider
 ```
@@ -545,42 +609,42 @@ let imageProvider = AnimationImageProvider(filepath: url)
 /// Set the provider on an animation.
 animationView.imageProvider = imageProvider
 ```
-[Back to contents](#contents)
-## Animation Cache
 
-`AnimationCacheProvider` is a protocol that describes an Animation Cache. Animation Cache is used when loading `Animation` models. Using an Animation Cache can increase performance when loading an animation multiple times.
+# LottieAnimation Cache
 
-Lottie comes with a prebuilt LRU Animation Cache.
+`AnimationCacheProvider` is a protocol that describes an LottieAnimation Cache. LottieAnimation Cache is used when loading `LottieAnimation` models. Using an LottieAnimation Cache can increase performance when loading an animation multiple times.
 
-### LRUAnimationCache
-An Animation Cache that will store animations up to `cacheSize`. Once `cacheSize` is reached, the least recently used animation will be ejected. The default size of the cache is 100.
+Lottie comes with a prebuilt LRU LottieAnimation Cache.
+
+## LRUAnimationCache
+An LottieAnimation Cache that will store animations up to `cacheSize`. Once `cacheSize` is reached, the least recently used animation will be ejected. The default size of the cache is 100.
 
 LRUAnimationCache has a global `sharedCache` that is used to store the animations.
 
 You may also call `LRUAnimationCache.sharedCache.clearCache()` to clear the cache.
 
-[Back to contents](#contents)
-## Value Providers
-`AnyValueProvider` is a protocol that return animation data for a property at a given time. Every fame an `AnimationView` queries all of its properties and asks if their ValueProvider has an update. If it does the AnimationView will read the property and update that portion of the animation.
+
+# Value Providers
+`AnyValueProvider` is a protocol that return animation data for a property at a given time. Every fame an `LottieAnimationView` queries all of its properties and asks if their ValueProvider has an update. If it does the LottieAnimationView will read the property and update that portion of the animation.
 
 Value Providers can be used to dynamically set animation properties at run time.
 
-### Primitives
+## Primitives
 
 ValueProviders work with a few Primitive data types. 
 
- - **Color**: A primitive that describes a color in R G B A (0-1)
- - **Vector1D**: A single float value.
- - **Vector3D**: A three dimensional vector. (X, Y, Z)
+ - **LottieColor**: A primitive that describes a color in R G B A (0-1)
+ - **LottieVector1D**: A single float value.
+ - **LottieVector3D**: A three dimensional vector. (X, Y, Z)
  
-### Prebuilt Providers
+## Prebuilt Providers
 Lottie comes with a handful of prebuilt providers for each Primitive Type. Each Provider can be initialized with a single value, or a block that will be called on a frame-by-frame basis.
 
 Example
 ```swift
 
 /// A Color Value provider that returns a reddish color.
-let redValueProvider = ColorValueProvider(Color(r: 1, g: 0.2, b: 0.3, a: 1))
+let redValueProvider = ColorValueProvider(LottieColor(r: 1, g: 0.2, b: 0.3, a: 1))
 
 /// A keypath that finds the color value for all `Fill 1` nodes.
 let fillKeypath = AnimationKeypath(keypath: "**.Fill 1.Color")
@@ -589,13 +653,12 @@ animationView.setValueProvider(redValueProvider, keypath: fillKeypath)
 
 /// Later...
 /// Changing the value provider will update the animation.
-redValueProvider.color = Color(r: 0, g: 0.2, b: 1, a: 1)
+redValueProvider.color = LottieColor(r: 0, g: 0.2, b: 1, a: 1)
 ```
-[Back to contents](#contents)
-## Animation Keypaths
-`AnimationKeypath` is an object that describes a keypath search for nodes in the animation JSON. `AnimationKeypath` matches views and properties inside of `AnimationView` to their backing `Animation` model by name.
+# LottieAnimation Keypaths
+`AnimationKeypath` is an object that describes a keypath search for nodes in the animation JSON. `AnimationKeypath` matches views and properties inside of `LottieAnimationView` to their backing `LottieAnimation` model by name.
 
-A keypath can be used to set properties on an existing animation, or can be validated with an existing `Animation`. `AnimationKeypath` can describe a specific object, or can use wildcards for fuzzy matching of objects. Acceptable wildcards are either "*" (star) or "**" (double star). Single star will search a single depth for the next object. Double star will search any depth.
+A keypath can be used to set properties on an existing animation, or can be validated with an existing `LottieAnimation`. `AnimationKeypath` can describe a specific object, or can use wildcards for fuzzy matching of objects. Acceptable wildcards are either "*" (star) or "**" (double star). Single star will search a single depth for the next object. Double star will search any depth.
 
 An `AnimationKeypath` can be initialized with a dot-separated keypath, or with an array of keys. 
 
@@ -615,8 +678,7 @@ Code Example:
 let fillKeypath =  AnimationKeypath(keypath:  "**.Fill 1.Color")
 ```
 
-[Back to contents](#contents)
-## Animated Control
+# Animated Control
 Lottie comes prepacked with a two Animated Controls, `AnimatedSwitch` and `AnimatedButton`. Both of these controls are built on top of `AnimatedControl`
 
 `AnimatedControl` is a subclass of `UIControl` that provides an interactive mechanism for controlling the visual state of an animation in response to user actions.
@@ -625,8 +687,9 @@ The `AnimatedControl` will show and hide layers depending on the current `UICont
 
 Users of `AnimationControl` can set a Layer Name for each `UIControl.State`. When the state is change the `AnimationControl` will change the visibility of its layers.
 
-[Back to contents](#contents)
-## Animated Switch
+# Animated Switch
+
+Also available as `LottieSwitch`, a SwiftUI `View` implementation.
 
 ![SwitchButton](images/switchTest.gif)
 
@@ -641,8 +704,11 @@ public func setProgressForState(fromProgress: AnimationProgressTime,
     toProgress: AnimationProgressTime,
     forState onState: Bool)
 ```
-[Back to contents](#contents)
-## Animated Button
+
+# Animated Button
+
+Also available as `LottieButton`, a SwiftUI `View` implementation.
+
 ![HeartButton](images/HeartButton.gif)
 
 An interactive button that plays an animation when pressed.
@@ -665,7 +731,7 @@ Example:
 let twitterButton = AnimatedButton()
 twitterButton.translatesAutoresizingMaskIntoConstraints = false
 /// Set an animation on the button.
-twitterButton.animation = Animation.named("TwitterHeartButton", subdirectory: "TestAnimations")
+twitterButton.animation = LottieAnimation.named("TwitterHeartButton", subdirectory: "TestAnimations")
 /// Turn off clips to bounds, as the animation goes outside of the bounds.
 twitterButton.clipsToBounds = false
 /// Set animation play ranges for touch states
@@ -674,37 +740,37 @@ twitterButton.setPlayRange(fromMarker: "touchDownEnd", toMarker: "touchUpCancel"
 twitterButton.setPlayRange(fromMarker: "touchDownEnd", toMarker: "touchUpEnd", event: .touchUpInside)
 view.addSubview(twitterButton)
 ```
-[Back to contents](#contents)
-## Examples
 
-### Changing Animations at Runtime
+# Examples
+
+## Changing Animations at Runtime
 
 Lottie can do more than just play beautiful animations. Lottie allows you to **change** animations at runtime.
 
-### Say we want to create 4 toggle switches.
+## Say we want to create 4 toggle switches.
 ![Toggle](images/switch_Normal.gif)
 
 It's easy to create the four switches and play them:
 
 ```swift
-let animationView = AnimationView(name: "toggle");
+let animationView = LottieAnimationView(name: "toggle");
 self.view.addSubview(animationView)
 animationView.play()
 
-let animationView2 = AnimationView(name: "toggle");
+let animationView2 = LottieAnimationView(name: "toggle");
 self.view.addSubview(animationView2)
 animationView2.play()
 
-let animationView3 = AnimationView(name: "toggle");
+let animationView3 = LottieAnimationView(name: "toggle");
 self.view.addSubview(animationView3)
 animationView3.play()
 
-let animationView4 = AnimationView(name: "toggle");
+let animationView4 = LottieAnimationView(name: "toggle");
 self.view.addSubview(animationView4)
 animationView4.play()
 
 ```
-### Now lets change their colors
+## Now lets change their colors
 ![Recolored Toggle](images/switch_BgColors.gif)
 
 ```swift
@@ -726,128 +792,33 @@ animationView3.setValueProvider(redValueProvider, keypath: keypath)
 animationView4.setValueProvider(orangeValueProvider, keypath: keypath)
 ```
 The keyPath is a dot separated path of layer and property names from After Effects.
-AnimationView provides `func logHierarchyKeypaths()` which will recursively log all settable keypaths for the animation.
+LottieAnimationView provides `func logHierarchyKeypaths()` which will recursively log all settable keypaths for the animation.
 ![Key Path](images/aftereffectskeypath.png)
 
 "BG-On.Group 1.Fill 1.Color"
 
-### Now lets change a couple of properties
+## Now lets change a couple of properties
 ![Multiple Colors](images/switch_MultipleBgs.gif)
 
 Lottie allows you to change **any** property that is animatable in After Effects. 
 
-[Back to contents](#contents)
-
-#
-## Supported After Effects Features
-
-See Supported Features by platform [here](/supported-features.md)
-| **Shapes** | **2.5.2** | **3.0** |
-|:--|:-:|:-:|
-| Shape | 👍 | 👍 |
-| Ellipse | 👍 | 👍 |
-| Rectangle | 👍 | 👍 |
-| Rounded Rectangle | 👍 | 👍 |
-| Polystar | 👍 | 👍 |
-| Group | 👍 | 👍 |
-| Repeater | 👍 | ⛔️ |
-| Trim Path (individually) | ⛔️ | 🎉 |
-| Trim Path (simultaneously) | ❗️ | 🎉 |
-| **Renderable** | **2.5.2** | **3.0** |
-| Fill  | 👍 | 👍 |
-| Stroke | 👍 | 👍 |
-| Radial Gradient |               👍 | 👍 |
-| Linear Gradient |               👍 | 👍 |
-| Gradient Stroke |               ⛔️ | 🎉 |
-| **Transforms** | **2.5.2** | **3.0** |
-| Position |                      👍 | 👍 |
-| Position (separated X/Y) |      ❗️ | 👍 |
-| Scale |                         👍 | 👍 |
-| Skew |                         ⛔️ | 🎉 |
-| Rotation |                      👍 | 👍 |
-| Anchor Point |                  👍 | 👍 |
-| Opacity |                       👍 | 👍 |
-| Parenting |                     👍 | 👍 |
-| Auto Orient |                   ⛔️ | ⛔️ |
-| **Interpolation** | **2.5.2** | **3.0** |
-| Linear Interpolation |          ❗️ | 🎉 |
-| Bezier Interpolation |          👍 | 👍 |
-| Hold Interpolation |            👍 | 👍 |
-| Spatial Bezier Interpolation |  ❗️ | 🎉 |
-| Rove Across Time |              👍 | 👍 |
-| **Masks** | **2.5.2** | **3.0** |
-| Mask Path |                     👍 | 👍 |
-| Mask Opacity |                  👍 | 👍 |
-| Add |                           👍 | 👍 |
-| Subtract |                      ❗️ | 🎉 |
-| Intersect |                     ⛔️ | 🎉 |
-| Lighten |                       ⛔️ | ⛔️ |
-| Darken |                        ⛔️ | ⛔️ |
-| Difference |                    ⛔️ | ⛔️ |
-| Expansion |                     ⛔️ | ⛔️ |
-| Feather |                       ⛔️ | ⛔️ |
-| **Mattes** | **2.5.2** | **3.0** |
-| Alpha Matte |                   👍 | 👍 |
-| Alpha Inverted Matte |          ⛔️ | 🎉 |
-| Luma Matte |                    ⛔️ | ⛔️ |
-| Luma Inverted Matte |           ⛔️ | ⛔️ |
-| **Merge Paths** | **2.5.2** | **3.0** |
-| Merge |                        ⛔ | ⛔ | 
-| Add | ⛔ | ⛔ |
-| Subtract | ⛔ | ⛔ |
-| Intersect | ⛔ | ⛔ | 
-| Exclude Intersection | ⛔ | ⛔ | 
-| **Layer Effects** | **2.5.2** | **3.0** |
-| Fill |                          ⛔️ | ⛔️ |
-| Stroke |                        ⛔️ | ⛔️ |
-| Tint |                          ⛔️ | ⛔️ |
-| Tritone |                       ⛔️ | ⛔️ |
-| Levels Individual Controls |    ⛔️ | ⛔️ |
-| **Text** | **2.5.2** | **3.0** |
-| Glyphs |                         ⛔️ | ⛔️ | 
-| Fonts |                          ⛔️ | 🎉 |
-| Transform |                      ⛔️ |🎉 | 
-| Fill |                           ⛔️ | 🎉 | 
-| Stroke |                         ⛔️ | 🎉 | 
-| Tracking |                       ⛔️ | 🎉 | 
-| Anchor point grouping |         ⛔️ | ⛔️ | 
-| Text Path |                     ⛔ | ⛔️ | 
-| Per-character 3D |              ⛔ | ⛔️ | 
-| Range selector (Units) |        ⛔ | ⛔️ | 
-| Range selector (Based on) |     ⛔ | ⛔️ | 
-| Range selector (Amount) |       ⛔ | ⛔️ | 
-| Range selector (Shape) |        ⛔ | ⛔️ |
-| Range selector (Ease High) |    ⛔ | ⛔️ |
-| Range selector (Ease Low)  |    ⛔ | ⛔️ |
-| Range selector (Randomize order) | ⛔ | ⛔️ |
-| expression selector |           ⛔ | ⛔️ | 
-| **Other** | **2.5.2** | **3.0** | 
-| Expressions |                   ⛔️ | ⛔️ |
-| Images |                        👍 | 👍 |
-| Precomps |                      👍 | 👍 |
-| Time Stretch |                  ⛔️ | 👍 |
-| Time remap |                   ⛔️ | 👍 |
-| Markers | ⛔️ | 🎉 |
-
-[Back to contents](#contents)
-## Alternatives
+# Alternatives
 1. Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It's often hard or even impossible to justify spending so much time to get an animation right.
 2. [Facebook Keyframes](https://github.com/facebookincubator/Keyframes). Keyframes is a wonderful new library from Facebook that they built for reactions. However, Keyframes doesn't support some of Lottie's features such as masks, mattes, trim paths, dash patterns, and more.
 2. Gifs. Gifs are more than double the size of a bodymovin JSON and are rendered at a fixed size that can't be scaled up to match large and high density screens.
 3. Png sequences. Png sequences are even worse than gifs in that their file sizes are often 30-50x the size of the bodymovin json and also can't be scaled up.
 
-[Back to contents](#contents)
-## Why is it Called Lottie?
+# Why is it Called Lottie?
 Lottie is named after a German film director and the foremost pioneer of silhouette animation. Her best known films are The Adventures of Prince Achmed (1926) – the oldest surviving feature-length animated film, preceding Walt Disney's feature-length Snow White and the Seven Dwarfs (1937) by over ten years.
 [The art of Lotte Reineger](https://www.youtube.com/watch?v=LvU55CUw5Ck&feature=youtu.be)
 
-[Back to contents](#contents)
-## Contributing
-Contributors are more than welcome. Just upload a PR with a description of your changes.
-To get ramped up on how Lottie-iOS works, read through the [Contributor Documentation](/ios-contributor.md)
+# Contributing
+Contributors are more than welcome. Just post a PR with a description of your changes. For larger changes, please open a discussion first to help build alignment on the necessary changes and the design direction.
 
-[Back to contents](#contents)
-## Issues or Feature Requests?
-File github issues for anything that is broken. Be sure to check the [list of supported features](#supported-after-effects-features) before submitting.  If an animation is not working, please attach the After Effects file to your issue. Debugging without the original can be very difficult. Lottie is developed and maintained by [Brandon Withrow](mailto:brandon@withrow.io). Feel free to reach out via [email](mailto:brandon@withrow.io) or [Twitter](https://twitter.com/theWithra)
+# Issues or Feature Requests?
 
-[Back to contents](#contents)
+Use GitHub issues for for filing bug reports about crashes, regressions, unexpected behavior, etc. Be sure to check the [list of supported features](https://airbnb.io/lottie/#/supported-features) before submitting. If an animation is not working, please attach the After Effects file or animation JSON file to your issue.
+
+If you have a question or feature request, please start a discussion here:
+https://github.com/airbnb/lottie-ios/discussions
+

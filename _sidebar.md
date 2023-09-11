@@ -5,7 +5,7 @@
 * [**After Effects**](/after-effects.md)
 * [**Android**](/android.md)
 * [**Android - Jetpack Compose**](/android-compose.md)
-* [**iOS/MacOS**](/ios.md)
+* [**iOS**](/ios.md)
 * [**React Native**](/react-native.md)
 * [**Web**](/web.md)
 * [**Windows**](/windows.md)

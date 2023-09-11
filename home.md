@@ -83,6 +83,10 @@ Here are some articles and podcasts from the Lottie team @ Airbnb
 
 [Lottie Animation with Brandon Withrow and Gabriel Peal on Software engineering daily podcast](https://softwareengineeringdaily.com/2017/08/10/lottie-animation-with-brandon-withrow-and-gabriel-peal/)
 
+[Announcing Lottie 4.0 for iOS](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54): A new rendering engine with significant performance improvements powered by Core Animation
+
+[Moving Lottie Swiftly into the Future](https://medium.com/airbnb-engineering/lottie-and-swift-at-airbnb-e0c85dc365e7): A personal story on how Airbnb rewrote the popular open source library Lottie in a new language
+
 ## Community articles and videos
 
 Here are some links from around the community
