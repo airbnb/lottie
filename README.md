@@ -31,7 +31,7 @@ To do that, find the markdown file with the docs you want to edit and follow [Gi
 * [Skia](https://skia.org/user/modules/skottie)
 * [Xamarin](https://github.com/martijn00/LottieXamarin)
 * [NativeScript](https://github.com/bradmartin/nativescript-lottie)
-* [Axway Appcelerator](https://github.com/m1ga/ti.animation)
+* [Titanium SDK](https://github.com/m1ga/ti.animation)
 * [Qt QML](https://sea-region.github.com/kbroulik/lottie-qml)
 * [Rlottie](https://github.com/Samsung/rlottie)
 * [Python](https://gitlab.com/mattia.basaglia/python-lottie)
