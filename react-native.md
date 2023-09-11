@@ -248,4 +248,5 @@ LottieReactNative/LRNContainerView.h: 'Lottie/Lottie.h' file not found
 Add the `Lottie.framework` to the `Embedded Binaries` in your Xcode project configuration.
 
 ## Animation issues
-Refer to the troubleshooting guilds on [Android](/android/troubleshooting.md) or [iOS](/ios/troubleshooting.md).
+
+Refer to the [troubleshooting guide](https://github.com/lottie-react-native/lottie-react-native#troubleshooting).
