@@ -1,7 +1,7 @@
 # Supported Features
 
 | **Shapes** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web** (SVG) | **Web** (Canvas) | **Web** (HTML) |
-|:--|:-:|:-:|:-:|:-:|:-:|:-:|
+|:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Shape |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Ellipse |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Rectangle |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
