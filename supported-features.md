@@ -1,6 +1,6 @@
 # Supported Features
 
-| **Shapes** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web** (SVG) | **Web** (Canvas) | **Web** (HTML) |
+| **Shapes** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 |:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Shape |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Ellipse |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
@@ -11,13 +11,13 @@
 | Repeater |                      👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 | 👍 |
 | Trim Path (individually) |      👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Trim Path (simultaneously) |    👍 | ⛔️ | 👍 | 👍 | 👍 | 👍 | 👍 |
-| **Fills** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Fills** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Color |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Fill Rule |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Radial Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 |
 | Linear Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 |
-| **Strokes** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Strokes** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Color |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Width |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
@@ -26,7 +26,7 @@
 | Miter Limit |                   👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Dashes |                        👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Gradient |                      👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
-| **Transforms** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Transforms** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Position |                      👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Position (separated X/Y) |      👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Scale |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
@@ -36,13 +36,13 @@
 | Parenting |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Auto Orient |                   ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Skew |                          ❓ | 👍 | 👍 | ❓ | 👍 | 👍 | 👍 |
-| **Interpolation** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Interpolation** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Linear Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Bezier Interpolation |          👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Hold Interpolation |            👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Spatial Bezier Interpolation |  👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Rove Across Time |              👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
-| **Masks** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Masks** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Mask Path |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Mask Opacity |                  👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Add |                           👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
@@ -53,18 +53,18 @@
 | Difference |                    ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
 | Expansion |                     ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 |
 | Feather |                       ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔️ | ⛔ | ⛔ |
-| **Mattes** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Mattes** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Alpha Matte |                   👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Alpha Inverted Matte |          👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Luma Matte |                    ⛔️ | ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Luma Inverted Matte |           ⛔️ | ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
-| **Merge Paths** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Merge Paths** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Merge |                         👍 (KitKat+) | ⛔ | ⛔ | 👍 | ⛔ | ⛔ | ⛔ |
 | Add |                           👍 (KitKat+) | ⛔ | ⛔ | 👍 | ⛔ | ⛔ | ⛔ |
 | Subtract |                      👍 (KitKat+) | ⛔ | ⛔ | 👍 | ⛔ | ⛔ | ⛔ |
 | Intersect |                     👍 (KitKat+) | ⛔ | ⛔ | 👍 | ⛔ | ⛔ | ⛔ |
 | Exclude Intersection |          👍 (KitKat+) | ⛔ | ⛔ | 👍 | ⛔ | ⛔ | ⛔ |
-| **Layer Effects** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Layer Effects** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Fill |                          ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Stroke |                        ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Tint |                          ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
@@ -72,7 +72,7 @@
 | Levels Individual Controls |    ⛔️ | ⛔️ | ⛔️ | ⛔️ | ❔ | 👍 | 👍 |
 | Gaussian blur |                 👍 (4.1+) | ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
 | Drop Shadows |                  👍 (4.1+) | 👍 | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
-| **Text** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Text** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Glyphs |                        👍 | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Fonts |                         👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Transform |                     👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
@@ -90,7 +90,7 @@
 | Range selector (Ease Low)  |    ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Range selector (Randomize order) | ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | expression selector |           ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
-| **Other** | **Android** | **iOS** (Core Animation) | **iOS** (Main Thread) | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
+| **Other** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Expressions |                   ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Images |                        👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Precomps |                      👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
