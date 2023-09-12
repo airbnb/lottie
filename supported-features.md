@@ -12,11 +12,11 @@
 | Trim Path (individually) |      👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Trim Path (simultaneously) |    👍 | ⛔️ | 👍 | 👍 | 👍 | 👍 | 👍 |
 | **Fills** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
-| Color |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
-| Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
-| Fill Rule |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
-| Radial Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 |
-| Linear Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 |
+| Color |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+| Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+| Fill Rule |                     👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
+| Radial Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 | 👍 |
+| Linear Gradient |               👍 | 👍 | ️️️️️️️️👍 | 👍 | 👍 | 👍 | 👍 |
 | **Strokes** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Color |                         👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Opacity |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
