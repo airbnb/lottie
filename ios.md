@@ -574,9 +574,6 @@ Most animations are rendered exactly the same by both rendering engines, but s s
 As of [Lottie 4.0](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54), Lottie uses the Core Animation rendering engine by default. If Lottie detects that an animation uses functionality not supported by the Core Animation rendering engine, it will automatically fall back to the Main Thread rendering engine. You can also configure which rendering engine is used by configuring the `LottieConfiguration.renderingEngine`.
 
 
-By default, if Lottie detects that an animation uses functionality not supported by the Core Animation rendering engine, it will automatically fall back to the Main Thread rendering engine. You can also configure which rendering engine is used by configuring the `LottieConfiguration.renderingEngine`.
-
-
 # Image Provider
 Image provider is a protocol that is used to supply images to `LottieAnimationView`.
 
