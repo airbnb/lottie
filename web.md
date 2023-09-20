@@ -41,7 +41,7 @@ npm install lottie-web
 
 ## Bower
 ```bash
-bower install lottie-web
+bower install bodymovin
 ```
 
 ---
