@@ -96,7 +96,7 @@ For example, here's how you load and play a simple local animation:
 
 ```swift
 LottieView(animation: .named("StarAnimation"))
-  .play()
+  .playing()
 ```
 
 `LottieView` also provides a convenient API for loading animations asynchronously, e.g. by downloading them from a URL:
@@ -105,23 +105,23 @@ LottieView(animation: .named("StarAnimation"))
 LottieView {
   try await LottieAnimation.loadedFrom(url: myAnimationDownloadURL)
 }
-.play()
+.playing()
 ```
 
 You can use an `@State` property with a `LottiePlaybackMode` to control animation playback. For example, here's how you can trigger an animation to be played in response to a button being pressed:
 
 ```swift
-@State var playbackMode = LottiePlaybackMode.pause
+@State var playbackMode = LottiePlaybackMode.paused
 
 var body: some View {
   LottieView(animation: .named("StarAnimation"))
-    .play(playbackMode)
+    .playbackMode(playbackMode)
     .animationDidFinish { _ in
-      playbackMode = .pause
+      playbackMode = .paused
     }
   
   Button {
-    playbackMode = .fromProgress(0, toProgress: 1, loopMode: .playOnce)
+    playbackMode = .playing(fromProgress(0, toProgress: 1, loopMode: .playOnce))
   } label: {
     Image(systemName: "play.fill")
   }
@@ -214,7 +214,7 @@ starAnimationView.play { finished in
 
 // SwiftUI LottieView API
 LottieView(animation: myAnimation)
-  .play()
+  .playing()
   .animationDidFinish { finished in
     /// LottieAnimation did finish
   }
@@ -239,7 +239,7 @@ animationView.play(fromProgress: 0.5, toProgress: 1)
 
 // SwiftUI LottieView API
 LottieView(animation: myAnimation)
-  .play(.fromProgress(0.5, toProgress: 1, loopMode: .playOnce))
+  .playing(.fromProgress(0.5, toProgress: 1, loopMode: .playOnce))
 ```
 
 ### Play with Frame Time
@@ -262,7 +262,7 @@ animationView.play(fromFrame: 24, toFrame: 48)
 
 // SwiftUI LottieView API
 LottieView(animation: myAnimation)
-  .play(.fromFrame(24, toFrame: 24, loopMode: .playOnce))
+  .playing(.fromFrame(24, toFrame: 48, loopMode: .playOnce))
 ```
 
 ### Play with Marker Names
@@ -287,7 +287,7 @@ animationView.play(fromMarker: "ftue1_begin", toMarker: "ftue1_end")
 
 // SwiftUI LottieView API
 LottieView(animation: myAnimation)
-  .play(.fromMarker("ftue1_begin", toMarker: "ftue1_end", loopMode: .playOnce))
+  .playing(.fromMarker("ftue1_begin", toMarker: "ftue1_end", loopMode: .playOnce))
 ```
 
 ### Stop
@@ -311,7 +311,7 @@ animationView.pause()
 
 // SwiftUI LottieView API
 LottieView(animation: myAnimation)
-  .playbackMode(.pause)
+  .playbackMode(.paused)
 ```
 
 ## LottieAnimation Settings
@@ -338,12 +338,13 @@ var LottieAnimationView.backgroundBehavior: LottieBackgroundBehavior { get set }
 ```
 Describes the behavior of an LottieAnimationView when the app is moved to the background. (iOS only)
 
-The default is `.pause`
+The default is `.continuePlaying` when using the Core Animation rendering engine, and `.pauseAndRestore` when using the Main Thread rendering engine.
 
 Options:
 : **stop**: Stop the animation and reset it to the beginning of its current play time. The completion block is called.
 : **pause**: Pause the animation in its current state. The completion block is called.
-: **pauseAndRestore**: Pause the animation and restart it when the application moves back to the foreground. The completion block is stored and called when the animation completes.
+: **pauseAndRestore**: Pause the animation and restart it when the application moves back to the foreground. The completion block is stored and called when the animation completes. This is the default when using the Main Thread rendering engine.
+: **continuePlaying**: The animation continues playing in the background. This is the default when using the Core Animation rendering engine.
 
 ### Loop Mode
 ```swift
@@ -390,6 +391,15 @@ Defaults to `1`
 ### Current Progress
 ```swift
 var LottieAnimationView.currentProgress: AnimationProgressTime { get set }
+
+// SwiftUI LottieView API: setting current progress
+LottieView(animation: myAnimation)
+  .currentProgress(0.5)
+
+// SwiftUI LottieView API: getting current progress
+LottieView(animation: myAnimation)
+  .playing()
+  .getRealtimeAnimationProgress($progressBinding)
 ```
 Sets the current animation time with a Progress Time. Returns the current Progress Time, or the final Progress Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
@@ -397,6 +407,10 @@ Sets the current animation time with a Progress Time. Returns the current Progre
 ### Current Time
 ```swift
 var LottieAnimationView.currentTime: TimeInterval { get set }
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .currentTime(4.0)
 ```
 Sets the current animation time with a TimeInterval. Returns the current TimeInterval, or the final TimeInterval if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
@@ -404,6 +418,10 @@ Sets the current animation time with a TimeInterval. Returns the current TimeInt
 ### Current Frame
 ```swift
 var LottieAnimationView.currentFrame: AnimationFrameTime { get set }
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .currentFrame(120.0)
 ```
 Sets the current animation time with a Frame Time. Returns the current  Frame Time, or the final  Frame Time if an animation is in progress.
 ==Note==: Setting this will stop the current animation, if any.
@@ -419,18 +437,11 @@ var LottieAnimationView.realtimeAnimationProgress: AnimationProgressTime { get }
 ```
 Returns the realtime Progress Time of an LottieAnimationView while an animation is in flight.
 
-### Force Display Update
-```swift
-func LottieAnimationView.forceDisplayUpdate()
-```
-Forces the LottieAnimationView to redraw its contents.
-
 
 ## Using Markers
 Markers are a way to describe a point in time by a key name. Markers are encoded into animation JSON. By using markers a designer can mark playback points for a developer to use without having to worry about keeping track of animation frames. If the animation file is updated, the developer does not need to update playback code.
 
 Markers can be used to [playback sections of animation](#play-with-marker-names), or can be read directly for more advanced use. Both `LottieAnimation` and `LottieAnimationView` have methods for reading Marker Times.
-
 
 ### Reading Marker Time
 ```swift
@@ -463,8 +474,14 @@ Example:
 let fillKeypath = AnimationKeypath(keypath: "**.Fill 1.Color")
 /// A Color Value provider that returns a reddish color.
 let redValueProvider = ColorValueProvider(Color(r: 1, g: 0.2, b: 0.3, a: 1))
+
 /// Set the provider on the animationView.
 animationView.setValueProvider(redValueProvider, keypath: fillKeypath)
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .playing()
+  .valueProvider(redValueProvider, for: fillKeypath)
 ```
 
 ### Reading LottieAnimation Properties
@@ -473,6 +490,7 @@ LottieAnimationView.getValue(for keypath: AnimationKeypath, atFrame: AnimationFr
 ```
 Reads the value of a property specified by the Keypath.
 Returns nil if no property is found.
+Only supported by the Main Thread rendering engine.
 
 Parameters
 : **for**: The keypath used to search for the property.
@@ -488,75 +506,17 @@ let position = animationView.getValue(for: fillKeypath, atFrame: nil)
 
 ### Logging Keypaths
 ```swift
+// UIKit LottieAnimationView API
 LottieAnimationView.logHierarchyKeypaths()
+
+// SwiftUI LottieView API
+LottieView(animation: myAnimation)
+  .playing()
+  .configure { lottieAnimationView in
+    lottieAnimationView.logHierarchyKeypaths()
+  }
 ```
 Logs all child keypaths of the animation into the console.
-
-### Adding Views to Animations
-Custom views can be added to AnimationViews. These views will animate alongside the animation.
-
-### Enabling and Disabling LottieAnimation Nodes
-
-`public func setNodeIsEnabled(isEnabled: Bool, keypath: AnimationKeypath)`
-
-Sets the enabled state of all animator nodes found with the keypath search.
-This can be used to interactively enable / disable parts of the animation.
-An enabled node affects the render tree, a disabled node will be removed from the render tree.
-
-- Parameter isEnabled: When true the animator nodes affect the rendering tree. When false the node is removed from the tree.
-- Parameter keypath: The keypath used to find the node(s).
-
-Example
-```swift
-// Create an animation view.
-let animation = LottieAnimation.named("LottieLogo1", subdirectory: "TestAnimations")
-// Some time later. Create a keypath to find any node named "Stroke 1"
-let keypath1 = AnimationKeypath(keypath: "**.Stroke 1")
-// Disable all nodes named Stroke 1, removing them from the current render tree.
-animationView.setNodeIsEnabled(isEnabled: false, keypath: keypath1)
-// Re-enable all nodes named Stroke 1.
-animationView.setNodeIsEnabled(isEnabled: true, keypath: keypath1)
-```
-
-### Adding Subviews
-```swift
-LottieAnimationView.addSubview(_ subview: AnimationSubview, forLayerAt keypath: AnimationKeypath)
-```
-Searches for the nearest child layer to the first Keypath and adds the subview to that layer. The subview will move and animate with the child layer. Furthermore the subview will be in the child layers coordinate space.
-==Note==: if no layer is found for the keypath, then nothing happens.
-
-Parameters
-: **subview**: The subview to add to the found animation layer.
-: **keypath**: The keypath used to find the animation layer.
-
-Example:
-```swift
-/// A keypath that finds `Layer 1`
-let layerKeypath = AnimationKeypath(keypath: "Layer 1")
-
-/// Wrap the custom view in an `AnimationSubview`
-let subview = AnimationSubview()
-subview.addSubview(customView)
-
-/// Set the provider on the animationView.
-animationView.addSubview(subview, forLayerAt: layerKeypath)
-```
-
-### Converting CGRect and CGPoint to Layers
-```swift
-/// Converts a rect
-LottieAnimationView.convert(_ rect: CGRect, toLayerAt keypath: AnimationKeypath) -> CGRect?
-/// Converts a point
-LottieAnimationView.convert(_ point: CGPoint, toLayerAt keypath: AnimationKeypath) -> CGPoint?
-```
-These two methods are used to convert geometry from the LottieAnimationView's coordinate space into the coordinate space of the layer found at Keypath.
-
-If no layer is found, nil is returned
-
-Parameters
-: **point or rect**: The CGPoint or CGRect in the LottieAnimationView's coordinate space to convert.
-: **keypath**: The keypath used to find the layer.
-#
 
 # Rendering Engines
 
