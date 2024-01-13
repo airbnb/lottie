@@ -48,7 +48,7 @@ project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '.
 <pre><code class="lang-groovy">
 dependencies {
   ...
-  compile project(':lottie-react-native')
+  implementation project(':lottie-react-native')
   ...
 }
 </code></pre>
