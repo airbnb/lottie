@@ -40,7 +40,7 @@ or you can add it manually:
 
 <pre><code class="lang-groovy">
 include ':lottie-react-native'
-project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
+project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/android')
 </code></pre>
 
 `build.gradle`:
