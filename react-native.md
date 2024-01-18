@@ -1,252 +1,281 @@
-# Getting Started
+# Lottie React Native
 
-Get started with Lottie by installing the node module with yarn or npm:
+[![npm Version](https://img.shields.io/npm/v/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native) [![License](https://img.shields.io/npm/l/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native)
 
-<pre><code class="bash">yarn add lottie-react-native@{{ book.reactNativeVersion }}
-# or
-npm i --save lottie-react-native@{{ book.reactNativeVersion }}
-</code></pre>
+Lottie component for React Native ([Repo](https://github.com/lottie-react-native/lottie-react-native))
 
-### iOS
+# Installing
 
-If you're using CocoaPods on iOS, you can put the following in your `Podfile`:
+## Breaking Changes in v6!
 
-```ruby
-pod 'lottie-ios', :path => '../node_modules/lottie-ios'
-pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
-```
+We've made some significant updates in version 6 that may impact your current setup. To get all the details about these changes, check out the [migration guide](https://github.com/lottie-react-native/lottie-react-native/blob/master/MIGRATION-5-TO-6.md).
 
-If you're not using CocoaPods on iOS, you can use `react-native link`:
+Stay informed to ensure a seamless transition to the latest version. Thank you!
 
-```bash
-react-native link lottie-ios
-react-native link lottie-react-native
-```
+## iOS and Android
 
-After this, open the Xcode project configuration and add the `Lottie.framework` as `Embedded
-Binaries`.
-
-### Android
-
-For android, you can `react-native link` as well:
-
-```bash
-react-native link lottie-react-native
-```
-
-or you can add it manually:
-
-`settings.gradle`:
-
-<pre><code class="lang-groovy">
-include ':lottie-react-native'
-project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
-</code></pre>
-
-`build.gradle`:
-
-<pre><code class="lang-groovy">
-dependencies {
-  ...
-  compile project(':lottie-react-native')
-  ...
-}
-</code></pre>
-
-Lottie requires Android support library version 26. If you're using the `react-native init`
-template, you may still be using 23. To change this, simply go to `android/app/build.gradle` and
-find the `compileSdkVersion` option inside of the `android` block and change it to
+- Install `lottie-react-native` (latest):
 
 ```
-android {
-    compileSdkVersion 26 // <-- update this to 26
-    // ...
+yarn add lottie-react-native
 ```
 
-You must also add the `LottiePackage` to `getPackages()` in your `ReactApplication`
+Go to your ios folder and run:
 
-```java
-    import com.airbnb.android.react.lottie.LottiePackage;
+```
+pod install
+```
+
+## Web
+
+- Install `lottie-react-native` (latest):
+
+```
+yarn add lottie-react-native
+```
+
+- Add dependencies for web players:
+
+```
+yarn add @dotlottie/react-player @lottiefiles/react-lottie-player
+```
+
+## Windows (React Native >= 0.63)
+
+<details>
+<summary>Install the `lottie-react-native` npm package. (Click to expand)</summary>
+<br>
     
-    ...
-    
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          ...
-          new LottiePackage()
-      );
-    }
-  };
+Add the following to the end of your project file. For C# apps, this should come after any `Microsoft.Windows.UI.Xaml.CSharp.targets` includes. For C++ apps, it should come after any `Microsoft.Cpp.targets` includes.
+```xml
+<PropertyGroup Label="LottieReactNativeProps">
+    <LottieReactNativeDir>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\lottie-react-native\package.json'))\node_modules\lottie-react-native</LottieReactNativeDir>
+</PropertyGroup>
+<ImportGroup Label="LottieReactNativeTargets">
+    <Import Project="$(LottieReactNativeDir)\src\windows\cppwinrt\PropertySheets\LottieGen.Auto.targets" />
+</ImportGroup>
 ```
 
-Then, go to `android/build.gradle` and make sure it has  :
+Add the LottieReactNative.vcxproj file to your Visual Studio solution to ensure it takes part in the build.
 
+For C# apps, you'll need to install the following packages through NuGet:
+
+- LottieGen.MsBuild
+- Microsoft.UI.Xaml
+- Win2D.uwp
+- Microsoft.Toolkit.Uwp.UI.Lottie
+  - This package is used for loading JSON dynamically. If you only need codegen animation, you can set `<EnableLottieDynamicSource>false</EnableLottieDynamicSource>` in your project file and omit this reference.
+
+For C++ apps, you'll need these NuGet packages:
+
+- LottieGen.MsBuild
+- Microsoft.UI.Xaml
+
+WinUI 2.6 (Microsoft.UI.Xaml 2.6.0) is required by default. Overriding this requires creating a Directory.Build.props file in your project root with a `<WinUIVersion>` property.
+
+In your application code where you set up your React Native Windows PackageProviders list, add the LottieReactNative provider:
+
+```csharp
+// C#
+PackageProviders.Add(new LottieReactNative.ReactPackageProvider(new AnimatedVisuals.LottieCodegenSourceProvider()));
 ```
-allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-        // Add the following 3 lines
-        maven {
-            url 'https://maven.google.com'
-        }
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
-        }
-    }
-}
+
+```cpp
+// C++
+#include <winrt/LottieReactNative.h>
+#include <winrt/AnimatedVisuals.h>
+
+...
+
+PackageProviders().Append(winrt::LottieReactNative::ReactPackageProvider(winrt::AnimatedVisuals::LottieCodegenSourceProvider()));
 ```
 
-With this change you should be ready to go.
+Codegen animations are supported by adding LottieAnimation items to your project file. These will be compiled into your application and available at runtime by name. For example:
 
-Lottie's animation progress can be controlled with an `Animated` value:
+```xml
+<!-- .vcxproj or .csproj -->
+<ItemGroup>
+    <LottieAnimation Include="Assets/Animations/MyAnimation.json" Name="MyAnimation" />
+</ItemGroup>
+```
+
+```js
+// js
+<LottieView source={"MyAnimation"} style={{width: "100%", height: "100%"}} />
+```
+
+Codegen is available to both C# and C++ applications. Dynamic loading of JSON strings at runtime is currently only supported in C# applications.
+
+</details>
+
+# Usage
+
+Lottie can be used in a declarative way:
 
 ```jsx
-import React from 'react';
-import { Animated, Easing } from 'react-native';
-import LottieView from 'lottie-react-native';
+import React from "react";
+import LottieView from "lottie-react-native";
 
-export default class BasicExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      progress: new Animated.Value(0),
-    };
-  }
-
-  componentDidMount() {
-    Animated.timing(this.state.progress, {
-      toValue: 1,
-      duration: 5000,
-      easing: Easing.linear,
-    }).start();
-  }
-
-  render() {
-    return (
-      <LottieView source={require('../path/to/animation.json')} progress={this.state.progress} />
-    );
-  }
+export default function Animation() {
+  return (
+    <LottieView
+      source={require("../path/to/animation.json")}
+      style={{width: "100%", height: "100%"}}
+      autoPlay
+      loop
+    />
+  );
 }
 ```
 
 Additionally, there is an imperative API which is sometimes simpler.
 
-```jsx
-import React from 'react';
-import LottieView from 'lottie-react-native';
+```tsx
+import React, { useEffect, useRef } from "react";
+import LottieView from "lottie-react-native";
 
-export default class BasicExample extends React.Component {
-  componentDidMount() {
-    this.animation.play();
+export default function AnimationWithImperativeApi() {
+  const animationRef = useRef<LottieView>(null);
+
+  useEffect(() => {
+    animationRef.current?.play();
+
     // Or set a specific startFrame and endFrame with:
-    this.animation.play(30, 120);
-  }
+    animationRef.current?.play(30, 120);
+  }, []);
 
-  render() {
-    return (
-      <LottieView
-        ref={animation => {
-          this.animation = animation;
-        }}
-        source={require('../path/to/animation.json')}
-      />
-    );
-  }
+  return (
+    <LottieView
+      ref={animationRef}
+      source={require("../path/to/animation.json")}
+      style={{width: "100%", height: "100%"}}
+    />
+  );
 }
 ```
 
-## Sample App
+Lottie's animation view can be controlled by either React Native Animated or Reanimated API.
 
-You can check out the example project with the following instructions
+```tsx
+import React, { useEffect, useRef, Animated } from "react";
+import { Animated, Easing } from "react-native";
+import LottieView from "lottie-react-native";
 
-1. Clone the repo: `git clone https://github.com/airbnb/lottie-react-native.git`
-2. Open: `cd lottie-react-native` and Install: `npm install`
-3. Run `npm start` to start the packager. ** The packager must be running to use the sample apps.**
-4. In another CLI window, do the following:
+const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
-For Running iOS:
+export default function ControllingAnimationProgress() {
+  const animationProgress = useRef(new Animated.Value(0));
 
-1. If you don't have CocoaPods installed, run `bundle install`
-2. Install pods: `npm run build:pods`
-3. Run Example: `npm run run:ios`
+  useEffect(() => {
+    Animated.timing(animationProgress.current, {
+      toValue: 1,
+      duration: 5000,
+      easing: Easing.linear,
+      useNativeDriver: false,
+    }).start();
+  }, []);
 
-For Running Android:
-
-1. Run Example: `npm run run:android`
-
-# Props
-
+  return (
+    <AnimatedLottieView
+      source={require("../path/to/animation.json")}
+      progress={animationProgress.current}
+      style={{width: "100%", height: "100%"}}
+    />
+  );
+}
 ```
-type AnimationProps = {
-  // The source of animation. Can be referenced as a local asset by a string, or remotely
-  // with an object with a `uri` property, or it can be an actual JS object of an
-  // animation, obtained (for example) with something like
-  // `require('../path/to/animation.json')`
-  source: string | AnimationJson | { uri: string },
 
-  // A number between 0 and 1, or an `Animated` number between 0 and 1. This number
-  // represents the normalized progress of the animation. If you update this prop, the
-  // animation will correspondingly update to the frame at that progress value. This
-  // prop is not required if you are using the imperative API.
-  progress: number | Animated = 0,
+Changing color of layers:
 
-  // The speed the animation will progress. This only affects the imperative API. The
-  // default value is 1.
-  speed: number = 1,
+NOTE: This feature may not work properly on Android. We will try fix it soon.
 
-  // A boolean flag indicating whether or not the animation should loop.
-  loop: boolean = false,
+```jsx
+import React from "react";
+import LottieView from "lottie-react-native";
 
-  // Style attributes for the view, as expected in a standard `View`:
-  // http://facebook.github.io/react-native/releases/0.39/docs/view.html#style
-  // CAVEAT: border styling is not supported.
-  style?: ViewStyle,
+export default function ChangingColorOfLayers() {
+  return (
+    <LottieView
+      source={require("../path/to/animation.json")}
+      colorFilters={[
+        {
+          keypath: "button",
+          color: "#F00000",
+        },
+        {
+          keypath: "Sending Loader",
+          color: "#F00000",
+        },
+      ]}
+      style={{width: "100%", height: "100%"}}
+      autoPlay
+      loop
+    />
+  );
+}
+```
 
-  // [Android] Relative folder inside of assets containing image files to be animated.
-  // Make sure that the images that bodymovin export are in that folder with their names unchanged (should be img_#).
-  // Refer to https://github.com/airbnb/lottie-android#image-support for more details.
-  imageAssetsFolder: string,
+# If you want to use `.lottie` files
+
+You need to modify your `metro.config.js` file accordingly by adding `lottie` extension to the `assetExts` array:
+
+```js
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
+  resolver: {
+    assetExts: [...defaultConfig.resolver.assetExts, "lottie"],
+  },
 };
 
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
 ```
 
+# Setup jest for dotLottie files
 
-Methods:
+Create a file in the following path `__mocks__/lottieMock.js` and add the following code:
 
+```js
+module.exports = "lottie-test-file-stub";
 ```
-class Animation extends React.Component {
 
-  // play the animation all the way through, at the speed specified as a prop.
-  play();
+Then add the following to your `jest.config.js` file:
 
-
-  // Reset the animation back to `0` progress.
-  reset();
-
+```js
+module.exports = {
+  ...
+  moduleNameMapper: {
+    ...,
+    '\\.(lottie)$': '<rootDir>/jest/__mocks__/lottieMock.js',
+  },
+  ...
 }
 ```
+
+# API
+
+You can find the full list of props and methods available in our [API document](https://github.com/airbnb/lottie-react-native/blob/master/docs/api.md). These are the most common ones:
+
+| Prop               | Description                                                                                                                                                                                                                                                                     | Default                                                                                                                         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **`source`**       | **Mandatory** - The source of animation. Can be referenced as a local asset by a string, or remotely with an object with a `uri` property, or it can be an actual JS object of an animation, obtained (for example) with something like `require('../path/to/animation.json')`. | _None_                                                                                                                          |
+| **`style`**        | Style attributes for the view, as expected in a standard [`View`](https://facebook.github.io/react-native/docs/layout-props.html).                                                                                                                                              | You need to set it manually. Refer to this [pull request](https://github.com/lottie-react-native/lottie-react-native/pull/992). |
+| **`loop`**         | A boolean flag indicating whether or not the animation should loop.                                                                                                                                                                                                             | `true`                                                                                                                          |
+| **`autoPlay`**     | A boolean flag indicating whether or not the animation should start automatically when mounted. This only affects the imperative API.                                                                                                                                           | `false`                                                                                                                         |
+| **`colorFilters`** | An array of objects denoting layers by KeyPath and a new color filter value (as hex string).                                                                                                                                                                                    | `[]`                                                                                                                            |
+
+[More...](https://github.com/airbnb/lottie-react-native/blob/master/docs/api.md)
 
 # Troubleshooting
 
-If you are trying to run `pod install` and you get:
+Not all After Effects features are supported by Lottie. If you notice there are some layers or animations missing check [this list](https://github.com/airbnb/lottie/blob/master/supported-features.md) to ensure they are supported.
 
-```
-[!] Unable to find a specification for `lottie-ios`
-```
-
-Run `pod repo update` and retry.
-
-When your build fails with:
-
-```
-LottieReactNative/LRNContainerView.h: 'Lottie/Lottie.h' file not found
-```
-
-Add the `Lottie.framework` to the `Embedded Binaries` in your Xcode project configuration.
-
-## Animation issues
-
-Refer to the [troubleshooting guide](https://github.com/lottie-react-native/lottie-react-native#troubleshooting).
+For further troubleshooting, please refer to the [troubleshooting guide](https://github.com/lottie-react-native/lottie-react-native#troubleshooting).
