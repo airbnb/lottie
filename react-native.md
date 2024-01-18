@@ -2,7 +2,7 @@
 
 [![npm Version](https://img.shields.io/npm/v/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native) [![License](https://img.shields.io/npm/l/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native)
 
-Lottie component for React Native ([iOS](https://github.com/airbnb/lottie-ios), [Android](https://github.com/airbnb/lottie-android), and [Windows](https://github.com/CommunityToolkit/Lottie-Windows))
+Lottie component for React Native ([Repo](https://github.com/lottie-react-native/lottie-react-native))
 
 # Installing
 
