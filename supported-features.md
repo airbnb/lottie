@@ -71,7 +71,7 @@
 | Tritone |                       ⛔️ | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Levels Individual Controls |    ⛔️ | ⛔️ | ⛔️ | ⛔️ | ❔ | 👍 | 👍 |
 | Gaussian blur |                 👍 (4.1+) | ⛔️ | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
-| Drop Shadows |                  👍 (4.1+) | 👍 | ⛔️ | ⛔️ | ❔ | ❔ | ❔ |
+| Drop Shadows |                  👍 (4.1+) | 👍 | 👍 | ⛔️ | ❔ | ❔ | ❔ |
 | **Text** | **Android** | **iOS (Core Animation)** | **iOS (Main Thread)** | **Windows** | **Web (SVG)** | **Web (Canvas)** | **Web (HTML)** |
 | Glyphs |                        👍 | ⛔️ | ⛔️ | ⛔️ | 👍 | 👍 | 👍 |
 | Fonts |                         👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
@@ -95,7 +95,7 @@
 | Images |                        👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Precomps |                      👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 | Time Stretch |                  👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
-| Time remap |                    👍 | ⛔️ | 👍 | ⛔️ | 👍 | 👍 | 👍 |
+| Time remap |                    👍 | 👍 | 👍 | ⛔️ | 👍 | 👍 | 👍 |
 | Markers |                       👍 | 👍 | 👍 | 👍 | 👍 | 👍 | 👍 |
 
 ## Drop Shadows and Gaussian Blurs on Android
