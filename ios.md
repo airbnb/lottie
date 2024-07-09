@@ -527,7 +527,7 @@ Lottie for iOS includes two rendering engine implementations, which are responsi
 
 You can learn more about the Core Animation rendering engine in [this post](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54) on Airbnb's Tech Blog: **[Announcing Lottie 4.0 for iOS](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54)**.
 
-The Core Animation rendering engine and Main Thread rendering engine support different sets of functionality. For example, as of Sept 2023 the Core Animation engine doesn't support time remapping, but only the Core Animation rendering engine supports drop shadows. A complete list of supported functionality is available [here](https://airbnb.io/lottie/#/supported-features).
+The Core Animation rendering engine and Main Thread rendering engine support different sets of functionality. A complete list of supported functionality is available [here](https://airbnb.io/lottie/#/supported-features).
 
 Most animations are rendered exactly the same by both rendering engines, but s shown above the Core Animation rendering engine and Main Thread rendering engine support slightly different sets of functionality. 
 
