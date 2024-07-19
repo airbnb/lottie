@@ -99,7 +99,7 @@ Here are some links from around the community
 
 [How to use Lottie \(In Spanish\)](https://www.youtube.com/watch?v=hLUBXENQSOc) by AnimatiCSS
 
-[How to use Lottie \(In Chinese\)](https://goo.gl/e7BkND) by PattyDraw
+[How to use Lottie \(In Chinese\)](https://medium.com/as-a-product-designer/心得分享-如何使用lottie-將完美動畫100-呈現在產品上-7ac7107abfa5) by Patty Wu
 
 [A Beginning’s Guide to Lottie: Creating Amazing Animations in iOS Apps](https://www.appcoda.com/lottie-beginner-guide/#) by Simon NG
 
