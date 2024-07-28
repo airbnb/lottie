@@ -121,7 +121,7 @@ var body: some View {
     }
   
   Button {
-    playbackMode = .playing(fromProgress(0, toProgress: 1, loopMode: .playOnce))
+    playbackMode = .playing(.fromProgress(0, toProgress: 1, loopMode: .playOnce))
   } label: {
     Image(systemName: "play.fill")
   }
