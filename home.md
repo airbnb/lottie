@@ -65,7 +65,7 @@ Lottie is named after a German film director and the foremost pioneer of silhoue
 
 ## Contributing to Documentation
 
-Contributors are more than welcome. Just put up a PR to [github.com/airbnb](https://github.com/airbnb/lottie).
+Contributors are more than welcome. Just put up a PR to [github.com/airbnb/lottie](https://github.com/airbnb/lottie).
 
 ## Issues or feature requests?
 
