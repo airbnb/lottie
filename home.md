@@ -69,7 +69,7 @@ Contributors are more than welcome. Just put up a PR to [github.com/airbnb](http
 
 ## Issues or feature requests?
 
-File github issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
+File GitHub issues for anything that is unexpectedly broken. If an After Effects file is not working, please attach it to your issue. Debugging without the original file is much more difficult.
 
 ## Articles, Interviews & Podcasts
 

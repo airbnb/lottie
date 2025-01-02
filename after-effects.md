@@ -99,7 +99,7 @@ Using alpha mattes can impact performance. If you're using an alpha matte or an 
 
 ## Debugging
 
-If an animation is broken. Try debugging the animation by exporting only certain layers at a time to see which ones work and which ones don't. After you isolate the problem areas, be sure to file a github issue with the After effects file attached and then you can choose to remake those layers in a different way.
+If an animation is broken. Try debugging the animation by exporting only certain layers at a time to see which ones work and which ones don't. After you isolate the problem areas, be sure to file a GitHub issue with the After effects file attached and then you can choose to remake those layers in a different way.
 
 ## No Blending modes or Luma mattes
 
@@ -228,7 +228,7 @@ After its downloaded just use the camera to scan the QR code.
 
 If you're animation looks correct in the preview app, you are good to go!
 
-If it doesn't then its time to do some debugging. Check out our [After Effects debugging tips](/after-effects/debugging.md) to see some techniques to get your animation working. If all else fails file an issue on github in the respective repo ([iOS](http://www.github.com/airbnb/lottie-ios), [Android](http://www.github.com/airbnb/lottie-android)) with your AE file attached and we'll do our best to support you.
+If it doesn't then its time to do some debugging. Check out our [After Effects debugging tips](/after-effects/debugging.md) to see some techniques to get your animation working. If all else fails file an issue on GitHub in the respective repo ([iOS](http://www.github.com/airbnb/lottie-ios), [Android](http://www.github.com/airbnb/lottie-android)) with your AE file attached and we'll do our best to support you.
 
 
 # Advanced Illustrator to Lottie workflow
