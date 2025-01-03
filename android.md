@@ -330,7 +330,7 @@ The Lottie for Android will automatically detect and report some errors. It does
 Check the [supported features page](/supported-features.md) on this site to see if you are using anything that isn't supported.
 
 ## Debug
-Try rendering individual parts of the animation to see which feature isn't rendering correctly. See if you can narrow it down to a specific combination of shapes and effects or anything more specific than "it doesn't look right". If the issue should be supported and isn't, file an issue on the appropriate lottie github page with a description and a zip of the aep file.
+Try rendering individual parts of the animation to see which feature isn't rendering correctly. See if you can narrow it down to a specific combination of shapes and effects or anything more specific than "it doesn't look right". If the issue should be supported and isn't, file an issue on the appropriate lottie GitHub page with a description and a zip of the aep file.
 
 ## Missing merge paths
 Merge paths are only available on KitKat and above so you must manually enable them using `enableMergePathsForKitKatAndAbove()`
