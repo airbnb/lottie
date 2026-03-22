@@ -117,7 +117,5 @@ Most animations are rendered exactly the same by both rendering engines, but as 
 
 As of [Lottie 4.0](https://medium.com/airbnb-engineering/announcing-lottie-4-0-for-ios-d4d226862a54), Lottie uses the Core Animation rendering engine by default. If Lottie detects that an animation uses functionality not supported by the Core Animation rendering engine, it will automatically fall back to the Main Thread rendering engine. You can also configure which rendering engine is used by configuring the `LottieConfiguration.renderingEngine`.
 
-#### Note on CoreAnimation Renderer Limitations
-
-> The CoreAnimation renderer might not support certain complex shape configurations, particularly those involving intersecting or subtracting paths. Due to architectural constraints of the CA engine, these cases may render differently compared to the MainThread renderer. This behavior is expected.  
-> For more details, see [GitHub Issue #2631](https://github.com/airbnb/lottie-ios/issues/2613).
+For example, the Core Animation rendering engine might not support certain complex shape configurations, particularly those involving intersecting or subtracting paths. Due to architectural constraints, these cases may render differently compared to the Main Thread rendering engine. This behavior is expected.  
+For more details, see [GitHub Issue #2631](https://github.com/airbnb/lottie-ios/issues/2613).
