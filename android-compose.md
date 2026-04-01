@@ -19,6 +19,17 @@ allprojects {
     }
 }
 ```
+For Kotlin DSL:- add Sonatype repository to your `settings.gradle` file:
+
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ...
+        maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
+    }
+}
+```
 
 The latest snapshot version is: ![lottieSnapshotVersion](https://img.shields.io/nexus/s/com.airbnb.android/lottie-compose?server=https%3A%2F%2Foss.sonatype.org)
 
